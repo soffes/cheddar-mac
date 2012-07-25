@@ -1,0 +1,504 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B21FF2C515BF7D6500AEEA97 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B21FF2C415BF7D6500AEEA97 /* Cocoa.framework */; };
+		B21FF57115BF7D7C00AEEA97 /* CDMDefines.m in Sources */ = {isa = PBXBuildFile; fileRef = B21FF2EE15BF7D7B00AEEA97 /* CDMDefines.m */; };
+		B21FF57215BF7D7C00AEEA97 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B21FF2F015BF7D7B00AEEA97 /* main.m */; };
+		B21FF57515BF7D7C00AEEA97 /* Gotham Book.hhea.xml in Resources */ = {isa = PBXBuildFile; fileRef = B21FF2F515BF7D7B00AEEA97 /* Gotham Book.hhea.xml */; };
+		B21FF57615BF7D7C00AEEA97 /* Gotham-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B21FF2F615BF7D7B00AEEA97 /* Gotham-Bold.otf */; };
+		B21FF57715BF7D7C00AEEA97 /* Gotham-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B21FF2F715BF7D7B00AEEA97 /* Gotham-BoldItalic.otf */; };
+		B21FF57815BF7D7C00AEEA97 /* Gotham-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = B21FF2F815BF7D7B00AEEA97 /* Gotham-Book.otf */; };
+		B21FF57915BF7D7C00AEEA97 /* Gotham-BookItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B21FF2F915BF7D7B00AEEA97 /* Gotham-BookItalic.otf */; };
+		B21FF57A15BF7D7C00AEEA97 /* Cheddar.icns in Resources */ = {isa = PBXBuildFile; fileRef = B21FF2FB15BF7D7B00AEEA97 /* Cheddar.icns */; };
+		B21FF57B15BF7D7C00AEEA97 /* Lists.xib in Resources */ = {isa = PBXBuildFile; fileRef = B21FF2FD15BF7D7B00AEEA97 /* Lists.xib */; };
+		B21FF57C15BF7D7C00AEEA97 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = B21FF2FE15BF7D7B00AEEA97 /* MainMenu.xib */; };
+		B21FF57D15BF7D7C00AEEA97 /* SignIn.xib in Resources */ = {isa = PBXBuildFile; fileRef = B21FF2FF15BF7D7B00AEEA97 /* SignIn.xib */; };
+		B21FF70315BF7D7C00AEEA97 /* Cheddar.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B21FF52515BF7D7C00AEEA97 /* Cheddar.xcdatamodeld */; };
+		B21FF70415BF7D7C00AEEA97 /* CheddarKitMac-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B21FF52815BF7D7C00AEEA97 /* CheddarKitMac-Info.plist */; };
+		B21FF70715BF7D7C00AEEA97 /* INAppStoreWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = B21FF52D15BF7D7C00AEEA97 /* INAppStoreWindow.m */; };
+		B2C1EBB615BF838200B65583 /* CDMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C1EBB115BF838200B65583 /* CDMAppDelegate.m */; };
+		B2C1EBB715BF838200B65583 /* CDMListsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C1EBB315BF838200B65583 /* CDMListsWindowController.m */; };
+		B2C1EBB815BF838200B65583 /* CDMSignInWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C1EBB515BF838200B65583 /* CDMSignInWindowController.m */; };
+		B2C1EBCE15BF95AE00B65583 /* CDMListTableRowView.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C1EBCD15BF95AE00B65583 /* CDMListTableRowView.m */; };
+		B2D8D5F315BF7FAE00A61836 /* CheddarKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2D8D5F015BF7F9100A61836 /* CheddarKit.framework */; };
+		B2D8D5F515BF7FBD00A61836 /* CheddarKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B2D8D5F015BF7F9100A61836 /* CheddarKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B21FF72015BF7D7D00AEEA97 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B21FF52115BF7D7C00AEEA97 /* CheddarKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B244408515BE53DC00D4D4CA;
+			remoteInfo = CheddarKit;
+		};
+		B2D8D5EF15BF7F9100A61836 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B21FF52115BF7D7C00AEEA97 /* CheddarKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B2D8D59015BF7EE600A61836;
+			remoteInfo = CheddarKitMac;
+		};
+		B2D8D5F115BF7FAA00A61836 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B21FF52115BF7D7C00AEEA97 /* CheddarKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = B2D8D58F15BF7EE600A61836;
+			remoteInfo = CheddarKitMac;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B2D8D5F415BF7FB300A61836 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B2D8D5F515BF7FBD00A61836 /* CheddarKit.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		B21FF2C015BF7D6500AEEA97 /* Cheddar for Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cheddar for Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B21FF2C415BF7D6500AEEA97 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		B21FF2C715BF7D6500AEEA97 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		B21FF2C815BF7D6500AEEA97 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		B21FF2C915BF7D6500AEEA97 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		B21FF2EE15BF7D7B00AEEA97 /* CDMDefines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMDefines.m; sourceTree = "<group>"; };
+		B21FF2EF15BF7D7B00AEEA97 /* Cheddar-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Cheddar-Prefix.pch"; sourceTree = "<group>"; };
+		B21FF2F015BF7D7B00AEEA97 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B21FF2F215BF7D7B00AEEA97 /* Cheddar-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Cheddar-Info.plist"; sourceTree = "<group>"; };
+		B21FF2F315BF7D7B00AEEA97 /* Cheddar.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Cheddar.entitlements; sourceTree = "<group>"; };
+		B21FF2F515BF7D7B00AEEA97 /* Gotham Book.hhea.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Gotham Book.hhea.xml"; sourceTree = "<group>"; };
+		B21FF2F615BF7D7B00AEEA97 /* Gotham-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Bold.otf"; sourceTree = "<group>"; };
+		B21FF2F715BF7D7B00AEEA97 /* Gotham-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-BoldItalic.otf"; sourceTree = "<group>"; };
+		B21FF2F815BF7D7B00AEEA97 /* Gotham-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Book.otf"; sourceTree = "<group>"; };
+		B21FF2F915BF7D7B00AEEA97 /* Gotham-BookItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-BookItalic.otf"; sourceTree = "<group>"; };
+		B21FF2FB15BF7D7B00AEEA97 /* Cheddar.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Cheddar.icns; sourceTree = "<group>"; };
+		B21FF2FD15BF7D7B00AEEA97 /* Lists.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Lists.xib; sourceTree = "<group>"; };
+		B21FF2FE15BF7D7B00AEEA97 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
+		B21FF2FF15BF7D7B00AEEA97 /* SignIn.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignIn.xib; sourceTree = "<group>"; };
+		B21FF52115BF7D7C00AEEA97 /* CheddarKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = CheddarKit.xcodeproj; sourceTree = "<group>"; };
+		B21FF52615BF7D7C00AEEA97 /* Cheddar 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Cheddar 2.xcdatamodel"; sourceTree = "<group>"; };
+		B21FF52715BF7D7C00AEEA97 /* Cheddar.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Cheddar.xcdatamodel; sourceTree = "<group>"; };
+		B21FF52815BF7D7C00AEEA97 /* CheddarKitMac-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "CheddarKitMac-Info.plist"; sourceTree = "<group>"; };
+		B21FF52C15BF7D7C00AEEA97 /* INAppStoreWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INAppStoreWindow.h; sourceTree = "<group>"; };
+		B21FF52D15BF7D7C00AEEA97 /* INAppStoreWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INAppStoreWindow.m; sourceTree = "<group>"; };
+		B2C1EBB015BF838200B65583 /* CDMAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMAppDelegate.h; sourceTree = "<group>"; };
+		B2C1EBB115BF838200B65583 /* CDMAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMAppDelegate.m; sourceTree = "<group>"; };
+		B2C1EBB215BF838200B65583 /* CDMListsWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMListsWindowController.h; sourceTree = "<group>"; };
+		B2C1EBB315BF838200B65583 /* CDMListsWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMListsWindowController.m; sourceTree = "<group>"; };
+		B2C1EBB415BF838200B65583 /* CDMSignInWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMSignInWindowController.h; sourceTree = "<group>"; };
+		B2C1EBB515BF838200B65583 /* CDMSignInWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMSignInWindowController.m; sourceTree = "<group>"; };
+		B2C1EBCC15BF95AE00B65583 /* CDMListTableRowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMListTableRowView.h; sourceTree = "<group>"; };
+		B2C1EBCD15BF95AE00B65583 /* CDMListTableRowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMListTableRowView.m; sourceTree = "<group>"; };
+		B2D8D60B15BF80D000A61836 /* CDMDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDMDefines.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B21FF2BD15BF7D6500AEEA97 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2D8D5F315BF7FAE00A61836 /* CheddarKit.framework in Frameworks */,
+				B21FF2C515BF7D6500AEEA97 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B21FF2B515BF7D6500AEEA97 = {
+			isa = PBXGroup;
+			children = (
+				B21FF2E615BF7D7B00AEEA97 /* Classes */,
+				B21FF2ED15BF7D7B00AEEA97 /* Other Sources */,
+				B21FF2F115BF7D7B00AEEA97 /* Resources */,
+				B21FF30015BF7D7B00AEEA97 /* Vendor */,
+				B21FF2C315BF7D6500AEEA97 /* Frameworks */,
+				B21FF2C115BF7D6500AEEA97 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		B21FF2C115BF7D6500AEEA97 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B21FF2C015BF7D6500AEEA97 /* Cheddar for Mac.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B21FF2C315BF7D6500AEEA97 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B21FF2C415BF7D6500AEEA97 /* Cocoa.framework */,
+				B21FF2C615BF7D6500AEEA97 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B21FF2C615BF7D6500AEEA97 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B21FF2C715BF7D6500AEEA97 /* AppKit.framework */,
+				B21FF2C815BF7D6500AEEA97 /* CoreData.framework */,
+				B21FF2C915BF7D6500AEEA97 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		B21FF2E615BF7D7B00AEEA97 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				B2C1EBB015BF838200B65583 /* CDMAppDelegate.h */,
+				B2C1EBB115BF838200B65583 /* CDMAppDelegate.m */,
+				B2C1EBB215BF838200B65583 /* CDMListsWindowController.h */,
+				B2C1EBB315BF838200B65583 /* CDMListsWindowController.m */,
+				B2C1EBB415BF838200B65583 /* CDMSignInWindowController.h */,
+				B2C1EBB515BF838200B65583 /* CDMSignInWindowController.m */,
+				B2C1EBCC15BF95AE00B65583 /* CDMListTableRowView.h */,
+				B2C1EBCD15BF95AE00B65583 /* CDMListTableRowView.m */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		B21FF2ED15BF7D7B00AEEA97 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				B2D8D60B15BF80D000A61836 /* CDMDefines.h */,
+				B21FF2EE15BF7D7B00AEEA97 /* CDMDefines.m */,
+				B21FF2EF15BF7D7B00AEEA97 /* Cheddar-Prefix.pch */,
+				B21FF2F015BF7D7B00AEEA97 /* main.m */,
+			);
+			path = "Other Sources";
+			sourceTree = "<group>";
+		};
+		B21FF2F115BF7D7B00AEEA97 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B21FF2F215BF7D7B00AEEA97 /* Cheddar-Info.plist */,
+				B21FF2F315BF7D7B00AEEA97 /* Cheddar.entitlements */,
+				B21FF2F415BF7D7B00AEEA97 /* Fonts */,
+				B21FF2FA15BF7D7B00AEEA97 /* Images */,
+				B21FF2FC15BF7D7B00AEEA97 /* Nibs */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B21FF2F415BF7D7B00AEEA97 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				B21FF2F515BF7D7B00AEEA97 /* Gotham Book.hhea.xml */,
+				B21FF2F615BF7D7B00AEEA97 /* Gotham-Bold.otf */,
+				B21FF2F715BF7D7B00AEEA97 /* Gotham-BoldItalic.otf */,
+				B21FF2F815BF7D7B00AEEA97 /* Gotham-Book.otf */,
+				B21FF2F915BF7D7B00AEEA97 /* Gotham-BookItalic.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		B21FF2FA15BF7D7B00AEEA97 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				B21FF2FB15BF7D7B00AEEA97 /* Cheddar.icns */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		B21FF2FC15BF7D7B00AEEA97 /* Nibs */ = {
+			isa = PBXGroup;
+			children = (
+				B21FF2FD15BF7D7B00AEEA97 /* Lists.xib */,
+				B21FF2FE15BF7D7B00AEEA97 /* MainMenu.xib */,
+				B21FF2FF15BF7D7B00AEEA97 /* SignIn.xib */,
+			);
+			path = Nibs;
+			sourceTree = "<group>";
+		};
+		B21FF30015BF7D7B00AEEA97 /* Vendor */ = {
+			isa = PBXGroup;
+			children = (
+				B21FF30115BF7D7B00AEEA97 /* CheddarKit */,
+				B21FF52A15BF7D7C00AEEA97 /* INAppStoreWindow */,
+			);
+			path = Vendor;
+			sourceTree = "<group>";
+		};
+		B21FF30115BF7D7B00AEEA97 /* CheddarKit */ = {
+			isa = PBXGroup;
+			children = (
+				B21FF52115BF7D7C00AEEA97 /* CheddarKit.xcodeproj */,
+				B21FF52415BF7D7C00AEEA97 /* Other Sources */,
+			);
+			path = CheddarKit;
+			sourceTree = "<group>";
+		};
+		B21FF52215BF7D7C00AEEA97 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B21FF72115BF7D7D00AEEA97 /* libCheddarKit.a */,
+				B2D8D5F015BF7F9100A61836 /* CheddarKit.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B21FF52415BF7D7C00AEEA97 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				B21FF52515BF7D7C00AEEA97 /* Cheddar.xcdatamodeld */,
+				B21FF52815BF7D7C00AEEA97 /* CheddarKitMac-Info.plist */,
+			);
+			path = "Other Sources";
+			sourceTree = "<group>";
+		};
+		B21FF52A15BF7D7C00AEEA97 /* INAppStoreWindow */ = {
+			isa = PBXGroup;
+			children = (
+				B21FF52C15BF7D7C00AEEA97 /* INAppStoreWindow.h */,
+				B21FF52D15BF7D7C00AEEA97 /* INAppStoreWindow.m */,
+			);
+			path = INAppStoreWindow;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B21FF2BF15BF7D6500AEEA97 /* Cheddar for Mac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B21FF2DE15BF7D6500AEEA97 /* Build configuration list for PBXNativeTarget "Cheddar for Mac" */;
+			buildPhases = (
+				B21FF2BC15BF7D6500AEEA97 /* Sources */,
+				B21FF2BD15BF7D6500AEEA97 /* Frameworks */,
+				B21FF2BE15BF7D6500AEEA97 /* Resources */,
+				B2D8D5F415BF7FB300A61836 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B2D8D5F215BF7FAA00A61836 /* PBXTargetDependency */,
+			);
+			name = "Cheddar for Mac";
+			productName = "Cheddar for Mac";
+			productReference = B21FF2C015BF7D6500AEEA97 /* Cheddar for Mac.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B21FF2B715BF7D6500AEEA97 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = CDM;
+				LastUpgradeCheck = 0450;
+				ORGANIZATIONNAME = "Nothing Magical";
+			};
+			buildConfigurationList = B21FF2BA15BF7D6500AEEA97 /* Build configuration list for PBXProject "Cheddar for Mac" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = B21FF2B515BF7D6500AEEA97;
+			productRefGroup = B21FF2C115BF7D6500AEEA97 /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = B21FF52215BF7D7C00AEEA97 /* Products */;
+					ProjectRef = B21FF52115BF7D7C00AEEA97 /* CheddarKit.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				B21FF2BF15BF7D6500AEEA97 /* Cheddar for Mac */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		B21FF72115BF7D7D00AEEA97 /* libCheddarKit.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libCheddarKit.a;
+			remoteRef = B21FF72015BF7D7D00AEEA97 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B2D8D5F015BF7F9100A61836 /* CheddarKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = CheddarKit.framework;
+			remoteRef = B2D8D5EF15BF7F9100A61836 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B21FF2BE15BF7D6500AEEA97 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B21FF57515BF7D7C00AEEA97 /* Gotham Book.hhea.xml in Resources */,
+				B21FF57615BF7D7C00AEEA97 /* Gotham-Bold.otf in Resources */,
+				B21FF57715BF7D7C00AEEA97 /* Gotham-BoldItalic.otf in Resources */,
+				B21FF57815BF7D7C00AEEA97 /* Gotham-Book.otf in Resources */,
+				B21FF57915BF7D7C00AEEA97 /* Gotham-BookItalic.otf in Resources */,
+				B21FF57A15BF7D7C00AEEA97 /* Cheddar.icns in Resources */,
+				B21FF57B15BF7D7C00AEEA97 /* Lists.xib in Resources */,
+				B21FF57C15BF7D7C00AEEA97 /* MainMenu.xib in Resources */,
+				B21FF57D15BF7D7C00AEEA97 /* SignIn.xib in Resources */,
+				B21FF70415BF7D7C00AEEA97 /* CheddarKitMac-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B21FF2BC15BF7D6500AEEA97 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B21FF57115BF7D7C00AEEA97 /* CDMDefines.m in Sources */,
+				B21FF57215BF7D7C00AEEA97 /* main.m in Sources */,
+				B21FF70315BF7D7C00AEEA97 /* Cheddar.xcdatamodeld in Sources */,
+				B21FF70715BF7D7C00AEEA97 /* INAppStoreWindow.m in Sources */,
+				B2C1EBB615BF838200B65583 /* CDMAppDelegate.m in Sources */,
+				B2C1EBB715BF838200B65583 /* CDMListsWindowController.m in Sources */,
+				B2C1EBB815BF838200B65583 /* CDMSignInWindowController.m in Sources */,
+				B2C1EBCE15BF95AE00B65583 /* CDMListTableRowView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B2D8D5F215BF7FAA00A61836 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CheddarKitMac;
+			targetProxy = B2D8D5F115BF7FAA00A61836 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		B21FF2DC15BF7D6500AEEA97 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		B21FF2DD15BF7D6500AEEA97 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		B21FF2DF15BF7D6500AEEA97 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Other Sources/Cheddar-Prefix.pch";
+				INFOPLIST_FILE = "Resources/Cheddar-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		B21FF2E015BF7D6500AEEA97 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Other Sources/Cheddar-Prefix.pch";
+				INFOPLIST_FILE = "Resources/Cheddar-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B21FF2BA15BF7D6500AEEA97 /* Build configuration list for PBXProject "Cheddar for Mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B21FF2DC15BF7D6500AEEA97 /* Debug */,
+				B21FF2DD15BF7D6500AEEA97 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B21FF2DE15BF7D6500AEEA97 /* Build configuration list for PBXNativeTarget "Cheddar for Mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B21FF2DF15BF7D6500AEEA97 /* Debug */,
+				B21FF2E015BF7D6500AEEA97 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B21FF52515BF7D7C00AEEA97 /* Cheddar.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B21FF52615BF7D7C00AEEA97 /* Cheddar 2.xcdatamodel */,
+				B21FF52715BF7D7C00AEEA97 /* Cheddar.xcdatamodel */,
+			);
+			currentVersion = B21FF52615BF7D7C00AEEA97 /* Cheddar 2.xcdatamodel */;
+			path = Cheddar.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = B21FF2B715BF7D6500AEEA97 /* Project object */;
+}

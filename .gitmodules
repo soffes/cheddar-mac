@@ -1,0 +1,6 @@
+[submodule "Vendor/CheddarKit"]
+	path = Vendor/CheddarKit
+	url = https://github.com/nothingmagical/cheddarkit.git
+[submodule "Vendor/INAppStoreWindow"]
+	path = Vendor/INAppStoreWindow
+	url = https://github.com/indragiek/INAppStoreWindow.git
