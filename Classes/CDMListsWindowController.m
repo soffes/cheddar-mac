@@ -8,6 +8,7 @@
 
 #import "CDMListsWindowController.h"
 #import "CDMListTableRowView.h"
+#import "CDMTaskTableRowView.h"
 #import "INAppStoreWindow.h"
 
 void SSDrawGradientInRect(CGContextRef context, CGGradientRef gradient, CGRect rect) {
@@ -121,11 +122,10 @@ void SSDrawGradientInRect(CGContextRef context, CGGradientRef gradient, CGRect r
 
 #pragma mark - NSTableViewDelegate
 
-- (BOOL)tableView:(NSTableView *)aTableView shouldSelectRow:(NSInteger)rowIndex {
-	if (aTableView == self.listsTableView) {
+- (BOOL)tableView:(NSTableView *)tableView shouldSelectRow:(NSInteger)rowIndex {
+	if (tableView == self.listsTableView) {
 		CDKList *list = [[self.listsArrayController arrangedObjects] objectAtIndex:rowIndex];
 		[[CDKHTTPClient sharedClient] getTasksWithList:list success:^(AFJSONRequestOperation *operation, id responseObject) {
-			NSLog(@"Fetched %@ tasks", list.title);
 			[self.tasksArrayController fetch:nil];
 		} failure:nil];
 		self.tasksArrayController.fetchPredicate = [NSPredicate predicateWithFormat:@"list = %@ AND archivedAt = nil", list];
@@ -137,7 +137,22 @@ void SSDrawGradientInRect(CGContextRef context, CGGradientRef gradient, CGRect r
 
 
 - (NSTableRowView *)tableView:(NSTableView *)tableView rowViewForRow:(NSInteger)row {
-	return [[CDMListTableRowView alloc] initWithFrame:CGRectZero];
+	if (tableView == self.listsTableView) {
+		return [[CDMListTableRowView alloc] initWithFrame:CGRectZero];
+	} else if (tableView == self.tasksTableView) {
+		return [[CDMTaskTableRowView alloc] initWithFrame:CGRectZero];
+	}
+	return nil;
+}
+
+
+- (CGFloat)tableView:(NSTableView *)tableView heightOfRow:(NSInteger)row {
+	if (tableView == self.listsTableView) {
+		return 45.0f;
+	} else if (tableView == self.tasksTableView) {
+		return 38.0f;
+	}
+	return 0.0f;
 }
 
 @end

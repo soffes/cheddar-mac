@@ -14,6 +14,8 @@
 			<string>NSArrayController</string>
 			<string>NSCustomObject</string>
 			<string>NSCustomView</string>
+			<string>NSImageCell</string>
+			<string>NSImageView</string>
 			<string>NSScrollView</string>
 			<string>NSScroller</string>
 			<string>NSTableCellView</string>
@@ -281,7 +283,7 @@
 											<double key="NSIntercellSpacingHeight">2</double>
 											<reference key="NSBackgroundColor" ref="587565961"/>
 											<reference key="NSGridColor" ref="294748861"/>
-											<double key="NSRowHeight">17</double>
+											<double key="NSRowHeight">38</double>
 											<int key="NSTvFlags">-2109734912</int>
 											<reference key="NSDelegate"/>
 											<reference key="NSDataSource"/>
@@ -289,6 +291,7 @@
 											<int key="NSDraggingSourceMaskForLocal">15</int>
 											<int key="NSDraggingSourceMaskForNonLocal">0</int>
 											<bool key="NSAllowsTypeSelect">NO</bool>
+											<int key="NSTableViewSelectionHighlightStyle">-1</int>
 											<int key="NSTableViewDraggingDestinationStyle">0</int>
 											<int key="NSTableViewGroupRowStyle">1</int>
 										</object>
@@ -339,7 +342,7 @@
 							<reference key="NSVScroller" ref="654706678"/>
 							<reference key="NSHScroller" ref="379529349"/>
 							<reference key="NSContentView" ref="525792407"/>
-							<bytes key="NSScrollAmts">QSAAAEEgAABBmAAAQZgAAA</bytes>
+							<bytes key="NSScrollAmts">QSAAAEEgAABCIAAAQiAAAA</bytes>
 							<double key="NSMinMagnification">0.25</double>
 							<double key="NSMaxMagnification">4</double>
 							<double key="NSMagnification">1</double>
@@ -562,6 +565,14 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
+						<string key="label">delegate</string>
+						<reference key="source" ref="1031128622"/>
+						<reference key="destination" ref="1001"/>
+					</object>
+					<int key="connectionID">205</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
 						<string key="label">textField</string>
 						<object class="NSTableCellView" key="source" id="33194441">
 							<nil key="NSNextResponder"/>
@@ -570,7 +581,7 @@
 								<object class="NSTextField" id="540843239">
 									<reference key="NSNextResponder" ref="33194441"/>
 									<int key="NSvFlags">266</int>
-									<string key="NSFrameSize">{408, 17}</string>
+									<string key="NSFrame">{{34, 9}, {373, 17}}</string>
 									<reference key="NSSuperview" ref="33194441"/>
 									<reference key="NSNextKeyView" ref="654706678"/>
 									<string key="NSAntiCompressionPriority">{250, 750}</string>
@@ -586,9 +597,41 @@
 									</object>
 									<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 								</object>
+								<object class="NSImageView" id="88861917">
+									<reference key="NSNextResponder" ref="33194441"/>
+									<int key="NSvFlags">268</int>
+									<set class="NSMutableSet" key="NSDragTypes">
+										<string>Apple PDF pasteboard type</string>
+										<string>Apple PICT pasteboard type</string>
+										<string>Apple PNG pasteboard type</string>
+										<string>NSFilenamesPboardType</string>
+										<string>NeXT Encapsulated PostScript v1.2 pasteboard type</string>
+										<string>NeXT TIFF v4.0 pasteboard type</string>
+									</set>
+									<string key="NSFrame">{{9, 10}, {18, 18}}</string>
+									<reference key="NSSuperview" ref="33194441"/>
+									<reference key="NSNextKeyView" ref="540843239"/>
+									<string key="NSReuseIdentifierKey">_NS:9</string>
+									<bool key="NSEnabled">YES</bool>
+									<object class="NSImageCell" key="NSCell" id="822588130">
+										<int key="NSCellFlags">134217728</int>
+										<int key="NSCellFlags2">33554432</int>
+										<object class="NSCustomResource" key="NSContents">
+											<string key="NSClassName">NSImage</string>
+											<string key="NSResourceName">cheat-checkbox</string>
+										</object>
+										<string key="NSCellIdentifier">_NS:9</string>
+										<int key="NSAlign">0</int>
+										<int key="NSScale">0</int>
+										<int key="NSStyle">0</int>
+										<bool key="NSAnimates">NO</bool>
+									</object>
+									<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
+									<bool key="NSEditable">YES</bool>
+								</object>
 							</array>
-							<string key="NSFrame">{{1, 1}, {408, 17}}</string>
-							<reference key="NSNextKeyView" ref="540843239"/>
+							<string key="NSFrame">{{1, 1}, {408, 38}}</string>
+							<reference key="NSNextKeyView" ref="88861917"/>
 						</object>
 						<reference key="destination" ref="540843239"/>
 					</object>
@@ -768,6 +811,7 @@
 						<reference key="object" ref="33194441"/>
 						<array class="NSMutableArray" key="children">
 							<reference ref="540843239"/>
+							<reference ref="88861917"/>
 						</array>
 						<reference key="parent" ref="570044936"/>
 					</object>
@@ -816,6 +860,19 @@
 						<reference key="object" ref="755359220"/>
 						<reference key="parent" ref="657761538"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">206</int>
+						<reference key="object" ref="88861917"/>
+						<array class="NSMutableArray" key="children">
+							<reference ref="822588130"/>
+						</array>
+						<reference key="parent" ref="33194441"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">207</int>
+						<reference key="object" ref="822588130"/>
+						<reference key="parent" ref="88861917"/>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -833,6 +890,7 @@
 				<array key="102.prototypeCellViews">
 					<reference ref="33194441"/>
 				</array>
+				<string key="103.CustomClassName">CDMTaskTableCellView</string>
 				<string key="103.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="104.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="108.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -846,6 +904,8 @@
 				<string key="152.CustomClassName">CDMAddTaskTextFieldCell</string>
 				<string key="152.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="2.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="206.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="207.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="3.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="34.CustomClassName">CDMListTableCellView</string>
 				<string key="34.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -868,7 +928,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">204</int>
+			<int key="maxID">207</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -948,6 +1008,14 @@
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
+					<string key="className">CDMTaskTableCellView</string>
+					<string key="superclassName">NSTableCellView</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/CDMTaskTableCellView.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
 					<string key="className">INAppStoreWindow</string>
 					<string key="superclassName">NSWindow</string>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
@@ -961,5 +1029,9 @@
 		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaFramework</string>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
 		<int key="IBDocument.defaultPropertyAccessControl">3</int>
+		<object class="NSMutableDictionary" key="IBDocument.LastKnownImageSizes">
+			<string key="NS.key.0">cheat-checkbox</string>
+			<string key="NS.object.0">{18, 18}</string>
+		</object>
 	</data>
 </archive>

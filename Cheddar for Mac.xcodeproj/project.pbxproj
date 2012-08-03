@@ -29,6 +29,9 @@
 		B249723315CBE117008388E5 /* CDMAddTaskTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B249723215CBE117008388E5 /* CDMAddTaskTextFieldCell.m */; };
 		B249724F15CC0058008388E5 /* title.png in Resources */ = {isa = PBXBuildFile; fileRef = B249724D15CC0058008388E5 /* title.png */; };
 		B249725015CC0058008388E5 /* title@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B249724E15CC0058008388E5 /* title@2x.png */; };
+		B249725315CC00D9008388E5 /* CDMTaskTableRowView.m in Sources */ = {isa = PBXBuildFile; fileRef = B249725215CC00D9008388E5 /* CDMTaskTableRowView.m */; };
+		B249725615CC02C1008388E5 /* CDMTaskTableCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = B249725515CC02C0008388E5 /* CDMTaskTableCellView.m */; };
+		B249725815CC0358008388E5 /* cheat-checkbox.png in Resources */ = {isa = PBXBuildFile; fileRef = B249725715CC0358008388E5 /* cheat-checkbox.png */; };
 		B25E136815CB98AD009751B9 /* CDMListTableRowView.m in Sources */ = {isa = PBXBuildFile; fileRef = B25E136715CB98AD009751B9 /* CDMListTableRowView.m */; };
 		B25E13AD15CBB19B009751B9 /* CDMListTableCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = B25E13AC15CBB19B009751B9 /* CDMListTableCellView.m */; };
 		B25E13B815CBC2AF009751B9 /* CDMAddTaskView.m in Sources */ = {isa = PBXBuildFile; fileRef = B25E13B715CBC2AF009751B9 /* CDMAddTaskView.m */; };
@@ -112,6 +115,11 @@
 		B249723215CBE117008388E5 /* CDMAddTaskTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMAddTaskTextFieldCell.m; sourceTree = "<group>"; };
 		B249724D15CC0058008388E5 /* title.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = title.png; sourceTree = "<group>"; };
 		B249724E15CC0058008388E5 /* title@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "title@2x.png"; sourceTree = "<group>"; };
+		B249725115CC00D9008388E5 /* CDMTaskTableRowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMTaskTableRowView.h; sourceTree = "<group>"; };
+		B249725215CC00D9008388E5 /* CDMTaskTableRowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMTaskTableRowView.m; sourceTree = "<group>"; };
+		B249725415CC02C0008388E5 /* CDMTaskTableCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMTaskTableCellView.h; sourceTree = "<group>"; };
+		B249725515CC02C0008388E5 /* CDMTaskTableCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMTaskTableCellView.m; sourceTree = "<group>"; };
+		B249725715CC0358008388E5 /* cheat-checkbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cheat-checkbox.png"; sourceTree = "<group>"; };
 		B25E136615CB98AD009751B9 /* CDMListTableRowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMListTableRowView.h; sourceTree = "<group>"; };
 		B25E136715CB98AD009751B9 /* CDMListTableRowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMListTableRowView.m; sourceTree = "<group>"; };
 		B25E13AB15CBB19B009751B9 /* CDMListTableCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMListTableCellView.h; sourceTree = "<group>"; };
@@ -234,6 +242,7 @@
 		B21FF2FA15BF7D7B00AEEA97 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				B249725715CC0358008388E5 /* cheat-checkbox.png */,
 				B249724D15CC0058008388E5 /* title.png */,
 				B249724E15CC0058008388E5 /* title@2x.png */,
 				B24970C015CBC6A9008388E5 /* textfield-focused.png */,
@@ -329,6 +338,10 @@
 				B25E13B715CBC2AF009751B9 /* CDMAddTaskView.m */,
 				B25E13B915CBC513009751B9 /* CDMAddTaskTextField.h */,
 				B25E13BA15CBC514009751B9 /* CDMAddTaskTextField.m */,
+				B249725115CC00D9008388E5 /* CDMTaskTableRowView.h */,
+				B249725215CC00D9008388E5 /* CDMTaskTableRowView.m */,
+				B249725415CC02C0008388E5 /* CDMTaskTableCellView.h */,
+				B249725515CC02C0008388E5 /* CDMTaskTableCellView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -425,6 +438,7 @@
 				B24970C715CBC6A9008388E5 /* textfield@2x.png in Resources */,
 				B249724F15CC0058008388E5 /* title.png in Resources */,
 				B249725015CC0058008388E5 /* title@2x.png in Resources */,
+				B249725815CC0358008388E5 /* cheat-checkbox.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,6 +462,8 @@
 				B25E13BB15CBC514009751B9 /* CDMAddTaskTextField.m in Sources */,
 				B24970CB15CBC836008388E5 /* NSImage+CDMAdditions.m in Sources */,
 				B249723315CBE117008388E5 /* CDMAddTaskTextFieldCell.m in Sources */,
+				B249725315CC00D9008388E5 /* CDMTaskTableRowView.m in Sources */,
+				B249725615CC02C1008388E5 /* CDMTaskTableCellView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
