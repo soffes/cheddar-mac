@@ -97,8 +97,8 @@ void SSDrawGradientInRect(CGContextRef context, CGGradientRef gradient, CGRect r
 		NSGradient *gradient = [[NSGradient alloc] initWithStartingColor:[colorList colorWithKey:@"gradientTop"] endingColor:[colorList colorWithKey:@"gradientBottom"]];
 		[gradient drawInRect:rect angle:-90.0f];
 				
-		NSImage *image = [NSImage imageNamed:@"title.png"];
-		rect = CGRectMake(roundf((drawingRect.size.width - 135.0f) / 2.0f), roundf((drawingRect.size.height - 24.0f) / 2.0f) - 2.0f, 135.0f, 24.0f);
+		NSImage *image = [NSImage imageNamed:@"title"];
+		rect = CGRectMake(roundf((drawingRect.size.width - 135.0f) / 2.0f), roundf((drawingRect.size.height - 24.0f) / 2.0f) + 1.0f, 135.0f, 24.0f);
 		[image drawInRect:rect fromRect:CGRectZero operation:NSCompositeSourceOver fraction:1.0f];
 		
 		CGContextRestoreGState(context);

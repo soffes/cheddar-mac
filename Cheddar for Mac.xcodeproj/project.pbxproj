@@ -27,6 +27,8 @@
 		B24970C715CBC6A9008388E5 /* textfield@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B24970C315CBC6A9008388E5 /* textfield@2x.png */; };
 		B24970CB15CBC836008388E5 /* NSImage+CDMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B24970CA15CBC836008388E5 /* NSImage+CDMAdditions.m */; };
 		B249723315CBE117008388E5 /* CDMAddTaskTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B249723215CBE117008388E5 /* CDMAddTaskTextFieldCell.m */; };
+		B249724F15CC0058008388E5 /* title.png in Resources */ = {isa = PBXBuildFile; fileRef = B249724D15CC0058008388E5 /* title.png */; };
+		B249725015CC0058008388E5 /* title@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B249724E15CC0058008388E5 /* title@2x.png */; };
 		B25E136815CB98AD009751B9 /* CDMListTableRowView.m in Sources */ = {isa = PBXBuildFile; fileRef = B25E136715CB98AD009751B9 /* CDMListTableRowView.m */; };
 		B25E13AD15CBB19B009751B9 /* CDMListTableCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = B25E13AC15CBB19B009751B9 /* CDMListTableCellView.m */; };
 		B25E13B815CBC2AF009751B9 /* CDMAddTaskView.m in Sources */ = {isa = PBXBuildFile; fileRef = B25E13B715CBC2AF009751B9 /* CDMAddTaskView.m */; };
@@ -108,6 +110,8 @@
 		B24970CA15CBC836008388E5 /* NSImage+CDMAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSImage+CDMAdditions.m"; sourceTree = "<group>"; };
 		B249723115CBE117008388E5 /* CDMAddTaskTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMAddTaskTextFieldCell.h; sourceTree = "<group>"; };
 		B249723215CBE117008388E5 /* CDMAddTaskTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMAddTaskTextFieldCell.m; sourceTree = "<group>"; };
+		B249724D15CC0058008388E5 /* title.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = title.png; sourceTree = "<group>"; };
+		B249724E15CC0058008388E5 /* title@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "title@2x.png"; sourceTree = "<group>"; };
 		B25E136615CB98AD009751B9 /* CDMListTableRowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMListTableRowView.h; sourceTree = "<group>"; };
 		B25E136715CB98AD009751B9 /* CDMListTableRowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMListTableRowView.m; sourceTree = "<group>"; };
 		B25E13AB15CBB19B009751B9 /* CDMListTableCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMListTableCellView.h; sourceTree = "<group>"; };
@@ -230,6 +234,8 @@
 		B21FF2FA15BF7D7B00AEEA97 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				B249724D15CC0058008388E5 /* title.png */,
+				B249724E15CC0058008388E5 /* title@2x.png */,
 				B24970C015CBC6A9008388E5 /* textfield-focused.png */,
 				B24970C115CBC6A9008388E5 /* textfield-focused@2x.png */,
 				B24970C215CBC6A9008388E5 /* textfield.png */,
@@ -417,6 +423,8 @@
 				B24970C515CBC6A9008388E5 /* textfield-focused@2x.png in Resources */,
 				B24970C615CBC6A9008388E5 /* textfield.png in Resources */,
 				B24970C715CBC6A9008388E5 /* textfield@2x.png in Resources */,
+				B249724F15CC0058008388E5 /* title.png in Resources */,
+				B249725015CC0058008388E5 /* title@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
