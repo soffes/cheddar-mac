@@ -8,6 +8,7 @@
 
 @interface NSImage (CDMAdditions)
 
-- (void)drawStretchableInRect:(NSRect)rect edgeInsets:(NSEdgeInsets)insets operation:(NSCompositingOperation)op fraction:(CGFloat)delta;
+
+- (void)drawStretchableImageInRect:(CGRect)rect leftCapWidth:(CGFloat)leftCapWith;
 
 @end
