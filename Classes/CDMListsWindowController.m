@@ -7,6 +7,7 @@
 //
 
 #import "CDMListsWindowController.h"
+#import "CDMTableRowView.h"
 #import "INAppStoreWindow.h"
 
 void SSDrawGradientInRect(CGContextRef context, CGGradientRef gradient, CGRect rect) {
@@ -38,7 +39,7 @@ void SSDrawGradientInRect(CGContextRef context, CGGradientRef gradient, CGRect r
 	[super windowDidLoad];
 	
 	INAppStoreWindow *aWindow = (INAppStoreWindow *)self.window;
-	aWindow.titleBarHeight = 60.0f;
+	aWindow.titleBarHeight = 40.0f;
 	[aWindow setTitleBarDrawingBlock:^(BOOL drawsAsMainWindow, CGRect drawingRect, CGPathRef clippingPath){
 		CGContextRef context = (CGContextRef)[[NSGraphicsContext currentContext] graphicsPort];
 		CGContextSaveGState(context);
@@ -46,19 +47,19 @@ void SSDrawGradientInRect(CGContextRef context, CGGradientRef gradient, CGRect r
 		CGContextClip(context);
 		
 		// Top inset
-		[[NSColor colorWithCalibratedRed:0.973f green:0.647f blue:0.545f alpha:1.0f] setFill];
+		[[NSColor colorWithDeviceRed:0.93 green:0.62 blue:0.53 alpha:1.0] setFill];
 		CGRect rect = drawingRect;
 		rect.origin.y = rect.size.height - 1.0f;
 		rect.size.height = 1.0f;
 		CGContextFillRect(context, rect);
 		
 		// Bottom inset
-		[[NSColor colorWithCalibratedRed:0.988f green:0.553f blue:0.427f alpha:1.0f] setFill];
+		[[NSColor colorWithDeviceRed:0.99 green:0.53 blue:0.40 alpha:1.0] setFill];
 		rect.origin.y = 1.0f;
 		CGContextFillRect(context, rect);
 
 		// Bottom border
-		[[NSColor colorWithCalibratedRed:0.737f green:0.282f blue:0.165f alpha:1.0f] setFill];
+		[[NSColor colorWithDeviceRed:0.40 green:0.40 blue:0.40 alpha:1.0] setFill];
 		rect.origin.y = 0.0f;
 		CGContextFillRect(context, rect);
 		
@@ -66,7 +67,7 @@ void SSDrawGradientInRect(CGContextRef context, CGGradientRef gradient, CGRect r
 		rect = drawingRect;
 		rect.origin.y += 2.0f;
 		rect.size.height -= 3.0f;
-		NSGradient *gradient = [[NSGradient alloc] initWithStartingColor:[NSColor colorWithCalibratedRed:0.969f green:0.549f blue:0.424f alpha:1.0f] endingColor:[NSColor colorWithCalibratedRed:0.992f green:0.451f blue:0.294f alpha:1.0f]];
+		NSGradient *gradient = [[NSGradient alloc] initWithStartingColor:[NSColor colorWithDeviceRed:0.97 green:0.54 blue:0.42 alpha:1.0] endingColor:[NSColor colorWithDeviceRed:0.99 green:0.44 blue:0.28 alpha:1.0]];
 		[gradient drawInRect:rect angle:-90.0f];
 				
 		NSImage *image = [NSImage imageNamed:@"title.png"];
@@ -105,6 +106,12 @@ void SSDrawGradientInRect(CGContextRef context, CGGradientRef gradient, CGRect r
 	}
 	
 	return YES;
+}
+
+
+- (NSTableRowView *)tableView:(NSTableView *)tableView rowViewForRow:(NSInteger)row {
+	CDMTableRowView *rowView = [[CDMTableRowView alloc] initWithFrame:CGRectZero];
+	return rowView;
 }
 
 @end

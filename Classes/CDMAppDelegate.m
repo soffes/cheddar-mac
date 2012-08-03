@@ -23,6 +23,9 @@
 	[CDKPushController setDevelopmentModeEnabled:YES];
 #endif
 	
+//	NSColorList *colorList = [[NSColorList alloc] initWithName:@"Cheddar"];
+//	[colorList setColor:<#(NSColor *)#> forKey:<#(NSString *)#>]
+	
 	// Initialize Core Data
 	[SSManagedObject mainContext];
 	
