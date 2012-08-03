@@ -10,7 +10,6 @@
 		B21FF2C515BF7D6500AEEA97 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B21FF2C415BF7D6500AEEA97 /* Cocoa.framework */; };
 		B21FF57115BF7D7C00AEEA97 /* CDMDefines.m in Sources */ = {isa = PBXBuildFile; fileRef = B21FF2EE15BF7D7B00AEEA97 /* CDMDefines.m */; };
 		B21FF57215BF7D7C00AEEA97 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B21FF2F015BF7D7B00AEEA97 /* main.m */; };
-		B21FF57515BF7D7C00AEEA97 /* Gotham Book.hhea.xml in Resources */ = {isa = PBXBuildFile; fileRef = B21FF2F515BF7D7B00AEEA97 /* Gotham Book.hhea.xml */; };
 		B21FF57615BF7D7C00AEEA97 /* Gotham-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B21FF2F615BF7D7B00AEEA97 /* Gotham-Bold.otf */; };
 		B21FF57715BF7D7C00AEEA97 /* Gotham-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B21FF2F715BF7D7B00AEEA97 /* Gotham-BoldItalic.otf */; };
 		B21FF57815BF7D7C00AEEA97 /* Gotham-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = B21FF2F815BF7D7B00AEEA97 /* Gotham-Book.otf */; };
@@ -22,11 +21,18 @@
 		B21FF70315BF7D7C00AEEA97 /* Cheddar.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B21FF52515BF7D7C00AEEA97 /* Cheddar.xcdatamodeld */; };
 		B21FF70415BF7D7C00AEEA97 /* CheddarKitMac-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B21FF52815BF7D7C00AEEA97 /* CheddarKitMac-Info.plist */; };
 		B21FF70715BF7D7C00AEEA97 /* INAppStoreWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = B21FF52D15BF7D7C00AEEA97 /* INAppStoreWindow.m */; };
-		B25E136815CB98AD009751B9 /* CDMTableRowView.m in Sources */ = {isa = PBXBuildFile; fileRef = B25E136715CB98AD009751B9 /* CDMTableRowView.m */; };
+		B24970C415CBC6A9008388E5 /* textfield-focused.png in Resources */ = {isa = PBXBuildFile; fileRef = B24970C015CBC6A9008388E5 /* textfield-focused.png */; };
+		B24970C515CBC6A9008388E5 /* textfield-focused@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B24970C115CBC6A9008388E5 /* textfield-focused@2x.png */; };
+		B24970C615CBC6A9008388E5 /* textfield.png in Resources */ = {isa = PBXBuildFile; fileRef = B24970C215CBC6A9008388E5 /* textfield.png */; };
+		B24970C715CBC6A9008388E5 /* textfield@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B24970C315CBC6A9008388E5 /* textfield@2x.png */; };
+		B24970CB15CBC836008388E5 /* NSImage+CDMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B24970CA15CBC836008388E5 /* NSImage+CDMAdditions.m */; };
+		B25E136815CB98AD009751B9 /* CDMListTableRowView.m in Sources */ = {isa = PBXBuildFile; fileRef = B25E136715CB98AD009751B9 /* CDMListTableRowView.m */; };
+		B25E13AD15CBB19B009751B9 /* CDMListTableCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = B25E13AC15CBB19B009751B9 /* CDMListTableCellView.m */; };
+		B25E13B815CBC2AF009751B9 /* CDMAddTaskView.m in Sources */ = {isa = PBXBuildFile; fileRef = B25E13B715CBC2AF009751B9 /* CDMAddTaskView.m */; };
+		B25E13BB15CBC514009751B9 /* CDMAddTaskTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = B25E13BA15CBC514009751B9 /* CDMAddTaskTextField.m */; };
 		B2C1EBB615BF838200B65583 /* CDMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C1EBB115BF838200B65583 /* CDMAppDelegate.m */; };
 		B2C1EBB715BF838200B65583 /* CDMListsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C1EBB315BF838200B65583 /* CDMListsWindowController.m */; };
 		B2C1EBB815BF838200B65583 /* CDMSignInWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C1EBB515BF838200B65583 /* CDMSignInWindowController.m */; };
-		B2C1EBCE15BF95AE00B65583 /* CDMListTableRowView.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C1EBCD15BF95AE00B65583 /* CDMListTableRowView.m */; };
 		B2D8D5F315BF7FAE00A61836 /* CheddarKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2D8D5F015BF7F9100A61836 /* CheddarKit.framework */; };
 		B2D8D5F515BF7FBD00A61836 /* CheddarKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B2D8D5F015BF7F9100A61836 /* CheddarKit.framework */; };
 /* End PBXBuildFile section */
@@ -79,7 +85,6 @@
 		B21FF2F015BF7D7B00AEEA97 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B21FF2F215BF7D7B00AEEA97 /* Cheddar-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Cheddar-Info.plist"; sourceTree = "<group>"; };
 		B21FF2F315BF7D7B00AEEA97 /* Cheddar.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Cheddar.entitlements; sourceTree = "<group>"; };
-		B21FF2F515BF7D7B00AEEA97 /* Gotham Book.hhea.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = "Gotham Book.hhea.xml"; sourceTree = "<group>"; };
 		B21FF2F615BF7D7B00AEEA97 /* Gotham-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Bold.otf"; sourceTree = "<group>"; };
 		B21FF2F715BF7D7B00AEEA97 /* Gotham-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-BoldItalic.otf"; sourceTree = "<group>"; };
 		B21FF2F815BF7D7B00AEEA97 /* Gotham-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Book.otf"; sourceTree = "<group>"; };
@@ -94,16 +99,26 @@
 		B21FF52815BF7D7C00AEEA97 /* CheddarKitMac-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "CheddarKitMac-Info.plist"; sourceTree = "<group>"; };
 		B21FF52C15BF7D7C00AEEA97 /* INAppStoreWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INAppStoreWindow.h; sourceTree = "<group>"; };
 		B21FF52D15BF7D7C00AEEA97 /* INAppStoreWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INAppStoreWindow.m; sourceTree = "<group>"; };
-		B25E136615CB98AD009751B9 /* CDMTableRowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMTableRowView.h; sourceTree = "<group>"; };
-		B25E136715CB98AD009751B9 /* CDMTableRowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMTableRowView.m; sourceTree = "<group>"; };
+		B24970C015CBC6A9008388E5 /* textfield-focused.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "textfield-focused.png"; sourceTree = "<group>"; };
+		B24970C115CBC6A9008388E5 /* textfield-focused@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "textfield-focused@2x.png"; sourceTree = "<group>"; };
+		B24970C215CBC6A9008388E5 /* textfield.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = textfield.png; sourceTree = "<group>"; };
+		B24970C315CBC6A9008388E5 /* textfield@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "textfield@2x.png"; sourceTree = "<group>"; };
+		B24970C915CBC836008388E5 /* NSImage+CDMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage+CDMAdditions.h"; sourceTree = "<group>"; };
+		B24970CA15CBC836008388E5 /* NSImage+CDMAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSImage+CDMAdditions.m"; sourceTree = "<group>"; };
+		B25E136615CB98AD009751B9 /* CDMListTableRowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMListTableRowView.h; sourceTree = "<group>"; };
+		B25E136715CB98AD009751B9 /* CDMListTableRowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMListTableRowView.m; sourceTree = "<group>"; };
+		B25E13AB15CBB19B009751B9 /* CDMListTableCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMListTableCellView.h; sourceTree = "<group>"; };
+		B25E13AC15CBB19B009751B9 /* CDMListTableCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMListTableCellView.m; sourceTree = "<group>"; };
+		B25E13B615CBC2AF009751B9 /* CDMAddTaskView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMAddTaskView.h; sourceTree = "<group>"; };
+		B25E13B715CBC2AF009751B9 /* CDMAddTaskView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMAddTaskView.m; sourceTree = "<group>"; };
+		B25E13B915CBC513009751B9 /* CDMAddTaskTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMAddTaskTextField.h; sourceTree = "<group>"; };
+		B25E13BA15CBC514009751B9 /* CDMAddTaskTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMAddTaskTextField.m; sourceTree = "<group>"; };
 		B2C1EBB015BF838200B65583 /* CDMAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMAppDelegate.h; sourceTree = "<group>"; };
 		B2C1EBB115BF838200B65583 /* CDMAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMAppDelegate.m; sourceTree = "<group>"; };
 		B2C1EBB215BF838200B65583 /* CDMListsWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMListsWindowController.h; sourceTree = "<group>"; };
 		B2C1EBB315BF838200B65583 /* CDMListsWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMListsWindowController.m; sourceTree = "<group>"; };
 		B2C1EBB415BF838200B65583 /* CDMSignInWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMSignInWindowController.h; sourceTree = "<group>"; };
 		B2C1EBB515BF838200B65583 /* CDMSignInWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMSignInWindowController.m; sourceTree = "<group>"; };
-		B2C1EBCC15BF95AE00B65583 /* CDMListTableRowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMListTableRowView.h; sourceTree = "<group>"; };
-		B2C1EBCD15BF95AE00B65583 /* CDMListTableRowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMListTableRowView.m; sourceTree = "<group>"; };
 		B2D8D60B15BF80D000A61836 /* CDMDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDMDefines.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -162,16 +177,14 @@
 		B21FF2E615BF7D7B00AEEA97 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				B24970C815CBC827008388E5 /* Categories */,
 				B2C1EBB015BF838200B65583 /* CDMAppDelegate.h */,
 				B2C1EBB115BF838200B65583 /* CDMAppDelegate.m */,
 				B2C1EBB215BF838200B65583 /* CDMListsWindowController.h */,
 				B2C1EBB315BF838200B65583 /* CDMListsWindowController.m */,
 				B2C1EBB415BF838200B65583 /* CDMSignInWindowController.h */,
 				B2C1EBB515BF838200B65583 /* CDMSignInWindowController.m */,
-				B2C1EBCC15BF95AE00B65583 /* CDMListTableRowView.h */,
-				B2C1EBCD15BF95AE00B65583 /* CDMListTableRowView.m */,
-				B25E136615CB98AD009751B9 /* CDMTableRowView.h */,
-				B25E136715CB98AD009751B9 /* CDMTableRowView.m */,
+				B25E13AA15CBB185009751B9 /* Views */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -202,7 +215,6 @@
 		B21FF2F415BF7D7B00AEEA97 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				B21FF2F515BF7D7B00AEEA97 /* Gotham Book.hhea.xml */,
 				B21FF2F615BF7D7B00AEEA97 /* Gotham-Bold.otf */,
 				B21FF2F715BF7D7B00AEEA97 /* Gotham-BoldItalic.otf */,
 				B21FF2F815BF7D7B00AEEA97 /* Gotham-Book.otf */,
@@ -214,6 +226,10 @@
 		B21FF2FA15BF7D7B00AEEA97 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				B24970C015CBC6A9008388E5 /* textfield-focused.png */,
+				B24970C115CBC6A9008388E5 /* textfield-focused@2x.png */,
+				B24970C215CBC6A9008388E5 /* textfield.png */,
+				B24970C315CBC6A9008388E5 /* textfield@2x.png */,
 				B21FF2FB15BF7D7B00AEEA97 /* Cheddar.icns */,
 			);
 			path = Images;
@@ -272,6 +288,30 @@
 				B21FF52D15BF7D7C00AEEA97 /* INAppStoreWindow.m */,
 			);
 			path = INAppStoreWindow;
+			sourceTree = "<group>";
+		};
+		B24970C815CBC827008388E5 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				B24970C915CBC836008388E5 /* NSImage+CDMAdditions.h */,
+				B24970CA15CBC836008388E5 /* NSImage+CDMAdditions.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		B25E13AA15CBB185009751B9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B25E136615CB98AD009751B9 /* CDMListTableRowView.h */,
+				B25E136715CB98AD009751B9 /* CDMListTableRowView.m */,
+				B25E13AB15CBB19B009751B9 /* CDMListTableCellView.h */,
+				B25E13AC15CBB19B009751B9 /* CDMListTableCellView.m */,
+				B25E13B615CBC2AF009751B9 /* CDMAddTaskView.h */,
+				B25E13B715CBC2AF009751B9 /* CDMAddTaskView.m */,
+				B25E13B915CBC513009751B9 /* CDMAddTaskTextField.h */,
+				B25E13BA15CBC514009751B9 /* CDMAddTaskTextField.m */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -351,7 +391,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B21FF57515BF7D7C00AEEA97 /* Gotham Book.hhea.xml in Resources */,
 				B21FF57615BF7D7C00AEEA97 /* Gotham-Bold.otf in Resources */,
 				B21FF57715BF7D7C00AEEA97 /* Gotham-BoldItalic.otf in Resources */,
 				B21FF57815BF7D7C00AEEA97 /* Gotham-Book.otf in Resources */,
@@ -361,6 +400,10 @@
 				B21FF57C15BF7D7C00AEEA97 /* MainMenu.xib in Resources */,
 				B21FF57D15BF7D7C00AEEA97 /* SignIn.xib in Resources */,
 				B21FF70415BF7D7C00AEEA97 /* CheddarKitMac-Info.plist in Resources */,
+				B24970C415CBC6A9008388E5 /* textfield-focused.png in Resources */,
+				B24970C515CBC6A9008388E5 /* textfield-focused@2x.png in Resources */,
+				B24970C615CBC6A9008388E5 /* textfield.png in Resources */,
+				B24970C715CBC6A9008388E5 /* textfield@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,8 +421,11 @@
 				B2C1EBB615BF838200B65583 /* CDMAppDelegate.m in Sources */,
 				B2C1EBB715BF838200B65583 /* CDMListsWindowController.m in Sources */,
 				B2C1EBB815BF838200B65583 /* CDMSignInWindowController.m in Sources */,
-				B2C1EBCE15BF95AE00B65583 /* CDMListTableRowView.m in Sources */,
-				B25E136815CB98AD009751B9 /* CDMTableRowView.m in Sources */,
+				B25E136815CB98AD009751B9 /* CDMListTableRowView.m in Sources */,
+				B25E13AD15CBB19B009751B9 /* CDMListTableCellView.m in Sources */,
+				B25E13B815CBC2AF009751B9 /* CDMAddTaskView.m in Sources */,
+				B25E13BB15CBC514009751B9 /* CDMAddTaskTextField.m in Sources */,
+				B24970CB15CBC836008388E5 /* NSImage+CDMAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
