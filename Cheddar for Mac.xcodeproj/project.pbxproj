@@ -235,7 +235,6 @@
 		B21FF2B515BF7D6500AEEA97 = {
 			isa = PBXGroup;
 			children = (
-				0338830115D97D57001FC04B /* Carbon.framework */,
 				B21FF2E615BF7D7B00AEEA97 /* Classes */,
 				B21FF2ED15BF7D7B00AEEA97 /* Other Sources */,
 				B21FF2F115BF7D7B00AEEA97 /* Resources */,
@@ -257,19 +256,12 @@
 			isa = PBXGroup;
 			children = (
 				B21FF2C415BF7D6500AEEA97 /* Cocoa.framework */,
-				B21FF2C615BF7D6500AEEA97 /* Other Frameworks */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		B21FF2C615BF7D6500AEEA97 /* Other Frameworks */ = {
-			isa = PBXGroup;
-			children = (
+				0338830115D97D57001FC04B /* Carbon.framework */,
 				B21FF2C715BF7D6500AEEA97 /* AppKit.framework */,
 				B21FF2C815BF7D6500AEEA97 /* CoreData.framework */,
 				B21FF2C915BF7D6500AEEA97 /* Foundation.framework */,
 			);
-			name = "Other Frameworks";
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		B21FF2E615BF7D7B00AEEA97 /* Classes */ = {
