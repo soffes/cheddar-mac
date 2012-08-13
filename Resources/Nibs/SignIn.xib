@@ -156,7 +156,6 @@
 							<string key="NSFrame">{{372, 20}, {128, 43}}</string>
 							<reference key="NSSuperview" ref="113831471"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="316911649">
@@ -261,7 +260,7 @@
 								<string>NeXT Encapsulated PostScript v1.2 pasteboard type</string>
 								<string>NeXT TIFF v4.0 pasteboard type</string>
 							</set>
-							<string key="NSFrame">{{197, 279}, {143, 24}}</string>
+							<string key="NSFrame">{{189, 279}, {143, 24}}</string>
 							<reference key="NSSuperview" ref="113831471"/>
 							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="791213884"/>
@@ -429,9 +428,9 @@
 							<reference ref="648619867"/>
 							<reference ref="791213884"/>
 							<reference ref="523551340"/>
-							<reference ref="1062161514"/>
 							<reference ref="825763602"/>
 							<reference ref="304560251"/>
+							<reference ref="1062161514"/>
 						</array>
 						<reference key="parent" ref="138494860"/>
 					</object>
@@ -555,6 +554,8 @@
 				<string key="24.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="25.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="26.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<boolean value="YES" key="3.IBNSWindowAutoPositionCentersHorizontal"/>
+				<boolean value="YES" key="3.IBNSWindowAutoPositionCentersVertical"/>
 				<string key="3.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<boolean value="NO" key="3.NSWindowTemplate.visibleAtLaunch"/>
 				<string key="4.CustomClassName">CDMArchesWindowContentView</string>
@@ -593,17 +594,25 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">CDMSignInWindowController</string>
 					<string key="superclassName">NSWindowController</string>
-					<object class="NSMutableDictionary" key="actions">
-						<string key="NS.key.0">signIn:</string>
-						<string key="NS.object.0">id</string>
-					</object>
-					<object class="NSMutableDictionary" key="actionInfosByName">
-						<string key="NS.key.0">signIn:</string>
-						<object class="IBActionInfo" key="NS.object.0">
+					<dictionary class="NSMutableDictionary" key="actions">
+						<string key="forgotPassword:">id</string>
+						<string key="signIn:">id</string>
+						<string key="signUp:">id</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="actionInfosByName">
+						<object class="IBActionInfo" key="forgotPassword:">
+							<string key="name">forgotPassword:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="signIn:">
 							<string key="name">signIn:</string>
 							<string key="candidateClassName">id</string>
 						</object>
-					</object>
+						<object class="IBActionInfo" key="signUp:">
+							<string key="name">signUp:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="passwordTextField">NSSecureTextField</string>
 						<string key="usernameTextField">NSTextField</string>
