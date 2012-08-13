@@ -44,6 +44,8 @@
 		0338833715D992EA001FC04B /* CDMSecureTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0338833615D992EA001FC04B /* CDMSecureTextFieldCell.m */; };
 		0338833A15D99438001FC04B /* CDMSecureTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 0338833915D99438001FC04B /* CDMSecureTextField.m */; };
 		0338833D15D9971D001FC04B /* CDMTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 0338833C15D9971D001FC04B /* CDMTextField.m */; };
+		0338839815D99F9B001FC04B /* CDMFlatButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0338839715D99F9B001FC04B /* CDMFlatButton.m */; };
+		0338839B15D99FA1001FC04B /* CDMFlatButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0338839A15D99FA1001FC04B /* CDMFlatButtonCell.m */; };
 		B21FF2C515BF7D6500AEEA97 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B21FF2C415BF7D6500AEEA97 /* Cocoa.framework */; };
 		B21FF57115BF7D7C00AEEA97 /* CDMDefines.m in Sources */ = {isa = PBXBuildFile; fileRef = B21FF2EE15BF7D7B00AEEA97 /* CDMDefines.m */; };
 		B21FF57215BF7D7C00AEEA97 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B21FF2F015BF7D7B00AEEA97 /* main.m */; };
@@ -167,6 +169,10 @@
 		0338833915D99438001FC04B /* CDMSecureTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMSecureTextField.m; sourceTree = "<group>"; };
 		0338833B15D9971D001FC04B /* CDMTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMTextField.h; sourceTree = "<group>"; };
 		0338833C15D9971D001FC04B /* CDMTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMTextField.m; sourceTree = "<group>"; };
+		0338839615D99F9B001FC04B /* CDMFlatButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMFlatButton.h; sourceTree = "<group>"; };
+		0338839715D99F9B001FC04B /* CDMFlatButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMFlatButton.m; sourceTree = "<group>"; };
+		0338839915D99FA1001FC04B /* CDMFlatButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMFlatButtonCell.h; sourceTree = "<group>"; };
+		0338839A15D99FA1001FC04B /* CDMFlatButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMFlatButtonCell.m; sourceTree = "<group>"; };
 		B21FF2C015BF7D6500AEEA97 /* Cheddar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cheddar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B21FF2C415BF7D6500AEEA97 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		B21FF2C715BF7D6500AEEA97 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -447,6 +453,8 @@
 		B249723015CBE10B008388E5 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				0338839915D99FA1001FC04B /* CDMFlatButtonCell.h */,
+				0338839A15D99FA1001FC04B /* CDMFlatButtonCell.m */,
 				033882FE15D97CA9001FC04B /* CDMTextFieldCell.h */,
 				033882FF15D97CA9001FC04B /* CDMTextFieldCell.m */,
 				B249723115CBE117008388E5 /* CDMAddTaskTextFieldCell.h */,
@@ -480,6 +488,8 @@
 				0338833915D99438001FC04B /* CDMSecureTextField.m */,
 				0338833B15D9971D001FC04B /* CDMTextField.h */,
 				0338833C15D9971D001FC04B /* CDMTextField.m */,
+				0338839615D99F9B001FC04B /* CDMFlatButton.h */,
+				0338839715D99F9B001FC04B /* CDMFlatButton.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -667,6 +677,8 @@
 				0338833D15D9971D001FC04B /* CDMTextField.m in Sources */,
 				B2A23D7915D997D900EA9D2D /* CDMAboutWindowController.m in Sources */,
 				B2A23D7C15D997E300EA9D2D /* CDMPreferencesWindowController.m in Sources */,
+				0338839815D99F9B001FC04B /* CDMFlatButton.m in Sources */,
+				0338839B15D99FA1001FC04B /* CDMFlatButtonCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

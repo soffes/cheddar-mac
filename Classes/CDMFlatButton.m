@@ -18,6 +18,8 @@
     CDMFlatButtonCell *cell = [[CDMFlatButtonCell alloc] init];
     [cell setAttributedTitle:[self attributedTitle]];
     [cell setTitle:[self title]];
+    [cell setTarget:[self target]];
+    [cell setAction:[self action]];
     [self setCell:cell];
 }
 
