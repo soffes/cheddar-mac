@@ -1,19 +1,19 @@
 //
-//  CDMAboutWindowController.m
+//  CDMPreferencesWindowController.m
 //  Cheddar for Mac
 //
 //  Created by Sam Soffes on 8/13/12.
 //  Copyright (c) 2012 Nothing Magical. All rights reserved.
 //
 
-#import "CDMAboutWindowController.h"
+#import "CDMPreferencesWindowController.h"
 
-@implementation CDMAboutWindowController
+@implementation CDMPreferencesWindowController
 
 #pragma mark - NSWindowController
 
 - (NSString *)windowNibName {
-	return @"About";
+	return @"Preferences";
 }
 
 @end

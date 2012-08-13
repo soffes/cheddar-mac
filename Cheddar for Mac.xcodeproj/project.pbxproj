@@ -73,7 +73,9 @@
 		B2A18D9715D8BA24002942A5 /* CDMCheckboxButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B2A18D9615D8BA24002942A5 /* CDMCheckboxButton.m */; };
 		B2A23D1515D988AB00EA9D2D /* NSColor+CDMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B2A23D1415D988AB00EA9D2D /* NSColor+CDMAdditions.m */; };
 		B2A23D7915D997D900EA9D2D /* CDMAboutWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2A23D7815D997D900EA9D2D /* CDMAboutWindowController.m */; };
-		B2A23D7C15D997E300EA9D2D /* CDMSettingsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2A23D7B15D997E300EA9D2D /* CDMSettingsWindowController.m */; };
+		B2A23D7C15D997E300EA9D2D /* CDMPreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2A23D7B15D997E300EA9D2D /* CDMPreferencesWindowController.m */; };
+		B2A23DA415D9997700EA9D2D /* About.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2A23DA315D9997700EA9D2D /* About.xib */; };
+		B2A23DA615D9997E00EA9D2D /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2A23DA515D9997E00EA9D2D /* Preferences.xib */; };
 		B2C1EBB615BF838200B65583 /* CDMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C1EBB115BF838200B65583 /* CDMAppDelegate.m */; };
 		B2C1EBB715BF838200B65583 /* CDMListsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C1EBB315BF838200B65583 /* CDMListsWindowController.m */; };
 		B2C1EBB815BF838200B65583 /* CDMSignInWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C1EBB515BF838200B65583 /* CDMSignInWindowController.m */; };
@@ -217,8 +219,10 @@
 		B2A23D1415D988AB00EA9D2D /* NSColor+CDMAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSColor+CDMAdditions.m"; sourceTree = "<group>"; };
 		B2A23D7715D997D900EA9D2D /* CDMAboutWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMAboutWindowController.h; sourceTree = "<group>"; };
 		B2A23D7815D997D900EA9D2D /* CDMAboutWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMAboutWindowController.m; sourceTree = "<group>"; };
-		B2A23D7A15D997E300EA9D2D /* CDMSettingsWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMSettingsWindowController.h; sourceTree = "<group>"; };
-		B2A23D7B15D997E300EA9D2D /* CDMSettingsWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMSettingsWindowController.m; sourceTree = "<group>"; };
+		B2A23D7A15D997E300EA9D2D /* CDMPreferencesWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMPreferencesWindowController.h; sourceTree = "<group>"; };
+		B2A23D7B15D997E300EA9D2D /* CDMPreferencesWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMPreferencesWindowController.m; sourceTree = "<group>"; };
+		B2A23DA315D9997700EA9D2D /* About.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = About.xib; sourceTree = "<group>"; };
+		B2A23DA515D9997E00EA9D2D /* Preferences.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Preferences.xib; sourceTree = "<group>"; };
 		B2C1EBB015BF838200B65583 /* CDMAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMAppDelegate.h; sourceTree = "<group>"; };
 		B2C1EBB115BF838200B65583 /* CDMAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMAppDelegate.m; sourceTree = "<group>"; };
 		B2C1EBB215BF838200B65583 /* CDMListsWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMListsWindowController.h; sourceTree = "<group>"; };
@@ -374,6 +378,8 @@
 				B21FF2FD15BF7D7B00AEEA97 /* Lists.xib */,
 				B21FF2FE15BF7D7B00AEEA97 /* MainMenu.xib */,
 				B21FF2FF15BF7D7B00AEEA97 /* SignIn.xib */,
+				B2A23DA315D9997700EA9D2D /* About.xib */,
+				B2A23DA515D9997E00EA9D2D /* Preferences.xib */,
 			);
 			path = Nibs;
 			sourceTree = "<group>";
@@ -487,8 +493,8 @@
 				B2C1EBB515BF838200B65583 /* CDMSignInWindowController.m */,
 				B2A23D7715D997D900EA9D2D /* CDMAboutWindowController.h */,
 				B2A23D7815D997D900EA9D2D /* CDMAboutWindowController.m */,
-				B2A23D7A15D997E300EA9D2D /* CDMSettingsWindowController.h */,
-				B2A23D7B15D997E300EA9D2D /* CDMSettingsWindowController.m */,
+				B2A23D7A15D997E300EA9D2D /* CDMPreferencesWindowController.h */,
+				B2A23D7B15D997E300EA9D2D /* CDMPreferencesWindowController.m */,
 			);
 			name = "Window Controllers";
 			sourceTree = "<group>";
@@ -621,6 +627,8 @@
 				033882DF15D968A6001FC04B /* traffic-zoom-pressed@2x.png in Resources */,
 				033882E015D968A6001FC04B /* traffic-zoom.png in Resources */,
 				033882E115D968A6001FC04B /* traffic-zoom@2x.png in Resources */,
+				B2A23DA415D9997700EA9D2D /* About.xib in Resources */,
+				B2A23DA615D9997E00EA9D2D /* Preferences.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -658,7 +666,7 @@
 				0338833A15D99438001FC04B /* CDMSecureTextField.m in Sources */,
 				0338833D15D9971D001FC04B /* CDMTextField.m in Sources */,
 				B2A23D7915D997D900EA9D2D /* CDMAboutWindowController.m in Sources */,
-				B2A23D7C15D997E300EA9D2D /* CDMSettingsWindowController.m in Sources */,
+				B2A23D7C15D997E300EA9D2D /* CDMPreferencesWindowController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
