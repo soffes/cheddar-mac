@@ -7,11 +7,18 @@
 //
 
 #import "CDMSecureTextField.h"
+#import "CDMSecureTextFieldCell.h"
 
 @implementation CDMSecureTextField
 
 - (void)awakeFromNib
 {
     [super awakeFromNib];
+    [self setCell:[[CDMSecureTextFieldCell alloc] initTextCell:[self stringValue]]];
+}
+
++ (Class)cellClass
+{
+    return [CDMSecureTextFieldCell class];
 }
 @end

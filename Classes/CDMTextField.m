@@ -7,23 +7,17 @@
 //
 
 #import "CDMTextField.h"
+#import "CDMTextFieldCell.h"
 
 @implementation CDMTextField
-
-- (id)initWithCoder:(NSCoder *)aDecoder
+- (void)awakeFromNib
 {
-    if ((self = [super initWithCoder:aDecoder])) {
-        NSLog(@"init with coder");
-    }
-    return self;
+    [super awakeFromNib];
+    [self setCell:[[CDMTextFieldCell alloc] initTextCell:[self stringValue]]];
 }
 
-- (id)initWithFrame:(NSRect)frame
++ (Class)cellClass
 {
-    if ((self = [super initWithFrame:frame])) {
-        NSLog(@"init with frame");
-    }
-    return self;
+    return [CDMTextFieldCell class];
 }
-
 @end

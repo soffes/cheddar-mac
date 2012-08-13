@@ -20,15 +20,23 @@ static CGFloat const kCDMTextFieldCellOuterShadowBlurRadius = 2.0f;
 #define kCDMTextFieldCellFillColor [NSColor whiteColor]
 
 @implementation CDMSecureTextFieldCell
+
+- (id)initTextCell:(NSString *)aString
+{
+    if ((self = [super initTextCell:aString])) {
+        self.font = [NSFont fontWithName:kCDMRegularFontName size:16.0];
+        self.textColor = [NSColor colorWithCalibratedRed:0.200 green:0.200 blue:0.200 alpha:1];
+        [self setDrawsBackground:NO];
+        [self setBordered:NO];
+        [self setBezeled:NO];
+        [self setFocusRingType:NSFocusRingTypeNone];
+        [self setEditable:YES];
+    }
+    return self;
+}
 - (void)awakeFromNib {
 	[super awakeFromNib];
-    NSLog(@"%@", NSStringFromClass([self class]));
-	self.font = [NSFont fontWithName:kCDMRegularFontName size:16.0];
-	self.textColor = [NSColor colorWithCalibratedRed:0.200 green:0.200 blue:0.200 alpha:1];
-    [self setDrawsBackground:NO];
-    [self setBordered:NO];
-    [self setBezeled:NO];
-    [self setFocusRingType:NSFocusRingTypeNone];
+    
 }
 
 // From http://stackoverflow.com/a/8626071/118631
@@ -47,7 +55,6 @@ static CGFloat const kCDMTextFieldCellOuterShadowBlurRadius = 2.0f;
 
 - (void)drawInteriorWithFrame:(NSRect)cellFrame inView:(NSView *)controlView
 {
-    NSLog(@"draw interior");
     CGFloat scaleFactor = [[controlView window] backingScaleFactor];
     BOOL firstResponder = [controlView isFirstResponder];
     NSRect drawingRect = NSInsetRect(cellFrame, kCDMTextFieldCellOuterShadowBlurRadius * scaleFactor, kCDMTextFieldCellOuterShadowBlurRadius * scaleFactor);

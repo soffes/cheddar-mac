@@ -43,6 +43,7 @@
 		0338833415D98DA4001FC04B /* NSView+CDMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0338833315D98DA4001FC04B /* NSView+CDMAdditions.m */; };
 		0338833715D992EA001FC04B /* CDMSecureTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0338833615D992EA001FC04B /* CDMSecureTextFieldCell.m */; };
 		0338833A15D99438001FC04B /* CDMSecureTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 0338833915D99438001FC04B /* CDMSecureTextField.m */; };
+		0338833D15D9971D001FC04B /* CDMTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 0338833C15D9971D001FC04B /* CDMTextField.m */; };
 		B21FF2C515BF7D6500AEEA97 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B21FF2C415BF7D6500AEEA97 /* Cocoa.framework */; };
 		B21FF57115BF7D7C00AEEA97 /* CDMDefines.m in Sources */ = {isa = PBXBuildFile; fileRef = B21FF2EE15BF7D7B00AEEA97 /* CDMDefines.m */; };
 		B21FF57215BF7D7C00AEEA97 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B21FF2F015BF7D7B00AEEA97 /* main.m */; };
@@ -160,6 +161,8 @@
 		0338833615D992EA001FC04B /* CDMSecureTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMSecureTextFieldCell.m; sourceTree = "<group>"; };
 		0338833815D99438001FC04B /* CDMSecureTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMSecureTextField.h; sourceTree = "<group>"; };
 		0338833915D99438001FC04B /* CDMSecureTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMSecureTextField.m; sourceTree = "<group>"; };
+		0338833B15D9971D001FC04B /* CDMTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMTextField.h; sourceTree = "<group>"; };
+		0338833C15D9971D001FC04B /* CDMTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMTextField.m; sourceTree = "<group>"; };
 		B21FF2C015BF7D6500AEEA97 /* Cheddar for Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cheddar for Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B21FF2C415BF7D6500AEEA97 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		B21FF2C715BF7D6500AEEA97 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -440,8 +443,6 @@
 				B2A18D9315D8B9C4002942A5 /* CDMCheckboxButtonCell.m */,
 				0338833515D992EA001FC04B /* CDMSecureTextFieldCell.h */,
 				0338833615D992EA001FC04B /* CDMSecureTextFieldCell.m */,
-				0338833815D99438001FC04B /* CDMSecureTextField.h */,
-				0338833915D99438001FC04B /* CDMSecureTextField.m */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -463,6 +464,10 @@
 				B249725515CC02C0008388E5 /* CDMTaskTableCellView.m */,
 				B2A18D9515D8BA24002942A5 /* CDMCheckboxButton.h */,
 				B2A18D9615D8BA24002942A5 /* CDMCheckboxButton.m */,
+				0338833815D99438001FC04B /* CDMSecureTextField.h */,
+				0338833915D99438001FC04B /* CDMSecureTextField.m */,
+				0338833B15D9971D001FC04B /* CDMTextField.h */,
+				0338833C15D9971D001FC04B /* CDMTextField.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -641,6 +646,7 @@
 				0338833415D98DA4001FC04B /* NSView+CDMAdditions.m in Sources */,
 				0338833715D992EA001FC04B /* CDMSecureTextFieldCell.m in Sources */,
 				0338833A15D99438001FC04B /* CDMSecureTextField.m in Sources */,
+				0338833D15D9971D001FC04B /* CDMTextField.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
