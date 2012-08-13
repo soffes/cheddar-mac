@@ -9,6 +9,7 @@
 @interface CDMAboutWindowController : NSWindowController
 
 @property IBOutlet NSTextField *subheaderLabel;
+@property IBOutlet NSTextField *versionLabel;
 @property IBOutlet NSTextField *copyrightLabel;
 
 @end
