@@ -13,7 +13,10 @@
 - (void)awakeFromNib
 {
     [super awakeFromNib];
-    [self setCell:[[CDMTextFieldCell alloc] initTextCell:[self stringValue]]];
+    CDMTextFieldCell *cell = [[CDMTextFieldCell alloc] initTextCell:[self stringValue]];
+    [cell setTarget:[self target]];
+    [cell setAction:[self action]];
+    [self setCell:cell];
 }
 
 + (Class)cellClass

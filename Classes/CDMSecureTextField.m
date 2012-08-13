@@ -14,7 +14,10 @@
 - (void)awakeFromNib
 {
     [super awakeFromNib];
-    [self setCell:[[CDMSecureTextFieldCell alloc] initTextCell:[self stringValue]]];
+    CDMSecureTextFieldCell *cell = [[CDMSecureTextFieldCell alloc] initTextCell:[self stringValue]];
+    [cell setTarget:[self target]];
+    [cell setAction:[self action]];
+    [self setCell:cell];
 }
 
 + (Class)cellClass
