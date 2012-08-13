@@ -37,6 +37,8 @@
 		033882DF15D968A6001FC04B /* traffic-zoom-pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 033882C315D968A6001FC04B /* traffic-zoom-pressed@2x.png */; };
 		033882E015D968A6001FC04B /* traffic-zoom.png in Resources */ = {isa = PBXBuildFile; fileRef = 033882C415D968A6001FC04B /* traffic-zoom.png */; };
 		033882E115D968A6001FC04B /* traffic-zoom@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 033882C515D968A6001FC04B /* traffic-zoom@2x.png */; };
+		0338830015D97CA9001FC04B /* CDMTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 033882FF15D97CA9001FC04B /* CDMTextFieldCell.m */; };
+		0338830215D97D57001FC04B /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0338830115D97D57001FC04B /* Carbon.framework */; };
 		B21FF2C515BF7D6500AEEA97 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B21FF2C415BF7D6500AEEA97 /* Cocoa.framework */; };
 		B21FF57115BF7D7C00AEEA97 /* CDMDefines.m in Sources */ = {isa = PBXBuildFile; fileRef = B21FF2EE15BF7D7B00AEEA97 /* CDMDefines.m */; };
 		B21FF57215BF7D7C00AEEA97 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B21FF2F015BF7D7B00AEEA97 /* main.m */; };
@@ -142,6 +144,9 @@
 		033882C315D968A6001FC04B /* traffic-zoom-pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "traffic-zoom-pressed@2x.png"; sourceTree = "<group>"; };
 		033882C415D968A6001FC04B /* traffic-zoom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "traffic-zoom.png"; sourceTree = "<group>"; };
 		033882C515D968A6001FC04B /* traffic-zoom@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "traffic-zoom@2x.png"; sourceTree = "<group>"; };
+		033882FE15D97CA9001FC04B /* CDMTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMTextFieldCell.h; sourceTree = "<group>"; };
+		033882FF15D97CA9001FC04B /* CDMTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMTextFieldCell.m; sourceTree = "<group>"; };
+		0338830115D97D57001FC04B /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
 		B21FF2C015BF7D6500AEEA97 /* Cheddar for Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cheddar for Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B21FF2C415BF7D6500AEEA97 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		B21FF2C715BF7D6500AEEA97 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -206,6 +211,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0338830215D97D57001FC04B /* Carbon.framework in Frameworks */,
 				B2D8D5F315BF7FAE00A61836 /* CheddarKit.framework in Frameworks */,
 				B21FF2C515BF7D6500AEEA97 /* Cocoa.framework in Frameworks */,
 			);
@@ -229,6 +235,7 @@
 		B21FF2B515BF7D6500AEEA97 = {
 			isa = PBXGroup;
 			children = (
+				0338830115D97D57001FC04B /* Carbon.framework */,
 				B21FF2E615BF7D7B00AEEA97 /* Classes */,
 				B21FF2ED15BF7D7B00AEEA97 /* Other Sources */,
 				B21FF2F115BF7D7B00AEEA97 /* Resources */,
@@ -441,6 +448,8 @@
 				B249725515CC02C0008388E5 /* CDMTaskTableCellView.m */,
 				B2A18D9515D8BA24002942A5 /* CDMCheckboxButton.h */,
 				B2A18D9615D8BA24002942A5 /* CDMCheckboxButton.m */,
+				033882FE15D97CA9001FC04B /* CDMTextFieldCell.h */,
+				033882FF15D97CA9001FC04B /* CDMTextFieldCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -593,6 +602,7 @@
 				B2A18D9415D8B9C4002942A5 /* CDMCheckboxButtonCell.m in Sources */,
 				B2A18D9715D8BA24002942A5 /* CDMCheckboxButton.m in Sources */,
 				0338828315D96201001FC04B /* CDMArchesWindow.m in Sources */,
+				0338830015D97CA9001FC04B /* CDMTextFieldCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

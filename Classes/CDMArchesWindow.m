@@ -7,6 +7,7 @@
 //
 
 #import "CDMArchesWindow.h"
+#import <Carbon/Carbon.h>
 
 static NSString* const kCDMArchesWindowImageNameArches = @"arches";
 static NSString* const kCDMArchesWindowImageNameTrafficNormal = @"traffic-normal";
@@ -147,6 +148,20 @@ static CGFloat const kCDMArchesWindowTrafficLightsYInset = 8.0f;
 - (void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)sendEvent:(NSEvent *)theEvent
+{
+    // Detect Command + W to close window
+    if ([theEvent type] == NSKeyDown) {
+        NSUInteger modifierFlags = [theEvent modifierFlags];
+        unsigned short keyCode = [theEvent keyCode];
+        if ((modifierFlags & NSCommandKeyMask) == NSCommandKeyMask && keyCode == kVK_ANSI_W) {
+            [self close];
+            return;
+        }
+    }
+    [super sendEvent:theEvent];
 }
 
 #pragma mark - Accessors
