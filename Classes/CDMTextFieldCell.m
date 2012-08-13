@@ -8,10 +8,16 @@
 
 #import "CDMTextFieldCell.h"
 #import "NSBezierPath+MCAdditions.h"
+#import "NSColor+CDMAdditions.h"
+#import "NSView+CDMAdditions.h"
 
 static CGFloat const kCDMTextFieldCellXInset = 10.0f;
 static CGFloat const kCDMTextFieldCellCornerRadius = 4.0f;
-static CGFloat const kCDMTextFieldCellShadowBlurRadius = 4.0f;
+static CGFloat const kCDMTextFieldCellInnerShadowBlurRadius = 2.0f;
+static CGFloat const kCDMTextFieldCellOuterShadowBlurRadius = 2.0f;
+#define kCDMTextFieldCellInnerShadowColor [NSColor colorWithDeviceWhite:0.0 alpha:0.3f]
+#define kCDMTextFieldCellOuterShadowColor [[NSColor cheddarOrangeColor] colorWithAlphaComponent:0.5f]
+#define kCDMTextFieldCellFillColor [NSColor whiteColor]
 
 @implementation CDMTextFieldCell
 - (void)awakeFromNib {
@@ -40,25 +46,26 @@ static CGFloat const kCDMTextFieldCellShadowBlurRadius = 4.0f;
 
 - (void)drawInteriorWithFrame:(NSRect)cellFrame inView:(NSView *)controlView
 {
-    NSColor *borderColor = [NSColor colorWithDeviceRed:0.72 green:0.73 blue:0.76 alpha:1.0];
-    NSColor *fillColor = [NSColor whiteColor];
-    NSColor *shadowColor = [NSColor colorWithDeviceWhite:0.f alpha:0.3f];
-    NSRect drawingRect = NSInsetRect(cellFrame, 1.f, 1.f);
+    CGFloat scaleFactor = [[controlView window] backingScaleFactor];
+    BOOL firstResponder = [controlView isFirstResponder];
+    NSRect drawingRect = NSInsetRect(cellFrame, kCDMTextFieldCellOuterShadowBlurRadius, kCDMTextFieldCellOuterShadowBlurRadius);
     NSBezierPath *path = [NSBezierPath bezierPathWithRoundedRect:drawingRect xRadius:kCDMTextFieldCellCornerRadius yRadius:kCDMTextFieldCellCornerRadius];
-    [borderColor setStroke];
-    [fillColor setFill];
-    [path fill];
-    [path stroke];
-    NSShadow *shadow = [NSShadow new];
-    [shadow setShadowBlurRadius:kCDMTextFieldCellShadowBlurRadius];
-    [shadow setShadowColor:shadowColor];
-    NSRect shadowRect = drawingRect;
-    // Add space on each of the dimensions that we don't want the shadow showing through
-    shadowRect.size.height += 20.f;
-    shadowRect.origin.x -= 20.f;
-    shadowRect.size.width += 40.f;
-    NSBezierPath *shadowPath = [NSBezierPath bezierPathWithRect:shadowRect];
+    [firstResponder ? [NSColor cheddarOrangeColor] : [NSColor cheddarSteelColor] setStroke];
+    [kCDMTextFieldCellFillColor setFill];
     [NSGraphicsContext saveGraphicsState];
+    if (firstResponder) {
+        NSShadow *outerShadow = [NSShadow new];
+        [outerShadow setShadowBlurRadius:kCDMTextFieldCellOuterShadowBlurRadius * scaleFactor];
+        [outerShadow setShadowColor:kCDMTextFieldCellOuterShadowColor];
+        [outerShadow set];
+    }
+    [path setLineWidth:scaleFactor];
+    [path stroke];
+    [path fill];
+    NSShadow *shadow = [NSShadow new];
+    [shadow setShadowBlurRadius:kCDMTextFieldCellInnerShadowBlurRadius * scaleFactor];
+    [shadow setShadowColor:kCDMTextFieldCellInnerShadowColor];
+    NSBezierPath *shadowPath = [NSBezierPath bezierPathWithRect:drawingRect];
     [path addClip];
     [shadowPath fillWithInnerShadow:shadow];
     [NSGraphicsContext restoreGraphicsState];
