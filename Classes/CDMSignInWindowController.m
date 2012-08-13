@@ -31,4 +31,14 @@
 	}];
 }
 
+
+- (IBAction)signUp:(id)sender {
+	[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://cheddarapp.com/signup"]];
+}
+
+
+- (IBAction)forgotPassword:(id)sender {
+	[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://cheddarapp.com/forgot"]];
+}
+
 @end

@@ -12,5 +12,7 @@
 @property (weak) IBOutlet NSSecureTextField *passwordTextField;
 
 - (IBAction)signIn:(id)sender;
+- (IBAction)signUp:(id)sender;
+- (IBAction)forgotPassword:(id)sender;
 
 @end
