@@ -167,7 +167,7 @@
 		0338833915D99438001FC04B /* CDMSecureTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMSecureTextField.m; sourceTree = "<group>"; };
 		0338833B15D9971D001FC04B /* CDMTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMTextField.h; sourceTree = "<group>"; };
 		0338833C15D9971D001FC04B /* CDMTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMTextField.m; sourceTree = "<group>"; };
-		B21FF2C015BF7D6500AEEA97 /* Cheddar for Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cheddar for Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B21FF2C015BF7D6500AEEA97 /* Cheddar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cheddar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B21FF2C415BF7D6500AEEA97 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		B21FF2C715BF7D6500AEEA97 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
 		B21FF2C815BF7D6500AEEA97 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -275,7 +275,7 @@
 		B21FF2C115BF7D6500AEEA97 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B21FF2C015BF7D6500AEEA97 /* Cheddar for Mac.app */,
+				B21FF2C015BF7D6500AEEA97 /* Cheddar.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -527,7 +527,7 @@
 			);
 			name = "Cheddar for Mac";
 			productName = "Cheddar for Mac";
-			productReference = B21FF2C015BF7D6500AEEA97 /* Cheddar for Mac.app */;
+			productReference = B21FF2C015BF7D6500AEEA97 /* Cheddar.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -740,7 +740,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Other Sources/Cheddar-Prefix.pch";
 				INFOPLIST_FILE = "Resources/Cheddar-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Cheddar;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -753,7 +753,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Other Sources/Cheddar-Prefix.pch";
 				INFOPLIST_FILE = "Resources/Cheddar-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Cheddar;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
