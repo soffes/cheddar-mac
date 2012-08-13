@@ -23,10 +23,6 @@ static NSString* const kCDMArchesWindowImageNameTrafficClosePressedGraphite = @"
 static NSString* const kCDMArchesWindowImageNameTrafficMinimizePressedGraphite = @"traffic-minimize-graphite-pressed";
 static NSString* const kCDMArchesWindowImageNameTrafficZoomPressedGraphite = @"traffic-zoom-graphite-pressed";
 
-// Undocumented stuff from <http://stackoverflow.com/questions/6099338/how-to-know-if-window-is-minimizable-when-titlebar-was-double-clicked>
-static NSString* const kAppleAquaColorVariant = @"AppleAquaColorVariant";
-static int const kAppleGraphiteColorValue = 6;
-
 static CGFloat const kCDMArchesWindowCornerRadius = 4.0f;
 static CGFloat const kCDMArchesWindowTrafficLightsSpacing = 7.0f;
 static CGFloat const kCDMArchesWindowTrafficLightsYInset = 8.0f;
@@ -217,10 +213,7 @@ static CGFloat const kCDMArchesWindowTrafficLightsYInset = 8.0f;
 
 - (BOOL)_isGraphite
 {
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    [userDefaults addSuiteNamed:NSGlobalDomain];
-    NSNumber *color = [userDefaults objectForKey:kAppleAquaColorVariant];
-    return ([color intValue] == kAppleGraphiteColorValue);
+    return ([NSColor currentControlTint] == NSGraphiteControlTint);
 }
 
 - (void)_resetAlternateButtonImages;
