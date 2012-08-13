@@ -48,7 +48,7 @@ static CGFloat const kCDMTextFieldCellOuterShadowBlurRadius = 2.0f;
 {
     CGFloat scaleFactor = [[controlView window] backingScaleFactor];
     BOOL firstResponder = [controlView isFirstResponder];
-    NSRect drawingRect = NSInsetRect(cellFrame, kCDMTextFieldCellOuterShadowBlurRadius, kCDMTextFieldCellOuterShadowBlurRadius);
+    NSRect drawingRect = NSInsetRect(cellFrame, kCDMTextFieldCellOuterShadowBlurRadius * scaleFactor, kCDMTextFieldCellOuterShadowBlurRadius * scaleFactor);
     NSBezierPath *path = [NSBezierPath bezierPathWithRoundedRect:drawingRect xRadius:kCDMTextFieldCellCornerRadius yRadius:kCDMTextFieldCellCornerRadius];
     [firstResponder ? [NSColor cheddarOrangeColor] : [NSColor cheddarSteelColor] setStroke];
     [kCDMTextFieldCellFillColor setFill];
