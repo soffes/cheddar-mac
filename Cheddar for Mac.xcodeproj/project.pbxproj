@@ -72,6 +72,8 @@
 		B2A18D9415D8B9C4002942A5 /* CDMCheckboxButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B2A18D9315D8B9C4002942A5 /* CDMCheckboxButtonCell.m */; };
 		B2A18D9715D8BA24002942A5 /* CDMCheckboxButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B2A18D9615D8BA24002942A5 /* CDMCheckboxButton.m */; };
 		B2A23D1515D988AB00EA9D2D /* NSColor+CDMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B2A23D1415D988AB00EA9D2D /* NSColor+CDMAdditions.m */; };
+		B2A23D7915D997D900EA9D2D /* CDMAboutWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2A23D7815D997D900EA9D2D /* CDMAboutWindowController.m */; };
+		B2A23D7C15D997E300EA9D2D /* CDMSettingsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2A23D7B15D997E300EA9D2D /* CDMSettingsWindowController.m */; };
 		B2C1EBB615BF838200B65583 /* CDMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C1EBB115BF838200B65583 /* CDMAppDelegate.m */; };
 		B2C1EBB715BF838200B65583 /* CDMListsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C1EBB315BF838200B65583 /* CDMListsWindowController.m */; };
 		B2C1EBB815BF838200B65583 /* CDMSignInWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C1EBB515BF838200B65583 /* CDMSignInWindowController.m */; };
@@ -213,6 +215,10 @@
 		B2A18D9615D8BA24002942A5 /* CDMCheckboxButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMCheckboxButton.m; sourceTree = "<group>"; };
 		B2A23D1315D988AB00EA9D2D /* NSColor+CDMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSColor+CDMAdditions.h"; sourceTree = "<group>"; };
 		B2A23D1415D988AB00EA9D2D /* NSColor+CDMAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSColor+CDMAdditions.m"; sourceTree = "<group>"; };
+		B2A23D7715D997D900EA9D2D /* CDMAboutWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMAboutWindowController.h; sourceTree = "<group>"; };
+		B2A23D7815D997D900EA9D2D /* CDMAboutWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMAboutWindowController.m; sourceTree = "<group>"; };
+		B2A23D7A15D997E300EA9D2D /* CDMSettingsWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMSettingsWindowController.h; sourceTree = "<group>"; };
+		B2A23D7B15D997E300EA9D2D /* CDMSettingsWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMSettingsWindowController.m; sourceTree = "<group>"; };
 		B2C1EBB015BF838200B65583 /* CDMAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMAppDelegate.h; sourceTree = "<group>"; };
 		B2C1EBB115BF838200B65583 /* CDMAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMAppDelegate.m; sourceTree = "<group>"; };
 		B2C1EBB215BF838200B65583 /* CDMListsWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMListsWindowController.h; sourceTree = "<group>"; };
@@ -479,6 +485,10 @@
 				B2C1EBB315BF838200B65583 /* CDMListsWindowController.m */,
 				B2C1EBB415BF838200B65583 /* CDMSignInWindowController.h */,
 				B2C1EBB515BF838200B65583 /* CDMSignInWindowController.m */,
+				B2A23D7715D997D900EA9D2D /* CDMAboutWindowController.h */,
+				B2A23D7815D997D900EA9D2D /* CDMAboutWindowController.m */,
+				B2A23D7A15D997E300EA9D2D /* CDMSettingsWindowController.h */,
+				B2A23D7B15D997E300EA9D2D /* CDMSettingsWindowController.m */,
 			);
 			name = "Window Controllers";
 			sourceTree = "<group>";
@@ -647,6 +657,8 @@
 				0338833715D992EA001FC04B /* CDMSecureTextFieldCell.m in Sources */,
 				0338833A15D99438001FC04B /* CDMSecureTextField.m in Sources */,
 				0338833D15D9971D001FC04B /* CDMTextField.m in Sources */,
+				B2A23D7915D997D900EA9D2D /* CDMAboutWindowController.m in Sources */,
+				B2A23D7C15D997E300EA9D2D /* CDMSettingsWindowController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
