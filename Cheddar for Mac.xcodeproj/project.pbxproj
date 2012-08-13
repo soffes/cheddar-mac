@@ -415,6 +415,8 @@
 		B249723015CBE10B008388E5 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				033882FE15D97CA9001FC04B /* CDMTextFieldCell.h */,
+				033882FF15D97CA9001FC04B /* CDMTextFieldCell.m */,
 				B249723115CBE117008388E5 /* CDMAddTaskTextFieldCell.h */,
 				B249723215CBE117008388E5 /* CDMAddTaskTextFieldCell.m */,
 				B2A18D9215D8B9C4002942A5 /* CDMCheckboxButtonCell.h */,
@@ -440,8 +442,6 @@
 				B249725515CC02C0008388E5 /* CDMTaskTableCellView.m */,
 				B2A18D9515D8BA24002942A5 /* CDMCheckboxButton.h */,
 				B2A18D9615D8BA24002942A5 /* CDMCheckboxButton.m */,
-				033882FE15D97CA9001FC04B /* CDMTextFieldCell.h */,
-				033882FF15D97CA9001FC04B /* CDMTextFieldCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
