@@ -8,6 +8,7 @@
 
 #import "CDMArchesWindow.h"
 #import <Carbon/Carbon.h>
+#import <QuartzCore/QuartzCore.h>
 
 static NSString* const kCDMArchesWindowImageNameArches = @"arches";
 static NSString* const kCDMArchesWindowImageNameTrafficNormal = @"traffic-normal";
@@ -27,6 +28,10 @@ static NSString* const kCDMArchesWindowImageNameTrafficZoomPressedGraphite = @"t
 static CGFloat const kCDMArchesWindowCornerRadius = 4.0f;
 static CGFloat const kCDMArchesWindowTrafficLightsSpacing = 7.0f;
 static CGFloat const kCDMArchesWindowTrafficLightsYInset = 8.0f;
+static NSInteger const kCDMArchesWindowShakeCount = 4;
+static CGFloat const kCDMArchesWindowShakeDuration = 0.5f;
+// factor that determines the distance the window moves when shaking
+static CGFloat const kCDMArchesWindowShakeVigour = 0.05f; 
 
 @implementation CDMArchesWindowContentView
 
@@ -92,6 +97,7 @@ static CGFloat const kCDMArchesWindowTrafficLightsYInset = 8.0f;
 - (BOOL)_isGraphite;
 - (void)_resetAlternateButtonImages;
 - (void)_registerNotifications;
+- (CAKeyframeAnimation *)_shakeAnimation:(NSRect)frame;
 @end
 
 @implementation CDMArchesWindow {
@@ -163,6 +169,33 @@ static CGFloat const kCDMArchesWindowTrafficLightsYInset = 8.0f;
     }
     [super sendEvent:theEvent];
 }
+
+#pragma mark - Actions
+
+- (IBAction)shake:(id)sender
+{
+    [self setAnimations:[NSDictionary dictionaryWithObject:[self _shakeAnimation:[self frame]] forKey:@"frameOrigin"]];
+	[[self animator] setFrameOrigin:[self frame].origin];
+}
+
+// From <http://www.cimgf.com/2008/02/27/core-animation-tutorial-window-shake-effect/>
+
+- (CAKeyframeAnimation *)_shakeAnimation:(NSRect)frame
+{
+    CAKeyframeAnimation *shakeAnimation = [CAKeyframeAnimation animation];
+    CGMutablePathRef shakePath = CGPathCreateMutable();
+    CGPathMoveToPoint(shakePath, NULL, NSMinX(frame), NSMinY(frame));
+	int index;
+	for (index = 0; index < kCDMArchesWindowShakeCount; ++index) {
+		CGPathAddLineToPoint(shakePath, NULL, NSMinX(frame) - frame.size.width * kCDMArchesWindowShakeVigour, NSMinY(frame));
+		CGPathAddLineToPoint(shakePath, NULL, NSMinX(frame) + frame.size.width * kCDMArchesWindowShakeVigour, NSMinY(frame));
+	}
+    CGPathCloseSubpath(shakePath);
+    shakeAnimation.path = shakePath;
+    shakeAnimation.duration = kCDMArchesWindowShakeDuration;
+    return shakeAnimation;
+}
+
 
 #pragma mark - Accessors
 

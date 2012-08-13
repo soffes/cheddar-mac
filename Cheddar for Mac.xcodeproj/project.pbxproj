@@ -48,6 +48,7 @@
 		0338839B15D99FA1001FC04B /* CDMFlatButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0338839A15D99FA1001FC04B /* CDMFlatButtonCell.m */; };
 		0338839E15D9A7EB001FC04B /* CDMTextButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0338839D15D9A7EB001FC04B /* CDMTextButton.m */; };
 		033883A115D9A7F6001FC04B /* CDMTextButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 033883A015D9A7F6001FC04B /* CDMTextButtonCell.m */; };
+		033883A815D9AAF8001FC04B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 033883A715D9AAF7001FC04B /* QuartzCore.framework */; };
 		B21FF2C515BF7D6500AEEA97 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B21FF2C415BF7D6500AEEA97 /* Cocoa.framework */; };
 		B21FF57115BF7D7C00AEEA97 /* CDMDefines.m in Sources */ = {isa = PBXBuildFile; fileRef = B21FF2EE15BF7D7B00AEEA97 /* CDMDefines.m */; };
 		B21FF57215BF7D7C00AEEA97 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B21FF2F015BF7D7B00AEEA97 /* main.m */; };
@@ -179,6 +180,7 @@
 		0338839D15D9A7EB001FC04B /* CDMTextButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMTextButton.m; sourceTree = "<group>"; };
 		0338839F15D9A7F6001FC04B /* CDMTextButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMTextButtonCell.h; sourceTree = "<group>"; };
 		033883A015D9A7F6001FC04B /* CDMTextButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMTextButtonCell.m; sourceTree = "<group>"; };
+		033883A715D9AAF7001FC04B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		B21FF2C015BF7D6500AEEA97 /* Cheddar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cheddar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B21FF2C415BF7D6500AEEA97 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		B21FF2C715BF7D6500AEEA97 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -251,6 +253,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				033883A815D9AAF8001FC04B /* QuartzCore.framework in Frameworks */,
 				0338830215D97D57001FC04B /* Carbon.framework in Frameworks */,
 				B2D8D5F315BF7FAE00A61836 /* CheddarKit.framework in Frameworks */,
 				B21FF2C515BF7D6500AEEA97 /* Cocoa.framework in Frameworks */,
@@ -295,6 +298,7 @@
 		B21FF2C315BF7D6500AEEA97 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				033883A715D9AAF7001FC04B /* QuartzCore.framework */,
 				B21FF2C415BF7D6500AEEA97 /* Cocoa.framework */,
 				0338830115D97D57001FC04B /* Carbon.framework */,
 				B21FF2C715BF7D6500AEEA97 /* AppKit.framework */,
