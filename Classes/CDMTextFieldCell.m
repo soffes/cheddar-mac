@@ -21,8 +21,7 @@ static CGFloat const kCDMTextFieldCellOuterShadowBlurRadius = 2.0f;
 
 @implementation CDMTextFieldCell
 
-- (id)initTextCell:(NSString *)aString
-{
+- (id)initTextCell:(NSString *)aString {
     if ((self = [super initTextCell:aString])) {
         self.font = [NSFont fontWithName:kCDMRegularFontName size:16.0];
         self.textColor = [NSColor colorWithCalibratedRed:0.200 green:0.200 blue:0.200 alpha:1];
@@ -35,45 +34,59 @@ static CGFloat const kCDMTextFieldCellOuterShadowBlurRadius = 2.0f;
     return self;
 }
 
+
 // From http://stackoverflow.com/a/8626071/118631
 - (NSRect)adjustedFrameToVerticallyCenterText:(NSRect)frame {
 	NSInteger offset = floor((NSHeight(frame) - ([[self font] ascender] - [[self font] descender])) / 2);
 	return NSInsetRect(frame, kCDMTextFieldCellXInset, offset);
 }
 
+
 - (void)editWithFrame:(NSRect)aRect inView:(NSView *)controlView editor:(NSText *)editor delegate:(id)delegate event:(NSEvent *)event {
 	[super editWithFrame:[self adjustedFrameToVerticallyCenterText:aRect] inView:controlView editor:editor delegate:delegate event:event];
 }
+
 
 - (void)selectWithFrame:(NSRect)aRect inView:(NSView *)controlView editor:(NSText *)editor delegate:(id)delegate start:(NSInteger)start length:(NSInteger)length {
 	[super selectWithFrame:[self adjustedFrameToVerticallyCenterText:aRect] inView:controlView editor:editor delegate:delegate start:start length:length];
 }
 
-- (void)drawInteriorWithFrame:(NSRect)cellFrame inView:(NSView *)controlView
-{
+
+- (void)drawInteriorWithFrame:(NSRect)cellFrame inView:(NSView *)controlView {
     CGFloat scaleFactor = [[controlView window] backingScaleFactor];
     BOOL firstResponder = [controlView isFirstResponder];
-    NSRect drawingRect = NSInsetRect(cellFrame, (kCDMTextFieldCellOuterShadowBlurRadius * scaleFactor) + 0.5f, (kCDMTextFieldCellOuterShadowBlurRadius * scaleFactor) + 0.5f);
-    NSBezierPath *path = [NSBezierPath bezierPathWithRoundedRect:drawingRect xRadius:kCDMTextFieldCellCornerRadius yRadius:kCDMTextFieldCellCornerRadius];
+
+	CGFloat inset = (kCDMTextFieldCellOuterShadowBlurRadius + 1.0f) * scaleFactor;
+    NSRect drawingRect = NSInsetRect(cellFrame, inset, inset);
+	NSBezierPath *path = [NSBezierPath bezierPathWithRoundedRect:drawingRect xRadius:kCDMTextFieldCellCornerRadius yRadius:kCDMTextFieldCellCornerRadius];
+	
     [firstResponder ? [NSColor cheddarOrangeColor] : [NSColor cheddarSteelColor] setStroke];
     [kCDMTextFieldCellFillColor setFill];
+
     [NSGraphicsContext saveGraphicsState];
+	
     if (firstResponder) {
         NSShadow *outerShadow = [NSShadow new];
         [outerShadow setShadowBlurRadius:kCDMTextFieldCellOuterShadowBlurRadius * scaleFactor];
         [outerShadow setShadowColor:kCDMTextFieldCellOuterShadowColor];
         [outerShadow set];
     }
-    [path setLineWidth:scaleFactor];
+	
+    [path setLineWidth:scaleFactor * 2.0];
     [path stroke];
     [path fill];
+	
     NSShadow *shadow = [NSShadow new];
     [shadow setShadowBlurRadius:kCDMTextFieldCellInnerShadowBlurRadius * scaleFactor];
     [shadow setShadowColor:kCDMTextFieldCellInnerShadowColor];
+	
     NSBezierPath *shadowPath = [NSBezierPath bezierPathWithRect:drawingRect];
     [path addClip];
     [shadowPath fillWithInnerShadow:shadow];
+	
     [NSGraphicsContext restoreGraphicsState];
+	
     [super drawInteriorWithFrame:[self adjustedFrameToVerticallyCenterText:cellFrame] inView:controlView];
 }
+
 @end
