@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0338827F15D9611F001FC04B /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 0338827E15D9611F001FC04B /* Fonts */; };
 		B21624CE15D9662E00D48636 /* traffic-close-graphite-pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = B21624B415D9662E00D48636 /* traffic-close-graphite-pressed.png */; };
 		B21624CF15D9662E00D48636 /* traffic-close-graphite-pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B21624B515D9662E00D48636 /* traffic-close-graphite-pressed@2x.png */; };
 		B21624D015D9662E00D48636 /* traffic-close-graphite.png in Resources */ = {isa = PBXBuildFile; fileRef = B21624B615D9662E00D48636 /* traffic-close-graphite.png */; };
@@ -34,6 +33,10 @@
 		B21624E515D9662E00D48636 /* traffic-zoom-pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B21624CB15D9662E00D48636 /* traffic-zoom-pressed@2x.png */; };
 		B21624E615D9662E00D48636 /* traffic-zoom.png in Resources */ = {isa = PBXBuildFile; fileRef = B21624CC15D9662E00D48636 /* traffic-zoom.png */; };
 		B21624E715D9662E00D48636 /* traffic-zoom@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B21624CD15D9662E00D48636 /* traffic-zoom@2x.png */; };
+		B216251315D966F800D48636 /* Gotham-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B216250F15D966F800D48636 /* Gotham-Bold.otf */; };
+		B216251415D966F800D48636 /* Gotham-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B216251015D966F800D48636 /* Gotham-BoldItalic.otf */; };
+		B216251515D966F800D48636 /* Gotham-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = B216251115D966F800D48636 /* Gotham-Book.otf */; };
+		B216251615D966F800D48636 /* Gotham-BookItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B216251215D966F800D48636 /* Gotham-BookItalic.otf */; };
 		B21FF2C515BF7D6500AEEA97 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B21FF2C415BF7D6500AEEA97 /* Cocoa.framework */; };
 		B21FF57115BF7D7C00AEEA97 /* CDMDefines.m in Sources */ = {isa = PBXBuildFile; fileRef = B21FF2EE15BF7D7B00AEEA97 /* CDMDefines.m */; };
 		B21FF57215BF7D7C00AEEA97 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B21FF2F015BF7D7B00AEEA97 /* main.m */; };
@@ -108,7 +111,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0338827E15D9611F001FC04B /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
 		B21624B415D9662E00D48636 /* traffic-close-graphite-pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "traffic-close-graphite-pressed.png"; sourceTree = "<group>"; };
 		B21624B515D9662E00D48636 /* traffic-close-graphite-pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "traffic-close-graphite-pressed@2x.png"; sourceTree = "<group>"; };
 		B21624B615D9662E00D48636 /* traffic-close-graphite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "traffic-close-graphite.png"; sourceTree = "<group>"; };
@@ -135,6 +137,10 @@
 		B21624CB15D9662E00D48636 /* traffic-zoom-pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "traffic-zoom-pressed@2x.png"; sourceTree = "<group>"; };
 		B21624CC15D9662E00D48636 /* traffic-zoom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "traffic-zoom.png"; sourceTree = "<group>"; };
 		B21624CD15D9662E00D48636 /* traffic-zoom@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "traffic-zoom@2x.png"; sourceTree = "<group>"; };
+		B216250F15D966F800D48636 /* Gotham-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Bold.otf"; sourceTree = "<group>"; };
+		B216251015D966F800D48636 /* Gotham-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-BoldItalic.otf"; sourceTree = "<group>"; };
+		B216251115D966F800D48636 /* Gotham-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Book.otf"; sourceTree = "<group>"; };
+		B216251215D966F800D48636 /* Gotham-BookItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-BookItalic.otf"; sourceTree = "<group>"; };
 		B21FF2C015BF7D6500AEEA97 /* Cheddar for Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cheddar for Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B21FF2C415BF7D6500AEEA97 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		B21FF2C715BF7D6500AEEA97 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -207,6 +213,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B216250E15D966F800D48636 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				B216250F15D966F800D48636 /* Gotham-Bold.otf */,
+				B216251015D966F800D48636 /* Gotham-BoldItalic.otf */,
+				B216251115D966F800D48636 /* Gotham-Book.otf */,
+				B216251215D966F800D48636 /* Gotham-BookItalic.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		B21FF2B515BF7D6500AEEA97 = {
 			isa = PBXGroup;
 			children = (
@@ -276,11 +293,11 @@
 		B21FF2F115BF7D7B00AEEA97 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				0338827E15D9611F001FC04B /* Fonts */,
+				B21FF2FC15BF7D7B00AEEA97 /* Nibs */,
+				B21FF2FA15BF7D7B00AEEA97 /* Images */,
+				B216250E15D966F800D48636 /* Fonts */,
 				B21FF2F215BF7D7B00AEEA97 /* Cheddar-Info.plist */,
 				B21FF2F315BF7D7B00AEEA97 /* Cheddar.entitlements */,
-				B21FF2FA15BF7D7B00AEEA97 /* Images */,
-				B21FF2FC15BF7D7B00AEEA97 /* Nibs */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -515,7 +532,6 @@
 				B249725015CC0058008388E5 /* title@2x.png in Resources */,
 				B2D2A4D915CC96140029D315 /* arches.png in Resources */,
 				B2D2A4DA15CC96140029D315 /* arches@2x.png in Resources */,
-				0338827F15D9611F001FC04B /* Fonts in Resources */,
 				B21624CE15D9662E00D48636 /* traffic-close-graphite-pressed.png in Resources */,
 				B21624CF15D9662E00D48636 /* traffic-close-graphite-pressed@2x.png in Resources */,
 				B21624D015D9662E00D48636 /* traffic-close-graphite.png in Resources */,
@@ -542,6 +558,10 @@
 				B21624E515D9662E00D48636 /* traffic-zoom-pressed@2x.png in Resources */,
 				B21624E615D9662E00D48636 /* traffic-zoom.png in Resources */,
 				B21624E715D9662E00D48636 /* traffic-zoom@2x.png in Resources */,
+				B216251315D966F800D48636 /* Gotham-Bold.otf in Resources */,
+				B216251415D966F800D48636 /* Gotham-BoldItalic.otf in Resources */,
+				B216251515D966F800D48636 /* Gotham-Book.otf in Resources */,
+				B216251615D966F800D48636 /* Gotham-BookItalic.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
