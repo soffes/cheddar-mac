@@ -82,6 +82,8 @@
 		B2A23DA415D9997700EA9D2D /* About.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2A23DA315D9997700EA9D2D /* About.xib */; };
 		B2A23DA615D9997E00EA9D2D /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2A23DA515D9997E00EA9D2D /* Preferences.xib */; };
 		B2B2E12415D9A67C008672DA /* DBPrefsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B2E11115D9A67C008672DA /* DBPrefsWindowController.m */; };
+		B2B2E15915D9ACA1008672DA /* preferences-updates.png in Resources */ = {isa = PBXBuildFile; fileRef = B2B2E15315D9ACA1008672DA /* preferences-updates.png */; };
+		B2B2E15D15D9B158008672DA /* CDMPreferencesRowView.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B2E15C15D9B158008672DA /* CDMPreferencesRowView.m */; };
 		B2C1EBB615BF838200B65583 /* CDMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C1EBB115BF838200B65583 /* CDMAppDelegate.m */; };
 		B2C1EBB715BF838200B65583 /* CDMListsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C1EBB315BF838200B65583 /* CDMListsWindowController.m */; };
 		B2C1EBB815BF838200B65583 /* CDMSignInWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C1EBB515BF838200B65583 /* CDMSignInWindowController.m */; };
@@ -240,6 +242,9 @@
 		B2A23DA515D9997E00EA9D2D /* Preferences.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Preferences.xib; sourceTree = "<group>"; };
 		B2B2E11015D9A67C008672DA /* DBPrefsWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBPrefsWindowController.h; sourceTree = "<group>"; };
 		B2B2E11115D9A67C008672DA /* DBPrefsWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBPrefsWindowController.m; sourceTree = "<group>"; };
+		B2B2E15315D9ACA1008672DA /* preferences-updates.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "preferences-updates.png"; sourceTree = "<group>"; };
+		B2B2E15B15D9B158008672DA /* CDMPreferencesRowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMPreferencesRowView.h; sourceTree = "<group>"; };
+		B2B2E15C15D9B158008672DA /* CDMPreferencesRowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMPreferencesRowView.m; sourceTree = "<group>"; };
 		B2C1EBB015BF838200B65583 /* CDMAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMAppDelegate.h; sourceTree = "<group>"; };
 		B2C1EBB115BF838200B65583 /* CDMAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMAppDelegate.m; sourceTree = "<group>"; };
 		B2C1EBB215BF838200B65583 /* CDMListsWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMListsWindowController.h; sourceTree = "<group>"; };
@@ -338,11 +343,11 @@
 		B21FF2F115BF7D7B00AEEA97 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B21FF2FC15BF7D7B00AEEA97 /* Nibs */,
+				B21FF2FA15BF7D7B00AEEA97 /* Images */,
 				0338827E15D9611F001FC04B /* Fonts */,
 				B21FF2F215BF7D7B00AEEA97 /* Cheddar-Info.plist */,
 				B21FF2F315BF7D7B00AEEA97 /* Cheddar.entitlements */,
-				B21FF2FA15BF7D7B00AEEA97 /* Images */,
-				B21FF2FC15BF7D7B00AEEA97 /* Nibs */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -350,6 +355,7 @@
 		B21FF2FA15BF7D7B00AEEA97 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				B2B2E15315D9ACA1008672DA /* preferences-updates.png */,
 				033882AA15D968A6001FC04B /* sign-in-logo.png */,
 				033882AB15D968A6001FC04B /* sign-in-logo@2x.png */,
 				033882AC15D968A6001FC04B /* traffic-close-graphite-pressed.png */,
@@ -508,6 +514,8 @@
 				0338839715D99F9B001FC04B /* CDMFlatButton.m */,
 				0338839C15D9A7EB001FC04B /* CDMTextButton.h */,
 				0338839D15D9A7EB001FC04B /* CDMTextButton.m */,
+				B2B2E15B15D9B158008672DA /* CDMPreferencesRowView.h */,
+				B2B2E15C15D9B158008672DA /* CDMPreferencesRowView.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -675,6 +683,7 @@
 				033882E115D968A6001FC04B /* traffic-zoom@2x.png in Resources */,
 				B2A23DA415D9997700EA9D2D /* About.xib in Resources */,
 				B2A23DA615D9997E00EA9D2D /* Preferences.xib in Resources */,
+				B2B2E15915D9ACA1008672DA /* preferences-updates.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -718,6 +727,7 @@
 				0338839E15D9A7EB001FC04B /* CDMTextButton.m in Sources */,
 				B2B2E12415D9A67C008672DA /* DBPrefsWindowController.m in Sources */,
 				033883A115D9A7F6001FC04B /* CDMTextButtonCell.m in Sources */,
+				B2B2E15D15D9B158008672DA /* CDMPreferencesRowView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

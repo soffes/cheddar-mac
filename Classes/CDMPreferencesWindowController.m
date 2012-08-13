@@ -11,22 +11,16 @@
 @implementation CDMPreferencesWindowController
 
 @synthesize generalPreferenceView = _generalPreferenceView;
-@synthesize colorsPreferenceView = _colorsPreferenceView;
-@synthesize playbackPreferenceView = _playbackPreferenceView;
+@synthesize accountPreferenceView = _accountPreferenceView;
 @synthesize updatesPreferenceView = _updatesPreferenceView;
-@synthesize advancedPreferenceView = _advancedPreferenceView;
 
 - (void)setupToolbar{
-    [self addView:self.generalPreferenceView label:@"General"];
-    [self addView:self.colorsPreferenceView label:@"Colors"];
-    [self addView:self.playbackPreferenceView label:@"Playback"];
-    [self addView:self.updatesPreferenceView label:@"Updates"];
-    [self addFlexibleSpacer];
-    [self addView:self.advancedPreferenceView label:@"Advanced"];
+    [self addView:self.generalPreferenceView label:@"General" image:[NSImage imageNamed:@"NSPreferencesGeneral"]];
+    [self addView:self.accountPreferenceView label:@"Account" image:[NSImage imageNamed:@"NSUser"]];
+    [self addView:self.updatesPreferenceView label:@"Updates" image:[NSImage imageNamed:@"preferences-updates"]];
 
-    // Optional configuration settings.
-    [self setCrossFade:[[NSUserDefaults standardUserDefaults] boolForKey:@"fade"]];
-    [self setShiftSlowsAnimation:[[NSUserDefaults standardUserDefaults] boolForKey:@"shiftSlowsAnimation"]];
+    [self setCrossFade:YES];
+    [self setShiftSlowsAnimation:YES];
 }
 
 @end

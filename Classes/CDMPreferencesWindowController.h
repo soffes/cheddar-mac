@@ -11,9 +11,7 @@
 @interface CDMPreferencesWindowController : DBPrefsWindowController
 
 @property (strong, nonatomic) IBOutlet NSView *generalPreferenceView;
-@property (strong, nonatomic) IBOutlet NSView *colorsPreferenceView;
-@property (strong, nonatomic) IBOutlet NSView *playbackPreferenceView;
+@property (strong, nonatomic) IBOutlet NSView *accountPreferenceView;
 @property (strong, nonatomic) IBOutlet NSView *updatesPreferenceView;
-@property (strong, nonatomic) IBOutlet NSView *advancedPreferenceView;
 
 @end
