@@ -72,7 +72,7 @@ static CGFloat const kCDMTextFieldCellOuterShadowBlurRadius = 2.0f;
         [outerShadow set];
     }
 	
-    [path setLineWidth:scaleFactor * 2.0];
+    [path setLineWidth:2.0];
     [path stroke];
     [path fill];
 	
