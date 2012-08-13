@@ -260,7 +260,7 @@
 								<string>NeXT Encapsulated PostScript v1.2 pasteboard type</string>
 								<string>NeXT TIFF v4.0 pasteboard type</string>
 							</set>
-							<string key="NSFrame">{{197, 279}, {143, 24}}</string>
+							<string key="NSFrame">{{189, 279}, {143, 24}}</string>
 							<reference key="NSSuperview" ref="113831471"/>
 							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="791213884"/>
@@ -428,9 +428,9 @@
 							<reference ref="648619867"/>
 							<reference ref="791213884"/>
 							<reference ref="523551340"/>
-							<reference ref="1062161514"/>
 							<reference ref="825763602"/>
 							<reference ref="304560251"/>
+							<reference ref="1062161514"/>
 						</array>
 						<reference key="parent" ref="138494860"/>
 					</object>
