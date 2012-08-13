@@ -15,7 +15,7 @@
 
 - (void)awakeFromNib {
 	[super awakeFromNib];
-	self.font = [NSFont fontWithName:kCDIRegularFontName size:16.0];
+	self.font = [NSFont fontWithName:kCDMRegularFontName size:16.0];
 	self.textColor = [NSColor colorWithCalibratedRed:0.200 green:0.200 blue:0.200 alpha:1];
 	self.placeholderString = @"What do you have to do?";
 }

@@ -12,6 +12,14 @@
 #pragma mark - API
 
 extern NSString *const kCDMAPIClientID;
-extern NSString *const kCDMAPIClientSecret;
+extern NSString *const kCD<APIClientSecret;
+
+#pragma mark - Fonts
+
+extern NSString *const kCDMRegularFontName;
+extern NSString *const kCDMBoldFontName;
+extern NSString *const kCDMBoldItalicFontName;
+extern NSString *const kCDMItalicFontName;
 
 #endif
+
