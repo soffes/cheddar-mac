@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0338827F15D9611F001FC04B /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 0338827E15D9611F001FC04B /* Fonts */; };
+		0338828315D96201001FC04B /* CDMArchesWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 0338828215D96201001FC04B /* CDMArchesWindow.m */; };
 		B21FF2C515BF7D6500AEEA97 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B21FF2C415BF7D6500AEEA97 /* Cocoa.framework */; };
 		B21FF57115BF7D7C00AEEA97 /* CDMDefines.m in Sources */ = {isa = PBXBuildFile; fileRef = B21FF2EE15BF7D7B00AEEA97 /* CDMDefines.m */; };
 		B21FF57215BF7D7C00AEEA97 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B21FF2F015BF7D7B00AEEA97 /* main.m */; };
@@ -84,6 +85,8 @@
 
 /* Begin PBXFileReference section */
 		0338827E15D9611F001FC04B /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
+		0338828115D96201001FC04B /* CDMArchesWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDMArchesWindow.h; path = Classes/CDMArchesWindow.h; sourceTree = "<group>"; };
+		0338828215D96201001FC04B /* CDMArchesWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDMArchesWindow.m; path = Classes/CDMArchesWindow.m; sourceTree = "<group>"; };
 		B21FF2C015BF7D6500AEEA97 /* Cheddar for Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cheddar for Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B21FF2C415BF7D6500AEEA97 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		B21FF2C715BF7D6500AEEA97 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -119,8 +122,8 @@
 		B249725415CC02C0008388E5 /* CDMTaskTableCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMTaskTableCellView.h; sourceTree = "<group>"; };
 		B249725515CC02C0008388E5 /* CDMTaskTableCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMTaskTableCellView.m; sourceTree = "<group>"; };
 		B249725715CC0358008388E5 /* cheat-checkbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cheat-checkbox.png"; sourceTree = "<group>"; };
-		B25B9C5C15CF2784005FA4A2 /* CDMMainWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMMainWindow.h; sourceTree = "<group>"; };
-		B25B9C5D15CF2784005FA4A2 /* CDMMainWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMMainWindow.m; sourceTree = "<group>"; };
+		B25B9C5C15CF2784005FA4A2 /* CDMMainWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDMMainWindow.h; path = Classes/CDMMainWindow.h; sourceTree = "<group>"; };
+		B25B9C5D15CF2784005FA4A2 /* CDMMainWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDMMainWindow.m; path = Classes/CDMMainWindow.m; sourceTree = "<group>"; };
 		B25E136615CB98AD009751B9 /* CDMListTableRowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMListTableRowView.h; sourceTree = "<group>"; };
 		B25E136715CB98AD009751B9 /* CDMListTableRowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMListTableRowView.m; sourceTree = "<group>"; };
 		B25E13AB15CBB19B009751B9 /* CDMListTableCellView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMListTableCellView.h; sourceTree = "<group>"; };
@@ -157,6 +160,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0338828015D961E1001FC04B /* Windows */ = {
+			isa = PBXGroup;
+			children = (
+				B25B9C5C15CF2784005FA4A2 /* CDMMainWindow.h */,
+				B25B9C5D15CF2784005FA4A2 /* CDMMainWindow.m */,
+				0338828115D96201001FC04B /* CDMArchesWindow.h */,
+				0338828215D96201001FC04B /* CDMArchesWindow.m */,
+			);
+			name = Windows;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		B21FF2B515BF7D6500AEEA97 = {
 			isa = PBXGroup;
 			children = (
@@ -205,6 +220,7 @@
 				B2C1EBB315BF838200B65583 /* CDMListsWindowController.m */,
 				B2C1EBB415BF838200B65583 /* CDMSignInWindowController.h */,
 				B2C1EBB515BF838200B65583 /* CDMSignInWindowController.m */,
+				0338828015D961E1001FC04B /* Windows */,
 				B25E13AA15CBB185009751B9 /* Views */,
 				B249723015CBE10B008388E5 /* Cells */,
 				B24970C815CBC827008388E5 /* Categories */,
@@ -342,8 +358,6 @@
 				B249725215CC00D9008388E5 /* CDMTaskTableRowView.m */,
 				B249725415CC02C0008388E5 /* CDMTaskTableCellView.h */,
 				B249725515CC02C0008388E5 /* CDMTaskTableCellView.m */,
-				B25B9C5C15CF2784005FA4A2 /* CDMMainWindow.h */,
-				B25B9C5D15CF2784005FA4A2 /* CDMMainWindow.m */,
 				B2A18D9515D8BA24002942A5 /* CDMCheckboxButton.h */,
 				B2A18D9615D8BA24002942A5 /* CDMCheckboxButton.m */,
 			);
@@ -470,6 +484,7 @@
 				B25B9C5E15CF2784005FA4A2 /* CDMMainWindow.m in Sources */,
 				B2A18D9415D8B9C4002942A5 /* CDMCheckboxButtonCell.m in Sources */,
 				B2A18D9715D8BA24002942A5 /* CDMCheckboxButton.m in Sources */,
+				0338828315D96201001FC04B /* CDMArchesWindow.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

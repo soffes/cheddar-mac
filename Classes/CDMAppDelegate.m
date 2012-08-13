@@ -29,13 +29,13 @@
 	// Setup the OAuth credentials
 	[[CDKHTTPClient sharedClient] setClientID:kCDMAPIClientID secret:kCDMAPIClientSecret];
 	
-	if (![CDKUser currentUser]) {
+	//if (![CDKUser currentUser]) {
 		_signInWindowController = [[CDMSignInWindowController alloc] init];
 		[_signInWindowController.window makeKeyAndOrderFront:nil];
-	} else {
+	//} else {
 		_listsWindowController = [[CDMListsWindowController alloc] init];
 		[_listsWindowController.window makeKeyAndOrderFront:nil];
-	}
+	//}
 
 	dispatch_async(dispatch_get_main_queue(), ^{
 		// Initialize the connection to Pusher
