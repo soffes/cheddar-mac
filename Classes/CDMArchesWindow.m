@@ -99,6 +99,9 @@ static CGFloat const kCDMArchesWindowTrafficLightsYInset = 8.0f;
     NSButton *_zoomButton;
     CDMArchesWindowTrafficLightsView *_trafficLightContainer;
 }
+@synthesize closeEnabled = _closeEnabled;
+@synthesize minimizeEnabled = _minimizeEnabled;
+@synthesize zoomEnabled = _zoomEnabled;
 
 #pragma mark - Initialization
 
@@ -117,6 +120,11 @@ static CGFloat const kCDMArchesWindowTrafficLightsYInset = 8.0f;
         [self setMovableByWindowBackground:YES];
         [self _createAndPositionTrafficLights];
         [self _registerNotifications];
+        
+        // Set default values
+        self.zoomEnabled = NO;
+        self.minimizeEnabled = NO;
+        self.closeEnabled = YES;
     }
     return self;
 }
@@ -141,6 +149,26 @@ static CGFloat const kCDMArchesWindowTrafficLightsYInset = 8.0f;
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
+#pragma mark - Accessors
+
+- (void)setCloseEnabled:(BOOL)closeEnabled
+{
+    _closeEnabled = closeEnabled;
+    [_closeButton setEnabled:closeEnabled];
+}
+
+- (void)setMinimizeEnabled:(BOOL)minimizeEnabled
+{
+    _minimizeEnabled = minimizeEnabled;
+    [_minimizeButton setEnabled:minimizeEnabled];
+}
+
+- (void)setZoomEnabled:(BOOL)zoomEnabled
+{
+    _zoomEnabled = zoomEnabled;
+    [_zoomButton setEnabled:zoomEnabled];
+}
+
 #pragma mark - NSResponder
 
 - (BOOL)canBecomeKeyWindow
@@ -158,9 +186,15 @@ static CGFloat const kCDMArchesWindowTrafficLightsYInset = 8.0f;
 - (void)trafficLightsViewMouseEntered:(CDMArchesWindowTrafficLightsView*)view
 {
     BOOL graphite = [self _isGraphite];
-    [_closeButton setImage:[NSImage imageNamed:graphite ? kCDMArchesWindowImageNameTrafficCloseGraphite : kCDMArchesWindowImageNameTrafficClose]];
-    [_minimizeButton setImage:[NSImage imageNamed:graphite ? kCDMArchesWindowImageNameTrafficMinimizeGraphite : kCDMArchesWindowImageNameTrafficMinimize]];
-    [_zoomButton setImage:[NSImage imageNamed:graphite ? kCDMArchesWindowImageNameTrafficZoomGraphite : kCDMArchesWindowImageNameTrafficZoom]];
+    if (self.closeEnabled) {
+        [_closeButton setImage:[NSImage imageNamed:graphite ? kCDMArchesWindowImageNameTrafficCloseGraphite : kCDMArchesWindowImageNameTrafficClose]];
+    }
+    if (self.minimizeEnabled) {
+        [_minimizeButton setImage:[NSImage imageNamed:graphite ? kCDMArchesWindowImageNameTrafficMinimizeGraphite : kCDMArchesWindowImageNameTrafficMinimize]];
+    }
+    if (self.zoomEnabled) {
+        [_zoomButton setImage:[NSImage imageNamed:graphite ? kCDMArchesWindowImageNameTrafficZoomGraphite : kCDMArchesWindowImageNameTrafficZoom]];
+    }
 }
 
 - (void)trafficLightsViewMouseExited:(CDMArchesWindowTrafficLightsView*)view
@@ -186,16 +220,19 @@ static CGFloat const kCDMArchesWindowTrafficLightsYInset = 8.0f;
     _closeButton = [self _borderlessButtonWithRect:closeRect];
     [_closeButton setTarget:self];
     [_closeButton setAction:@selector(close)];
+    [_closeButton setEnabled:self.closeEnabled];
     NSRect minimizeRect = closeRect;
     minimizeRect.origin.x += closeRect.size.width + kCDMArchesWindowTrafficLightsSpacing;
     _minimizeButton = [self _borderlessButtonWithRect:minimizeRect];
     [_minimizeButton setTarget:self];
     [_minimizeButton setAction:@selector(miniaturize:)];
+    [_minimizeButton setEnabled:self.minimizeEnabled];
     NSRect zoomRect = minimizeRect;
     zoomRect.origin.x += minimizeRect.size.width + kCDMArchesWindowTrafficLightsSpacing;
     _zoomButton = [self _borderlessButtonWithRect:zoomRect];
     [_zoomButton setTarget:self];
     [_zoomButton setAction:@selector(zoom:)];
+    [_zoomButton setEnabled:self.zoomEnabled];
     [self _resetAlternateButtonImages];
     [_trafficLightContainer addSubview:_closeButton];
     [_trafficLightContainer addSubview:_minimizeButton];
