@@ -9,12 +9,23 @@
 #import "CDMAppDelegate.h"
 #import "CDMSignInWindowController.h"
 #import "CDMListsWindowController.h"
+#import "CDMPreferencesWindowController.h"
 #import "CDMDefines.h"
 
 @implementation CDMAppDelegate {
 	CDMSignInWindowController *_signInWindowController;
 	CDMListsWindowController *_listsWindowController;
 }
+
+
+#pragma mark - Actions
+
+- (IBAction)openPreferences:(id)sender{
+	[[CDMPreferencesWindowController sharedPrefsWindowController] showWindow:nil];
+}
+
+
+#pragma mark - NSApplicationDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
 	// Optionally enable development mode

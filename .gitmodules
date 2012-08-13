@@ -4,3 +4,6 @@
 [submodule "Vendor/INAppStoreWindow"]
 	path = Vendor/INAppStoreWindow
 	url = https://github.com/indragiek/INAppStoreWindow.git
+[submodule "Vendor/DBPrefsWindowController"]
+	path = Vendor/DBPrefsWindowController
+	url = https://github.com/kgn/DBPrefsWindowController.git
