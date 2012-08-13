@@ -32,54 +32,24 @@ static inline CGImageRef _createNoiseImageRef(NSUInteger width, NSUInteger heigh
 	[super awakeFromNib];
 	
 	NSColorList *colorList = [[NSColorList alloc] initWithName:NSStringFromClass([self class])];
-	
-	NSColorSpace *sRGB = [NSColorSpace sRGBColorSpace];
-	
-	CGFloat components[] = { 239.0 / 255.0, 157.0 / 255.0, 133.0 / 255.0, 1.0 };
-	[colorList setColor:[NSColor colorWithColorSpace:sRGB components:components count:4] forKey:@"topInset"];
-	
-	components[0] = 1.0;
-	components[1] = 136.0 / 255.0;
-	components[2] = 96.0 / 255.0;
-	[colorList setColor:[NSColor colorWithColorSpace:sRGB components:components count:4] forKey:@"bottomInset"];
-	
-	components[0] = 101.0 / 255.0;
-	components[1] = 101.0 / 255.0;
-	components[2] = 101.0 / 255.0;
-	[colorList setColor:[NSColor colorWithColorSpace:sRGB components:components count:4] forKey:@"bottomBorder"];
-	
-	components[0] = 249.0 / 255.0;
-	components[1] = 138.0 / 255.0;
-	components[2] = 102.0 / 255.0;
-	[colorList setColor:[NSColor colorWithColorSpace:sRGB components:components count:4] forKey:@"gradientTop"];
-	
-	components[0] = 1.0;
-	components[1] = 112.0 / 255.0;
-	components[2] = 63.0 / 255.0;
-	[colorList setColor:[NSColor colorWithColorSpace:sRGB components:components count:4] forKey:@"gradientBottom"];
-	
+
+	[colorList setColor:[NSColor colorWithCalibratedRed:0.914 green:0.545 blue:0.448 alpha:1.000] forKey:@"topInset"];
+	[colorList setColor:[NSColor colorWithCalibratedRed:0.961 green:0.457 blue:0.324 alpha:1.000] forKey:@"gradientTop"];
+	[colorList setColor:[NSColor colorWithCalibratedRed:0.988 green:0.347 blue:0.192 alpha:1.000] forKey:@"gradientBottom"];
+	[colorList setColor:[NSColor colorWithCalibratedRed:0.990 green:0.448 blue:0.306 alpha:1.000] forKey:@"bottomInset"];
+	[colorList setColor:[NSColor colorWithCalibratedWhite:0.333 alpha:1.000] forKey:@"bottomBorder"];
+
+//	[colorList setColor:[NSColor whiteColor] forKey:@"topInset"];
+//	[colorList setColor:[NSColor colorWithCalibratedWhite:0.888 alpha:1.000] forKey:@"gradientTop"];
+//	[colorList setColor:[NSColor colorWithCalibratedWhite:0.629 alpha:1.000] forKey:@"gradientBottom"];
+//	[colorList setColor:[NSColor colorWithCalibratedWhite:0.660 alpha:1.000] forKey:@"bottomInset"];
+//	[colorList setColor:[NSColor colorWithCalibratedWhite:0.341 alpha:1.000] forKey:@"bottomBorder"];
+
 	[colorList setColor:[NSColor whiteColor] forKey:@"topInsetUnemphasized"];
-	
-	components[0] = 251.0 / 255.0;
-	components[1] = 251.0 / 255.0;
-	components[2] = 251.0 / 255.0;
-	[colorList setColor:[NSColor colorWithColorSpace:sRGB components:components count:4] forKey:@"gradientTopUnemphasized"];
-	
-	components[0] = 223.0 / 255.0;
-	components[1] = 223.0 / 255.0;
-	components[2] = 223.0 / 255.0;
-	[colorList setColor:[NSColor colorWithColorSpace:sRGB components:components count:4] forKey:@"gradientBottomUnemphasized"];
-	
-	components[0] = 228.0 / 255.0;
-	components[1] = 228.0 / 255.0;
-	components[2] = 228.0 / 255.0;
-	[colorList setColor:[NSColor colorWithColorSpace:sRGB components:components count:4] forKey:@"bottomInsetUnemphasized"];
-	
-	components[0] = 166.0 / 255.0;
-	components[1] = 166.0 / 255.0;
-	components[2] = 166.0 / 255.0;
-	[colorList setColor:[NSColor colorWithColorSpace:sRGB components:components count:4] forKey:@"bottomBorderUnemphasized"];
-	
+	[colorList setColor:[NSColor colorWithCalibratedWhite:0.970 alpha:1.000] forKey:@"gradientTopUnemphasized"];
+	[colorList setColor:[NSColor colorWithCalibratedWhite:0.845 alpha:1.000] forKey:@"gradientBottomUnemphasized"];
+	[colorList setColor:[NSColor colorWithCalibratedWhite:0.878 alpha:1.000] forKey:@"bottomInsetUnemphasized"];
+	[colorList setColor:[NSColor colorWithCalibratedWhite:0.590 alpha:1.000] forKey:@"bottomBorderUnemphasized"];
 	
 	self.titleBarHeight = 44.0f;
 	self.centerFullScreenButton = YES;
@@ -135,25 +105,26 @@ static inline CGImageRef _createNoiseImageRef(NSUInteger width, NSUInteger heigh
 		[gradient drawInRect:rect angle:-90.0f];
 		
 		// Noise
-//		if (drawsAsMainWindow) {
-			static CGImageRef noisePattern = nil;
-            if (noisePattern == nil) {
-                noisePattern = _createNoiseImageRef(128, 128, 0.015);
-            }
-			      
-            CGContextSetBlendMode(context, kCGBlendModePlusLighter);
-            CGRect noisePatternRect = CGRectZero;
-            noisePatternRect.size = CGSizeMake(CGImageGetWidth(noisePattern), CGImageGetHeight(noisePattern));
-            CGContextDrawTiledImage(context, noisePatternRect, noisePattern);
+//		static CGImageRef noisePattern = nil;
+//		if (noisePattern == nil) {
+//			noisePattern = _createNoiseImageRef(128, 128, 0.015);
 //		}
+//			  
+//		CGContextSetBlendMode(context, kCGBlendModePlusLighter);
+//		CGRect noisePatternRect = CGRectZero;
+//		noisePatternRect.size = CGSizeMake(CGImageGetWidth(noisePattern), CGImageGetHeight(noisePattern));
+//		CGContextDrawTiledImage(context, noisePatternRect, noisePattern);
 		
 		// Title
 		NSImage *image = [NSImage imageNamed:@"title"];
 		rect = CGRectMake(roundf((drawingRect.size.width - 135.0f) / 2.0f), roundf((drawingRect.size.height - 24.0f) / 2.0f) + 1.0f, 135.0f, 24.0f);
 		[image drawInRect:rect fromRect:CGRectZero operation:NSCompositeSourceOver fraction:1.0f];
-		
+
 		CGContextRestoreGState(context);
 	}];
+
+//	NSButton *close = [self standardWindowButton:NSWindowCloseButton];
+//	close.cell = [[CDMTrafflicLightCell alloc] init];
 }
 
 @end

@@ -19,39 +19,15 @@
 - (id)initWithFrame:(NSRect)frameRect {
 	if ((self = [super initWithFrame:frameRect])) {
 		self.colorList = [[NSColorList alloc] initWithName:NSStringFromClass([self class])];
+		[self.colorList setColor:[NSColor colorWithCalibratedWhite:0.926 alpha:1.000] forKey:@"border"];
+
+		[self.colorList setColor:[NSColor colorWithCalibratedRed:0.082 green:0.654 blue:0.887 alpha:1.000] forKey:@"selectedTop"];
+		[self.colorList setColor:[NSColor colorWithCalibratedRed:0.071 green:0.570 blue:0.801 alpha:1.000] forKey:@"selectedBottom"];
+		[self.colorList setColor:[NSColor colorWithCalibratedRed:0.058 green:0.458 blue:0.700 alpha:1.000] forKey:@"selectedBorder"];
 		
-		NSColorSpace *sRGB = [NSColorSpace sRGBColorSpace];
-		
-		CGFloat components[] = { 0.0, 182.0 / 255.0, 232.0 / 255.0, 1.0 };
-		[self.colorList setColor:[NSColor colorWithColorSpace:sRGB components:components count:4] forKey:@"selectedTop"];
-		
-		components[1] = 163.0 / 255.0;
-		components[2] = 214.0 / 255.0;
-		[self.colorList setColor:[NSColor colorWithColorSpace:sRGB components:components count:4] forKey:@"selectedBottom"];
-		
-		components[1] = 137.0 / 255.0;
-		components[2] = 192.0 / 255.0;
-		[self.colorList setColor:[NSColor colorWithColorSpace:sRGB components:components count:4] forKey:@"selectedBorder"];
-		
-		components[0] = 240.0 / 255.0;
-		components[1] = 240.0 / 255.0;
-		components[2] = 240.0 / 255.0;
-		[self.colorList setColor:[NSColor colorWithColorSpace:sRGB components:components count:4] forKey:@"border"];
-		
-		components[0] = 138.0 / 255.0;
-		components[1] = 143.0 / 255.0;
-		components[2] = 155.0 / 255.0;
-		[self.colorList setColor:[NSColor colorWithColorSpace:sRGB components:components count:4] forKey:@"selectedTopUnemphasized"];
-		
-		components[0] = 104.0 / 255.0;
-		components[1] = 109.0 / 255.0;
-		components[2] = 120.0 / 255.0;
-		[self.colorList setColor:[NSColor colorWithColorSpace:sRGB components:components count:4] forKey:@"selectedBottomUnemphasized"];
-		
-		components[0] = 84.0 / 255.0;
-		components[1] = 88.0 / 255.0;
-		components[2] = 96.0 / 255.0;
-		[self.colorList setColor:[NSColor colorWithColorSpace:sRGB components:components count:4] forKey:@"selectedBorderUnemphasized"];
+		[self.colorList setColor:[NSColor colorWithCalibratedRed:0.710 green:0.705 blue:0.710 alpha:1.000] forKey:@"selectedTopUnemphasized"];
+		[self.colorList setColor:[NSColor colorWithCalibratedWhite:0.542 alpha:1.000] forKey:@"selectedBottomUnemphasized"];
+		[self.colorList setColor:[NSColor colorWithCalibratedWhite:0.400 alpha:1.000] forKey:@"selectedBorderUnemphasized"];
 	}
 	return self;
 }

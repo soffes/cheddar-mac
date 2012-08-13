@@ -53,7 +53,7 @@ void SSDrawGradientInRect(CGContextRef context, CGGradientRef gradient, CGRect r
 		NSLog(@"Failed to get lists: %@", error);
 	}];
 	
-	self.listsTableView.backgroundColor = [NSColor colorWithPatternImage:[NSImage imageNamed:@"arches"]];
+//	self.listsTableView.backgroundColor = [NSColor colorWithPatternImage:[NSImage imageNamed:@"arches"]];
 //	self.tasksTableView.backgroundColor = [NSColor colorWithPatternImage:[NSImage imageNamed:@"arches"]];
 }
 

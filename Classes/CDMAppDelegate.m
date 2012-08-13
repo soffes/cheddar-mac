@@ -22,7 +22,7 @@
 	[CDKHTTPClient setDevelopmentModeEnabled:YES];
 	[CDKPushController setDevelopmentModeEnabled:YES];
 #endif
-		
+
 	// Initialize Core Data
 	[SSManagedObject mainContext];
 	
@@ -36,6 +36,11 @@
 		_listsWindowController = [[CDMListsWindowController alloc] init];
 		[_listsWindowController.window makeKeyAndOrderFront:nil];
 	}
+
+	dispatch_async(dispatch_get_main_queue(), ^{
+		// Initialize the connection to Pusher
+		[CDKPushController sharedController];
+	});
 }
 
 
