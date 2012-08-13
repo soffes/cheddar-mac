@@ -37,6 +37,8 @@
 		B216251415D966F800D48636 /* Gotham-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B216251015D966F800D48636 /* Gotham-BoldItalic.otf */; };
 		B216251515D966F800D48636 /* Gotham-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = B216251115D966F800D48636 /* Gotham-Book.otf */; };
 		B216251615D966F800D48636 /* Gotham-BookItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B216251215D966F800D48636 /* Gotham-BookItalic.otf */; };
+		B216251915D9681800D48636 /* sign-in-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = B216251715D9681800D48636 /* sign-in-logo.png */; };
+		B216251A15D9681800D48636 /* sign-in-logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B216251815D9681800D48636 /* sign-in-logo@2x.png */; };
 		B21FF2C515BF7D6500AEEA97 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B21FF2C415BF7D6500AEEA97 /* Cocoa.framework */; };
 		B21FF57115BF7D7C00AEEA97 /* CDMDefines.m in Sources */ = {isa = PBXBuildFile; fileRef = B21FF2EE15BF7D7B00AEEA97 /* CDMDefines.m */; };
 		B21FF57215BF7D7C00AEEA97 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B21FF2F015BF7D7B00AEEA97 /* main.m */; };
@@ -141,6 +143,8 @@
 		B216251015D966F800D48636 /* Gotham-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-BoldItalic.otf"; sourceTree = "<group>"; };
 		B216251115D966F800D48636 /* Gotham-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Book.otf"; sourceTree = "<group>"; };
 		B216251215D966F800D48636 /* Gotham-BookItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-BookItalic.otf"; sourceTree = "<group>"; };
+		B216251715D9681800D48636 /* sign-in-logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sign-in-logo.png"; sourceTree = "<group>"; };
+		B216251815D9681800D48636 /* sign-in-logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "sign-in-logo@2x.png"; sourceTree = "<group>"; };
 		B21FF2C015BF7D6500AEEA97 /* Cheddar for Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cheddar for Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B21FF2C415BF7D6500AEEA97 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		B21FF2C715BF7D6500AEEA97 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -305,6 +309,8 @@
 		B21FF2FA15BF7D7B00AEEA97 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				B216251715D9681800D48636 /* sign-in-logo.png */,
+				B216251815D9681800D48636 /* sign-in-logo@2x.png */,
 				B21624B415D9662E00D48636 /* traffic-close-graphite-pressed.png */,
 				B21624B515D9662E00D48636 /* traffic-close-graphite-pressed@2x.png */,
 				B21624B615D9662E00D48636 /* traffic-close-graphite.png */,
@@ -562,6 +568,8 @@
 				B216251415D966F800D48636 /* Gotham-BoldItalic.otf in Resources */,
 				B216251515D966F800D48636 /* Gotham-Book.otf in Resources */,
 				B216251615D966F800D48636 /* Gotham-BookItalic.otf in Resources */,
+				B216251915D9681800D48636 /* sign-in-logo.png in Resources */,
+				B216251A15D9681800D48636 /* sign-in-logo@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
