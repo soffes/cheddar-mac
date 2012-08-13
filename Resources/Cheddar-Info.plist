@@ -30,6 +30,8 @@
 	<string>Copyright © 2012 Nothing Magical. All rights reserved.</string>
 	<key>NSMainNibFile</key>
 	<string>MainMenu</string>
+	<key>ATSApplicationFontsPath</key>
+	<string>Fonts/</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
 </dict>

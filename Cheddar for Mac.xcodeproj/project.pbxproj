@@ -7,13 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0338827F15D9611F001FC04B /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 0338827E15D9611F001FC04B /* Fonts */; };
 		B21FF2C515BF7D6500AEEA97 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B21FF2C415BF7D6500AEEA97 /* Cocoa.framework */; };
 		B21FF57115BF7D7C00AEEA97 /* CDMDefines.m in Sources */ = {isa = PBXBuildFile; fileRef = B21FF2EE15BF7D7B00AEEA97 /* CDMDefines.m */; };
 		B21FF57215BF7D7C00AEEA97 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B21FF2F015BF7D7B00AEEA97 /* main.m */; };
-		B21FF57615BF7D7C00AEEA97 /* Gotham-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = B21FF2F615BF7D7B00AEEA97 /* Gotham-Bold.otf */; };
-		B21FF57715BF7D7C00AEEA97 /* Gotham-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B21FF2F715BF7D7B00AEEA97 /* Gotham-BoldItalic.otf */; };
-		B21FF57815BF7D7C00AEEA97 /* Gotham-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = B21FF2F815BF7D7B00AEEA97 /* Gotham-Book.otf */; };
-		B21FF57915BF7D7C00AEEA97 /* Gotham-BookItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = B21FF2F915BF7D7B00AEEA97 /* Gotham-BookItalic.otf */; };
 		B21FF57A15BF7D7C00AEEA97 /* Cheddar.icns in Resources */ = {isa = PBXBuildFile; fileRef = B21FF2FB15BF7D7B00AEEA97 /* Cheddar.icns */; };
 		B21FF57B15BF7D7C00AEEA97 /* Lists.xib in Resources */ = {isa = PBXBuildFile; fileRef = B21FF2FD15BF7D7B00AEEA97 /* Lists.xib */; };
 		B21FF57C15BF7D7C00AEEA97 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = B21FF2FE15BF7D7B00AEEA97 /* MainMenu.xib */; };
@@ -86,6 +83,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0338827E15D9611F001FC04B /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
 		B21FF2C015BF7D6500AEEA97 /* Cheddar for Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cheddar for Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B21FF2C415BF7D6500AEEA97 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		B21FF2C715BF7D6500AEEA97 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -96,10 +94,6 @@
 		B21FF2F015BF7D7B00AEEA97 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		B21FF2F215BF7D7B00AEEA97 /* Cheddar-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Cheddar-Info.plist"; sourceTree = "<group>"; };
 		B21FF2F315BF7D7B00AEEA97 /* Cheddar.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Cheddar.entitlements; sourceTree = "<group>"; };
-		B21FF2F615BF7D7B00AEEA97 /* Gotham-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Bold.otf"; sourceTree = "<group>"; };
-		B21FF2F715BF7D7B00AEEA97 /* Gotham-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-BoldItalic.otf"; sourceTree = "<group>"; };
-		B21FF2F815BF7D7B00AEEA97 /* Gotham-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-Book.otf"; sourceTree = "<group>"; };
-		B21FF2F915BF7D7B00AEEA97 /* Gotham-BookItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Gotham-BookItalic.otf"; sourceTree = "<group>"; };
 		B21FF2FB15BF7D7B00AEEA97 /* Cheddar.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Cheddar.icns; sourceTree = "<group>"; };
 		B21FF2FD15BF7D7B00AEEA97 /* Lists.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Lists.xib; sourceTree = "<group>"; };
 		B21FF2FE15BF7D7B00AEEA97 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
@@ -232,24 +226,13 @@
 		B21FF2F115BF7D7B00AEEA97 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0338827E15D9611F001FC04B /* Fonts */,
 				B21FF2F215BF7D7B00AEEA97 /* Cheddar-Info.plist */,
 				B21FF2F315BF7D7B00AEEA97 /* Cheddar.entitlements */,
-				B21FF2F415BF7D7B00AEEA97 /* Fonts */,
 				B21FF2FA15BF7D7B00AEEA97 /* Images */,
 				B21FF2FC15BF7D7B00AEEA97 /* Nibs */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		B21FF2F415BF7D7B00AEEA97 /* Fonts */ = {
-			isa = PBXGroup;
-			children = (
-				B21FF2F615BF7D7B00AEEA97 /* Gotham-Bold.otf */,
-				B21FF2F715BF7D7B00AEEA97 /* Gotham-BoldItalic.otf */,
-				B21FF2F815BF7D7B00AEEA97 /* Gotham-Book.otf */,
-				B21FF2F915BF7D7B00AEEA97 /* Gotham-BookItalic.otf */,
-			);
-			path = Fonts;
 			sourceTree = "<group>";
 		};
 		B21FF2FA15BF7D7B00AEEA97 /* Images */ = {
@@ -444,10 +427,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B21FF57615BF7D7C00AEEA97 /* Gotham-Bold.otf in Resources */,
-				B21FF57715BF7D7C00AEEA97 /* Gotham-BoldItalic.otf in Resources */,
-				B21FF57815BF7D7C00AEEA97 /* Gotham-Book.otf in Resources */,
-				B21FF57915BF7D7C00AEEA97 /* Gotham-BookItalic.otf in Resources */,
 				B21FF57A15BF7D7C00AEEA97 /* Cheddar.icns in Resources */,
 				B21FF57B15BF7D7C00AEEA97 /* Lists.xib in Resources */,
 				B21FF57C15BF7D7C00AEEA97 /* MainMenu.xib in Resources */,
@@ -462,6 +441,7 @@
 				B249725815CC0358008388E5 /* cheat-checkbox.png in Resources */,
 				B2D2A4D915CC96140029D315 /* arches.png in Resources */,
 				B2D2A4DA15CC96140029D315 /* arches@2x.png in Resources */,
+				0338827F15D9611F001FC04B /* Fonts in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -558,13 +538,12 @@
 		B21FF2DF15BF7D6500AEEA97 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Other Sources/Cheddar-Prefix.pch";
 				INFOPLIST_FILE = "Resources/Cheddar-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -572,13 +551,12 @@
 		B21FF2E015BF7D6500AEEA97 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Other Sources/Cheddar-Prefix.pch";
 				INFOPLIST_FILE = "Resources/Cheddar-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
