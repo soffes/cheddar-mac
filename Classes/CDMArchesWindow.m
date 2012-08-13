@@ -28,7 +28,7 @@ static NSString* const kAppleAquaColorVariant = @"AppleAquaColorVariant";
 static int const kAppleGraphiteColorValue = 6;
 
 static CGFloat const kCDMArchesWindowCornerRadius = 4.0f;
-static CGFloat const kCDMArchesWindowTrafficLightsSpacing = 8.0f;
+static CGFloat const kCDMArchesWindowTrafficLightsSpacing = 6.0f;
 static CGFloat const kCDMArchesWindowTrafficLightsYInset = 8.0f;
 
 @implementation CDMArchesWindowContentView
