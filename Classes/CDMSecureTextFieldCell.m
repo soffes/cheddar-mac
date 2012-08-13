@@ -1,12 +1,12 @@
 //
-//  CDMTextFieldCell.m
+//  CDMSecureTextFieldCell.m
 //  Cheddar for Mac
 //
 //  Created by Indragie Karunaratne on 2012-08-13.
 //  Copyright (c) 2012 Nothing Magical. All rights reserved.
 //
 
-#import "CDMTextFieldCell.h"
+#import "CDMSecureTextFieldCell.h"
 #import "NSBezierPath+MCAdditions.h"
 #import "NSColor+CDMAdditions.h"
 #import "NSView+CDMAdditions.h"
@@ -19,9 +19,10 @@ static CGFloat const kCDMTextFieldCellOuterShadowBlurRadius = 2.0f;
 #define kCDMTextFieldCellOuterShadowColor [[NSColor cheddarOrangeColor] colorWithAlphaComponent:0.5f]
 #define kCDMTextFieldCellFillColor [NSColor whiteColor]
 
-@implementation CDMTextFieldCell
+@implementation CDMSecureTextFieldCell
 - (void)awakeFromNib {
 	[super awakeFromNib];
+    NSLog(@"%@", NSStringFromClass([self class]));
 	self.font = [NSFont fontWithName:kCDMRegularFontName size:16.0];
 	self.textColor = [NSColor colorWithCalibratedRed:0.200 green:0.200 blue:0.200 alpha:1];
     [self setDrawsBackground:NO];
@@ -46,9 +47,10 @@ static CGFloat const kCDMTextFieldCellOuterShadowBlurRadius = 2.0f;
 
 - (void)drawInteriorWithFrame:(NSRect)cellFrame inView:(NSView *)controlView
 {
+    NSLog(@"draw interior");
     CGFloat scaleFactor = [[controlView window] backingScaleFactor];
     BOOL firstResponder = [controlView isFirstResponder];
-    NSRect drawingRect = NSInsetRect(cellFrame, kCDMTextFieldCellOuterShadowBlurRadius * scaleFactor + 0.5f, kCDMTextFieldCellOuterShadowBlurRadius * scaleFactor + 0.5f);
+    NSRect drawingRect = NSInsetRect(cellFrame, kCDMTextFieldCellOuterShadowBlurRadius * scaleFactor, kCDMTextFieldCellOuterShadowBlurRadius * scaleFactor);
     NSBezierPath *path = [NSBezierPath bezierPathWithRoundedRect:drawingRect xRadius:kCDMTextFieldCellCornerRadius yRadius:kCDMTextFieldCellCornerRadius];
     [firstResponder ? [NSColor cheddarOrangeColor] : [NSColor cheddarSteelColor] setStroke];
     [kCDMTextFieldCellFillColor setFill];

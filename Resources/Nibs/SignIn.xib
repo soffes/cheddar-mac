@@ -156,6 +156,7 @@
 							<string key="NSFrame">{{372, 20}, {128, 43}}</string>
 							<reference key="NSSuperview" ref="113831471"/>
 							<reference key="NSWindow"/>
+							<reference key="NSNextKeyView"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="316911649">
@@ -184,13 +185,12 @@
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSSecureTextFieldCell" key="NSCell" id="575597738">
-								<int key="NSCellFlags">342884416</int>
+								<int key="NSCellFlags">338690112</int>
 								<int key="NSCellFlags2">272630848</int>
 								<string key="NSContents"/>
 								<reference key="NSSupport" ref="1066045982"/>
 								<string key="NSCellIdentifier">_NS:9</string>
 								<reference key="NSControlView" ref="523551340"/>
-								<bool key="NSDrawsBackground">YES</bool>
 								<reference key="NSBackgroundColor" ref="389269770"/>
 								<reference key="NSTextColor" ref="337675382"/>
 								<array key="NSAllowedInputLocales">
@@ -554,6 +554,7 @@
 				<string key="23.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="24.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="25.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="26.CustomClassName">CDMSecureTextFieldCell</string>
 				<string key="26.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<boolean value="YES" key="3.IBNSWindowAutoPositionCentersHorizontal"/>
 				<boolean value="YES" key="3.IBNSWindowAutoPositionCentersVertical"/>
@@ -590,6 +591,14 @@
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">./Classes/CDMArchesWindowContentView.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">CDMSecureTextFieldCell</string>
+					<string key="superclassName">NSSecureTextFieldCell</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/CDMSecureTextFieldCell.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">
