@@ -39,7 +39,7 @@
 		033882E115D968A6001FC04B /* traffic-zoom@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 033882C515D968A6001FC04B /* traffic-zoom@2x.png */; };
 		0338830015D97CA9001FC04B /* CDMTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 033882FF15D97CA9001FC04B /* CDMTextFieldCell.m */; };
 		0338830215D97D57001FC04B /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0338830115D97D57001FC04B /* Carbon.framework */; };
-		0338831B15D985C1001FC04B /* NSBezierPath+MCAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0338831A15D985C1001FC04B /* NSBezierPath+MCAdditions.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		0338833115D98BF5001FC04B /* NSBezierPath+MCAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0338833015D98BF5001FC04B /* NSBezierPath+MCAdditions.m */; };
 		B21FF2C515BF7D6500AEEA97 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B21FF2C415BF7D6500AEEA97 /* Cocoa.framework */; };
 		B21FF57115BF7D7C00AEEA97 /* CDMDefines.m in Sources */ = {isa = PBXBuildFile; fileRef = B21FF2EE15BF7D7B00AEEA97 /* CDMDefines.m */; };
 		B21FF57215BF7D7C00AEEA97 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B21FF2F015BF7D7B00AEEA97 /* main.m */; };
@@ -149,8 +149,8 @@
 		033882FE15D97CA9001FC04B /* CDMTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMTextFieldCell.h; sourceTree = "<group>"; };
 		033882FF15D97CA9001FC04B /* CDMTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMTextFieldCell.m; sourceTree = "<group>"; };
 		0338830115D97D57001FC04B /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
-		0338831915D985C1001FC04B /* NSBezierPath+MCAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBezierPath+MCAdditions.h"; sourceTree = "<group>"; };
-		0338831A15D985C1001FC04B /* NSBezierPath+MCAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBezierPath+MCAdditions.m"; sourceTree = "<group>"; };
+		0338832F15D98BF5001FC04B /* NSBezierPath+MCAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBezierPath+MCAdditions.h"; sourceTree = "<group>"; };
+		0338833015D98BF5001FC04B /* NSBezierPath+MCAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBezierPath+MCAdditions.m"; sourceTree = "<group>"; };
 		B21FF2C015BF7D6500AEEA97 /* Cheddar for Mac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cheddar for Mac.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B21FF2C415BF7D6500AEEA97 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		B21FF2C715BF7D6500AEEA97 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -408,15 +408,12 @@
 		B24970C815CBC827008388E5 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				0338832F15D98BF5001FC04B /* NSBezierPath+MCAdditions.h */,
+				0338833015D98BF5001FC04B /* NSBezierPath+MCAdditions.m */,
 				B24970C915CBC836008388E5 /* NSImage+CDMAdditions.h */,
 				B24970CA15CBC836008388E5 /* NSImage+CDMAdditions.m */,
-<<<<<<< HEAD
 				B2A23D1315D988AB00EA9D2D /* NSColor+CDMAdditions.h */,
 				B2A23D1415D988AB00EA9D2D /* NSColor+CDMAdditions.m */,
-=======
-				0338831915D985C1001FC04B /* NSBezierPath+MCAdditions.h */,
-				0338831A15D985C1001FC04B /* NSBezierPath+MCAdditions.m */,
->>>>>>> More work on the text field
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -624,11 +621,8 @@
 				B2A18D9715D8BA24002942A5 /* CDMCheckboxButton.m in Sources */,
 				0338828315D96201001FC04B /* CDMArchesWindow.m in Sources */,
 				0338830015D97CA9001FC04B /* CDMTextFieldCell.m in Sources */,
-<<<<<<< HEAD
 				B2A23D1515D988AB00EA9D2D /* NSColor+CDMAdditions.m in Sources */,
-=======
-				0338831B15D985C1001FC04B /* NSBezierPath+MCAdditions.m in Sources */,
->>>>>>> More work on the text field
+				0338833115D98BF5001FC04B /* NSBezierPath+MCAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
