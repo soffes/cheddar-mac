@@ -8,6 +8,7 @@
 
 #import "CDMMainWindow.h"
 
+// Copied from INAppStoreWindow
 static inline CGImageRef _createNoiseImageRef(NSUInteger width, NSUInteger height, CGFloat factor) {
     NSUInteger size = width * height;
     char *rgba = (char *)malloc(size);
@@ -38,12 +39,6 @@ static inline CGImageRef _createNoiseImageRef(NSUInteger width, NSUInteger heigh
 	[colorList setColor:[NSColor colorWithCalibratedRed:0.988 green:0.347 blue:0.192 alpha:1.000] forKey:@"gradientBottom"];
 	[colorList setColor:[NSColor colorWithCalibratedRed:0.990 green:0.448 blue:0.306 alpha:1.000] forKey:@"bottomInset"];
 	[colorList setColor:[NSColor colorWithCalibratedWhite:0.333 alpha:1.000] forKey:@"bottomBorder"];
-
-//	[colorList setColor:[NSColor whiteColor] forKey:@"topInset"];
-//	[colorList setColor:[NSColor colorWithCalibratedWhite:0.888 alpha:1.000] forKey:@"gradientTop"];
-//	[colorList setColor:[NSColor colorWithCalibratedWhite:0.629 alpha:1.000] forKey:@"gradientBottom"];
-//	[colorList setColor:[NSColor colorWithCalibratedWhite:0.660 alpha:1.000] forKey:@"bottomInset"];
-//	[colorList setColor:[NSColor colorWithCalibratedWhite:0.341 alpha:1.000] forKey:@"bottomBorder"];
 
 	[colorList setColor:[NSColor whiteColor] forKey:@"topInsetUnemphasized"];
 	[colorList setColor:[NSColor colorWithCalibratedWhite:0.970 alpha:1.000] forKey:@"gradientTopUnemphasized"];
@@ -105,16 +100,16 @@ static inline CGImageRef _createNoiseImageRef(NSUInteger width, NSUInteger heigh
 		[gradient drawInRect:rect angle:-90.0f];
 		
 		// Noise
-//		static CGImageRef noisePattern = nil;
-//		if (noisePattern == nil) {
-//			noisePattern = _createNoiseImageRef(128, 128, 0.015);
-//		}
-//			  
-//		CGContextSetBlendMode(context, kCGBlendModePlusLighter);
-//		CGRect noisePatternRect = CGRectZero;
-//		noisePatternRect.size = CGSizeMake(CGImageGetWidth(noisePattern), CGImageGetHeight(noisePattern));
-//		CGContextDrawTiledImage(context, noisePatternRect, noisePattern);
-		
+		static CGImageRef noisePattern = nil;
+		if (noisePattern == nil) {
+			noisePattern = _createNoiseImageRef(128, 128, 0.015);
+		}
+			  
+		CGContextSetBlendMode(context, kCGBlendModePlusLighter);
+		CGRect noisePatternRect = CGRectZero;
+		noisePatternRect.size = CGSizeMake(CGImageGetWidth(noisePattern), CGImageGetHeight(noisePattern));
+		CGContextDrawTiledImage(context, noisePatternRect, noisePattern);
+
 		// Title
 		NSImage *image = [NSImage imageNamed:@"title"];
 		rect = CGRectMake(roundf((drawingRect.size.width - 135.0f) / 2.0f), roundf((drawingRect.size.height - 24.0f) / 2.0f) + 1.0f, 135.0f, 24.0f);
@@ -122,9 +117,6 @@ static inline CGImageRef _createNoiseImageRef(NSUInteger width, NSUInteger heigh
 
 		CGContextRestoreGState(context);
 	}];
-
-//	NSButton *close = [self standardWindowButton:NSWindowCloseButton];
-//	close.cell = [[CDMTrafflicLightCell alloc] init];
 }
 
 @end
