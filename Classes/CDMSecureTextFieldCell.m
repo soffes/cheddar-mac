@@ -49,31 +49,40 @@ static CGFloat const kCDMTextFieldCellOuterShadowBlurRadius = 2.0f;
 	[super selectWithFrame:[self adjustedFrameToVerticallyCenterText:aRect] inView:controlView editor:editor delegate:delegate start:start length:length];
 }
 
-- (void)drawInteriorWithFrame:(NSRect)cellFrame inView:(NSView *)controlView
-{
+- (void)drawInteriorWithFrame:(NSRect)cellFrame inView:(NSView *)controlView {
     CGFloat scaleFactor = [[controlView window] backingScaleFactor];
     BOOL firstResponder = [controlView isFirstResponder];
-    NSRect drawingRect = NSInsetRect(cellFrame, (kCDMTextFieldCellOuterShadowBlurRadius * scaleFactor) + 0.5f, (kCDMTextFieldCellOuterShadowBlurRadius * scaleFactor) + 0.5f);
-    NSBezierPath *path = [NSBezierPath bezierPathWithRoundedRect:drawingRect xRadius:kCDMTextFieldCellCornerRadius yRadius:kCDMTextFieldCellCornerRadius];
+    
+	CGFloat inset = (kCDMTextFieldCellOuterShadowBlurRadius + 1.0f) * scaleFactor;
+    NSRect drawingRect = NSInsetRect(cellFrame, inset, inset);
+	NSBezierPath *path = [NSBezierPath bezierPathWithRoundedRect:drawingRect xRadius:kCDMTextFieldCellCornerRadius yRadius:kCDMTextFieldCellCornerRadius];
+	
     [firstResponder ? [NSColor cheddarOrangeColor] : [NSColor cheddarSteelColor] setStroke];
     [kCDMTextFieldCellFillColor setFill];
+    
     [NSGraphicsContext saveGraphicsState];
+	
     if (firstResponder) {
         NSShadow *outerShadow = [NSShadow new];
         [outerShadow setShadowBlurRadius:kCDMTextFieldCellOuterShadowBlurRadius * scaleFactor];
         [outerShadow setShadowColor:kCDMTextFieldCellOuterShadowColor];
         [outerShadow set];
     }
-    [path setLineWidth:scaleFactor];
+	
+    [path setLineWidth:2.0];
     [path stroke];
     [path fill];
+	
     NSShadow *shadow = [NSShadow new];
     [shadow setShadowBlurRadius:kCDMTextFieldCellInnerShadowBlurRadius * scaleFactor];
     [shadow setShadowColor:kCDMTextFieldCellInnerShadowColor];
+	
     NSBezierPath *shadowPath = [NSBezierPath bezierPathWithRect:drawingRect];
     [path addClip];
     [shadowPath fillWithInnerShadow:shadow];
+	
     [NSGraphicsContext restoreGraphicsState];
+	
     [super drawInteriorWithFrame:[self adjustedFrameToVerticallyCenterText:cellFrame] inView:controlView];
 }
 @end

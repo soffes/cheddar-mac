@@ -7,12 +7,15 @@
 //
 
 #import "CDMSignInWindowController.h"
+#import "NSColor+CDMAdditions.h"
+#import "CDMFlatButton.h"
 
 @implementation CDMSignInWindowController
 
 @synthesize usernameTextField = _usernameTextField;
 @synthesize passwordTextField = _passwordTextField;
-
+@synthesize signInButton = _signInButton;
+@synthesize signUpButton = _signUpButton;
 
 #pragma mark - NSWindowController
 
@@ -20,6 +23,12 @@
 	return @"SignIn";
 }
 
+- (void)windowDidLoad
+{
+    [super windowDidLoad];
+    [self.signInButton setButtonColor:[NSColor cheddarSteelColor]];
+    [self.signUpButton setButtonColor:[NSColor cheddarOrangeColor]];
+}
 
 #pragma mark - Actions
 
