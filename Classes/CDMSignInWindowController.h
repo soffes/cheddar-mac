@@ -11,6 +11,8 @@
 
 @property (weak) IBOutlet NSTextField *usernameTextField;
 @property (weak) IBOutlet NSSecureTextField *passwordTextField;
+@property (weak) IBOutlet NSTextField *usernameLabel;
+@property (weak) IBOutlet NSTextField *passwordLabel;
 @property (weak) IBOutlet CDMFlatButton *signUpButton;
 @property (weak) IBOutlet CDMFlatButton *signInButton;
 - (IBAction)signIn:(id)sender;

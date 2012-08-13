@@ -10,12 +10,17 @@
 #import "NSColor+CDMAdditions.h"
 #import "CDMFlatButton.h"
 
+#define CDMSignInWindowControllerLabelTextColor [NSColor colorWithDeviceWhite:0.267f alpha:1.f]
+#define CDMSignInWindowControllerFont [NSFont fontWithName:kCDMRegularFontName size:16.0]
+
 @implementation CDMSignInWindowController
 
 @synthesize usernameTextField = _usernameTextField;
 @synthesize passwordTextField = _passwordTextField;
 @synthesize signInButton = _signInButton;
 @synthesize signUpButton = _signUpButton;
+@synthesize usernameLabel = _usernameLabel;
+@synthesize passwordLabel = _passwordLabel;
 
 #pragma mark - NSWindowController
 
@@ -28,6 +33,12 @@
     [super windowDidLoad];
     [self.signInButton setButtonColor:[NSColor cheddarSteelColor]];
     [self.signUpButton setButtonColor:[NSColor cheddarOrangeColor]];
+    NSColor *color = CDMSignInWindowControllerLabelTextColor;
+    NSFont *font = CDMSignInWindowControllerFont;
+    [self.usernameLabel setTextColor:color];
+    [self.passwordLabel setTextColor:color];
+    [self.usernameLabel setFont:font];
+    [self.passwordLabel setFont:font];
 }
 
 #pragma mark - Actions
