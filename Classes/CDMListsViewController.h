@@ -12,6 +12,6 @@
 
 @property (nonatomic, weak) IBOutlet NSArrayController *arrayController;
 @property (nonatomic, weak) IBOutlet NSTableView *tableView;
-@property (nonatomic, weak) CDMTasksViewController *tasksViewController;
+@property (nonatomic, weak) IBOutlet CDMTasksViewController *tasksViewController;
 
 @end
