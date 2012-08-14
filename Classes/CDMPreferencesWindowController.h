@@ -10,10 +10,13 @@
 
 @interface CDMPreferencesWindowController : DBPrefsWindowController
 
-@property (strong, nonatomic) IBOutlet NSView *generalPreferenceView;
-@property (strong, nonatomic) IBOutlet NSView *accountPreferenceView;
-@property (strong, nonatomic) IBOutlet NSView *updatesPreferenceView;
+@property (weak, nonatomic) IBOutlet NSView *generalPreferenceView;
+@property (weak, nonatomic) IBOutlet NSView *accountPreferenceView;
+@property (weak, nonatomic) IBOutlet NSView *updatesPreferenceView;
+
+@property (weak, nonatomic) IBOutlet NSTextField *usernameLabel;
 
 - (IBAction)signOut:(id)sender;
+- (IBAction)manageAccount:(id)sender;
 
 @end

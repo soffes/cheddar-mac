@@ -13,6 +13,24 @@
 @synthesize generalPreferenceView = _generalPreferenceView;
 @synthesize accountPreferenceView = _accountPreferenceView;
 @synthesize updatesPreferenceView = _updatesPreferenceView;
+@synthesize usernameLabel = _usernameLabel;
+
+
+#pragma mark - NSWindowController
+
+- (void)showWindow:(id)sender {
+	if (![CDKUser currentUser]) {
+		return;
+	}
+	[super showWindow:sender];
+}
+
+
+- (void)windowDidLoad {
+	[super windowDidLoad];
+	self.usernameLabel.stringValue = [NSString stringWithFormat:@"You are signed in as %@.", [CDKUser currentUser].username];
+}
+
 
 #pragma mark - DBPrefsWindowController
 
@@ -30,6 +48,11 @@
 
 - (IBAction)signOut:(id)sender {
 	[CDKUser setCurrentUser:nil];
+}
+
+
+- (IBAction)manageAccount:(id)sender {
+	[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://cheddarapp.com/account"]];
 }
 
 @end
