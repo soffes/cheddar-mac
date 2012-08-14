@@ -59,7 +59,6 @@
 		B21FF57C15BF7D7C00AEEA97 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = B21FF2FE15BF7D7B00AEEA97 /* MainMenu.xib */; };
 		B21FF57D15BF7D7C00AEEA97 /* SignIn.xib in Resources */ = {isa = PBXBuildFile; fileRef = B21FF2FF15BF7D7B00AEEA97 /* SignIn.xib */; };
 		B21FF70315BF7D7C00AEEA97 /* Cheddar.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B21FF52515BF7D7C00AEEA97 /* Cheddar.xcdatamodeld */; };
-		B21FF70415BF7D7C00AEEA97 /* CheddarKitMac-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B21FF52815BF7D7C00AEEA97 /* CheddarKitMac-Info.plist */; };
 		B21FF70715BF7D7C00AEEA97 /* INAppStoreWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = B21FF52D15BF7D7C00AEEA97 /* INAppStoreWindow.m */; };
 		B24970C415CBC6A9008388E5 /* textfield-focused.png in Resources */ = {isa = PBXBuildFile; fileRef = B24970C015CBC6A9008388E5 /* textfield-focused.png */; };
 		B24970C515CBC6A9008388E5 /* textfield-focused@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B24970C115CBC6A9008388E5 /* textfield-focused@2x.png */; };
@@ -207,7 +206,6 @@
 		B21FF52115BF7D7C00AEEA97 /* CheddarKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = CheddarKit.xcodeproj; sourceTree = "<group>"; };
 		B21FF52615BF7D7C00AEEA97 /* Cheddar 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Cheddar 2.xcdatamodel"; sourceTree = "<group>"; };
 		B21FF52715BF7D7C00AEEA97 /* Cheddar.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Cheddar.xcdatamodel; sourceTree = "<group>"; };
-		B21FF52815BF7D7C00AEEA97 /* CheddarKitMac-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "CheddarKitMac-Info.plist"; sourceTree = "<group>"; };
 		B21FF52C15BF7D7C00AEEA97 /* INAppStoreWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INAppStoreWindow.h; sourceTree = "<group>"; };
 		B21FF52D15BF7D7C00AEEA97 /* INAppStoreWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INAppStoreWindow.m; sourceTree = "<group>"; };
 		B24970C015CBC6A9008388E5 /* textfield-focused.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "textfield-focused.png"; sourceTree = "<group>"; };
@@ -448,7 +446,6 @@
 			isa = PBXGroup;
 			children = (
 				B21FF52515BF7D7C00AEEA97 /* Cheddar.xcdatamodeld */,
-				B21FF52815BF7D7C00AEEA97 /* CheddarKitMac-Info.plist */,
 			);
 			path = "Other Sources";
 			sourceTree = "<group>";
@@ -661,7 +658,6 @@
 				B21FF57B15BF7D7C00AEEA97 /* MainWindow.xib in Resources */,
 				B21FF57C15BF7D7C00AEEA97 /* MainMenu.xib in Resources */,
 				B21FF57D15BF7D7C00AEEA97 /* SignIn.xib in Resources */,
-				B21FF70415BF7D7C00AEEA97 /* CheddarKitMac-Info.plist in Resources */,
 				B24970C415CBC6A9008388E5 /* textfield-focused.png in Resources */,
 				B24970C515CBC6A9008388E5 /* textfield-focused@2x.png in Resources */,
 				B24970C615CBC6A9008388E5 /* textfield.png in Resources */,
