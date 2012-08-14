@@ -57,6 +57,9 @@
 		03B3952E15DAC97900A8A7D4 /* CDMBoolToTaskTextColorValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 03B3952D15DAC97000A8A7D4 /* CDMBoolToTaskTextColorValueTransformer.m */; };
 		03CB266315DA1FAC00FEDF25 /* CDMAddListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CB266215DA1FAC00FEDF25 /* CDMAddListView.m */; };
 		03CB269015DA248E00FEDF25 /* CDMAddListTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CB268F15DA248E00FEDF25 /* CDMAddListTextFieldCell.m */; };
+		03F2D96B15DAD88C00EEC543 /* CDMPlusWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03F2D96A15DAD88C00EEC543 /* CDMPlusWindowController.m */; };
+		03F2D96D15DAD89900EEC543 /* Plus.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03F2D96C15DAD89900EEC543 /* Plus.xib */; };
+		03F2D97015DAD8C500EEC543 /* CDMPlusWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 03F2D96F15DAD8C500EEC543 /* CDMPlusWindow.m */; };
 		B209670B15DAB8E600E73B93 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B209670015DAB8BE00E73B93 /* Sparkle.framework */; };
 		B209670C15DABAAE00E73B93 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B209670015DAB8BE00E73B93 /* Sparkle.framework */; };
 		B21FF2C515BF7D6500AEEA97 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B21FF2C415BF7D6500AEEA97 /* Cocoa.framework */; };
@@ -318,6 +321,11 @@
 		03CB266215DA1FAC00FEDF25 /* CDMAddListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMAddListView.m; sourceTree = "<group>"; };
 		03CB268E15DA248E00FEDF25 /* CDMAddListTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMAddListTextFieldCell.h; sourceTree = "<group>"; };
 		03CB268F15DA248E00FEDF25 /* CDMAddListTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMAddListTextFieldCell.m; sourceTree = "<group>"; };
+		03F2D96915DAD88C00EEC543 /* CDMPlusWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMPlusWindowController.h; sourceTree = "<group>"; };
+		03F2D96A15DAD88C00EEC543 /* CDMPlusWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMPlusWindowController.m; sourceTree = "<group>"; };
+		03F2D96C15DAD89900EEC543 /* Plus.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Plus.xib; sourceTree = "<group>"; };
+		03F2D96E15DAD8C500EEC543 /* CDMPlusWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDMPlusWindow.h; path = Classes/CDMPlusWindow.h; sourceTree = "<group>"; };
+		03F2D96F15DAD8C500EEC543 /* CDMPlusWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDMPlusWindow.m; path = Classes/CDMPlusWindow.m; sourceTree = "<group>"; };
 		B209661815DAB8BD00E73B93 /* Sparkle.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Sparkle.xcodeproj; sourceTree = "<group>"; };
 		B21FF2C015BF7D6500AEEA97 /* Cheddar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cheddar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B21FF2C415BF7D6500AEEA97 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -409,6 +417,8 @@
 				B25B9C5D15CF2784005FA4A2 /* CDMMainWindow.m */,
 				0338828115D96201001FC04B /* CDMArchesWindow.h */,
 				0338828215D96201001FC04B /* CDMArchesWindow.m */,
+				03F2D96E15DAD8C500EEC543 /* CDMPlusWindow.h */,
+				03F2D96F15DAD8C500EEC543 /* CDMPlusWindow.m */,
 			);
 			name = Windows;
 			path = ..;
@@ -569,6 +579,7 @@
 				B21FF2FF15BF7D7B00AEEA97 /* SignIn.xib */,
 				B2A23DA315D9997700EA9D2D /* About.xib */,
 				B2A23DA515D9997E00EA9D2D /* Preferences.xib */,
+				03F2D96C15DAD89900EEC543 /* Plus.xib */,
 			);
 			path = Nibs;
 			sourceTree = "<group>";
@@ -742,6 +753,8 @@
 				B2A23D7815D997D900EA9D2D /* CDMAboutWindowController.m */,
 				B2A23D7A15D997E300EA9D2D /* CDMPreferencesWindowController.h */,
 				B2A23D7B15D997E300EA9D2D /* CDMPreferencesWindowController.m */,
+				03F2D96915DAD88C00EEC543 /* CDMPlusWindowController.h */,
+				03F2D96A15DAD88C00EEC543 /* CDMPlusWindowController.m */,
 			);
 			name = "Window Controllers";
 			sourceTree = "<group>";
@@ -1040,6 +1053,7 @@
 				B27CBB4F15DA233C00BC851F /* x@2x.png in Resources */,
 				03B3951C15DAB73000A8A7D4 /* Localizable.strings in Resources */,
 				B2F1F86D15DAC697002B9733 /* dsa_pub.pem in Resources */,
+				03F2D96D15DAD89900EEC543 /* Plus.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1089,6 +1103,8 @@
 				03B3951F15DABFD900A8A7D4 /* CDMTextField.m in Sources */,
 				03B3952815DAC66E00A8A7D4 /* CDMTaskTextField.m in Sources */,
 				03B3952E15DAC97900A8A7D4 /* CDMBoolToTaskTextColorValueTransformer.m in Sources */,
+				03F2D96B15DAD88C00EEC543 /* CDMPlusWindowController.m in Sources */,
+				03F2D97015DAD8C500EEC543 /* CDMPlusWindow.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

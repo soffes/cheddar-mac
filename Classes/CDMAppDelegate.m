@@ -13,12 +13,16 @@
 #import "CDMDefines.h"
 #import "CDMListsViewController.h"
 #import "CDMTasksViewController.h"
+#import "CDMPlusWindowController.h"
 
 @interface CDMAppDelegate ()
 - (void)_userChanged:(NSNotification *)notification;
+- (void)_showPlusWindowIfNecessary;
 @end
 
-@implementation CDMAppDelegate
+@implementation CDMAppDelegate {
+    CDMPlusWindowController *_plusWindowController;
+}
 
 @synthesize signInWindowController = _signInWindowController;
 @synthesize mainWindowController = _mainWindowController;
@@ -75,6 +79,18 @@
 	}
 }
 
+- (void)_showPlusWindowIfNecessary
+{
+    NSWindow *mainWindow = [_mainWindowController window];
+    _plusWindowController = [[CDMPlusWindowController alloc] init];
+    _plusWindowController.parentWindow = mainWindow;
+    NSWindow *overlayWindow = [_plusWindowController window];
+    [overlayWindow setAlphaValue:0.f];
+    [overlayWindow setFrame:[mainWindow frame] display:YES animate:NO];
+    [mainWindow addChildWindow:overlayWindow ordered:NSWindowAbove];
+    [overlayWindow makeKeyAndOrderFront:nil];
+    [[overlayWindow animator] setAlphaValue:1.f];
+}
 
 #pragma mark - NSMenuDelegate
 
@@ -128,6 +144,7 @@
 		// Add observer for sign out
 		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(_userChanged:) name:kCDKCurrentUserChangedNotificationName object:nil];
 	});
+    [self _showPlusWindowIfNecessary];
 }
 
 
