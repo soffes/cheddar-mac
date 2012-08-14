@@ -46,7 +46,7 @@
 				<string key="NSClassName">NSApplication</string>
 			</object>
 			<object class="NSViewController" id="845133359"/>
-				<nil key="NSNextResponder"/>
+			<object class="NSViewController" id="666935639"/>
 			<object class="NSWindowTemplate" id="1005">
 				<int key="NSWindowStyleMask">15</int>
 				<int key="NSWindowBacking">2</int>
@@ -58,6 +58,7 @@
 				<nil key="NSUserInterfaceItemIdentifier"/>
 				<string key="NSWindowContentMinSize">{300, 300}</string>
 				<object class="NSView" key="NSWindowView" id="1006">
+					<reference key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
 					<array class="NSMutableArray" key="NSSubviews">
 						<object class="NSSplitView" id="964323735">
@@ -238,13 +239,14 @@
 										</object>
 									</array>
 									<string key="NSFrameSize">{200, 449}</string>
+									<reference key="NSSuperview" ref="964323735"/>
 									<reference key="NSWindow"/>
 									<reference key="NSNextKeyView" ref="56518651"/>
 									<string key="NSReuseIdentifierKey">_NS:11</string>
 									<string key="NSClassName">NSView</string>
 								</object>
 								<object class="NSCustomView" id="97112713">
-				<nil key="NSNextResponder"/>
+									<reference key="NSNextResponder" ref="964323735"/>
 									<int key="NSvFlags">256</int>
 									<array class="NSMutableArray" key="NSSubviews">
 										<object class="NSCustomView" id="63484262">
@@ -408,6 +410,7 @@
 												</object>
 											</array>
 											<string key="NSFrameSize">{408, 390}</string>
+											<reference key="NSSuperview" ref="97112713"/>
 											<reference key="NSWindow"/>
 											<reference key="NSNextKeyView" ref="877182312"/>
 											<string key="NSReuseIdentifierKey">_NS:9</string>
@@ -432,7 +435,7 @@
 							<string key="NSFrameSize">{609, 449}</string>
 							<reference key="NSSuperview" ref="1006"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView"/>
+							<reference key="NSNextKeyView" ref="746060700"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<bool key="NSIsVertical">YES</bool>
 							<int key="NSDividerStyle">2</int>
@@ -497,7 +500,7 @@
 							<string key="NSFrame">{{20, 80}, {327, 40}}</string>
 							<reference key="NSSuperview" ref="1055725255"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView" ref="972181394"/>
+							<reference key="NSNextKeyView" ref="882113657"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSTextFieldCell" key="NSCell" id="347546766">
@@ -517,7 +520,7 @@
 						<object class="NSButton" id="771441868">
 							<reference key="NSNextResponder" ref="1055725255"/>
 							<int key="NSvFlags">268</int>
-							<string key="NSFrame">{{242, 20}, {105, 40}}</string>
+							<string key="NSFrame">{{238, 20}, {109, 40}}</string>
 							<reference key="NSSuperview" ref="1055725255"/>
 							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView"/>
@@ -539,22 +542,22 @@
 							</object>
 							<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 						</object>
-						<object class="NSButton" id="972181394">
+						<object class="NSButton" id="882113657">
 							<reference key="NSNextResponder" ref="1055725255"/>
 							<int key="NSvFlags">268</int>
-							<string key="NSFrame">{{144, 20}, {88, 40}}</string>
+							<string key="NSFrame">{{145, 20}, {83, 40}}</string>
 							<reference key="NSSuperview" ref="1055725255"/>
 							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="771441868"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<bool key="NSEnabled">YES</bool>
-							<object class="NSButtonCell" key="NSCell" id="416712843">
+							<object class="NSButtonCell" key="NSCell" id="51082437">
 								<int key="NSCellFlags">67108864</int>
 								<int key="NSCellFlags2">134217728</int>
 								<string key="NSContents">Cancel</string>
 								<reference key="NSSupport" ref="1017777950"/>
 								<string key="NSCellIdentifier">_NS:9</string>
-								<reference key="NSControlView" ref="972181394"/>
+								<reference key="NSControlView" ref="882113657"/>
 								<int key="NSButtonFlags">-2038284288</int>
 								<int key="NSButtonFlags2">134</int>
 								<string key="NSAlternateContents"/>
@@ -575,9 +578,6 @@
 				<string key="NSMaxSize">{10000000000000, 10000000000000}</string>
 				<bool key="NSWindowIsRestorable">YES</bool>
 			</object>
-						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
-				<reference key="NSWindow"/>
 		</array>
 		<object class="IBObjectContainer" key="IBDocument.Objects">
 			<array class="NSMutableArray" key="connectionRecords">
@@ -676,30 +676,6 @@
 						<reference key="destination" ref="882113657"/>
 					</object>
 					<int key="connectionID">359</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">createListButton</string>
-						<reference key="source" ref="1001"/>
-						<reference key="destination" ref="771441868"/>
-					</object>
-					<int key="connectionID">363</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">closeCreateList:</string>
-						<reference key="source" ref="1001"/>
-						<reference key="destination" ref="972181394"/>
-					</object>
-					<int key="connectionID">366</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">cancelListButton</string>
-						<reference key="source" ref="1001"/>
-						<reference key="destination" ref="972181394"/>
-					</object>
-					<int key="connectionID">367</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -1078,7 +1054,6 @@
 						<array class="NSMutableArray" key="children">
 							<reference ref="746060700"/>
 							<reference ref="97112713"/>
-							<reference ref="972181394"/>
 						</array>
 						<reference key="parent" ref="1006"/>
 					</object>
@@ -1329,19 +1304,6 @@
 						<reference key="object" ref="51082437"/>
 						<reference key="parent" ref="882113657"/>
 					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">364</int>
-						<reference key="object" ref="972181394"/>
-						<array class="NSMutableArray" key="children">
-							<reference ref="416712843"/>
-						</array>
-						<reference key="parent" ref="1055725255"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">365</int>
-						<reference key="object" ref="416712843"/>
-						<reference key="parent" ref="972181394"/>
-					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -1411,9 +1373,6 @@
 				<string key="356.CustomClassName">CDMFlatButton</string>
 				<string key="356.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="357.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="364.CustomClassName">CDMFlatButton</string>
-				<string key="364.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="365.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="80.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="80.ibExternalFetchPredicateFormat"/>
 			</dictionary>
@@ -1421,7 +1380,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">367</int>
+			<int key="maxID">359</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -1528,7 +1487,6 @@
 						<string key="createListButton">CDMFlatButton</string>
 						<string key="createListPanel">NSPanel</string>
 						<string key="listsViewController">CDMListsViewController</string>
-						<string key="splitView">RBSplitView</string>
 						<string key="splitViewLeft">NSView</string>
 						<string key="tasksViewController">CDMTasksViewController</string>
 					</dictionary>
@@ -1548,10 +1506,6 @@
 						<object class="IBToOneOutletInfo" key="listsViewController">
 							<string key="name">listsViewController</string>
 							<string key="candidateClassName">CDMListsViewController</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="splitView">
-							<string key="name">splitView</string>
-							<string key="candidateClassName">RBSplitView</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="splitViewLeft">
 							<string key="name">splitViewLeft</string>
@@ -1627,33 +1581,6 @@
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">./Classes/INAppStoreWindow.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">RBSplitSubview</string>
-					<string key="superclassName">NSView</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/RBSplitSubview.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">RBSplitView</string>
-					<string key="superclassName">RBSplitSubview</string>
-					<object class="NSMutableDictionary" key="outlets">
-						<string key="NS.key.0">delegate</string>
-						<string key="NS.object.0">id</string>
-					</object>
-					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<string key="NS.key.0">delegate</string>
-						<object class="IBToOneOutletInfo" key="NS.object.0">
-							<string key="name">delegate</string>
-							<string key="candidateClassName">id</string>
-						</object>
-					</object>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/RBSplitView.h</string>
 					</object>
 				</object>
 			</array>
