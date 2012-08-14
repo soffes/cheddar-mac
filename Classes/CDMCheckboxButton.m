@@ -22,4 +22,9 @@
 	[self.cell drawBezelWithFrame:self.bounds inView:self];
 }
 
+
+- (BOOL)isFlipped {
+	return NO;
+}
+
 @end

@@ -16,11 +16,7 @@
 
 	NSColor *cheddarSteelColor = [NSColor colorWithCalibratedRed:0.53 green:0.55 blue:0.59 alpha:1.0];
 
-	if (button.state == NSOnState) {
-		// TODO: This should drag the checkmark instead
-		cheddarSteelColor = [NSColor redColor];
-	}
-
+	CGFloat scaleFactor = [[controlView window] backingScaleFactor];
 	NSColor *cheddarCheckboxInnerShadow = [NSColor colorWithCalibratedRed:0.75 green:0.75 blue:0.75 alpha:0.4];
 
 	NSBezierPath *roundedRectanglePath = [NSBezierPath bezierPathWithRoundedRect: NSMakeRect(0.5, 0.5, 18, 18) xRadius: 5 yRadius: 5];
@@ -28,13 +24,18 @@
 	[roundedRectanglePath fill];
 
 	[cheddarSteelColor setStroke];
-	[roundedRectanglePath setLineWidth:1.0];
+	[roundedRectanglePath setLineWidth:scaleFactor];
 	[roundedRectanglePath stroke];
 
 	NSBezierPath *roundedRectangle2Path = [NSBezierPath bezierPathWithRoundedRect: NSMakeRect(1.5, 1.5, 16, 16) xRadius: 4 yRadius: 4];
 	[cheddarCheckboxInnerShadow setStroke];
-	[roundedRectangle2Path setLineWidth:1.0];
+	[roundedRectangle2Path setLineWidth:scaleFactor];
 	[roundedRectangle2Path stroke];
+
+	if (button.state == NSOnState) {
+		NSImage *check = [NSImage imageNamed:@"check"];
+		[check drawInRect:CGRectMake(3.0f, 4.0f, 14.0f, 11.0f) fromRect:CGRectMake(0.0f, 0.0f, 14.0f, 11.0f) operation:NSCompositeSourceOver fraction:1.0f];
+	}
 }
 
 @end

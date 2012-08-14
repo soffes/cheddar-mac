@@ -75,6 +75,8 @@
 		B25E13AD15CBB19B009751B9 /* CDMListTableCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = B25E13AC15CBB19B009751B9 /* CDMListTableCellView.m */; };
 		B25E13B815CBC2AF009751B9 /* CDMAddTaskView.m in Sources */ = {isa = PBXBuildFile; fileRef = B25E13B715CBC2AF009751B9 /* CDMAddTaskView.m */; };
 		B25E13BB15CBC514009751B9 /* CDMAddTaskTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = B25E13BA15CBC514009751B9 /* CDMAddTaskTextField.m */; };
+		B27CB9B115D9E2B600BC851F /* check.png in Resources */ = {isa = PBXBuildFile; fileRef = B27CB9AF15D9E2B600BC851F /* check.png */; };
+		B27CB9B215D9E2B600BC851F /* check@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B27CB9B015D9E2B600BC851F /* check@2x.png */; };
 		B2A18D9415D8B9C4002942A5 /* CDMCheckboxButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B2A18D9315D8B9C4002942A5 /* CDMCheckboxButtonCell.m */; };
 		B2A18D9715D8BA24002942A5 /* CDMCheckboxButton.m in Sources */ = {isa = PBXBuildFile; fileRef = B2A18D9615D8BA24002942A5 /* CDMCheckboxButton.m */; };
 		B2A23D1515D988AB00EA9D2D /* NSColor+CDMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B2A23D1415D988AB00EA9D2D /* NSColor+CDMAdditions.m */; };
@@ -232,6 +234,8 @@
 		B25E13B715CBC2AF009751B9 /* CDMAddTaskView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMAddTaskView.m; sourceTree = "<group>"; };
 		B25E13B915CBC513009751B9 /* CDMAddTaskTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMAddTaskTextField.h; sourceTree = "<group>"; };
 		B25E13BA15CBC514009751B9 /* CDMAddTaskTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMAddTaskTextField.m; sourceTree = "<group>"; };
+		B27CB9AF15D9E2B600BC851F /* check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check.png; sourceTree = "<group>"; };
+		B27CB9B015D9E2B600BC851F /* check@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "check@2x.png"; sourceTree = "<group>"; };
 		B2A18D9215D8B9C4002942A5 /* CDMCheckboxButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMCheckboxButtonCell.h; sourceTree = "<group>"; };
 		B2A18D9315D8B9C4002942A5 /* CDMCheckboxButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMCheckboxButtonCell.m; sourceTree = "<group>"; };
 		B2A18D9515D8BA24002942A5 /* CDMCheckboxButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMCheckboxButton.h; sourceTree = "<group>"; };
@@ -360,6 +364,8 @@
 		B21FF2FA15BF7D7B00AEEA97 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				B27CB9AF15D9E2B600BC851F /* check.png */,
+				B27CB9B015D9E2B600BC851F /* check@2x.png */,
 				B2B2E15315D9ACA1008672DA /* preferences-updates.png */,
 				033882AA15D968A6001FC04B /* sign-in-logo.png */,
 				033882AB15D968A6001FC04B /* sign-in-logo@2x.png */,
@@ -698,6 +704,8 @@
 				B2A23DA415D9997700EA9D2D /* About.xib in Resources */,
 				B2A23DA615D9997E00EA9D2D /* Preferences.xib in Resources */,
 				B2B2E15915D9ACA1008672DA /* preferences-updates.png in Resources */,
+				B27CB9B115D9E2B600BC851F /* check.png in Resources */,
+				B27CB9B215D9E2B600BC851F /* check@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

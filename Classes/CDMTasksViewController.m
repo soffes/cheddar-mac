@@ -72,8 +72,8 @@ NSString* const kCDMTasksDragTypeMove = @"CDMTasksDragTypeMove";
     return (operation == NSTableViewDropAbove) ? NSDragOperationMove : NSDragOperationNone;
 }
 
-- (BOOL)tableView:(NSTableView *)aTableView acceptDrop:(id < NSDraggingInfo >)info row:(NSInteger)row dropOperation:(NSTableViewDropOperation)operation
-{
+
+- (BOOL)tableView:(NSTableView *)aTableView acceptDrop:(id < NSDraggingInfo >)info row:(NSInteger)row dropOperation:(NSTableViewDropOperation)operation {
     NSMutableArray *tasks = [self.arrayController.arrangedObjects mutableCopy];
     NSPasteboard *pasteboard = [info draggingPasteboard];
     NSIndexSet *originalIndexes = [NSKeyedUnarchiver unarchiveObjectWithData:[pasteboard dataForType:kCDMTasksDragTypeRearrange]];
