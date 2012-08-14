@@ -14,5 +14,8 @@
 @property (nonatomic, strong) IBOutlet CDMListsViewController *listsViewController;
 @property (nonatomic, strong) IBOutlet CDMTasksViewController *tasksViewController;
 @property (nonatomic, weak) IBOutlet NSView *splitViewLeft;
+@property (nonatomic, weak) IBOutlet NSPanel *createListPanel;
+
+- (IBAction)createList:(id)sender;
 
 @end

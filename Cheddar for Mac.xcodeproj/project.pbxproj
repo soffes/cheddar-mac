@@ -96,6 +96,76 @@
 			remoteGlobalIDString = B244408515BE53DC00D4D4CA;
 			remoteInfo = CheddarKit;
 		};
+		B27CBAB715DA0A1C00BC851F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B27CBA7A15DA0A1B00BC851F /* RBSplitView.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D5E002A107328E1100594182;
+			remoteInfo = "Framework(Leo)";
+		};
+		B27CBAB915DA0A1C00BC851F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B27CBA7A15DA0A1B00BC851F /* RBSplitView.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8D1AC9740486D14A00FE50C9;
+			remoteInfo = "IBPlugin(Leo)";
+		};
+		B27CBABB15DA0A1C00BC851F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B27CBA7A15DA0A1B00BC851F /* RBSplitView.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D5E003B9073298FC00594182;
+			remoteInfo = "Library(Leo)";
+		};
+		B27CBABD15DA0A1C00BC851F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B27CBA7A15DA0A1B00BC851F /* RBSplitView.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D5EA8A09074CF5AB00AE807E;
+			remoteInfo = "SampleApp(Leo)";
+		};
+		B27CBABF15DA0A1C00BC851F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B27CBA7A15DA0A1B00BC851F /* RBSplitView.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D57553981082D7BC008B2348;
+			remoteInfo = "SampleApp(LeoGC)";
+		};
+		B27CBAC115DA0A1C00BC851F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B27CBA7A15DA0A1B00BC851F /* RBSplitView.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D57553D91082D9DA008B2348;
+			remoteInfo = "Framework(Sno)";
+		};
+		B27CBAC315DA0A1C00BC851F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B27CBA7A15DA0A1B00BC851F /* RBSplitView.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D57553F71082DA31008B2348;
+			remoteInfo = "IBPlugin(Sno)";
+		};
+		B27CBAC515DA0A1C00BC851F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B27CBA7A15DA0A1B00BC851F /* RBSplitView.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D575526B1081C668008B2348;
+			remoteInfo = "Library(Sno)";
+		};
+		B27CBAC715DA0A1C00BC851F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B27CBA7A15DA0A1B00BC851F /* RBSplitView.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D57552A51081CB10008B2348;
+			remoteInfo = "SampleApp(Sno)";
+		};
+		B27CBAC915DA0A1C00BC851F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B27CBA7A15DA0A1B00BC851F /* RBSplitView.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D57552D61081D325008B2348;
+			remoteInfo = "SampleApp(SnoGC)";
+		};
 		B2D8D5EF15BF7F9100A61836 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B21FF52115BF7D7C00AEEA97 /* CheddarKit.xcodeproj */;
@@ -222,6 +292,7 @@
 		B27CBA1315D9EBCE00BC851F /* CDMConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMConstants.m; sourceTree = "<group>"; };
 		B27CBA2E15D9F12800BC851F /* SNRFetchedResultsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNRFetchedResultsController.h; sourceTree = "<group>"; };
 		B27CBA2F15D9F12800BC851F /* SNRFetchedResultsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNRFetchedResultsController.m; sourceTree = "<group>"; };
+		B27CBA7A15DA0A1B00BC851F /* RBSplitView.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = RBSplitView.xcodeproj; sourceTree = "<group>"; };
 		B2A23D1315D988AB00EA9D2D /* NSColor+CDMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSColor+CDMAdditions.h"; sourceTree = "<group>"; };
 		B2A23D1415D988AB00EA9D2D /* NSColor+CDMAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSColor+CDMAdditions.m"; sourceTree = "<group>"; };
 		B2A23D7715D997D900EA9D2D /* CDMAboutWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMAboutWindowController.h; sourceTree = "<group>"; };
@@ -411,6 +482,7 @@
 		B21FF30015BF7D7B00AEEA97 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				B27CBA5F15DA0A1B00BC851F /* RBSplitView */,
 				B27CBA2B15D9F12800BC851F /* SNRFetchedResultsController */,
 				B21FF30115BF7D7B00AEEA97 /* CheddarKit */,
 				B21FF52A15BF7D7C00AEEA97 /* INAppStoreWindow */,
@@ -529,6 +601,31 @@
 			path = SNRFetchedResultsController;
 			sourceTree = "<group>";
 		};
+		B27CBA5F15DA0A1B00BC851F /* RBSplitView */ = {
+			isa = PBXGroup;
+			children = (
+				B27CBA7A15DA0A1B00BC851F /* RBSplitView.xcodeproj */,
+			);
+			path = RBSplitView;
+			sourceTree = "<group>";
+		};
+		B27CBA7B15DA0A1B00BC851F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B27CBAB815DA0A1C00BC851F /* RBSplitView(Leo).framework */,
+				B27CBABA15DA0A1C00BC851F /* RBSplitView(Leo).ibplugin */,
+				B27CBABC15DA0A1C00BC851F /* libRBSplitView(Leo).a */,
+				B27CBABE15DA0A1C00BC851F /* SampleApp(Leo).app */,
+				B27CBAC015DA0A1C00BC851F /* SampleApp(LeoGC).app */,
+				B27CBAC215DA0A1C00BC851F /* RBSplitView(Sno).framework */,
+				B27CBAC415DA0A1C00BC851F /* RBSplitView(Sno).ibplugin */,
+				B27CBAC615DA0A1C00BC851F /* libRBSplitView(Sno).a */,
+				B27CBAC815DA0A1C00BC851F /* SampleApp(Sno).app */,
+				B27CBACA15DA0A1C00BC851F /* SampleApp(SnoGC).app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		B2A23D1015D9817F00EA9D2D /* Window Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -618,6 +715,10 @@
 					ProductGroup = B21FF52215BF7D7C00AEEA97 /* Products */;
 					ProjectRef = B21FF52115BF7D7C00AEEA97 /* CheddarKit.xcodeproj */;
 				},
+				{
+					ProductGroup = B27CBA7B15DA0A1B00BC851F /* Products */;
+					ProjectRef = B27CBA7A15DA0A1B00BC851F /* RBSplitView.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -632,6 +733,76 @@
 			fileType = archive.ar;
 			path = libCheddarKit.a;
 			remoteRef = B21FF72015BF7D7D00AEEA97 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B27CBAB815DA0A1C00BC851F /* RBSplitView(Leo).framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = "RBSplitView(Leo).framework";
+			remoteRef = B27CBAB715DA0A1C00BC851F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B27CBABA15DA0A1C00BC851F /* RBSplitView(Leo).ibplugin */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "RBSplitView(Leo).ibplugin";
+			remoteRef = B27CBAB915DA0A1C00BC851F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B27CBABC15DA0A1C00BC851F /* libRBSplitView(Leo).a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libRBSplitView(Leo).a";
+			remoteRef = B27CBABB15DA0A1C00BC851F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B27CBABE15DA0A1C00BC851F /* SampleApp(Leo).app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "SampleApp(Leo).app";
+			remoteRef = B27CBABD15DA0A1C00BC851F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B27CBAC015DA0A1C00BC851F /* SampleApp(LeoGC).app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "SampleApp(LeoGC).app";
+			remoteRef = B27CBABF15DA0A1C00BC851F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B27CBAC215DA0A1C00BC851F /* RBSplitView(Sno).framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = "RBSplitView(Sno).framework";
+			remoteRef = B27CBAC115DA0A1C00BC851F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B27CBAC415DA0A1C00BC851F /* RBSplitView(Sno).ibplugin */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "RBSplitView(Sno).ibplugin";
+			remoteRef = B27CBAC315DA0A1C00BC851F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B27CBAC615DA0A1C00BC851F /* libRBSplitView(Sno).a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libRBSplitView(Sno).a";
+			remoteRef = B27CBAC515DA0A1C00BC851F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B27CBAC815DA0A1C00BC851F /* SampleApp(Sno).app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "SampleApp(Sno).app";
+			remoteRef = B27CBAC715DA0A1C00BC851F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B27CBACA15DA0A1C00BC851F /* SampleApp(SnoGC).app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "SampleApp(SnoGC).app";
+			remoteRef = B27CBAC915DA0A1C00BC851F /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		B2D8D5F015BF7F9100A61836 /* CheddarKit.framework */ = {

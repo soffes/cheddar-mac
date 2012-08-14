@@ -29,6 +29,8 @@ void SSDrawGradientInRect(CGContextRef context, CGGradientRef gradient, CGRect r
 @synthesize listsViewController = _listsViewController;
 @synthesize tasksViewController = _tasksViewController;
 @synthesize splitViewLeft = _splitViewLeft;
+@synthesize createListPanel = _createListPanel;
+
 
 #pragma mark - NSObject
 
@@ -56,6 +58,13 @@ void SSDrawGradientInRect(CGContextRef context, CGGradientRef gradient, CGRect r
 }
 
 
+#pragma mark - Actions
+
+- (IBAction)createList:(id)sender {
+	[NSApp beginSheet:self.createListPanel modalForWindow:self.window modalDelegate:nil didEndSelector:nil contextInfo:nil];
+}
+
+
 #pragma mark - Private
 
 - (void)_userChanged:(NSNotification *)notification {
@@ -73,5 +82,13 @@ void SSDrawGradientInRect(CGContextRef context, CGGradientRef gradient, CGRect r
     // Don't resize the sidebar
     return subview != self.splitViewLeft;
 }
+
+
+#pragma mark - NSWindowDelegate
+
+//- (NSRect)window:(NSWindow *)window willPositionSheet:(NSWindow *)sheet usingRect:(NSRect)rect {
+//	CGFloat width = rect.size.width;
+//	return CGRectMake(roundf((window.frame.size.width - width) / 2.0f), 40.0f, width, 1.0f);
+//}
 
 @end
