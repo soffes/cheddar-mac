@@ -8,21 +8,20 @@
 
 #import "CDMShadowTableView.h"
 
-@implementation CDMShadowTableView
+#define CDMShadowTableViewBottomColor [NSColor colorWithDeviceWhite:0.937f alpha:0.0f]
+#define CDMShadowTableViewTopColor [NSColor colorWithDeviceWhite:0.937f alpha:1.0f]
 
-- (id)initWithFrame:(NSRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code here.
-    }
-    
-    return self;
-}
+@implementation CDMShadowTableView
 
 - (void)drawRect:(NSRect)dirtyRect
 {
-    // Drawing code here.
+    [super drawRect:dirtyRect];
+    if ([self numberOfRows]) {
+        NSRect rowRect = [self rectOfRow:[self numberOfRows] - 1];
+        NSRect gradientRect = NSMakeRect(0.f, NSMaxY(rowRect), [self bounds].size.width, 3.f);
+        NSGradient *gradient = [[NSGradient alloc] initWithStartingColor:CDMShadowTableViewBottomColor endingColor:CDMShadowTableViewTopColor];
+        [gradient drawInRect:gradientRect angle:270.f];
+    }
 }
 
 @end
