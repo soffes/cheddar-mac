@@ -11,5 +11,5 @@
 @interface CDMTasksViewController : NSViewController
 @property (nonatomic, weak) IBOutlet NSArrayController *arrayController;
 @property (nonatomic, weak) IBOutlet NSTableView *tableView;
-- (void)selectList:(CDKList*)list;
+@property (nonatomic, strong) CDKList *selectedList;
 @end

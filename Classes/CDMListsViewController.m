@@ -39,7 +39,7 @@
     NSInteger selectedRow = [self.tableView selectedRow];
     if (selectedRow != -1) {
         CDKList *list = [[self.arrayController arrangedObjects] objectAtIndex:selectedRow];
-        [self.tasksViewController selectList:list];
+        [self.tasksViewController setSelectedList:list];
     }
 }
 

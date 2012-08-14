@@ -31,7 +31,7 @@
 
 
 - (IBAction)showMainWindow:(id)sender {
-	[_listsWindowController showWindow:sender];
+	[_mainWindowController showWindow:sender];
 }
 
 
