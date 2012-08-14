@@ -13,6 +13,9 @@
 #import "CDMFlatButton.h"
 #import "NSColor+CDMAdditions.h"
 
+static CGFloat const kCDMMainWindowControllerMinLeftWidth = 100.f;
+static NSString* const kCDMLastDividerPositionKey = @"CDMLastDividerPosition";
+
 void SSDrawGradientInRect(CGContextRef context, CGGradientRef gradient, CGRect rect) {
 	CGContextSaveGState(context);
 	CGContextClipToRect(context, rect);
@@ -31,6 +34,7 @@ void SSDrawGradientInRect(CGContextRef context, CGGradientRef gradient, CGRect r
 @synthesize listsViewController = _listsViewController;
 @synthesize tasksViewController = _tasksViewController;
 @synthesize splitViewLeft = _splitViewLeft;
+@synthesize splitView = _splitView;
 
 
 #pragma mark - NSObject
@@ -42,6 +46,15 @@ void SSDrawGradientInRect(CGContextRef context, CGGradientRef gradient, CGRect r
 	return self;
 }
 
+#pragma mark - Actions
+
+- (IBAction)toggleSidebar:(id)sender {
+    if (![self.splitViewLeft isHidden]) {
+        [self.splitView setPosition:0.f ofDividerAtIndex:0];
+    } else {
+        [self.splitView setPosition:[[NSUserDefaults standardUserDefaults] floatForKey:kCDMLastDividerPositionKey] ofDividerAtIndex:0];
+    }
+}
 
 #pragma mark - NSWindowController
 
@@ -56,6 +69,12 @@ void SSDrawGradientInRect(CGContextRef context, CGGradientRef gradient, CGRect r
 	}
 
 	[super showWindow:sender];
+}
+
+- (void)windowDidLoad
+{
+    [super windowDidLoad];
+    [[NSUserDefaults standardUserDefaults] setFloat:NSMaxX([self.splitViewLeft frame]) forKey:kCDMLastDividerPositionKey];
 }
 
 #pragma mark - Private
@@ -73,7 +92,38 @@ void SSDrawGradientInRect(CGContextRef context, CGGradientRef gradient, CGRect r
 
 - (BOOL)splitView:(NSSplitView *)splitView shouldAdjustSizeOfSubview:(NSView *)subview {
     // Don't resize the sidebar
+    // Only prevent the subview from resizing when the user is resizing the window
+    // We don't want to prevent any other cases where the view may be resized (e.g. restoring autosave)
     return subview != self.splitViewLeft && [[self window] inLiveResize];
 }
 
+// Good docs here <http://manicwave.com/blog/2009/12/28/unraveling-the-mysteries-of-nssplitview-part-1/>
+
+- (CGFloat)splitView:(NSSplitView *)splitView constrainMinCoordinate:(CGFloat)proposedMin ofSubviewAt:(NSInteger)dividerIndex
+{
+    return proposedMin + kCDMMainWindowControllerMinLeftWidth;
+}
+
+- (BOOL)splitView:(NSSplitView *)splitView canCollapseSubview:(NSView *)subview
+{
+    // Allow for the collapsing of the sidebar
+    return subview == self.splitViewLeft;
+}
+
+- (void)splitViewDidResizeSubviews:(NSNotification *)aNotification
+{
+    if (![self.splitViewLeft isHidden]) {
+        [[NSUserDefaults standardUserDefaults] setFloat:NSMaxX([self.splitViewLeft frame]) forKey:kCDMLastDividerPositionKey];
+    }
+}
+
+#pragma mark - NSMenuDelegate
+
+- (void)menuNeedsUpdate:(NSMenu *)menu
+{
+    NSMenuItem *showHide = [menu itemAtIndex:0];
+    [showHide setTitle:NSLocalizedString([self.splitViewLeft isHidden] ? @"Show Sidebar" : @"Hide Sidebar", nil)];
+    [showHide setTarget:self];
+    [showHide setAction:@selector(toggleSidebar:)];
+}
 @end

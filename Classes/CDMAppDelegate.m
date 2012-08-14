@@ -18,7 +18,7 @@
 
 @synthesize signInWindowController = _signInWindowController;
 @synthesize mainWindowController = _mainWindowController;
-
+@synthesize viewMenu = _viewMenu;
 
 #pragma mark - Class Methods
 
@@ -67,6 +67,7 @@
 	[[CDKHTTPClient sharedClient] setClientID:kCDMAPIClientID secret:kCDMAPIClientSecret];
 
 	_mainWindowController = [[CDMMainWindowController alloc] init];
+    self.viewMenu.delegate = _mainWindowController;
 	[_mainWindowController showWindow:nil];
 
 	if (![CDKUser currentUser]) {
