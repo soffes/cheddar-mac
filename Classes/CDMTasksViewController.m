@@ -61,8 +61,7 @@ static CGFloat const kCDMTasksViewControllerAddListAnimationDuration = 0.1f;
     }];
 }
 
-- (IBAction)addList:(id)sender
-{
+- (IBAction)addList:(id)sender {
     if ([self.addListView superview]) {
         [self closeAddList:nil];
         return;
@@ -89,8 +88,7 @@ static CGFloat const kCDMTasksViewControllerAddListAnimationDuration = 0.1f;
     [NSAnimationContext endGrouping];
 }
 
-- (IBAction)closeAddList:(id)sender
-{
+- (IBAction)closeAddList:(id)sender {
     if (![self.addListView superview]) { return; }
     NSScrollView *scrollView = [self.tableView enclosingScrollView];
     NSRect newScrollFrame = [scrollView frame];
@@ -106,6 +104,17 @@ static CGFloat const kCDMTasksViewControllerAddListAnimationDuration = 0.1f;
     [[scrollView animator] setFrame:newScrollFrame];
     [[self.addListView animator] setFrame:newAddFrame];
     [NSAnimationContext endGrouping];
+}
+
+#pragma mark - NSControlTextEditingDelegate
+
+- (BOOL)control:(NSControl *)control textView:(NSTextView *)textView doCommandBySelector:(SEL)command
+{
+    if (command == @selector(cancelOperation:)) {
+        [self closeAddList:nil];
+        return YES;
+    }
+    return NO;
 }
 
 #pragma mark - Accessors
