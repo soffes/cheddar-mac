@@ -29,4 +29,7 @@
 	return [self colorWithCalibratedWhite:0.267f alpha:1.0f];
 }
 
++ (NSColor *)cheddarLightTextColor {
+    return [self colorWithCalibratedRed:0.200 green:0.200 blue:0.200 alpha:1];
+}
 @end

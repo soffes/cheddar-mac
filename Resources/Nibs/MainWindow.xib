@@ -55,7 +55,6 @@
 						<string key="NSFrame">{{575, 15}, {15, 15}}</string>
 						<reference key="NSSuperview" ref="154427372"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSButtonCell" key="NSCell" id="617846072">
@@ -470,7 +469,6 @@
 													<string key="NSFrame">{{1, 119}, {223, 15}}</string>
 													<reference key="NSSuperview" ref="672568933"/>
 													<reference key="NSWindow"/>
-													<reference key="NSNextKeyView"/>
 													<string key="NSReuseIdentifierKey">_NS:60</string>
 													<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 													<int key="NSsFlags">1</int>
@@ -748,8 +746,8 @@
 									<string key="NSAntiCompressionPriority">{250, 750}</string>
 									<bool key="NSEnabled">YES</bool>
 									<object class="NSTextFieldCell" key="NSCell" id="539052915">
-										<int key="NSCellFlags">67108928</int>
-										<int key="NSCellFlags2">272668672</int>
+										<int key="NSCellFlags">69206081</int>
+										<int key="NSCellFlags2">1346410496</int>
 										<string key="NSContents">Table View Cell</string>
 										<reference key="NSSupport" ref="1017777950"/>
 										<reference key="NSControlView" ref="411643406"/>
@@ -1305,6 +1303,7 @@
 				<string key="268.userInterfaceItemIdentifier">TaskCell</string>
 				<string key="269.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="270.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="273.CustomClassName">CDMTaskTextFieldCell</string>
 				<string key="273.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="304.CustomClassName">CDMListsViewController</string>
 				<string key="304.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>

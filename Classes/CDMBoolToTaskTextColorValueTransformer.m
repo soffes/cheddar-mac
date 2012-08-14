@@ -13,6 +13,6 @@
 + (Class)transformedValueClass { return [NSColor class]; }
 + (BOOL)allowsReverseTransformation { return NO; }
 - (id)transformedValue:(id)value {
-    return [value boolValue] ? [NSColor cheddarSteelColor] : [NSColor colorWithCalibratedRed:0.200 green:0.200 blue:0.200 alpha:1];
+    return [value boolValue] ? [NSColor cheddarSteelColor] : [NSColor cheddarLightTextColor];
 }
 @end

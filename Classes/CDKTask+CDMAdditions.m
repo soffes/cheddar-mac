@@ -7,6 +7,7 @@
 //
 
 #import "CDKTask+CDMAdditions.h"
+#import "NSColor+CDMAdditions.h"
 
 @implementation CDKTask (CDMAdditions)
 - (NSAttributedString *)attributedDisplayText {
@@ -18,7 +19,9 @@
 	}
     
 	NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:self.displayText];
-    [attributedString addAttribute:NSFontAttributeName value:[NSFont fontWithName:kCDMRegularFontName size:15.f] range:NSMakeRange(0, [self.displayText length])];
+    NSRange range = NSMakeRange(0, [self.displayText length]);
+    [attributedString addAttribute:NSFontAttributeName value:[NSFont fontWithName:kCDMRegularFontName size:15.f] range:range];
+    [attributedString addAttribute:NSForegroundColorAttributeName value:[self isCompleted] ? [NSColor cheddarLightTextColor] : [NSColor cheddarSteelColor] range:range];
 	[self addEntitiesToAttributedString:attributedString];
 	return attributedString;
 }
