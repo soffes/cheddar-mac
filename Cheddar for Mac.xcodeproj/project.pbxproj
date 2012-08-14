@@ -48,12 +48,13 @@
 		033883A815D9AAF8001FC04B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 033883A715D9AAF7001FC04B /* QuartzCore.framework */; };
 		0338840815D9D53C001FC04B /* CDMListsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0338840715D9D53B001FC04B /* CDMListsViewController.m */; };
 		0338840B15D9D66F001FC04B /* CDMTasksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0338840A15D9D66F001FC04B /* CDMTasksViewController.m */; };
-		037252DE15D9FAA800E87D87 /* CDMBoolToTaskTextColorValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 037252DD15D9FAA800E87D87 /* CDMBoolToTaskTextColorValueTransformer.m */; };
 		037252E115D9FCF700E87D87 /* CDKTask+CDMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 037252E015D9FCF700E87D87 /* CDKTask+CDMAdditions.m */; };
 		037253A815DA1C4000E87D87 /* CDMShadowTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 037253A715DA1C4000E87D87 /* CDMShadowTableView.m */; };
 		03B3951A15DAAA2F00A8A7D4 /* CDMWhiteOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03B3951915DAAA2F00A8A7D4 /* CDMWhiteOverlayView.m */; };
 		03B3951C15DAB73000A8A7D4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 03B3951B15DAB73000A8A7D4 /* Localizable.strings */; };
 		03B3951F15DABFD900A8A7D4 /* CDMTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 03B3951E15DABFD800A8A7D4 /* CDMTextField.m */; };
+		03B3952815DAC66E00A8A7D4 /* CDMTaskTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 03B3952715DAC66E00A8A7D4 /* CDMTaskTextField.m */; };
+		03B3952E15DAC97900A8A7D4 /* CDMBoolToTaskTextColorValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 03B3952D15DAC97000A8A7D4 /* CDMBoolToTaskTextColorValueTransformer.m */; };
 		03CB266315DA1FAC00FEDF25 /* CDMAddListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CB266215DA1FAC00FEDF25 /* CDMAddListView.m */; };
 		03CB269015DA248E00FEDF25 /* CDMAddListTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CB268F15DA248E00FEDF25 /* CDMAddListTextFieldCell.m */; };
 		B209670B15DAB8E600E73B93 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B209670015DAB8BE00E73B93 /* Sparkle.framework */; };
@@ -300,8 +301,6 @@
 		0338840715D9D53B001FC04B /* CDMListsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMListsViewController.m; sourceTree = "<group>"; };
 		0338840915D9D66F001FC04B /* CDMTasksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMTasksViewController.h; sourceTree = "<group>"; };
 		0338840A15D9D66F001FC04B /* CDMTasksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMTasksViewController.m; sourceTree = "<group>"; };
-		037252DC15D9FAA800E87D87 /* CDMBoolToTaskTextColorValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMBoolToTaskTextColorValueTransformer.h; sourceTree = "<group>"; };
-		037252DD15D9FAA800E87D87 /* CDMBoolToTaskTextColorValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMBoolToTaskTextColorValueTransformer.m; sourceTree = "<group>"; };
 		037252DF15D9FCF700E87D87 /* CDKTask+CDMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CDKTask+CDMAdditions.h"; sourceTree = "<group>"; };
 		037252E015D9FCF700E87D87 /* CDKTask+CDMAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CDKTask+CDMAdditions.m"; sourceTree = "<group>"; };
 		037253A615DA1C4000E87D87 /* CDMShadowTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMShadowTableView.h; sourceTree = "<group>"; };
@@ -311,6 +310,10 @@
 		03B3951B15DAB73000A8A7D4 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		03B3951D15DABFD800A8A7D4 /* CDMTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMTextField.h; sourceTree = "<group>"; };
 		03B3951E15DABFD800A8A7D4 /* CDMTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMTextField.m; sourceTree = "<group>"; };
+		03B3952615DAC66E00A8A7D4 /* CDMTaskTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMTaskTextField.h; sourceTree = "<group>"; };
+		03B3952715DAC66E00A8A7D4 /* CDMTaskTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMTaskTextField.m; sourceTree = "<group>"; };
+		03B3952C15DAC96E00A8A7D4 /* CDMBoolToTaskTextColorValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMBoolToTaskTextColorValueTransformer.h; sourceTree = "<group>"; };
+		03B3952D15DAC97000A8A7D4 /* CDMBoolToTaskTextColorValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMBoolToTaskTextColorValueTransformer.m; sourceTree = "<group>"; };
 		03CB266115DA1FAC00FEDF25 /* CDMAddListView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMAddListView.h; sourceTree = "<group>"; };
 		03CB266215DA1FAC00FEDF25 /* CDMAddListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMAddListView.m; sourceTree = "<group>"; };
 		03CB268E15DA248E00FEDF25 /* CDMAddListTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMAddListTextFieldCell.h; sourceTree = "<group>"; };
@@ -411,11 +414,11 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
-		037252DB15D9FA8B00E87D87 /* Value Transformers */ = {
+		03B3952F15DAC97D00A8A7D4 /* Value Transformers */ = {
 			isa = PBXGroup;
 			children = (
-				037252DC15D9FAA800E87D87 /* CDMBoolToTaskTextColorValueTransformer.h */,
-				037252DD15D9FAA800E87D87 /* CDMBoolToTaskTextColorValueTransformer.m */,
+				03B3952C15DAC96E00A8A7D4 /* CDMBoolToTaskTextColorValueTransformer.h */,
+				03B3952D15DAC97000A8A7D4 /* CDMBoolToTaskTextColorValueTransformer.m */,
 			);
 			name = "Value Transformers";
 			sourceTree = "<group>";
@@ -476,7 +479,7 @@
 		B21FF2E615BF7D7B00AEEA97 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				037252DB15D9FA8B00E87D87 /* Value Transformers */,
+				03B3952F15DAC97D00A8A7D4 /* Value Transformers */,
 				B2A23D1115D9818500EA9D2D /* Application */,
 				B2A23D1015D9817F00EA9D2D /* Window Controllers */,
 				B27CB98815D9D90D00BC851F /* View Controllers */,
@@ -677,6 +680,8 @@
 				03B3951915DAAA2F00A8A7D4 /* CDMWhiteOverlayView.m */,
 				03B3951D15DABFD800A8A7D4 /* CDMTextField.h */,
 				03B3951E15DABFD800A8A7D4 /* CDMTextField.m */,
+				03B3952615DAC66E00A8A7D4 /* CDMTaskTextField.h */,
+				03B3952715DAC66E00A8A7D4 /* CDMTaskTextField.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -1076,13 +1081,14 @@
 				0338840B15D9D66F001FC04B /* CDMTasksViewController.m in Sources */,
 				B27CBA1415D9EBCE00BC851F /* CDMConstants.m in Sources */,
 				B27CBA3215D9F12800BC851F /* SNRFetchedResultsController.m in Sources */,
-				037252DE15D9FAA800E87D87 /* CDMBoolToTaskTextColorValueTransformer.m in Sources */,
 				037252E115D9FCF700E87D87 /* CDKTask+CDMAdditions.m in Sources */,
 				037253A815DA1C4000E87D87 /* CDMShadowTableView.m in Sources */,
 				03CB266315DA1FAC00FEDF25 /* CDMAddListView.m in Sources */,
 				03CB269015DA248E00FEDF25 /* CDMAddListTextFieldCell.m in Sources */,
 				03B3951A15DAAA2F00A8A7D4 /* CDMWhiteOverlayView.m in Sources */,
 				03B3951F15DABFD900A8A7D4 /* CDMTextField.m in Sources */,
+				03B3952815DAC66E00A8A7D4 /* CDMTaskTextField.m in Sources */,
+				03B3952E15DAC97900A8A7D4 /* CDMBoolToTaskTextColorValueTransformer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

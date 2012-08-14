@@ -21,7 +21,7 @@
 	NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:self.displayText];
     NSRange range = NSMakeRange(0, [self.displayText length]);
     [attributedString addAttribute:NSFontAttributeName value:[NSFont fontWithName:kCDMRegularFontName size:15.f] range:range];
-    [attributedString addAttribute:NSForegroundColorAttributeName value:[self isCompleted] ? [NSColor cheddarLightTextColor] : [NSColor cheddarSteelColor] range:range];
+    [attributedString addAttribute:NSForegroundColorAttributeName value:[self isCompleted] ? [NSColor cheddarSteelColor] : [NSColor cheddarLightTextColor] range:range];
 	[self addEntitiesToAttributedString:attributedString];
 	return attributedString;
 }
