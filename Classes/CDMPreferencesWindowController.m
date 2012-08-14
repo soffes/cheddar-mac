@@ -48,6 +48,7 @@
 
 - (IBAction)signOut:(id)sender {
 	[CDKUser setCurrentUser:nil];
+	[self close];
 }
 
 

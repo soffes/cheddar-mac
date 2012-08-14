@@ -14,11 +14,24 @@
 #import "CDMListsViewController.h"
 #import "CDMTasksViewController.h"
 
+@interface CDMAppDelegate ()
+- (void)_userChanged:(NSNotification *)notification;
+@end
+
 @implementation CDMAppDelegate
 
 @synthesize signInWindowController = _signInWindowController;
 @synthesize mainWindowController = _mainWindowController;
 @synthesize viewMenu = _viewMenu;
+
+
+- (CDMSignInWindowController *)signInWindowController {
+	if (!_signInWindowController) {
+		_signInWindowController = [[CDMSignInWindowController alloc] init];
+	}
+	return _signInWindowController;
+}
+
 
 #pragma mark - Class Methods
 
@@ -43,13 +56,38 @@
 	[_mainWindowController showWindow:sender];
 }
 
+
 - (IBAction)addList:(id)sender {
     [_mainWindowController.listsViewController addList:self];
 }
 
+
 - (IBAction)addTask:(id)sender {
     [_mainWindowController.tasksViewController focusTaskField:nil];
 }
+
+
+#pragma mark - Private
+
+- (void)_userChanged:(NSNotification *)notification {
+	if (![CDKUser currentUser]) {
+		[self.signInWindowController showWindow:nil];
+	}
+}
+
+
+#pragma mark - NSMenuDelegate
+
+- (BOOL)validateMenuItem:(NSMenuItem *)menuItem {
+	if (![CDKUser currentUser]) {
+		if ([menuItem.title isEqualToString:@"New List"] || [menuItem.title isEqualToString:@"New Task"] ||
+			[menuItem.title isEqualToString:@"Preferences"] || [menuItem.title isEqualToString:@"Tasks"]) {
+			return NO;
+		}
+	}
+	return YES;
+}
+
 
 #pragma mark - NSApplicationDelegate
 
@@ -80,13 +118,15 @@
 	[_mainWindowController showWindow:nil];
 
 	if (![CDKUser currentUser]) {
-		_signInWindowController = [[CDMSignInWindowController alloc] init];
-		[_signInWindowController showWindow:nil];
+		[self.signInWindowController showWindow:nil];
 	}
 
 	dispatch_async(dispatch_get_main_queue(), ^{
 		// Initialize the connection to Pusher
 		[CDKPushController sharedController];
+
+		// Add observer for sign out
+		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(_userChanged:) name:kCDKCurrentUserChangedNotificationName object:nil];
 	});
 }
 

@@ -9,6 +9,7 @@
 #import "CDMSignInWindowController.h"
 #import "CDMAppDelegate.h"
 #import "CDMMainWindowController.h"
+#import "CDMArchesWindow.h"
 #import "CDMListsViewController.h"
 #import "NSColor+CDMAdditions.h"
 #import "CDMFlatButton.h"
@@ -35,6 +36,9 @@
 - (void)windowDidLoad {
 	[super windowDidLoad];
 
+	CDMArchesWindow *archesWindow = (CDMArchesWindow *)self.window;
+	archesWindow.closeEnabled = NO;
+
 	[self.signUpButton setButtonColor:[NSColor cheddarSteelColor]];
 	[self.signInButton setButtonColor:[NSColor cheddarOrangeColor]];
 
@@ -53,7 +57,10 @@
 
 - (IBAction)signIn:(id)sender {
 	[[CDKHTTPClient sharedClient] signInWithLogin:self.usernameTextField.stringValue password:self.passwordTextField.stringValue success:^(AFJSONRequestOperation *operation, id responseObject) {
+		[self.usernameTextField becomeFirstResponder];
 		[self close];
+		self.usernameTextField.stringValue = @"";
+		self.passwordTextField.stringValue = @"";
 	} failure:^(AFJSONRequestOperation *operation, NSError *error) {
 		NSLog(@"Failed: %@", error);
 	}];

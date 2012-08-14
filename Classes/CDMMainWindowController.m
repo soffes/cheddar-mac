@@ -63,19 +63,19 @@ void SSDrawGradientInRect(CGContextRef context, CGGradientRef gradient, CGRect r
 }
 
 
+- (void)windowDidLoad {
+    [super windowDidLoad];
+    [[NSUserDefaults standardUserDefaults] setFloat:NSMaxX([self.splitViewLeft frame]) forKey:kCDMLastDividerPositionKey];
+}
+
+
 - (void)showWindow:(id)sender {
 	if (![CDKUser currentUser]) {
 		return;
 	}
-
 	[super showWindow:sender];
 }
 
-- (void)windowDidLoad
-{
-    [super windowDidLoad];
-    [[NSUserDefaults standardUserDefaults] setFloat:NSMaxX([self.splitViewLeft frame]) forKey:kCDMLastDividerPositionKey];
-}
 
 #pragma mark - Private
 
@@ -97,33 +97,43 @@ void SSDrawGradientInRect(CGContextRef context, CGGradientRef gradient, CGRect r
     return subview != self.splitViewLeft && [[self window] inLiveResize];
 }
 
-// Good docs here <http://manicwave.com/blog/2009/12/28/unraveling-the-mysteries-of-nssplitview-part-1/>
 
-- (CGFloat)splitView:(NSSplitView *)splitView constrainMinCoordinate:(CGFloat)proposedMin ofSubviewAt:(NSInteger)dividerIndex
-{
+// Good docs here <http://manicwave.com/blog/2009/12/28/unraveling-the-mysteries-of-nssplitview-part-1/>
+- (CGFloat)splitView:(NSSplitView *)splitView constrainMinCoordinate:(CGFloat)proposedMin ofSubviewAt:(NSInteger)dividerIndex {
     return proposedMin + kCDMMainWindowControllerMinLeftWidth;
 }
 
-- (BOOL)splitView:(NSSplitView *)splitView canCollapseSubview:(NSView *)subview
-{
+
+- (BOOL)splitView:(NSSplitView *)splitView canCollapseSubview:(NSView *)subview {
     // Allow for the collapsing of the sidebar
     return subview == self.splitViewLeft;
 }
 
-- (void)splitViewDidResizeSubviews:(NSNotification *)aNotification
-{
+
+- (void)splitViewDidResizeSubviews:(NSNotification *)aNotification {
     if (![self.splitViewLeft isHidden]) {
         [[NSUserDefaults standardUserDefaults] setFloat:NSMaxX([self.splitViewLeft frame]) forKey:kCDMLastDividerPositionKey];
     }
 }
 
+
 #pragma mark - NSMenuDelegate
 
-- (void)menuNeedsUpdate:(NSMenu *)menu
-{
+- (void)menuNeedsUpdate:(NSMenu *)menu {
     NSMenuItem *showHide = [menu itemAtIndex:0];
     [showHide setTitle:NSLocalizedString([self.splitViewLeft isHidden] ? @"Show Sidebar" : @"Hide Sidebar", nil)];
     [showHide setTarget:self];
     [showHide setAction:@selector(toggleSidebar:)];
 }
+
+
+- (BOOL)validateMenuItem:(NSMenuItem *)menuItem {
+	if (![CDKUser currentUser]) {
+		if ([menuItem.title isEqualToString:@"Hide Sidebar"] || [menuItem.title isEqualToString:@"Show Sidebar"]) {
+			return NO;
+		}
+	}
+	return YES;
+}
+
 @end
