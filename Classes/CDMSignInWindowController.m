@@ -7,6 +7,9 @@
 //
 
 #import "CDMSignInWindowController.h"
+#import "CDMAppDelegate.h"
+#import "CDMMainWindowController.h"
+#import "CDMListsViewController.h"
 #import "NSColor+CDMAdditions.h"
 #import "CDMFlatButton.h"
 
@@ -28,24 +31,31 @@
 	return @"SignIn";
 }
 
-- (void)windowDidLoad
-{
+
+- (void)windowDidLoad {
     [super windowDidLoad];
+	
     [self.signUpButton setButtonColor:[NSColor cheddarSteelColor]];
     [self.signInButton setButtonColor:[NSColor cheddarOrangeColor]];
+	
     NSColor *color = CDMSignInWindowControllerLabelTextColor;
     NSFont *font = CDMSignInWindowControllerFont;
+	
     [self.usernameLabel setTextColor:color];
     [self.passwordLabel setTextColor:color];
+	
     [self.usernameLabel setFont:font];
     [self.passwordLabel setFont:font];
 }
+
 
 #pragma mark - Actions
 
 - (IBAction)signIn:(id)sender {
 	[[CDKHTTPClient sharedClient] signInWithLogin:self.usernameTextField.stringValue password:self.passwordTextField.stringValue success:^(AFJSONRequestOperation *operation, id responseObject) {
-		NSLog(@"signed in");
+		CDMAppDelegate *appDelegate = [CDMAppDelegate sharedAppDelegate];
+		[appDelegate.mainWindowController showWindow:nil];
+		[self close];
 	} failure:^(AFJSONRequestOperation *operation, NSError *error) {
 		NSLog(@"Failed: %@", error);
 	}];

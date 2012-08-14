@@ -14,4 +14,6 @@
 @property (nonatomic, weak) IBOutlet NSTableView *tableView;
 @property (nonatomic, weak) IBOutlet CDMTasksViewController *tasksViewController;
 
+- (IBAction)reload:(id)sender;
+
 @end

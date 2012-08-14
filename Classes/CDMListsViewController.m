@@ -35,13 +35,22 @@ static NSString* const kCDMListsDragTypeRearrange = @"CDMListsDragTypeRearrange"
     self.arrayController.managedObjectContext = [CDKList mainContext];
 	self.arrayController.fetchPredicate = [NSPredicate predicateWithFormat:@"archivedAt = nil && user = %@", [CDKUser currentUser]];
 	self.arrayController.sortDescriptors = [CDKList defaultSortDescriptors];
-	
-    [[CDKHTTPClient sharedClient] getListsWithSuccess:^(AFJSONRequestOperation *operation, id responseObject) {
+
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reload:) name:kCDKCurrentUserChangedNotificationName object:nil];
+
+    [self reload:nil];
+    _awakenFromNib = YES;
+}
+
+
+#pragma mark - Actions
+
+- (IBAction)reload:(id)sender {
+	[[CDKHTTPClient sharedClient] getListsWithSuccess:^(AFJSONRequestOperation *operation, id responseObject) {
 		NSLog(@"Got lists");
 	} failure:^(AFJSONRequestOperation *operation, NSError *error) {
 		NSLog(@"Failed to get lists: %@", error);
 	}];
-    _awakenFromNib = YES;
 }
 
 
