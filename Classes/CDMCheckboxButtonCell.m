@@ -7,13 +7,10 @@
 //
 
 #import "CDMCheckboxButtonCell.h"
-#import "CDMCheckboxButton.h"
 
 @implementation CDMCheckboxButtonCell
 
 - (void)drawBezelWithFrame:(NSRect)frame inView:(NSView *)controlView {
-	CDMCheckboxButton *button = (CDMCheckboxButton *)controlView;
-
 	NSColor *cheddarSteelColor = [NSColor colorWithCalibratedRed:0.53 green:0.55 blue:0.59 alpha:1.0];
 
 	CGFloat scaleFactor = [[controlView window] backingScaleFactor];
@@ -32,6 +29,7 @@
 	[roundedRectangle2Path setLineWidth:scaleFactor];
 	[roundedRectangle2Path stroke];
 
+	NSButton *button = (NSButton *)controlView;
 	if (button.state == NSOnState) {
 		NSImage *check = [NSImage imageNamed:@"check"];
 		[check drawInRect:CGRectMake(3.0f, 4.0f, 14.0f, 11.0f) fromRect:CGRectMake(0.0f, 0.0f, 14.0f, 11.0f) operation:NSCompositeSourceOver fraction:1.0f];
