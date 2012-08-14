@@ -13,7 +13,7 @@
 
 - (void)awakeFromNib {
 	[super awakeFromNib];
-    [self addObserver:self forKeyPath:@"objectValue.displayText" options:0 context:NULL];
+    [self addObserver:self forKeyPath:@"objectValue.entities" options:0 context:NULL];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
@@ -24,6 +24,6 @@
 
 - (void)dealloc
 {
-    [self removeObserver:self forKeyPath:@"objectValue.displayText"];
+    [self removeObserver:self forKeyPath:@"objectValue.entities"];
 }
 @end

@@ -8,10 +8,13 @@
 
 #import "CDMTasksViewController.h"
 #import "CDMTaskTableRowView.h"
+#import "CDMTaskTableCellView.h"
 #import <QuartzCore/QuartzCore.h>
+#import "CDKTask+CDMAdditions.h"
 
 static NSString* const kCDMTasksDragTypeRearrange = @"CDMTasksDragTypeRearrange";
 NSString* const kCDMTasksDragTypeMove = @"CDMTasksDragTypeMove";
+static NSString* const kCDMTaskCellIdentifier = @"TaskCell";
 
 @implementation CDMTasksViewController {
     BOOL _awakenFromNib;
@@ -45,7 +48,12 @@ NSString* const kCDMTasksDragTypeMove = @"CDMTasksDragTypeMove";
     task.list = self.selectedList;
     task.position = [NSNumber numberWithInteger:self.selectedList.highestPosition + 1];
     // [self.tableView insertRowsAtIndexes:[NSIndexSet indexSetWithIndex:[self.tableView numberOfRows]] withAnimation:NSTableViewAnimationSlideDown];
-    [task createWithSuccess:nil failure:^(AFJSONRequestOperation *remoteOperation, NSError *error) {
+    [task createWithSuccess:^{
+        NSUInteger index = [[self.arrayController arrangedObjects] indexOfObject:task];
+        if (index != NSNotFound) {
+            [self.tableView reloadDataForRowIndexes:[NSIndexSet indexSetWithIndex:index] columnIndexes:[NSIndexSet indexSetWithIndex:0]];
+        }
+    } failure:^(AFJSONRequestOperation *remoteOperation, NSError *error) {
         NSLog(@"Error creating task: %@, %@", error, [error userInfo]);
     }];
 }
@@ -72,6 +80,14 @@ NSString* const kCDMTasksDragTypeMove = @"CDMTasksDragTypeMove";
 
 - (CGFloat)tableView:(NSTableView *)tableView heightOfRow:(NSInteger)row {
 	return 38.0f;
+}
+
+- (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
+{
+    CDMTaskTableCellView *cellView = [tableView makeViewWithIdentifier:kCDMTaskCellIdentifier owner:self];
+    CDKTask *task = [[self.arrayController arrangedObjects] objectAtIndex:row];
+    [cellView.textField setAttributedStringValue:[task attributedDisplayText]];
+    return cellView;
 }
 
 
