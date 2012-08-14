@@ -12,7 +12,6 @@
 #define kCDMPlusDialogViewShadowOffset NSMakeSize(0.f, -3.f)
 #define kCDMPlusDialogViewShadowColor [NSColor colorWithDeviceWhite:0.f alpha:0.3f]
 
-static NSString* const kCDMPlusDialogViewImageNameArches = @"arches";
 static CGFloat const kCDMPlusDialogViewCornerRadius = 6.f;
 static CGFloat const kCDMPlusDialogViewShadowBlurRadius = 4.f;
 

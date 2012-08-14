@@ -36,7 +36,7 @@ static CGFloat const kCDMPlusWindowCornerRadius = 4.f;
 
 - (void)drawRect:(NSRect)dirtyRect {
     NSBezierPath *path = [NSBezierPath bezierPathWithRoundedRect:[self bounds] xRadius:kCDMPlusWindowCornerRadius yRadius:kCDMPlusWindowCornerRadius];
-    NSGradient *gradient = [[NSGradient alloc] initWithStartingColor:[NSColor clearColor] endingColor:[NSColor colorWithDeviceWhite:0.f alpha:0.5f]];
+    NSGradient *gradient = [[NSGradient alloc] initWithStartingColor:[NSColor clearColor] endingColor:[NSColor colorWithDeviceWhite:0.f alpha:0.6f]];
     [gradient drawInBezierPath:path relativeCenterPosition:NSMakePoint(0, 0)];
 }
 
