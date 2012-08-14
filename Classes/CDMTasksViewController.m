@@ -15,7 +15,9 @@ static NSString* const CDMTasksDragTypeRearrange = @"CDMTasksDragTypeRearrange";
 
 @end
 
-@implementation CDMTasksViewController
+@implementation CDMTasksViewController {
+    BOOL _awakenFromNib;
+}
 @synthesize arrayController = _arrayController;
 @synthesize tableView = _tableView;
 @synthesize selectedList = _selectedList;
@@ -23,9 +25,11 @@ static NSString* const CDMTasksDragTypeRearrange = @"CDMTasksDragTypeRearrange";
 - (void)awakeFromNib
 {
     [super awakeFromNib];
+    if (_awakenFromNib) { return; }
     self.arrayController.managedObjectContext = [CDKTask mainContext];
 	self.arrayController.sortDescriptors = [CDKTask defaultSortDescriptors];
     [self.tableView registerForDraggedTypes:[NSArray arrayWithObject:CDMTasksDragTypeRearrange]];
+    _awakenFromNib = YES;
 }
 
 #pragma mark - Accessors
@@ -34,12 +38,11 @@ static NSString* const CDMTasksDragTypeRearrange = @"CDMTasksDragTypeRearrange";
 {
     if (_selectedList != selectedList) {
         _selectedList = selectedList;
+        [[CDKHTTPClient sharedClient] getTasksWithList:_selectedList success:^(AFJSONRequestOperation *operation, id responseObject) {
+            self.arrayController.fetchPredicate = [NSPredicate predicateWithFormat:@"list = %@ AND archivedAt = nil", _selectedList];
+            [self.arrayController fetch:nil];
+        } failure:nil];
     }
-    [[CDKHTTPClient sharedClient] getTasksWithList:_selectedList success:^(AFJSONRequestOperation *operation, id responseObject) {
-        [self.arrayController fetch:nil];
-    } failure:nil];
-    self.arrayController.fetchPredicate = [NSPredicate predicateWithFormat:@"list = %@ AND archivedAt = nil", _selectedList];
-    [self.arrayController fetch:nil];
 }
 
 #pragma mark - NSTableViewDelegate
@@ -69,8 +72,21 @@ static NSString* const CDMTasksDragTypeRearrange = @"CDMTasksDragTypeRearrange";
 
 - (BOOL)tableView:(NSTableView *)aTableView acceptDrop:(id < NSDraggingInfo >)info row:(NSInteger)row dropOperation:(NSTableViewDropOperation)operation
 {
-    // Insert your code here to make the change in the data model
-    NSLog(@"dropped index: %ld", row);
+    NSMutableArray *tasks = [self.arrayController.arrangedObjects mutableCopy];
+    NSPasteboard *pasteboard = [info draggingPasteboard];
+    NSIndexSet *originalIndexes = [NSKeyedUnarchiver unarchiveObjectWithData:[pasteboard dataForType:CDMTasksDragTypeRearrange]];
+    NSUInteger originalListIndex = [originalIndexes firstIndex];
+    NSUInteger destinationRow = (row > originalListIndex) ? row - 1 : row;
+	CDKTask *task = [self.arrayController.arrangedObjects objectAtIndex:originalListIndex];
+	[tasks removeObject:task];
+	[tasks insertObject:task atIndex:destinationRow];
+	NSInteger i = 0;
+	for (task in tasks) {
+		task.position = [NSNumber numberWithInteger:i++];
+	}
+	[self.arrayController.managedObjectContext save:nil];
+	[CDKTask sortWithObjects:tasks];
+    [self.tableView moveRowAtIndex:originalListIndex toIndex:destinationRow];
     return YES;
 }
 @end

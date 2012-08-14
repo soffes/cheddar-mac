@@ -16,7 +16,9 @@ static NSString* const CDMListsDragTypeRearrange = @"CDMListsDragTypeRearrange";
 
 @end
 
-@implementation CDMListsViewController
+@implementation CDMListsViewController {
+    BOOL _awakenFromNib;
+}
 @synthesize arrayController = _arrayController;
 @synthesize tableView = _tableView;
 @synthesize tasksViewController = _tasksViewController;
@@ -24,6 +26,7 @@ static NSString* const CDMListsDragTypeRearrange = @"CDMListsDragTypeRearrange";
 - (void)awakeFromNib
 {
     [super awakeFromNib];
+    if (_awakenFromNib) { return; }
     [self.tableView registerForDraggedTypes:[NSArray arrayWithObject:CDMListsDragTypeRearrange]];
     self.arrayController.managedObjectContext = [CDKList mainContext];
 	self.arrayController.fetchPredicate = [NSPredicate predicateWithFormat:@"archivedAt = nil && user = %@", [CDKUser currentUser]];
@@ -33,6 +36,7 @@ static NSString* const CDMListsDragTypeRearrange = @"CDMListsDragTypeRearrange";
 	} failure:^(AFJSONRequestOperation *operation, NSError *error) {
 		NSLog(@"Failed to get lists: %@", error);
 	}];
+    _awakenFromNib = YES;
 }
 
 #pragma mark - NSTableViewDelegate
@@ -71,8 +75,21 @@ static NSString* const CDMListsDragTypeRearrange = @"CDMListsDragTypeRearrange";
 
 - (BOOL)tableView:(NSTableView *)aTableView acceptDrop:(id < NSDraggingInfo >)info row:(NSInteger)row dropOperation:(NSTableViewDropOperation)operation
 {
-    // Insert your code here to make the change in the data model
-    NSLog(@"dropped index: %ld", row);
+    NSMutableArray *lists = [self.arrayController.arrangedObjects mutableCopy];
+    NSPasteboard *pasteboard = [info draggingPasteboard];
+    NSIndexSet *originalIndexes = [NSKeyedUnarchiver unarchiveObjectWithData:[pasteboard dataForType:CDMListsDragTypeRearrange]];
+    NSUInteger originalListIndex = [originalIndexes firstIndex];
+    NSUInteger destinationRow = (row > originalListIndex) ? row - 1 : row;
+	CDKList *list = [self.arrayController.arrangedObjects objectAtIndex:originalListIndex];
+	[lists removeObject:list];
+	[lists insertObject:list atIndex:destinationRow];
+	NSInteger i = 0;
+	for (list in lists) {
+		list.position = [NSNumber numberWithInteger:i++];
+	}
+	[self.arrayController.managedObjectContext save:nil];
+	[CDKList sortWithObjects:lists];
+    [self.tableView moveRowAtIndex:originalListIndex toIndex:destinationRow];
     return YES;
 }
 @end
