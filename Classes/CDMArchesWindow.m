@@ -135,14 +135,14 @@ static CGFloat const kCDMArchesWindowShakeVigour = 0.05f;
     return self;
 }
 
-- (void)awakeFromNib
-{
+
+- (void)awakeFromNib {
     [super awakeFromNib];
     [[[self contentView] superview] addSubview:_trafficLightContainer];
 }
 
-- (void)_registerNotifications
-{
+
+- (void)_registerNotifications {
     // This notification gets sent when the user changes the color scheme (Aqua or Graphite)
     // Tip from <http://www.cocoabuilder.com/archive/cocoa/13836-notification-of-aqua-graphite-preference-changed.html#13835>
     [[NSNotificationCenter defaultCenter] addObserver:self
@@ -150,15 +150,15 @@ static CGFloat const kCDMArchesWindowShakeVigour = 0.05f;
                                                  name:NSControlTintDidChangeNotification object:nil];
 }
 
-- (void)dealloc
-{
+
+- (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-- (void)sendEvent:(NSEvent *)theEvent
-{
+
+- (void)sendEvent:(NSEvent *)theEvent {
     // Detect Command + W to close window
-    if ([theEvent type] == NSKeyDown) {
+    if (self.closeEnabled && [theEvent type] == NSKeyDown) {
         NSUInteger modifierFlags = [theEvent modifierFlags];
         unsigned short keyCode = [theEvent keyCode];
         if ((modifierFlags & NSCommandKeyMask) == NSCommandKeyMask && keyCode == kVK_ANSI_W) {
@@ -169,18 +169,17 @@ static CGFloat const kCDMArchesWindowShakeVigour = 0.05f;
     [super sendEvent:theEvent];
 }
 
+
 #pragma mark - Actions
 
-- (IBAction)shake:(id)sender
-{
+- (IBAction)shake:(id)sender {
     [self setAnimations:[NSDictionary dictionaryWithObject:[self _shakeAnimation:[self frame]] forKey:@"frameOrigin"]];
 	[[self animator] setFrameOrigin:[self frame].origin];
 }
 
-// From <http://www.cimgf.com/2008/02/27/core-animation-tutorial-window-shake-effect/>
 
-- (CAKeyframeAnimation *)_shakeAnimation:(NSRect)frame
-{
+// From <http://www.cimgf.com/2008/02/27/core-animation-tutorial-window-shake-effect/>
+- (CAKeyframeAnimation *)_shakeAnimation:(NSRect)frame {
     CAKeyframeAnimation *shakeAnimation = [CAKeyframeAnimation animation];
     CGMutablePathRef shakePath = CGPathCreateMutable();
     CGPathMoveToPoint(shakePath, NULL, NSMinX(frame), NSMinY(frame));
@@ -198,64 +197,66 @@ static CGFloat const kCDMArchesWindowShakeVigour = 0.05f;
 
 #pragma mark - Accessors
 
-- (void)setCloseEnabled:(BOOL)closeEnabled
-{
+- (void)setCloseEnabled:(BOOL)closeEnabled {
     _closeEnabled = closeEnabled;
     [_closeButton setEnabled:closeEnabled];
 }
 
-- (void)setMinimizeEnabled:(BOOL)minimizeEnabled
-{
+
+- (void)setMinimizeEnabled:(BOOL)minimizeEnabled {
     _minimizeEnabled = minimizeEnabled;
     [_minimizeButton setEnabled:minimizeEnabled];
 }
 
-- (void)setZoomEnabled:(BOOL)zoomEnabled
-{
+
+- (void)setZoomEnabled:(BOOL)zoomEnabled {
     _zoomEnabled = zoomEnabled;
     [_zoomButton setEnabled:zoomEnabled];
 }
 
+
 #pragma mark - NSResponder
 
-- (BOOL)canBecomeKeyWindow
-{
+- (BOOL)canBecomeKeyWindow {
     return YES;
 }
 
-- (BOOL)acceptsFirstResponder
-{
+
+- (BOOL)acceptsFirstResponder {
     return YES;
 }
+
 
 #pragma mark - CDMArchesWindowTrafficLightsViewDelegate
 
-- (void)trafficLightsViewMouseEntered:(CDMArchesWindowTrafficLightsView*)view
-{
+- (void)trafficLightsViewMouseEntered:(CDMArchesWindowTrafficLightsView*)view {
     BOOL graphite = [self _isGraphite];
-    if (self.closeEnabled) {
+
+	if (self.closeEnabled) {
         [_closeButton setImage:[NSImage imageNamed:graphite ? kCDMArchesWindowImageNameTrafficCloseGraphite : kCDMArchesWindowImageNameTrafficClose]];
     }
+
     if (self.minimizeEnabled) {
         [_minimizeButton setImage:[NSImage imageNamed:graphite ? kCDMArchesWindowImageNameTrafficMinimizeGraphite : kCDMArchesWindowImageNameTrafficMinimize]];
     }
-    if (self.zoomEnabled) {
+
+	if (self.zoomEnabled) {
         [_zoomButton setImage:[NSImage imageNamed:graphite ? kCDMArchesWindowImageNameTrafficZoomGraphite : kCDMArchesWindowImageNameTrafficZoom]];
     }
 }
 
-- (void)trafficLightsViewMouseExited:(CDMArchesWindowTrafficLightsView*)view
-{
+
+- (void)trafficLightsViewMouseExited:(CDMArchesWindowTrafficLightsView*)view {
     NSImage *trafficNormal = [NSImage imageNamed:kCDMArchesWindowImageNameTrafficNormal];
     [_closeButton setImage:trafficNormal];
     [_minimizeButton setImage:trafficNormal];
     [_zoomButton setImage:trafficNormal];
 }
 
+
 #pragma mark - Private
 
-- (void)_createAndPositionTrafficLights
-{
+- (void)_createAndPositionTrafficLights {
     NSView *themeView = [[self contentView] superview];
     NSImage *trafficNormal = [NSImage imageNamed:kCDMArchesWindowImageNameTrafficNormal];
     NSSize imageSize = [trafficNormal size];
@@ -286,8 +287,8 @@ static CGFloat const kCDMArchesWindowShakeVigour = 0.05f;
     [_trafficLightContainer addSubview:_zoomButton];
 }
 
-- (NSButton*)_borderlessButtonWithRect:(NSRect)rect
-{
+
+- (NSButton*)_borderlessButtonWithRect:(NSRect)rect {
     NSButton *button = [[NSButton alloc] initWithFrame:rect];
     [button setBordered:NO];
     [button setButtonType:NSMomentaryChangeButton];
@@ -295,13 +296,13 @@ static CGFloat const kCDMArchesWindowShakeVigour = 0.05f;
     return button;
 }
 
-- (BOOL)_isGraphite
-{
+
+- (BOOL)_isGraphite {
     return ([NSColor currentControlTint] == NSGraphiteControlTint);
 }
 
-- (void)_resetAlternateButtonImages;
-{
+
+- (void)_resetAlternateButtonImages {
     BOOL graphite = [self _isGraphite];
     NSImage *close = [NSImage imageNamed:graphite ? kCDMArchesWindowImageNameTrafficClosePressedGraphite : kCDMArchesWindowImageNameTrafficClosePressed];
     NSImage *minimize = [NSImage imageNamed:graphite ? kCDMArchesWindowImageNameTrafficMinimizePressedGraphite : kCDMArchesWindowImageNameTrafficMinimizePressed];
@@ -310,4 +311,5 @@ static CGFloat const kCDMArchesWindowShakeVigour = 0.05f;
     [_minimizeButton setAlternateImage:minimize];
     [_zoomButton setAlternateImage:zoom];
 }
+
 @end

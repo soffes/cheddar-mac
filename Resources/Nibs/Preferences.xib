@@ -359,7 +359,7 @@
 							<object class="NSButton" id="285873144">
 								<reference key="NSNextResponder" ref="640147172"/>
 								<int key="NSvFlags">268</int>
-								<string key="NSFrame">{{157, 23}, {146, 32}}</string>
+								<string key="NSFrame">{{141, 23}, {178, 32}}</string>
 								<reference key="NSSuperview" ref="640147172"/>
 								<reference key="NSWindow"/>
 								<reference key="NSNextKeyView"/>
@@ -368,7 +368,7 @@
 								<object class="NSButtonCell" key="NSCell" id="796852134">
 									<int key="NSCellFlags">67108864</int>
 									<int key="NSCellFlags2">134217728</int>
-									<string key="NSContents">Manage Account</string>
+									<string key="NSContents">Manage Your Account</string>
 									<reference key="NSSupport" ref="892052804"/>
 									<string key="NSCellIdentifier">_NS:9</string>
 									<reference key="NSControlView" ref="285873144"/>

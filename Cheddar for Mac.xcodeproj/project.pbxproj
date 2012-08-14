@@ -479,13 +479,13 @@
 		B21FF2E615BF7D7B00AEEA97 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				03B3952F15DAC97D00A8A7D4 /* Value Transformers */,
 				B2A23D1115D9818500EA9D2D /* Application */,
 				B2A23D1015D9817F00EA9D2D /* Window Controllers */,
 				B27CB98815D9D90D00BC851F /* View Controllers */,
 				0338828015D961E1001FC04B /* Windows */,
 				B25E13AA15CBB185009751B9 /* Views */,
 				B249723015CBE10B008388E5 /* Cells */,
+				03B3952F15DAC97D00A8A7D4 /* Value Transformers */,
 				B24970C815CBC827008388E5 /* Categories */,
 			);
 			path = Classes;
