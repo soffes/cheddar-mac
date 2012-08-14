@@ -27,11 +27,11 @@ static NSString* const kCDMListsDragTypeRearrange = @"CDMListsDragTypeRearrange"
     [super awakeFromNib];
     
     [self.tableView registerForDraggedTypes:[NSArray arrayWithObjects:kCDMListsDragTypeRearrange, kCDMTasksDragTypeMove, nil]];
+	
     if (_awakenFromNib) {
         return;
     }
-	
-	
+		
     self.arrayController.managedObjectContext = [CDKList mainContext];
 	self.arrayController.fetchPredicate = [NSPredicate predicateWithFormat:@"archivedAt = nil && user = %@", [CDKUser currentUser]];
 	self.arrayController.sortDescriptors = [CDKList defaultSortDescriptors];

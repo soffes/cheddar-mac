@@ -701,7 +701,7 @@
 									</object>
 									<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 								</object>
-								<object class="NSButton" id="84775584">
+								<object class="NSButton" id="760301156">
 									<reference key="NSNextResponder" ref="418552173"/>
 									<int key="NSvFlags">268</int>
 									<string key="NSFrame">{{10, 10}, {19, 19}}</string>
@@ -709,13 +709,13 @@
 									<reference key="NSNextKeyView" ref="411643406"/>
 									<string key="NSReuseIdentifierKey">_NS:9</string>
 									<bool key="NSEnabled">YES</bool>
-									<object class="NSButtonCell" key="NSCell" id="109539574">
+									<object class="NSButtonCell" key="NSCell" id="720079375">
 										<int key="NSCellFlags">-2080374784</int>
 										<int key="NSCellFlags2">268435456</int>
 										<string key="NSContents">Check</string>
 										<reference key="NSSupport" ref="1017777950"/>
 										<string key="NSCellIdentifier">_NS:9</string>
-										<reference key="NSControlView" ref="84775584"/>
+										<reference key="NSControlView" ref="760301156"/>
 										<int key="NSButtonFlags">1211912448</int>
 										<int key="NSButtonFlags2">2</int>
 										<object class="NSCustomResource" key="NSNormalImage">
@@ -734,7 +734,7 @@
 								</object>
 							</array>
 							<string key="NSFrame">{{1, 1}, {405, 38}}</string>
-							<reference key="NSNextKeyView" ref="84775584"/>
+							<reference key="NSNextKeyView" ref="760301156"/>
 						</object>
 						<reference key="destination" ref="411643406"/>
 					</object>
@@ -814,23 +814,19 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: objectValue.completedAt</string>
-						<reference key="source" ref="84775584"/>
+						<string key="label">value: objectValue.completed</string>
+						<reference key="source" ref="760301156"/>
 						<reference key="destination" ref="418552173"/>
 						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="84775584"/>
+							<reference key="NSSource" ref="760301156"/>
 							<reference key="NSDestination" ref="418552173"/>
-							<string key="NSLabel">value: objectValue.completedAt</string>
+							<string key="NSLabel">value: objectValue.completed</string>
 							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">objectValue.completedAt</string>
-							<object class="NSDictionary" key="NSOptions">
-								<string key="NS.key.0">NSValueTransformerName</string>
-								<string key="NS.object.0">NSIsNil</string>
-							</object>
+							<string key="NSKeyPath">objectValue.completed</string>
 							<int key="NSNibBindingConnectorVersion">2</int>
 						</object>
 					</object>
-					<int key="connectionID">327</int>
+					<int key="connectionID">330</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -1040,7 +1036,7 @@
 						<int key="objectID">268</int>
 						<reference key="object" ref="418552173"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="84775584"/>
+							<reference ref="760301156"/>
 							<reference ref="411643406"/>
 						</array>
 						<reference key="parent" ref="1058526399"/>
@@ -1075,16 +1071,16 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">321</int>
-						<reference key="object" ref="84775584"/>
+						<reference key="object" ref="760301156"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="109539574"/>
+							<reference ref="720079375"/>
 						</array>
 						<reference key="parent" ref="418552173"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">322</int>
-						<reference key="object" ref="109539574"/>
-						<reference key="parent" ref="84775584"/>
+						<reference key="object" ref="720079375"/>
+						<reference key="parent" ref="760301156"/>
 					</object>
 				</array>
 			</object>
@@ -1151,7 +1147,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">327</int>
+			<int key="maxID">330</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
