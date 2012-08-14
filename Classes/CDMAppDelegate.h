@@ -18,4 +18,5 @@
 
 - (IBAction)showMainWindow:(id)sender;
 - (IBAction)addList:(id)sender;
+- (IBAction)addTask:(id)sender;
 @end

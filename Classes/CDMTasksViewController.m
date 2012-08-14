@@ -60,6 +60,11 @@ static NSString* const kCDMTaskCellIdentifier = @"TaskCell";
     }
 }
 
+- (IBAction)focusTaskField:(id)sender {
+    [[self.taskField window] makeFirstResponder:self.taskField];
+}
+
+
 #pragma mark - Accessors
 
 - (void)setSelectedList:(CDKList *)selectedList {

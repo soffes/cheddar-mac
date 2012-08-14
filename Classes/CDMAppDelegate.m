@@ -12,6 +12,7 @@
 #import "CDMPreferencesWindowController.h"
 #import "CDMDefines.h"
 #import "CDMListsViewController.h"
+#import "CDMTasksViewController.h"
 
 @implementation CDMAppDelegate
 
@@ -44,6 +45,10 @@
 
 - (IBAction)addList:(id)sender {
     [_mainWindowController.listsViewController addList:self];
+}
+
+- (IBAction)addTask:(id)sender {
+    [_mainWindowController.tasksViewController focusTaskField:nil];
 }
 
 #pragma mark - NSApplicationDelegate

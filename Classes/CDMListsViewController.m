@@ -128,6 +128,7 @@ static CGFloat const kCDMTasksViewControllerAddListAnimationDuration = 0.15f;
             if (index != NSNotFound) {
                 [self.tableView selectRowIndexes:[NSIndexSet indexSetWithIndex:index] byExtendingSelection:NO];
             }
+            [self.tasksViewController focusTaskField:nil];
         } failure:^(AFJSONRequestOperation *remoteOperation, NSError *error) {
             NSLog(@"Error creating list: %@, %@", error, [error userInfo]);
         }];
