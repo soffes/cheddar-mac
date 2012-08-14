@@ -36,7 +36,18 @@ NSString* const kCDMTasksDragTypeMove = @"CDMTasksDragTypeMove";
 
 - (IBAction)addTask:(id)sender
 {
-    NSString *task = [self.taskField stringValue];
+    NSString *taskText = [self.taskField stringValue];
+    [self.taskField setStringValue:@""];
+    [[self.taskField window] makeFirstResponder:self.tableView];
+    CDKTask *task = [[CDKTask alloc] init];
+    task.text = taskText;
+    task.displayText = taskText;
+    task.list = self.selectedList;
+    task.position = [NSNumber numberWithInteger:self.selectedList.highestPosition + 1];
+    // [self.tableView insertRowsAtIndexes:[NSIndexSet indexSetWithIndex:[self.tableView numberOfRows]] withAnimation:NSTableViewAnimationSlideDown];
+    [task createWithSuccess:nil failure:^(AFJSONRequestOperation *remoteOperation, NSError *error) {
+        NSLog(@"Error creating task: %@, %@", error, [error userInfo]);
+    }];
 }
 
 #pragma mark - Accessors
