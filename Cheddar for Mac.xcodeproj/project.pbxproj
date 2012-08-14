@@ -69,6 +69,7 @@
 		B25E13B815CBC2AF009751B9 /* CDMAddTaskView.m in Sources */ = {isa = PBXBuildFile; fileRef = B25E13B715CBC2AF009751B9 /* CDMAddTaskView.m */; };
 		B27CBA1415D9EBCE00BC851F /* CDMConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = B27CBA1315D9EBCE00BC851F /* CDMConstants.m */; };
 		B27CBA2A15D9EFA300BC851F /* CDKTask+CDMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B27CBA2915D9EFA300BC851F /* CDKTask+CDMAdditions.m */; };
+		B27CBA3215D9F12800BC851F /* SNRFetchedResultsController.m in Sources */ = {isa = PBXBuildFile; fileRef = B27CBA2F15D9F12800BC851F /* SNRFetchedResultsController.m */; };
 		B2A23D1515D988AB00EA9D2D /* NSColor+CDMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B2A23D1415D988AB00EA9D2D /* NSColor+CDMAdditions.m */; };
 		B2A23D7915D997D900EA9D2D /* CDMAboutWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2A23D7815D997D900EA9D2D /* CDMAboutWindowController.m */; };
 		B2A23D7C15D997E300EA9D2D /* CDMPreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2A23D7B15D997E300EA9D2D /* CDMPreferencesWindowController.m */; };
@@ -216,6 +217,8 @@
 		B27CBA1315D9EBCE00BC851F /* CDMConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMConstants.m; sourceTree = "<group>"; };
 		B27CBA2815D9EFA300BC851F /* CDKTask+CDMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CDKTask+CDMAdditions.h"; sourceTree = "<group>"; };
 		B27CBA2915D9EFA300BC851F /* CDKTask+CDMAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CDKTask+CDMAdditions.m"; sourceTree = "<group>"; };
+		B27CBA2E15D9F12800BC851F /* SNRFetchedResultsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNRFetchedResultsController.h; sourceTree = "<group>"; };
+		B27CBA2F15D9F12800BC851F /* SNRFetchedResultsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNRFetchedResultsController.m; sourceTree = "<group>"; };
 		B2A23D1315D988AB00EA9D2D /* NSColor+CDMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSColor+CDMAdditions.h"; sourceTree = "<group>"; };
 		B2A23D1415D988AB00EA9D2D /* NSColor+CDMAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSColor+CDMAdditions.m"; sourceTree = "<group>"; };
 		B2A23D7715D997D900EA9D2D /* CDMAboutWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMAboutWindowController.h; sourceTree = "<group>"; };
@@ -395,6 +398,7 @@
 		B21FF30015BF7D7B00AEEA97 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				B27CBA2B15D9F12800BC851F /* SNRFetchedResultsController */,
 				B21FF30115BF7D7B00AEEA97 /* CheddarKit */,
 				B21FF52A15BF7D7C00AEEA97 /* INAppStoreWindow */,
 				B2B2E0FA15D9A67C008672DA /* DBPrefsWindowController */,
@@ -501,6 +505,15 @@
 				0338840A15D9D66F001FC04B /* CDMTasksViewController.m */,
 			);
 			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		B27CBA2B15D9F12800BC851F /* SNRFetchedResultsController */ = {
+			isa = PBXGroup;
+			children = (
+				B27CBA2E15D9F12800BC851F /* SNRFetchedResultsController.h */,
+				B27CBA2F15D9F12800BC851F /* SNRFetchedResultsController.m */,
+			);
+			path = SNRFetchedResultsController;
 			sourceTree = "<group>";
 		};
 		B2A23D1015D9817F00EA9D2D /* Window Controllers */ = {
@@ -704,6 +717,7 @@
 				0338840B15D9D66F001FC04B /* CDMTasksViewController.m in Sources */,
 				B27CBA1415D9EBCE00BC851F /* CDMConstants.m in Sources */,
 				B27CBA2A15D9EFA300BC851F /* CDKTask+CDMAdditions.m in Sources */,
+				B27CBA3215D9F12800BC851F /* SNRFetchedResultsController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

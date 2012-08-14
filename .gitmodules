@@ -7,3 +7,6 @@
 [submodule "Vendor/DBPrefsWindowController"]
 	path = Vendor/DBPrefsWindowController
 	url = https://github.com/kgn/DBPrefsWindowController.git
+[submodule "Vendor/SNRFetchedResultsController"]
+	path = Vendor/SNRFetchedResultsController
+	url = https://github.com/indragiek/SNRFetchedResultsController.git
