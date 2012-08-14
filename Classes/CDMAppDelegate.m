@@ -25,6 +25,16 @@
 }
 
 
+- (IBAction)showHelp:(id)sender {
+	[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://cheddarapp.com/support"]];
+}
+
+
+- (IBAction)showMainWindow:(id)sender {
+	[_listsWindowController showWindow:sender];
+}
+
+
 #pragma mark - NSApplicationDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {

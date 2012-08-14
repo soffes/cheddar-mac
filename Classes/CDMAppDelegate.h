@@ -7,4 +7,7 @@
 //
 
 @interface CDMAppDelegate : NSObject <NSApplicationDelegate>
+
+- (IBAction)showMainWindow:(id)sender;
+
 @end
