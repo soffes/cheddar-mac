@@ -45,6 +45,16 @@
 			<object class="NSCustomObject" id="1004">
 				<string key="NSClassName">NSApplication</string>
 			</object>
+			<object class="NSCustomView" id="897831669">
+				<reference key="NSNextResponder"/>
+				<int key="NSvFlags">268</int>
+				<string key="NSFrameSize">{603, 38}</string>
+				<reference key="NSSuperview"/>
+				<reference key="NSWindow"/>
+				<reference key="NSNextKeyView"/>
+				<string key="NSReuseIdentifierKey">_NS:9</string>
+				<string key="NSClassName">CDMAddListView</string>
+			</object>
 			<object class="NSViewController" id="845133359"/>
 			<object class="NSViewController" id="666935639"/>
 			<object class="NSWindowTemplate" id="1005">
@@ -981,6 +991,14 @@
 					<int key="connectionID">352</int>
 				</object>
 				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">addListView</string>
+						<reference key="source" ref="666935639"/>
+						<reference key="destination" ref="897831669"/>
+					</object>
+					<int key="connectionID">361</int>
+				</object>
+				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
 						<string key="label">value: objectValue.completed</string>
 						<reference key="source" ref="760301156"/>
@@ -1307,6 +1325,12 @@
 						<reference key="object" ref="51082437"/>
 						<reference key="parent" ref="882113657"/>
 					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">360</int>
+						<reference key="object" ref="897831669"/>
+						<reference key="parent" ref="0"/>
+						<string key="objectName">Add List View</string>
+					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
@@ -1379,6 +1403,7 @@
 				<string key="356.CustomClassName">CDMFlatButton</string>
 				<string key="356.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="357.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="360.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="80.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="80.ibExternalFetchPredicateFormat"/>
 			</dictionary>
@@ -1386,10 +1411,18 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">359</int>
+			<int key="maxID">361</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
+				<object class="IBPartialClassDescription">
+					<string key="className">CDMAddListView</string>
+					<string key="superclassName">NSView</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/CDMAddListView.h</string>
+					</object>
+				</object>
 				<object class="IBPartialClassDescription">
 					<string key="className">CDMAddTaskView</string>
 					<string key="superclassName">NSView</string>
@@ -1566,11 +1599,16 @@
 						</object>
 					</object>
 					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="addListView">NSView</string>
 						<string key="arrayController">NSArrayController</string>
 						<string key="tableView">NSTableView</string>
 						<string key="taskField">NSTextField</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="addListView">
+							<string key="name">addListView</string>
+							<string key="candidateClassName">NSView</string>
+						</object>
 						<object class="IBToOneOutletInfo" key="arrayController">
 							<string key="name">arrayController</string>
 							<string key="candidateClassName">NSArrayController</string>

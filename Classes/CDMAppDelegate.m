@@ -11,6 +11,7 @@
 #import "CDMMainWindowController.h"
 #import "CDMPreferencesWindowController.h"
 #import "CDMDefines.h"
+#import "CDMTasksViewController.h"
 
 @implementation CDMAppDelegate
 
@@ -41,6 +42,9 @@
 	[_mainWindowController showWindow:sender];
 }
 
+- (IBAction)addList:(id)sender {
+    [_mainWindowController.tasksViewController addList:self];
+}
 
 #pragma mark - NSApplicationDelegate
 

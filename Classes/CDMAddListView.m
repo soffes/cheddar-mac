@@ -8,21 +8,16 @@
 
 #import "CDMAddListView.h"
 
+#define CDMAddListViewSeparatorColor [NSColor colorWithCalibratedWhite:0.926 alpha:1.000]
+
 @implementation CDMAddListView
 
-- (id)initWithFrame:(NSRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code here.
-    }
-    
-    return self;
-}
-
-- (void)drawRect:(NSRect)dirtyRect
-{
-    // Drawing code here.
+- (void)drawRect:(NSRect)dirtyRect {
+    [[NSColor whiteColor] set];
+    NSRectFill([self bounds]);
+    NSRect separatorRect = NSMakeRect(0.f, 0.f, [self bounds].size.width, 1.f);
+    [CDMAddListViewSeparatorColor set];
+    NSRectFill(separatorRect);
 }
 
 @end

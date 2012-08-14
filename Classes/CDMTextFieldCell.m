@@ -11,7 +11,7 @@
 #import "NSColor+CDMAdditions.h"
 #import "NSView+CDMAdditions.h"
 
-static CGFloat const kCDMTextFieldCellXInset = 8.0f;
+static CGFloat const kCDMTextFieldCellXInset = 15.0f;
 static CGFloat const kCDMTextFieldCellCornerRadius = 4.0f;
 static CGFloat const kCDMTextFieldCellInnerShadowBlurRadius = 2.0f;
 static CGFloat const kCDMTextFieldCellOuterShadowBlurRadius = 2.0f;

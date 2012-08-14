@@ -17,5 +17,5 @@
 + (CDMAppDelegate *)sharedAppDelegate;
 
 - (IBAction)showMainWindow:(id)sender;
-
+- (IBAction)addList:(id)sender;
 @end
