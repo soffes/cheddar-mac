@@ -7,6 +7,7 @@
 //
 
 @class CDMFlatButton;
+
 @interface CDMSignInWindowController : NSWindowController
 
 @property (weak) IBOutlet NSTextField *usernameTextField;
@@ -15,6 +16,7 @@
 @property (weak) IBOutlet NSTextField *passwordLabel;
 @property (weak) IBOutlet CDMFlatButton *signUpButton;
 @property (weak) IBOutlet CDMFlatButton *signInButton;
+
 - (IBAction)signIn:(id)sender;
 - (IBAction)signUp:(id)sender;
 - (IBAction)forgotPassword:(id)sender;

@@ -15,8 +15,7 @@
 
 @implementation CDMTextButtonCell
 
-- (void)drawWithFrame:(NSRect)cellFrame inView:(NSView *)controlView
-{
+- (void)drawWithFrame:(NSRect)cellFrame inView:(NSView *)controlView {
     NSColor *color = [self isHighlighted] ? CDMTextButtonCellPressedColor : CDMTextButtonCellNormalColor;
     NSMutableParagraphStyle *style = [NSMutableParagraphStyle new];
     [style setAlignment:NSCenterTextAlignment];

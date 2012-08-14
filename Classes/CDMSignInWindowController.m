@@ -33,19 +33,19 @@
 
 
 - (void)windowDidLoad {
-    [super windowDidLoad];
-	
-    [self.signUpButton setButtonColor:[NSColor cheddarSteelColor]];
-    [self.signInButton setButtonColor:[NSColor cheddarOrangeColor]];
-	
-    NSColor *color = CDMSignInWindowControllerLabelTextColor;
-    NSFont *font = CDMSignInWindowControllerFont;
-	
-    [self.usernameLabel setTextColor:color];
-    [self.passwordLabel setTextColor:color];
-	
-    [self.usernameLabel setFont:font];
-    [self.passwordLabel setFont:font];
+	[super windowDidLoad];
+
+	[self.signUpButton setButtonColor:[NSColor cheddarSteelColor]];
+	[self.signInButton setButtonColor:[NSColor cheddarOrangeColor]];
+
+	NSColor *color = CDMSignInWindowControllerLabelTextColor;
+	NSFont *font = CDMSignInWindowControllerFont;
+
+	[self.usernameLabel setTextColor:color];
+	[self.usernameLabel setFont:font];
+
+	[self.passwordLabel setTextColor:color];
+	[self.passwordLabel setFont:font];
 }
 
 

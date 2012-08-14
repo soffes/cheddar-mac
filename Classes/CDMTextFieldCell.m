@@ -11,7 +11,7 @@
 #import "NSColor+CDMAdditions.h"
 #import "NSView+CDMAdditions.h"
 
-static CGFloat const kCDMTextFieldCellXInset = 10.0f;
+static CGFloat const kCDMTextFieldCellXInset = 8.0f;
 static CGFloat const kCDMTextFieldCellCornerRadius = 4.0f;
 static CGFloat const kCDMTextFieldCellInnerShadowBlurRadius = 2.0f;
 static CGFloat const kCDMTextFieldCellOuterShadowBlurRadius = 2.0f;
@@ -32,6 +32,15 @@ static CGFloat const kCDMTextFieldCellOuterShadowBlurRadius = 2.0f;
         [self setEditable:YES];
     }
     return self;
+}
+
+
+- (void)setPlaceholderString:(NSString *)string {
+	NSDictionary *placeholderAttributes = [[NSDictionary alloc] initWithObjectsAndKeys:
+										   [NSColor cheddarSteelColor], NSForegroundColorAttributeName,
+										   nil];
+	NSAttributedString *placeholder = [[NSAttributedString alloc] initWithString:string attributes:placeholderAttributes];
+	[self setPlaceholderAttributedString:placeholder];
 }
 
 
