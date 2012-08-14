@@ -12,9 +12,16 @@
 #import "CDMPreferencesWindowController.h"
 #import "CDMDefines.h"
 
-@implementation CDMAppDelegate {
-	CDMSignInWindowController *_signInWindowController;
-	CDMMainWindowController *_mainWindowController;
+@implementation CDMAppDelegate
+
+@synthesize signInWindowController = _signInWindowController;
+@synthesize mainWindowController = _mainWindowController;
+
+
+#pragma mark - Class Methods
+
++ (CDMAppDelegate *)sharedAppDelegate {
+	return (CDMAppDelegate *)[NSApp delegate];
 }
 
 
@@ -49,14 +56,14 @@
 	
 	// Setup the OAuth credentials
 	[[CDKHTTPClient sharedClient] setClientID:kCDMAPIClientID secret:kCDMAPIClientSecret];
-	
-	//if (![CDKUser currentUser]) {
+
+	_mainWindowController = [[CDMMainWindowController alloc] initWithWindowNibName:@"MainWindow"];
+	[_mainWindowController showWindow:nil];
+
+	if (![CDKUser currentUser]) {
 		_signInWindowController = [[CDMSignInWindowController alloc] init];
-		[_signInWindowController.window makeKeyAndOrderFront:nil];
-	//} else {
-    _mainWindowController = [[CDMMainWindowController alloc] initWithWindowNibName:@"MainWindow"];
-	[_mainWindowController.window makeKeyAndOrderFront:nil];
-	//}
+		[_signInWindowController showWindow:nil];
+	}
 
 	dispatch_async(dispatch_get_main_queue(), ^{
 		// Initialize the connection to Pusher

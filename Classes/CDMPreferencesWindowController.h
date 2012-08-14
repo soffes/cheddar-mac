@@ -14,4 +14,6 @@
 @property (strong, nonatomic) IBOutlet NSView *accountPreferenceView;
 @property (strong, nonatomic) IBOutlet NSView *updatesPreferenceView;
 
+- (IBAction)signOut:(id)sender;
+
 @end

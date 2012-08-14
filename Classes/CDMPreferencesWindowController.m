@@ -14,13 +14,22 @@
 @synthesize accountPreferenceView = _accountPreferenceView;
 @synthesize updatesPreferenceView = _updatesPreferenceView;
 
-- (void)setupToolbar{
+#pragma mark - DBPrefsWindowController
+
+- (void)setupToolbar {
     [self addView:self.generalPreferenceView label:@"General" image:[NSImage imageNamed:@"NSPreferencesGeneral"]];
     [self addView:self.accountPreferenceView label:@"Account" image:[NSImage imageNamed:@"NSUser"]];
     [self addView:self.updatesPreferenceView label:@"Updates" image:[NSImage imageNamed:@"preferences-updates"]];
 
     [self setCrossFade:YES];
     [self setShiftSlowsAnimation:YES];
+}
+
+
+#pragma mark - Actions
+
+- (IBAction)signOut:(id)sender {
+	[CDKUser setCurrentUser:nil];
 }
 
 @end
