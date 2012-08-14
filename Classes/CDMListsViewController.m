@@ -10,6 +10,8 @@
 #import "CDMListTableRowView.h"
 #import "CDMTasksViewController.h"
 
+static NSString* const CDMListsDragTypeRearrange = @"CDMListsDragTypeRearrange";
+
 @interface CDMListsViewController ()
 
 @end
@@ -22,6 +24,7 @@
 - (void)awakeFromNib
 {
     [super awakeFromNib];
+    [self.tableView registerForDraggedTypes:[NSArray arrayWithObject:CDMListsDragTypeRearrange]];
     self.arrayController.managedObjectContext = [CDKList mainContext];
 	self.arrayController.fetchPredicate = [NSPredicate predicateWithFormat:@"archivedAt = nil && user = %@", [CDKUser currentUser]];
 	self.arrayController.sortDescriptors = [CDKList defaultSortDescriptors];
@@ -49,5 +52,27 @@
 
 - (CGFloat)tableView:(NSTableView *)tableView heightOfRow:(NSInteger)row {
 	return 45.f;
+}
+
+#pragma mark - NSTableViewDataSource
+
+- (BOOL)tableView:(NSTableView *)aTableView writeRowsWithIndexes:(NSIndexSet *)rowIndexes toPasteboard:(NSPasteboard *)pboard
+{
+    [pboard declareTypes:[NSArray arrayWithObject:CDMListsDragTypeRearrange] owner:self];
+    NSData *archivedData = [NSKeyedArchiver archivedDataWithRootObject:rowIndexes];
+    [pboard setData:archivedData forType:CDMListsDragTypeRearrange];
+    return YES;
+}
+
+- (NSDragOperation)tableView:(NSTableView *)aTableView validateDrop:(id < NSDraggingInfo >)info proposedRow:(NSInteger)row proposedDropOperation:(NSTableViewDropOperation)operation
+{
+    return (operation == NSTableViewDropAbove) ? NSDragOperationMove : NSDragOperationNone;
+}
+
+- (BOOL)tableView:(NSTableView *)aTableView acceptDrop:(id < NSDraggingInfo >)info row:(NSInteger)row dropOperation:(NSTableViewDropOperation)operation
+{
+    // Insert your code here to make the change in the data model
+    NSLog(@"dropped index: %ld", row);
+    return YES;
 }
 @end
