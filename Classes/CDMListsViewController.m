@@ -9,14 +9,16 @@
 #import "CDMListsViewController.h"
 #import "CDMListTableRowView.h"
 #import "CDMTasksViewController.h"
+#import "CDMWhiteOverlayView.h"
 #import <QuartzCore/QuartzCore.h>
 
 static NSString* const kCDMListsDragTypeRearrange = @"CDMListsDragTypeRearrange";
-static CGFloat const kCDMTasksViewControllerAddListAnimationDuration = 0.1f;
+static CGFloat const kCDMTasksViewControllerAddListAnimationDuration = 0.15f;
 
 
 @implementation CDMListsViewController {
     BOOL _awakenFromNib;
+    CDMWhiteOverlayView *_overlayView;
 }
 @synthesize arrayController = _arrayController;
 @synthesize tableView = _tableView;
@@ -70,6 +72,10 @@ static CGFloat const kCDMTasksViewControllerAddListAnimationDuration = 0.1f;
     [self.addListField setStringValue:@""];
     NSView *parentView = [scrollView superview] ;
     [parentView addSubview:self.addListView positioned:NSWindowBelow relativeTo:[[parentView subviews] objectAtIndex:0]];
+    _overlayView = [[CDMWhiteOverlayView alloc] initWithFrame:[scrollView frame]];
+    [_overlayView setAlphaValue:0.f];
+    [_overlayView setAutoresizingMask:[scrollView autoresizingMask]];
+    [parentView addSubview:_overlayView positioned:NSWindowAbove relativeTo:scrollView];
     NSRect newScrollFrame = [scrollView frame];
     newScrollFrame.size.height -= [self.addListView frame].size.height;
     NSRect newAddFrame = beforeAddFrame;
@@ -81,6 +87,8 @@ static CGFloat const kCDMTasksViewControllerAddListAnimationDuration = 0.1f;
     }];
     [[scrollView animator] setFrame:newScrollFrame];
     [[self.addListView animator] setFrame:newAddFrame];
+    [[_overlayView animator] setFrame:newScrollFrame];
+    [[_overlayView animator] setAlphaValue:1.f];
     [NSAnimationContext endGrouping];
 }
 
@@ -96,9 +104,13 @@ static CGFloat const kCDMTasksViewControllerAddListAnimationDuration = 0.1f;
     [[NSAnimationContext currentContext] setDuration:kCDMTasksViewControllerAddListAnimationDuration];
     [[NSAnimationContext currentContext] setCompletionHandler:^{
         [self.addListView removeFromSuperview];
+        [_overlayView removeFromSuperview];
+        _overlayView = nil;
     }];
     [[scrollView animator] setFrame:newScrollFrame];
     [[self.addListView animator] setFrame:newAddFrame];
+    [[_overlayView animator] setFrame:newScrollFrame];
+    [[_overlayView animator] setAlphaValue:0.f];
     [NSAnimationContext endGrouping];
 }
 
