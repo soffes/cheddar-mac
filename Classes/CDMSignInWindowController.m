@@ -37,7 +37,7 @@
 	[super windowDidLoad];
 
 	CDMArchesWindow *archesWindow = (CDMArchesWindow *)self.window;
-	archesWindow.closeEnabled = NO;
+	archesWindow.closeEnabled = YES;
 
 	[self.signUpButton setButtonColor:[NSColor cheddarSteelColor]];
 	[self.signInButton setButtonColor:[NSColor cheddarOrangeColor]];

@@ -7,4 +7,5 @@
 //
 
 @interface CDMTaskTableCellView : NSTableCellView
+@property (nonatomic, weak) IBOutlet NSView *reorderView;
 @end

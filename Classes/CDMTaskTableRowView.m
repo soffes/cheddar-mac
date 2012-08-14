@@ -12,7 +12,9 @@
 @property (nonatomic, strong) NSColorList *colorList;
 @end
 
-@implementation CDMTaskTableRowView
+@implementation CDMTaskTableRowView {
+    NSTrackingArea *_trackingArea;
+}
 
 @synthesize colorList = _colorList;
 
@@ -43,4 +45,21 @@
 	[NSBezierPath fillRect:separatorRect];
 }
 
+- (void)updateTrackingAreas {
+    [super updateTrackingAreas];
+    if (_trackingArea) { [self removeTrackingArea:_trackingArea]; }
+	NSTrackingAreaOptions options = (NSTrackingMouseEnteredAndExited | NSTrackingActiveInKeyWindow);
+	_trackingArea = [[NSTrackingArea alloc] initWithRect:[self bounds] options:options owner:self userInfo:nil];
+	[self addTrackingArea:_trackingArea];
+}
+
+- (void)mouseEntered:(NSEvent *)theEvent {
+    NSView *view = [self viewAtColumn:0];
+    [view mouseEntered:theEvent];
+}
+
+- (void)mouseExited:(NSEvent *)theEvent {
+    NSView *view = [self viewAtColumn:0];
+    [view mouseExited:theEvent];
+}
 @end

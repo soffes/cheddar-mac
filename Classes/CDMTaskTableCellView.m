@@ -28,4 +28,25 @@
     [self removeObserver:self forKeyPath:@"objectValue.entities"];
     [self removeObserver:self forKeyPath:@"objectValue.completed"];
 }
+
+#pragma mark - Mouse Events
+
+- (void)mouseEntered:(NSEvent *)theEvent {
+    [self.reorderView setAlphaValue:0.f];
+    [self.reorderView setHidden:NO];
+    [NSAnimationContext beginGrouping];
+    [[NSAnimationContext currentContext] setDuration:kCDMTableViewAnimationDuration];
+    [[self.reorderView animator] setAlphaValue:1.f];
+    [NSAnimationContext endGrouping];
+}
+
+- (void)mouseExited:(NSEvent *)theEvent {
+    [NSAnimationContext beginGrouping];
+    [[NSAnimationContext currentContext] setCompletionHandler:^{
+        [self.reorderView setHidden:YES];
+    }];
+    [[NSAnimationContext currentContext] setDuration:kCDMTableViewAnimationDuration];
+    [[self.reorderView animator] setAlphaValue:0.f];
+    [NSAnimationContext endGrouping];
+}
 @end
