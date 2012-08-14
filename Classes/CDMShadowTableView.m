@@ -9,13 +9,13 @@
 #import "CDMShadowTableView.h"
 
 #define CDMShadowTableViewBottomColor [NSColor colorWithDeviceWhite:0.937f alpha:0.0f]
-#define CDMShadowTableViewTopColor [NSColor colorWithDeviceWhite:0.937f alpha:1.0f]
+#define CDMShadowTableViewTopColor [NSColor colorWithDeviceWhite:0.937f alpha:0.8f]
 
 @implementation CDMShadowTableView
 
-- (void)drawRect:(NSRect)dirtyRect
-{
+- (void)drawRect:(NSRect)dirtyRect {
     [super drawRect:dirtyRect];
+	
     if ([self numberOfRows]) {
         NSRect rowRect = [self rectOfRow:[self numberOfRows] - 1];
         NSRect gradientRect = NSMakeRect(0.f, NSMaxY(rowRect), [self bounds].size.width, 3.f);

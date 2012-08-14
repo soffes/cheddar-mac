@@ -10,6 +10,3 @@
 [submodule "Vendor/SNRFetchedResultsController"]
 	path = Vendor/SNRFetchedResultsController
 	url = https://github.com/indragiek/SNRFetchedResultsController.git
-[submodule "Vendor/RBSplitView"]
-	path = Vendor/RBSplitView
-	url = https://github.com/anlumo/RBSplitView.git
