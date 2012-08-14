@@ -11,5 +11,4 @@
 @interface CDMPlusWindowController : NSWindowController
 @property (nonatomic, assign) NSWindow *parentWindow;
 @property (nonatomic, weak) IBOutlet NSView *dialogView;
-- (IBAction)animateDialogViewOffScreen:(id)sender;
 @end

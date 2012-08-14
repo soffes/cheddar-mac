@@ -46,7 +46,7 @@
 					<reference key="NSNextResponder"/>
 					<int key="NSvFlags">256</int>
 					<array class="NSMutableArray" key="NSSubviews">
-						<object class="NSCustomView" id="559109207">
+						<object class="NSCustomView" id="961003347">
 							<reference key="NSNextResponder" ref="1006"/>
 							<int key="NSvFlags">301</int>
 							<string key="NSFrame">{{51, 41}, {378, 188}}</string>
@@ -59,7 +59,7 @@
 					<string key="NSFrameSize">{480, 270}</string>
 					<reference key="NSSuperview"/>
 					<reference key="NSWindow"/>
-					<reference key="NSNextKeyView" ref="559109207"/>
+					<reference key="NSNextKeyView" ref="961003347"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1440, 878}}</string>
 				<string key="NSMaxSize">{10000000000000, 10000000000000}</string>
@@ -80,7 +80,7 @@
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">dialogView</string>
 						<reference key="source" ref="1001"/>
-						<reference key="destination" ref="559109207"/>
+						<reference key="destination" ref="961003347"/>
 					</object>
 					<int key="connectionID">13</int>
 				</object>
@@ -123,13 +123,13 @@
 						<int key="objectID">2</int>
 						<reference key="object" ref="1006"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="559109207"/>
+							<reference ref="961003347"/>
 						</array>
 						<reference key="parent" ref="1005"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">4</int>
-						<reference key="object" ref="559109207"/>
+						<reference key="object" ref="961003347"/>
 						<reference key="parent" ref="1006"/>
 					</object>
 				</array>

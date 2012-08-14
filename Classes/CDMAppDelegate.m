@@ -94,6 +94,20 @@
     [[overlayWindow animator] setAlphaValue:1.f];
 }
 
+- (IBAction)dismissPlusWindow:(id)sender {
+    if (!_plusWindowController) { return; }
+    NSWindow *mainWindow = [_mainWindowController window];
+    NSWindow *overlayWindow = [_plusWindowController window];
+    [NSAnimationContext beginGrouping];
+    [[NSAnimationContext currentContext] setCompletionHandler:^{
+        [mainWindow removeChildWindow:overlayWindow];
+        [overlayWindow close];
+        _plusWindowController = nil;
+    }];
+    [[overlayWindow animator] setAlphaValue:0.f];
+    [NSAnimationContext endGrouping];
+}
+
 - (void)_mainWindowResized:(NSNotification*)notification
 {
     NSWindow *mainWindow = [_mainWindowController window];
