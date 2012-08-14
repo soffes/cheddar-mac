@@ -62,7 +62,8 @@
 		self.usernameTextField.stringValue = @"";
 		self.passwordTextField.stringValue = @"";
 	} failure:^(AFJSONRequestOperation *operation, NSError *error) {
-		NSLog(@"Failed: %@", error);
+		CDMArchesWindow *archesWindow = (CDMArchesWindow *)self.window;
+		[archesWindow shake:nil];
 	}];
 }
 
