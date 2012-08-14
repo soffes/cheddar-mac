@@ -56,16 +56,24 @@
 #pragma mark - Actions
 
 - (IBAction)signIn:(id)sender {
-	[[CDKHTTPClient sharedClient] signInWithLogin:self.usernameTextField.stringValue password:self.passwordTextField.stringValue success:^(AFJSONRequestOperation *operation, id responseObject) {
-		[self.usernameTextField becomeFirstResponder];
-		[self close];
-		self.usernameTextField.stringValue = @"";
-		self.passwordTextField.stringValue = @"";
-	} failure:^(AFJSONRequestOperation *operation, NSError *error) {
+	if (self.usernameTextField.stringValue.length == 0 || self.passwordTextField.stringValue.length == 0) {
 		CDMArchesWindow *archesWindow = (CDMArchesWindow *)self.window;
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [archesWindow shake:nil];
-        });
+		[archesWindow shake:nil];
+		return;
+	}
+	
+	[[CDKHTTPClient sharedClient] signInWithLogin:self.usernameTextField.stringValue password:self.passwordTextField.stringValue success:^(AFJSONRequestOperation *operation, id responseObject) {
+		dispatch_async(dispatch_get_main_queue(), ^{
+			[self.usernameTextField becomeFirstResponder];
+			[self close];
+			self.usernameTextField.stringValue = @"";
+			self.passwordTextField.stringValue = @"";
+		});
+	} failure:^(AFJSONRequestOperation *operation, NSError *error) {
+		dispatch_async(dispatch_get_main_queue(), ^{
+			CDMArchesWindow *archesWindow = (CDMArchesWindow *)self.window;
+			[archesWindow shake:nil];
+		});
     }];
 }
 

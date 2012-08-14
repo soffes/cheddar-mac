@@ -54,7 +54,7 @@
 					<array class="NSMutableArray" key="NSSubviews">
 						<object class="NSTextField" id="825763602">
 							<reference key="NSNextResponder" ref="113831471"/>
-							<int key="NSvFlags">268</int>
+							<int key="NSvFlags">266</int>
 							<string key="NSFrame">{{18, 161}, {404, 40}}</string>
 							<reference key="NSSuperview" ref="113831471"/>
 							<reference key="NSWindow"/>
@@ -96,7 +96,7 @@
 						</object>
 						<object class="NSTextField" id="791213884">
 							<reference key="NSNextResponder" ref="113831471"/>
-							<int key="NSvFlags">268</int>
+							<int key="NSvFlags">266</int>
 							<string key="NSFrame">{{25, 209}, {100, 17}}</string>
 							<reference key="NSSuperview" ref="113831471"/>
 							<reference key="NSWindow"/>
@@ -130,7 +130,7 @@
 						</object>
 						<object class="NSTextField" id="304560251">
 							<reference key="NSNextResponder" ref="113831471"/>
-							<int key="NSvFlags">268</int>
+							<int key="NSvFlags">266</int>
 							<string key="NSFrame">{{25, 124}, {100, 17}}</string>
 							<reference key="NSSuperview" ref="113831471"/>
 							<reference key="NSWindow"/>
@@ -151,7 +151,7 @@
 						</object>
 						<object class="NSButton" id="160063910">
 							<reference key="NSNextResponder" ref="113831471"/>
-							<int key="NSvFlags">268</int>
+							<int key="NSvFlags">289</int>
 							<string key="NSFrame">{{310, 20}, {110, 40}}</string>
 							<reference key="NSSuperview" ref="113831471"/>
 							<reference key="NSWindow"/>
@@ -175,7 +175,7 @@
 						</object>
 						<object class="NSSecureTextField" id="523551340">
 							<reference key="NSNextResponder" ref="113831471"/>
-							<int key="NSvFlags">268</int>
+							<int key="NSvFlags">266</int>
 							<string key="NSFrame">{{18, 80}, {404, 40}}</string>
 							<reference key="NSSuperview" ref="113831471"/>
 							<reference key="NSWindow"/>
@@ -200,7 +200,7 @@
 						</object>
 						<object class="NSButton" id="356816251">
 							<reference key="NSNextResponder" ref="113831471"/>
-							<int key="NSvFlags">268</int>
+							<int key="NSvFlags">289</int>
 							<string key="NSFrame">{{190, 20}, {110, 40}}</string>
 							<reference key="NSSuperview" ref="113831471"/>
 							<reference key="NSWindow"/>
@@ -217,7 +217,7 @@
 								<int key="NSButtonFlags">-2038284288</int>
 								<int key="NSButtonFlags2">134</int>
 								<string key="NSAlternateContents"/>
-								<string type="base64-UTF8" key="NSKeyEquivalent">DQ</string>
+								<string key="NSKeyEquivalent"/>
 								<int key="NSPeriodicDelay">200</int>
 								<int key="NSPeriodicInterval">25</int>
 							</object>
@@ -225,7 +225,7 @@
 						</object>
 						<object class="NSButton" id="648619867">
 							<reference key="NSNextResponder" ref="113831471"/>
-							<int key="NSvFlags">268</int>
+							<int key="NSvFlags">292</int>
 							<string key="NSFrame">{{20, 20}, {124, 40}}</string>
 							<reference key="NSSuperview" ref="113831471"/>
 							<reference key="NSWindow"/>
@@ -242,7 +242,7 @@
 								<int key="NSButtonFlags">-2038284288</int>
 								<int key="NSButtonFlags2">134</int>
 								<string key="NSAlternateContents"/>
-								<string type="base64-UTF8" key="NSKeyEquivalent">DQ</string>
+								<string key="NSKeyEquivalent"/>
 								<int key="NSPeriodicDelay">200</int>
 								<int key="NSPeriodicInterval">25</int>
 							</object>
@@ -250,7 +250,7 @@
 						</object>
 						<object class="NSImageView" id="1062161514">
 							<reference key="NSNextResponder" ref="113831471"/>
-							<int key="NSvFlags">268</int>
+							<int key="NSvFlags">264</int>
 							<set class="NSMutableSet" key="NSDragTypes">
 								<string>Apple PDF pasteboard type</string>
 								<string>Apple PICT pasteboard type</string>
@@ -378,10 +378,18 @@
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">nextKeyView</string>
-						<reference key="source" ref="160063910"/>
-						<reference key="destination" ref="825763602"/>
+						<reference key="source" ref="523551340"/>
+						<reference key="destination" ref="160063910"/>
 					</object>
-					<int key="connectionID">39</int>
+					<int key="connectionID">61</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">nextKeyView</string>
+						<reference key="source" ref="160063910"/>
+						<reference key="destination" ref="648619867"/>
+					</object>
+					<int key="connectionID">62</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBActionConnection" key="connection">
@@ -389,7 +397,23 @@
 						<reference key="source" ref="160063910"/>
 						<reference key="destination" ref="523551340"/>
 					</object>
-					<int key="connectionID">58</int>
+					<int key="connectionID">65</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">performClick:</string>
+						<reference key="source" ref="160063910"/>
+						<reference key="destination" ref="825763602"/>
+					</object>
+					<int key="connectionID">66</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">nextKeyView</string>
+						<reference key="source" ref="825763602"/>
+						<reference key="destination" ref="523551340"/>
+					</object>
+					<int key="connectionID">60</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -397,15 +421,15 @@
 						<reference key="source" ref="356816251"/>
 						<reference key="destination" ref="825763602"/>
 					</object>
-					<int key="connectionID">43</int>
+					<int key="connectionID">64</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">nextKeyView</string>
 						<reference key="source" ref="648619867"/>
-						<reference key="destination" ref="825763602"/>
+						<reference key="destination" ref="356816251"/>
 					</object>
-					<int key="connectionID">48</int>
+					<int key="connectionID">63</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -600,7 +624,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">58</int>
+			<int key="maxID">66</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
