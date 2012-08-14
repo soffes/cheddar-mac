@@ -1,5 +1,5 @@
 //
-//  CDMTextField.h
+//  CDMTaskTextFieldCell.h
 //  Cheddar for Mac
 //
 //  Created by Indragie Karunaratne on 2012-08-14.
@@ -8,6 +8,6 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface CDMTextField : NSTextField
+@interface CDMTaskTextFieldCell : NSTextFieldCell
 
 @end

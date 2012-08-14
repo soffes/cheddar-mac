@@ -56,7 +56,6 @@
 						<int key="NSvFlags">289</int>
 						<string key="NSFrame">{{575, 15}, {15, 15}}</string>
 						<reference key="NSSuperview" ref="154427372"/>
-						<reference key="NSWindow"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSButtonCell" key="NSCell" id="617846072">
@@ -88,7 +87,6 @@
 						<int key="NSvFlags">266</int>
 						<string key="NSFrame">{{9, 14}, {552, 17}}</string>
 						<reference key="NSSuperview" ref="154427372"/>
-						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="74726422"/>
 						<string key="NSAntiCompressionPriority">{250, 750}</string>
 						<bool key="NSEnabled">YES</bool>
@@ -123,7 +121,6 @@
 				</array>
 				<string key="NSFrameSize">{603, 45}</string>
 				<reference key="NSSuperview"/>
-				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="861775339"/>
 				<string key="NSReuseIdentifierKey">_NS:9</string>
 				<string key="NSClassName">CDMAddListView</string>
@@ -166,7 +163,6 @@
 															<array class="NSMutableArray" key="NSSubviews"/>
 															<string key="NSFrameSize">{217, 451}</string>
 															<reference key="NSSuperview" ref="583095631"/>
-															<reference key="NSWindow"/>
 															<reference key="NSNextKeyView" ref="764206625"/>
 															<string key="NSReuseIdentifierKey">_NS:13</string>
 															<bool key="NSEnabled">YES</bool>
@@ -256,7 +252,6 @@
 													</array>
 													<string key="NSFrameSize">{217, 451}</string>
 													<reference key="NSSuperview" ref="56518651"/>
-													<reference key="NSWindow"/>
 													<reference key="NSNextKeyView" ref="532599080"/>
 													<string key="NSReuseIdentifierKey">_NS:11</string>
 													<reference key="NSDocView" ref="532599080"/>
@@ -268,7 +263,6 @@
 													<int key="NSvFlags">-2147483392</int>
 													<string key="NSFrame">{{224, 17}, {15, 102}}</string>
 													<reference key="NSSuperview" ref="56518651"/>
-													<reference key="NSWindow"/>
 													<reference key="NSNextKeyView" ref="384455915"/>
 													<string key="NSReuseIdentifierKey">_NS:58</string>
 													<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
@@ -281,7 +275,6 @@
 													<int key="NSvFlags">-2147483392</int>
 													<string key="NSFrame">{{1, 432}, {42, 16}}</string>
 													<reference key="NSSuperview" ref="56518651"/>
-													<reference key="NSWindow"/>
 													<reference key="NSNextKeyView" ref="97112713"/>
 													<string key="NSReuseIdentifierKey">_NS:60</string>
 													<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
@@ -293,7 +286,6 @@
 											</array>
 											<string key="NSFrameSize">{217, 451}</string>
 											<reference key="NSSuperview" ref="746060700"/>
-											<reference key="NSWindow"/>
 											<reference key="NSNextKeyView" ref="583095631"/>
 											<string key="NSReuseIdentifierKey">_NS:9</string>
 											<int key="NSsFlags">133680</int>
@@ -308,7 +300,6 @@
 									</array>
 									<string key="NSFrameSize">{217, 449}</string>
 									<reference key="NSSuperview" ref="964323735"/>
-									<reference key="NSWindow"/>
 									<reference key="NSNextKeyView" ref="56518651"/>
 									<string key="NSReuseIdentifierKey">_NS:11</string>
 									<string key="NSClassName">NSView</string>
@@ -326,7 +317,6 @@
 													<int key="NSvFlags">258</int>
 													<string key="NSFrame">{{7, 6}, {379, 48}}</string>
 													<reference key="NSSuperview" ref="63484262"/>
-													<reference key="NSWindow"/>
 													<reference key="NSNextKeyView" ref="672568933"/>
 													<string key="NSReuseIdentifierKey">_NS:9</string>
 													<bool key="NSEnabled">YES</bool>
@@ -360,7 +350,6 @@
 											</array>
 											<string key="NSFrame">{{0, 390}, {393, 60}}</string>
 											<reference key="NSSuperview" ref="97112713"/>
-											<reference key="NSWindow"/>
 											<reference key="NSNextKeyView" ref="474699071"/>
 											<string key="NSReuseIdentifierKey">_NS:9</string>
 											<string key="NSClassName">CDMAddTaskView</string>
@@ -379,7 +368,6 @@
 															<array class="NSMutableArray" key="NSSubviews"/>
 															<string key="NSFrameSize">{391, 390}</string>
 															<reference key="NSSuperview" ref="877182312"/>
-															<reference key="NSWindow"/>
 															<reference key="NSNextKeyView" ref="418552173"/>
 															<string key="NSReuseIdentifierKey">_NS:13</string>
 															<bool key="NSEnabled">YES</bool>
@@ -445,7 +433,6 @@
 													</array>
 													<string key="NSFrameSize">{391, 390}</string>
 													<reference key="NSSuperview" ref="672568933"/>
-													<reference key="NSWindow"/>
 													<reference key="NSNextKeyView" ref="1038655729"/>
 													<string key="NSReuseIdentifierKey">_NS:11</string>
 													<reference key="NSDocView" ref="1038655729"/>
@@ -457,7 +444,6 @@
 													<int key="NSvFlags">-2147483392</int>
 													<string key="NSFrame">{{224, 17}, {15, 102}}</string>
 													<reference key="NSSuperview" ref="672568933"/>
-													<reference key="NSWindow"/>
 													<reference key="NSNextKeyView" ref="936567669"/>
 													<string key="NSReuseIdentifierKey">_NS:58</string>
 													<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
@@ -470,7 +456,6 @@
 													<int key="NSvFlags">-2147483392</int>
 													<string key="NSFrame">{{1, 119}, {223, 15}}</string>
 													<reference key="NSSuperview" ref="672568933"/>
-													<reference key="NSWindow"/>
 													<string key="NSReuseIdentifierKey">_NS:60</string>
 													<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 													<int key="NSsFlags">1</int>
@@ -481,7 +466,6 @@
 											</array>
 											<string key="NSFrameSize">{391, 390}</string>
 											<reference key="NSSuperview" ref="97112713"/>
-											<reference key="NSWindow"/>
 											<reference key="NSNextKeyView" ref="877182312"/>
 											<string key="NSReuseIdentifierKey">_NS:9</string>
 											<int key="NSsFlags">133680</int>
@@ -496,7 +480,6 @@
 									</array>
 									<string key="NSFrame">{{218, 0}, {391, 449}}</string>
 									<reference key="NSSuperview" ref="964323735"/>
-									<reference key="NSWindow"/>
 									<reference key="NSNextKeyView" ref="63484262"/>
 									<string key="NSReuseIdentifierKey">_NS:13</string>
 									<string key="NSClassName">NSView</string>
@@ -504,7 +487,6 @@
 							</array>
 							<string key="NSFrameSize">{609, 449}</string>
 							<reference key="NSSuperview" ref="1006"/>
-							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView" ref="746060700"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<bool key="NSIsVertical">YES</bool>
@@ -518,7 +500,6 @@
 					</array>
 					<string key="NSFrameSize">{609, 449}</string>
 					<reference key="NSSuperview"/>
-					<reference key="NSWindow"/>
 					<reference key="NSNextKeyView" ref="964323735"/>
 				</object>
 				<string key="NSScreenRect">{{0, 0}, {1440, 878}}</string>
@@ -744,7 +725,7 @@
 									<int key="NSvFlags">266</int>
 									<string key="NSFrame">{{34, 12}, {319, 17}}</string>
 									<reference key="NSSuperview" ref="418552173"/>
-									<reference key="NSNextKeyView" ref="1055749869"/>
+									<reference key="NSNextKeyView" ref="177605876"/>
 									<string key="NSAntiCompressionPriority">{250, 750}</string>
 									<bool key="NSEnabled">YES</bool>
 									<object class="NSTextFieldCell" key="NSCell" id="539052915">
@@ -789,7 +770,7 @@
 									</object>
 									<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 								</object>
-								<object class="NSImageView" id="311126077">
+								<object class="NSImageView" id="177605876">
 									<reference key="NSNextResponder" ref="418552173"/>
 									<int key="NSvFlags">-2147483359</int>
 									<set class="NSMutableSet" key="NSDragTypes">
@@ -802,8 +783,9 @@
 									</set>
 									<string key="NSFrame">{{362, 11}, {15, 15}}</string>
 									<reference key="NSSuperview" ref="418552173"/>
+									<reference key="NSNextKeyView" ref="1055749869"/>
 									<bool key="NSEnabled">YES</bool>
-									<object class="NSImageCell" key="NSCell" id="814884595">
+									<object class="NSImageCell" key="NSCell" id="1045317271">
 										<int key="NSCellFlags">0</int>
 										<int key="NSCellFlags2">33554432</int>
 										<object class="NSCustomResource" key="NSContents">
@@ -830,7 +812,7 @@
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">reorderView</string>
 						<reference key="source" ref="418552173"/>
-						<reference key="destination" ref="311126077"/>
+						<reference key="destination" ref="177605876"/>
 					</object>
 					<int key="connectionID">381</int>
 				</object>
@@ -1178,7 +1160,7 @@
 						<reference key="object" ref="418552173"/>
 						<array class="NSMutableArray" key="children">
 							<reference ref="760301156"/>
-							<reference ref="311126077"/>
+							<reference ref="177605876"/>
 							<reference ref="411643406"/>
 						</array>
 						<reference key="parent" ref="1058526399"/>
@@ -1275,16 +1257,16 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">379</int>
-						<reference key="object" ref="311126077"/>
+						<reference key="object" ref="177605876"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="814884595"/>
+							<reference ref="1045317271"/>
 						</array>
 						<reference key="parent" ref="418552173"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">380</int>
-						<reference key="object" ref="814884595"/>
-						<reference key="parent" ref="311126077"/>
+						<reference key="object" ref="1045317271"/>
+						<reference key="parent" ref="177605876"/>
 					</object>
 				</array>
 			</object>
@@ -1335,8 +1317,8 @@
 				<string key="268.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="268.userInterfaceItemIdentifier">TaskCell</string>
 				<string key="269.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="270.CustomClassName">CDMTaskTextField</string>
 				<string key="270.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="273.CustomClassName">CDMTaskTextFieldCell</string>
 				<string key="273.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="304.CustomClassName">CDMListsViewController</string>
 				<string key="304.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -1344,7 +1326,6 @@
 				<string key="307.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="321.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="322.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="331.CustomClassName">CDMTextField</string>
 				<string key="331.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="332.CustomClassName">CDMTextFieldCell</string>
 				<string key="332.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -1365,273 +1346,7 @@
 			<nil key="sourceID"/>
 			<int key="maxID">381</int>
 		</object>
-		<object class="IBClassDescriber" key="IBDocument.Classes">
-			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
-				<object class="IBPartialClassDescription">
-					<string key="className">CDMAddListTextFieldCell</string>
-					<string key="superclassName">NSTextFieldCell</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/CDMAddListTextFieldCell.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">CDMAddListView</string>
-					<string key="superclassName">NSView</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/CDMAddListView.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">CDMAddTaskView</string>
-					<string key="superclassName">NSView</string>
-					<object class="NSMutableDictionary" key="outlets">
-						<string key="NS.key.0">textField</string>
-						<string key="NS.object.0">NSTextField</string>
-					</object>
-					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<string key="NS.key.0">textField</string>
-						<object class="IBToOneOutletInfo" key="NS.object.0">
-							<string key="name">textField</string>
-							<string key="candidateClassName">NSTextField</string>
-						</object>
-					</object>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/CDMAddTaskView.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">CDMArchesWindowContentView</string>
-					<string key="superclassName">NSView</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/CDMArchesWindowContentView.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">CDMListTableCellView</string>
-					<string key="superclassName">NSTableCellView</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/CDMListTableCellView.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">CDMListsViewController</string>
-					<string key="superclassName">NSViewController</string>
-					<dictionary class="NSMutableDictionary" key="actions">
-						<string key="addList:">id</string>
-						<string key="closeAddList:">id</string>
-						<string key="createList:">id</string>
-						<string key="reload:">id</string>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="actionInfosByName">
-						<object class="IBActionInfo" key="addList:">
-							<string key="name">addList:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="closeAddList:">
-							<string key="name">closeAddList:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="createList:">
-							<string key="name">createList:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="reload:">
-							<string key="name">reload:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="outlets">
-						<string key="addListField">NSTextField</string>
-						<string key="addListView">NSView</string>
-						<string key="arrayController">NSArrayController</string>
-						<string key="tableView">NSTableView</string>
-						<string key="tasksViewController">CDMTasksViewController</string>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<object class="IBToOneOutletInfo" key="addListField">
-							<string key="name">addListField</string>
-							<string key="candidateClassName">NSTextField</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="addListView">
-							<string key="name">addListView</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="arrayController">
-							<string key="name">arrayController</string>
-							<string key="candidateClassName">NSArrayController</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="tableView">
-							<string key="name">tableView</string>
-							<string key="candidateClassName">NSTableView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="tasksViewController">
-							<string key="name">tasksViewController</string>
-							<string key="candidateClassName">CDMTasksViewController</string>
-						</object>
-					</dictionary>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/CDMListsViewController.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">CDMMainWindow</string>
-					<string key="superclassName">INAppStoreWindow</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/CDMMainWindow.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">CDMMainWindowController</string>
-					<string key="superclassName">NSWindowController</string>
-					<object class="NSMutableDictionary" key="actions">
-						<string key="NS.key.0">toggleSidebar:</string>
-						<string key="NS.object.0">id</string>
-					</object>
-					<object class="NSMutableDictionary" key="actionInfosByName">
-						<string key="NS.key.0">toggleSidebar:</string>
-						<object class="IBActionInfo" key="NS.object.0">
-							<string key="name">toggleSidebar:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-					</object>
-					<dictionary class="NSMutableDictionary" key="outlets">
-						<string key="listsViewController">CDMListsViewController</string>
-						<string key="splitView">NSSplitView</string>
-						<string key="splitViewLeft">NSView</string>
-						<string key="tasksViewController">CDMTasksViewController</string>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<object class="IBToOneOutletInfo" key="listsViewController">
-							<string key="name">listsViewController</string>
-							<string key="candidateClassName">CDMListsViewController</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="splitView">
-							<string key="name">splitView</string>
-							<string key="candidateClassName">NSSplitView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="splitViewLeft">
-							<string key="name">splitViewLeft</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="tasksViewController">
-							<string key="name">tasksViewController</string>
-							<string key="candidateClassName">CDMTasksViewController</string>
-						</object>
-					</dictionary>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/CDMMainWindowController.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">CDMShadowTableView</string>
-					<string key="superclassName">NSTableView</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/CDMShadowTableView.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">CDMTaskTableCellView</string>
-					<string key="superclassName">NSTableCellView</string>
-					<object class="NSMutableDictionary" key="outlets">
-						<string key="NS.key.0">reorderView</string>
-						<string key="NS.object.0">NSView</string>
-					</object>
-					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<string key="NS.key.0">reorderView</string>
-						<object class="IBToOneOutletInfo" key="NS.object.0">
-							<string key="name">reorderView</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
-					</object>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/CDMTaskTableCellView.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">CDMTaskTextField</string>
-					<string key="superclassName">NSTextField</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/CDMTaskTextField.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">CDMTasksViewController</string>
-					<string key="superclassName">NSViewController</string>
-					<dictionary class="NSMutableDictionary" key="actions">
-						<string key="addTask:">id</string>
-						<string key="focusTaskField:">id</string>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="actionInfosByName">
-						<object class="IBActionInfo" key="addTask:">
-							<string key="name">addTask:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="focusTaskField:">
-							<string key="name">focusTaskField:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="outlets">
-						<string key="arrayController">NSArrayController</string>
-						<string key="tableView">NSTableView</string>
-						<string key="taskField">NSTextField</string>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<object class="IBToOneOutletInfo" key="arrayController">
-							<string key="name">arrayController</string>
-							<string key="candidateClassName">NSArrayController</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="tableView">
-							<string key="name">tableView</string>
-							<string key="candidateClassName">NSTableView</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="taskField">
-							<string key="name">taskField</string>
-							<string key="candidateClassName">NSTextField</string>
-						</object>
-					</dictionary>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/CDMTasksViewController.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">CDMTextField</string>
-					<string key="superclassName">NSTextField</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/CDMTextField.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">CDMTextFieldCell</string>
-					<string key="superclassName">NSTextFieldCell</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/CDMTextFieldCell.h</string>
-					</object>
-				</object>
-				<object class="IBPartialClassDescription">
-					<string key="className">INAppStoreWindow</string>
-					<string key="superclassName">NSWindow</string>
-					<object class="IBClassDescriptionSource" key="sourceIdentifier">
-						<string key="majorKey">IBProjectSource</string>
-						<string key="minorKey">./Classes/INAppStoreWindow.h</string>
-					</object>
-				</object>
-			</array>
-		</object>
+		<object class="IBClassDescriber" key="IBDocument.Classes"/>
 		<int key="IBDocument.localizationMode">0</int>
 		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaFramework</string>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>

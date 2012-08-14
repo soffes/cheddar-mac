@@ -22,6 +22,9 @@
     NSRange range = NSMakeRange(0, [self.displayText length]);
     [attributedString addAttribute:NSFontAttributeName value:[NSFont fontWithName:kCDMRegularFontName size:15.f] range:range];
     [attributedString addAttribute:NSForegroundColorAttributeName value:[self isCompleted] ? [NSColor cheddarSteelColor] : [NSColor cheddarLightTextColor] range:range];
+    NSMutableParagraphStyle *style = [NSMutableParagraphStyle new];
+    [style setLineBreakMode:NSLineBreakByTruncatingTail];
+    [attributedString addAttribute:NSParagraphStyleAttributeName value:style range:range];
 	[self addEntitiesToAttributedString:attributedString];
 	return attributedString;
 }
@@ -65,6 +68,13 @@
 		else if ([type isEqualToString:@"code"]) {
 			[attributedString addAttribute:NSFontAttributeName value:[NSFont fontWithName:@"Courier" size:15.f] range:range];
 		}
+        // Link
+        else if ([type isEqualToString:@"link"]) {
+            [attributedString addAttribute:NSLinkAttributeName value:[entity valueForKey:@"url"] range:range];
+            [attributedString addAttribute:NSForegroundColorAttributeName value:[NSColor cheddarBlueColor] range:range];
+            [attributedString addAttribute: NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlinePatternSolid | NSUnderlineStyleSingle] range:range];
+            [attributedString addAttribute:NSCursorAttributeName value:[NSCursor pointingHandCursor] range:range];
+        }
 	}
 }
 
