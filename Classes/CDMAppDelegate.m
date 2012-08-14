@@ -103,6 +103,7 @@
         [mainWindow removeChildWindow:overlayWindow];
         [overlayWindow close];
         _plusWindowController = nil;
+        [[NSNotificationCenter defaultCenter] removeObserver:self name:NSWindowDidResizeNotification object:mainWindow];
     }];
     [[overlayWindow animator] setAlphaValue:0.f];
     [NSAnimationContext endGrouping];
