@@ -8,13 +8,13 @@
 
 #import "CDMAppDelegate.h"
 #import "CDMSignInWindowController.h"
-#import "CDMListsWindowController.h"
+#import "CDMMainWindowController.h"
 #import "CDMPreferencesWindowController.h"
 #import "CDMDefines.h"
 
 @implementation CDMAppDelegate {
 	CDMSignInWindowController *_signInWindowController;
-	CDMListsWindowController *_listsWindowController;
+	CDMMainWindowController *_mainWindowController;
 }
 
 
@@ -44,8 +44,8 @@
 		_signInWindowController = [[CDMSignInWindowController alloc] init];
 		[_signInWindowController.window makeKeyAndOrderFront:nil];
 	//} else {
-		_listsWindowController = [[CDMListsWindowController alloc] init];
-		[_listsWindowController.window makeKeyAndOrderFront:nil];
+    _mainWindowController = [[CDMMainWindowController alloc] initWithWindowNibName:@"MainWindow"];
+	[_mainWindowController.window makeKeyAndOrderFront:nil];
 	//}
 
 	dispatch_async(dispatch_get_main_queue(), ^{

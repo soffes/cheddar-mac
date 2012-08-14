@@ -49,11 +49,13 @@
 		0338839E15D9A7EB001FC04B /* CDMTextButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0338839D15D9A7EB001FC04B /* CDMTextButton.m */; };
 		033883A115D9A7F6001FC04B /* CDMTextButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 033883A015D9A7F6001FC04B /* CDMTextButtonCell.m */; };
 		033883A815D9AAF8001FC04B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 033883A715D9AAF7001FC04B /* QuartzCore.framework */; };
+		0338840815D9D53C001FC04B /* CDMListsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0338840715D9D53B001FC04B /* CDMListsViewController.m */; };
+		0338840B15D9D66F001FC04B /* CDMTasksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0338840A15D9D66F001FC04B /* CDMTasksViewController.m */; };
 		B21FF2C515BF7D6500AEEA97 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B21FF2C415BF7D6500AEEA97 /* Cocoa.framework */; };
 		B21FF57115BF7D7C00AEEA97 /* CDMDefines.m in Sources */ = {isa = PBXBuildFile; fileRef = B21FF2EE15BF7D7B00AEEA97 /* CDMDefines.m */; };
 		B21FF57215BF7D7C00AEEA97 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B21FF2F015BF7D7B00AEEA97 /* main.m */; };
 		B21FF57A15BF7D7C00AEEA97 /* Cheddar.icns in Resources */ = {isa = PBXBuildFile; fileRef = B21FF2FB15BF7D7B00AEEA97 /* Cheddar.icns */; };
-		B21FF57B15BF7D7C00AEEA97 /* Lists.xib in Resources */ = {isa = PBXBuildFile; fileRef = B21FF2FD15BF7D7B00AEEA97 /* Lists.xib */; };
+		B21FF57B15BF7D7C00AEEA97 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = B21FF2FD15BF7D7B00AEEA97 /* MainWindow.xib */; };
 		B21FF57C15BF7D7C00AEEA97 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = B21FF2FE15BF7D7B00AEEA97 /* MainMenu.xib */; };
 		B21FF57D15BF7D7C00AEEA97 /* SignIn.xib in Resources */ = {isa = PBXBuildFile; fileRef = B21FF2FF15BF7D7B00AEEA97 /* SignIn.xib */; };
 		B21FF70315BF7D7C00AEEA97 /* Cheddar.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B21FF52515BF7D7C00AEEA97 /* Cheddar.xcdatamodeld */; };
@@ -85,7 +87,7 @@
 		B2B2E15915D9ACA1008672DA /* preferences-updates.png in Resources */ = {isa = PBXBuildFile; fileRef = B2B2E15315D9ACA1008672DA /* preferences-updates.png */; };
 		B2B2E15D15D9B158008672DA /* CDMPreferencesRowView.m in Sources */ = {isa = PBXBuildFile; fileRef = B2B2E15C15D9B158008672DA /* CDMPreferencesRowView.m */; };
 		B2C1EBB615BF838200B65583 /* CDMAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C1EBB115BF838200B65583 /* CDMAppDelegate.m */; };
-		B2C1EBB715BF838200B65583 /* CDMListsWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C1EBB315BF838200B65583 /* CDMListsWindowController.m */; };
+		B2C1EBB715BF838200B65583 /* CDMMainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C1EBB315BF838200B65583 /* CDMMainWindowController.m */; };
 		B2C1EBB815BF838200B65583 /* CDMSignInWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2C1EBB515BF838200B65583 /* CDMSignInWindowController.m */; };
 		B2D2A4D915CC96140029D315 /* arches.png in Resources */ = {isa = PBXBuildFile; fileRef = B2D2A4D715CC96140029D315 /* arches.png */; };
 		B2D2A4DA15CC96140029D315 /* arches@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2D2A4D815CC96140029D315 /* arches@2x.png */; };
@@ -184,6 +186,10 @@
 		0338839F15D9A7F6001FC04B /* CDMTextButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMTextButtonCell.h; sourceTree = "<group>"; };
 		033883A015D9A7F6001FC04B /* CDMTextButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMTextButtonCell.m; sourceTree = "<group>"; };
 		033883A715D9AAF7001FC04B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		0338840615D9D53B001FC04B /* CDMListsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMListsViewController.h; sourceTree = "<group>"; };
+		0338840715D9D53B001FC04B /* CDMListsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMListsViewController.m; sourceTree = "<group>"; };
+		0338840915D9D66F001FC04B /* CDMTasksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMTasksViewController.h; sourceTree = "<group>"; };
+		0338840A15D9D66F001FC04B /* CDMTasksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMTasksViewController.m; sourceTree = "<group>"; };
 		B21FF2C015BF7D6500AEEA97 /* Cheddar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cheddar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B21FF2C415BF7D6500AEEA97 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		B21FF2C715BF7D6500AEEA97 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -195,7 +201,7 @@
 		B21FF2F215BF7D7B00AEEA97 /* Cheddar-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Cheddar-Info.plist"; sourceTree = "<group>"; };
 		B21FF2F315BF7D7B00AEEA97 /* Cheddar.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = Cheddar.entitlements; sourceTree = "<group>"; };
 		B21FF2FB15BF7D7B00AEEA97 /* Cheddar.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Cheddar.icns; sourceTree = "<group>"; };
-		B21FF2FD15BF7D7B00AEEA97 /* Lists.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Lists.xib; sourceTree = "<group>"; };
+		B21FF2FD15BF7D7B00AEEA97 /* MainWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		B21FF2FE15BF7D7B00AEEA97 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 		B21FF2FF15BF7D7B00AEEA97 /* SignIn.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SignIn.xib; sourceTree = "<group>"; };
 		B21FF52115BF7D7C00AEEA97 /* CheddarKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = CheddarKit.xcodeproj; sourceTree = "<group>"; };
@@ -247,8 +253,8 @@
 		B2B2E15C15D9B158008672DA /* CDMPreferencesRowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMPreferencesRowView.m; sourceTree = "<group>"; };
 		B2C1EBB015BF838200B65583 /* CDMAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMAppDelegate.h; sourceTree = "<group>"; };
 		B2C1EBB115BF838200B65583 /* CDMAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMAppDelegate.m; sourceTree = "<group>"; };
-		B2C1EBB215BF838200B65583 /* CDMListsWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMListsWindowController.h; sourceTree = "<group>"; };
-		B2C1EBB315BF838200B65583 /* CDMListsWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMListsWindowController.m; sourceTree = "<group>"; };
+		B2C1EBB215BF838200B65583 /* CDMMainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMMainWindowController.h; sourceTree = "<group>"; };
+		B2C1EBB315BF838200B65583 /* CDMMainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMMainWindowController.m; sourceTree = "<group>"; };
 		B2C1EBB415BF838200B65583 /* CDMSignInWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMSignInWindowController.h; sourceTree = "<group>"; };
 		B2C1EBB515BF838200B65583 /* CDMSignInWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMSignInWindowController.m; sourceTree = "<group>"; };
 		B2D2A4D715CC96140029D315 /* arches.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arches.png; sourceTree = "<group>"; };
@@ -400,7 +406,7 @@
 		B21FF2FC15BF7D7B00AEEA97 /* Nibs */ = {
 			isa = PBXGroup;
 			children = (
-				B21FF2FD15BF7D7B00AEEA97 /* Lists.xib */,
+				B21FF2FD15BF7D7B00AEEA97 /* MainWindow.xib */,
 				B21FF2FE15BF7D7B00AEEA97 /* MainMenu.xib */,
 				B21FF2FF15BF7D7B00AEEA97 /* SignIn.xib */,
 				B2A23DA315D9997700EA9D2D /* About.xib */,
@@ -523,14 +529,18 @@
 		B2A23D1015D9817F00EA9D2D /* Window Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				B2C1EBB215BF838200B65583 /* CDMListsWindowController.h */,
-				B2C1EBB315BF838200B65583 /* CDMListsWindowController.m */,
+				B2C1EBB215BF838200B65583 /* CDMMainWindowController.h */,
+				B2C1EBB315BF838200B65583 /* CDMMainWindowController.m */,
 				B2C1EBB415BF838200B65583 /* CDMSignInWindowController.h */,
 				B2C1EBB515BF838200B65583 /* CDMSignInWindowController.m */,
 				B2A23D7715D997D900EA9D2D /* CDMAboutWindowController.h */,
 				B2A23D7815D997D900EA9D2D /* CDMAboutWindowController.m */,
 				B2A23D7A15D997E300EA9D2D /* CDMPreferencesWindowController.h */,
 				B2A23D7B15D997E300EA9D2D /* CDMPreferencesWindowController.m */,
+				0338840615D9D53B001FC04B /* CDMListsViewController.h */,
+				0338840715D9D53B001FC04B /* CDMListsViewController.m */,
+				0338840915D9D66F001FC04B /* CDMTasksViewController.h */,
+				0338840A15D9D66F001FC04B /* CDMTasksViewController.m */,
 			);
 			name = "Window Controllers";
 			sourceTree = "<group>";
@@ -640,7 +650,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B21FF57A15BF7D7C00AEEA97 /* Cheddar.icns in Resources */,
-				B21FF57B15BF7D7C00AEEA97 /* Lists.xib in Resources */,
+				B21FF57B15BF7D7C00AEEA97 /* MainWindow.xib in Resources */,
 				B21FF57C15BF7D7C00AEEA97 /* MainMenu.xib in Resources */,
 				B21FF57D15BF7D7C00AEEA97 /* SignIn.xib in Resources */,
 				B21FF70415BF7D7C00AEEA97 /* CheddarKitMac-Info.plist in Resources */,
@@ -699,7 +709,7 @@
 				B21FF70315BF7D7C00AEEA97 /* Cheddar.xcdatamodeld in Sources */,
 				B21FF70715BF7D7C00AEEA97 /* INAppStoreWindow.m in Sources */,
 				B2C1EBB615BF838200B65583 /* CDMAppDelegate.m in Sources */,
-				B2C1EBB715BF838200B65583 /* CDMListsWindowController.m in Sources */,
+				B2C1EBB715BF838200B65583 /* CDMMainWindowController.m in Sources */,
 				B2C1EBB815BF838200B65583 /* CDMSignInWindowController.m in Sources */,
 				B25E136815CB98AD009751B9 /* CDMListTableRowView.m in Sources */,
 				B25E13AD15CBB19B009751B9 /* CDMListTableCellView.m in Sources */,
@@ -728,6 +738,8 @@
 				B2B2E12415D9A67C008672DA /* DBPrefsWindowController.m in Sources */,
 				033883A115D9A7F6001FC04B /* CDMTextButtonCell.m in Sources */,
 				B2B2E15D15D9B158008672DA /* CDMPreferencesRowView.m in Sources */,
+				0338840815D9D53C001FC04B /* CDMListsViewController.m in Sources */,
+				0338840B15D9D66F001FC04B /* CDMTasksViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
