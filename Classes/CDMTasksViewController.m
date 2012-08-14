@@ -41,7 +41,6 @@ static NSString* const kCDMTaskCellIdentifier = @"TaskCell";
 {
     NSString *taskText = [self.taskField stringValue];
     [self.taskField setStringValue:@""];
-    [[self.taskField window] makeFirstResponder:self.tableView];
     if ([taskText length]) {
         CDKTask *task = [[CDKTask alloc] init];
         task.text = taskText;
@@ -64,6 +63,12 @@ static NSString* const kCDMTaskCellIdentifier = @"TaskCell";
     [[self.taskField window] makeFirstResponder:self.taskField];
 }
 
+- (IBAction)endedEditingTextField:(id)sender {
+    NSInteger row = [self.tableView rowForView:sender];
+    if (row != -1) {
+        [self.tableView reloadDataForRowIndexes:[NSIndexSet indexSetWithIndex:row] columnIndexes:[NSIndexSet indexSetWithIndex:0]];
+    }
+}
 
 #pragma mark - Accessors
 

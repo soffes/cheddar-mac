@@ -127,6 +127,7 @@ static CGFloat const kCDMTasksViewControllerAddListAnimationDuration = 0.15f;
             NSUInteger index = [[self.arrayController arrangedObjects] indexOfObject:list];
             if (index != NSNotFound) {
                 [self.tableView selectRowIndexes:[NSIndexSet indexSetWithIndex:index] byExtendingSelection:NO];
+                [self tableViewSelectionDidChange:nil];
             }
             [self.tasksViewController focusTaskField:nil];
         } failure:^(AFJSONRequestOperation *remoteOperation, NSError *error) {
