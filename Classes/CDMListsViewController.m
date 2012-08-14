@@ -56,6 +56,8 @@ static CGFloat const kCDMTasksViewControllerAddListAnimationDuration = 0.15f;
 	} failure:^(AFJSONRequestOperation *operation, NSError *error) {
 		NSLog(@"Failed to get lists: %@", error);
 	}];
+
+	[[CDKHTTPClient sharedClient] updateCurrentUserWithSuccess:nil failure:nil];
 }
 
 
@@ -140,8 +142,7 @@ static CGFloat const kCDMTasksViewControllerAddListAnimationDuration = 0.15f;
 
 #pragma mark - NSControlTextEditingDelegate
 
-- (BOOL)control:(NSControl *)control textView:(NSTextView *)textView doCommandBySelector:(SEL)command
-{
+- (BOOL)control:(NSControl *)control textView:(NSTextView *)textView doCommandBySelector:(SEL)command {
     if (command == @selector(cancelOperation:)) {
         [self closeAddList:nil];
         return YES;
@@ -221,4 +222,5 @@ static CGFloat const kCDMTasksViewControllerAddListAnimationDuration = 0.15f;
     }
     return YES;
 }
+
 @end

@@ -100,6 +100,8 @@
 		B2D2A4DA15CC96140029D315 /* arches@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2D2A4D815CC96140029D315 /* arches@2x.png */; };
 		B2D8D5F315BF7FAE00A61836 /* CheddarKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2D8D5F015BF7F9100A61836 /* CheddarKit.framework */; };
 		B2D8D5F515BF7FBD00A61836 /* CheddarKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B2D8D5F015BF7F9100A61836 /* CheddarKit.framework */; };
+		B2DCE53415DB12CE00468BF5 /* move-arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = B2DCE53215DB12CE00468BF5 /* move-arrow.png */; };
+		B2DCE53515DB12CE00468BF5 /* move-arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2DCE53315DB12CE00468BF5 /* move-arrow@2x.png */; };
 		B2F1F86D15DAC697002B9733 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = B2F1F86C15DAC697002B9733 /* dsa_pub.pem */; };
 /* End PBXBuildFile section */
 
@@ -394,6 +396,8 @@
 		B2D2A4D715CC96140029D315 /* arches.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arches.png; sourceTree = "<group>"; };
 		B2D2A4D815CC96140029D315 /* arches@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arches@2x.png"; sourceTree = "<group>"; };
 		B2D8D60B15BF80D000A61836 /* CDMDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDMDefines.h; sourceTree = "<group>"; };
+		B2DCE53215DB12CE00468BF5 /* move-arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "move-arrow.png"; sourceTree = "<group>"; };
+		B2DCE53315DB12CE00468BF5 /* move-arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "move-arrow@2x.png"; sourceTree = "<group>"; };
 		B2F1F86C15DAC697002B9733 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -534,6 +538,8 @@
 		B21FF2FA15BF7D7B00AEEA97 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				B2DCE53215DB12CE00468BF5 /* move-arrow.png */,
+				B2DCE53315DB12CE00468BF5 /* move-arrow@2x.png */,
 				B27CBB4C15DA233C00BC851F /* x.png */,
 				B27CBB4D15DA233C00BC851F /* x@2x.png */,
 				B2B2E15315D9ACA1008672DA /* preferences-updates.png */,
@@ -1059,6 +1065,8 @@
 				03B3951C15DAB73000A8A7D4 /* Localizable.strings in Resources */,
 				B2F1F86D15DAC697002B9733 /* dsa_pub.pem in Resources */,
 				03F2D96D15DAD89900EEC543 /* Plus.xib in Resources */,
+				B2DCE53415DB12CE00468BF5 /* move-arrow.png in Resources */,
+				B2DCE53515DB12CE00468BF5 /* move-arrow@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

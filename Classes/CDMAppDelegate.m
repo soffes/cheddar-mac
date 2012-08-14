@@ -77,15 +77,21 @@
 - (void)_userChanged:(NSNotification *)notification {
 	if (![CDKUser currentUser]) {
 		[self.signInWindowController showWindow:nil];
+	} else {
+		if ([[[CDKUser currentUser] hasPlus] boolValue] == NO) {
+			[self performSelector:@selector(_showPlusWindowIfNecessary) withObject:nil afterDelay:0.25f];
+		}
 	}
 }
 
-- (void)_showPlusWindowIfNecessary
-{
+
+- (void)_showPlusWindowIfNecessary {
     NSWindow *mainWindow = [_mainWindowController window];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(_mainWindowResized:) name:NSWindowDidResizeNotification object:mainWindow];
+
     _plusWindowController = [[CDMPlusWindowController alloc] init];
     _plusWindowController.parentWindow = mainWindow;
+
     NSWindow *overlayWindow = [_plusWindowController window];
     [overlayWindow setAlphaValue:0.f];
     [overlayWindow setFrame:[mainWindow frame] display:YES animate:NO];
@@ -94,8 +100,11 @@
     [[overlayWindow animator] setAlphaValue:1.f];
 }
 
+
 - (IBAction)dismissPlusWindow:(id)sender {
-    if (!_plusWindowController) { return; }
+    if (!_plusWindowController) {
+		return;
+	}
     NSWindow *mainWindow = [_mainWindowController window];
     NSWindow *overlayWindow = [_plusWindowController window];
     [NSAnimationContext beginGrouping];
@@ -109,12 +118,13 @@
     [NSAnimationContext endGrouping];
 }
 
-- (void)_mainWindowResized:(NSNotification*)notification
-{
+
+- (void)_mainWindowResized:(NSNotification*)notification {
     NSWindow *mainWindow = [_mainWindowController window];
     NSWindow *overlayWindow = [_plusWindowController window];
     [overlayWindow setFrame:[mainWindow frame] display:YES animate:NO];
 }
+
 
 #pragma mark - NSMenuDelegate
 
@@ -165,10 +175,10 @@
 		// Initialize the connection to Pusher
 		[CDKPushController sharedController];
 
-		// Add observer for sign out
+		// Add observer for user change
 		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(_userChanged:) name:kCDKCurrentUserChangedNotificationName object:nil];
+		[self _userChanged:nil];
 	});
-    //[self performSelector:@selector(_showPlusWindowIfNecessary) withObject:nil afterDelay:0.25f];
 }
 
 

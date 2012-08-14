@@ -8,6 +8,7 @@
 
 #import "CDMFlatButton.h"
 #import "CDMFlatButtonCell.h"
+#import "NSColor+CDMAdditions.h"
 
 @implementation CDMFlatButton
 
@@ -21,6 +22,7 @@
     [cell setTitle:[self title]];
     [cell setTarget:[self target]];
     [cell setAction:[self action]];
+	[cell setButtonColor:[NSColor cheddarOrangeColor]];
     [self setCell:cell];
 }
 

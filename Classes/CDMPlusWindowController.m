@@ -9,14 +9,49 @@
 #import "CDMPlusWindowController.h"
 #import "CDMPlusWindow.h"
 #import <QuartzCore/QuartzCore.h>
+#import "CDMAppDelegate.h"
+#import "NSColor+CDMAdditions.h"
 
-@interface CDMPlusWindowController ()
-
+@interface CDMPlusWindowContentView ()
+- (void)_userUpdated:(NSNotification *)notification;
 @end
 
 @implementation CDMPlusWindowController
+
 @synthesize parentWindow = _parentWindow;
 @synthesize dialogView = _dialogView;
+@synthesize titleLabel = _titleLabel;
+@synthesize messageLabel = _messageLabel;
+
+- (void)setParentWindow:(NSWindow *)parentWindow {
+    [(CDMPlusWindow*)[self window] setParentWindow:parentWindow];
+}
+
+
+- (NSWindow*)parentWindow {
+    return [(CDMPlusWindow*)[self window] parentWindow];
+}
+
+
+#pragma mark - NSObject
+
+- (void)awakeFromNib {
+	[super awakeFromNib];
+
+	self.titleLabel.font = [NSFont fontWithName:kCDMBoldFontName size:16.0f];
+	self.titleLabel.textColor = [NSColor cheddarSteelColor];
+	
+	self.messageLabel.font = [NSFont fontWithName:kCDMRegularFontName size:14.0f];
+	self.messageLabel.textColor = [NSColor cheddarTextColor];
+
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(_userUpdated:) name:kCDKUserUpdatedNotificationName object:nil];
+}
+
+
+- (void)dealloc {
+	[[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 
 #pragma mark - NSWindowController
 
@@ -24,15 +59,20 @@
 	return @"Plus";
 }
 
-#pragma mark - Accessors
 
-- (void)setParentWindow:(NSWindow *)parentWindow
-{
-    [(CDMPlusWindow*)[self window] setParentWindow:parentWindow];
+#pragma mark - Actions
+
+- (IBAction)upgrade:(id)sender {
+	[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://cheddarapp.com/account#plus"]];
 }
 
-- (NSWindow*)parentWindow
-{
-    return [(CDMPlusWindow*)[self window] parentWindow];
+
+#pragma mark - Private
+
+- (void)_userUpdated:(NSNotification *)notification {
+	if ([CDKUser currentUser] && [[[CDKUser currentUser] hasPlus] boolValue]) {
+		[(CDMAppDelegate *)[NSApp delegate] dismissPlusWindow:nil];
+	}
 }
+
 @end

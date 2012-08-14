@@ -19,6 +19,6 @@
 - (IBAction)reload:(id)sender;
 - (IBAction)addList:(id)sender;
 - (IBAction)closeAddList:(id)sender;
-
 - (IBAction)createList:(id)sender;
+
 @end
