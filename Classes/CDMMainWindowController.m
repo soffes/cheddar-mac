@@ -73,7 +73,7 @@ void SSDrawGradientInRect(CGContextRef context, CGGradientRef gradient, CGRect r
 
 - (BOOL)splitView:(NSSplitView *)splitView shouldAdjustSizeOfSubview:(NSView *)subview {
     // Don't resize the sidebar
-    return subview != self.splitViewLeft;
+    return subview != self.splitViewLeft && [[self window] inLiveResize];
 }
 
 @end
