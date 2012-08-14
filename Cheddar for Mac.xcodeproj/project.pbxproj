@@ -43,10 +43,8 @@
 		0338833415D98DA4001FC04B /* NSView+CDMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0338833315D98DA4001FC04B /* NSView+CDMAdditions.m */; };
 		0338833715D992EA001FC04B /* CDMSecureTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0338833615D992EA001FC04B /* CDMSecureTextFieldCell.m */; };
 		0338833A15D99438001FC04B /* CDMSecureTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 0338833915D99438001FC04B /* CDMSecureTextField.m */; };
-		0338833D15D9971D001FC04B /* CDMTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 0338833C15D9971D001FC04B /* CDMTextField.m */; };
 		0338839815D99F9B001FC04B /* CDMFlatButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0338839715D99F9B001FC04B /* CDMFlatButton.m */; };
 		0338839B15D99FA1001FC04B /* CDMFlatButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0338839A15D99FA1001FC04B /* CDMFlatButtonCell.m */; };
-		0338839E15D9A7EB001FC04B /* CDMTextButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 0338839D15D9A7EB001FC04B /* CDMTextButton.m */; };
 		033883A115D9A7F6001FC04B /* CDMTextButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 033883A015D9A7F6001FC04B /* CDMTextButtonCell.m */; };
 		033883A815D9AAF8001FC04B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 033883A715D9AAF7001FC04B /* QuartzCore.framework */; };
 		0338840815D9D53C001FC04B /* CDMListsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0338840715D9D53B001FC04B /* CDMListsViewController.m */; };
@@ -60,12 +58,7 @@
 		B21FF57D15BF7D7C00AEEA97 /* SignIn.xib in Resources */ = {isa = PBXBuildFile; fileRef = B21FF2FF15BF7D7B00AEEA97 /* SignIn.xib */; };
 		B21FF70315BF7D7C00AEEA97 /* Cheddar.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B21FF52515BF7D7C00AEEA97 /* Cheddar.xcdatamodeld */; };
 		B21FF70715BF7D7C00AEEA97 /* INAppStoreWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = B21FF52D15BF7D7C00AEEA97 /* INAppStoreWindow.m */; };
-		B24970C415CBC6A9008388E5 /* textfield-focused.png in Resources */ = {isa = PBXBuildFile; fileRef = B24970C015CBC6A9008388E5 /* textfield-focused.png */; };
-		B24970C515CBC6A9008388E5 /* textfield-focused@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B24970C115CBC6A9008388E5 /* textfield-focused@2x.png */; };
-		B24970C615CBC6A9008388E5 /* textfield.png in Resources */ = {isa = PBXBuildFile; fileRef = B24970C215CBC6A9008388E5 /* textfield.png */; };
-		B24970C715CBC6A9008388E5 /* textfield@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B24970C315CBC6A9008388E5 /* textfield@2x.png */; };
 		B24970CB15CBC836008388E5 /* NSImage+CDMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B24970CA15CBC836008388E5 /* NSImage+CDMAdditions.m */; };
-		B249723315CBE117008388E5 /* CDMAddTaskTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B249723215CBE117008388E5 /* CDMAddTaskTextFieldCell.m */; };
 		B249724F15CC0058008388E5 /* title.png in Resources */ = {isa = PBXBuildFile; fileRef = B249724D15CC0058008388E5 /* title.png */; };
 		B249725015CC0058008388E5 /* title@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B249724E15CC0058008388E5 /* title@2x.png */; };
 		B249725315CC00D9008388E5 /* CDMTaskTableRowView.m in Sources */ = {isa = PBXBuildFile; fileRef = B249725215CC00D9008388E5 /* CDMTaskTableRowView.m */; };
@@ -74,7 +67,6 @@
 		B25E136815CB98AD009751B9 /* CDMListTableRowView.m in Sources */ = {isa = PBXBuildFile; fileRef = B25E136715CB98AD009751B9 /* CDMListTableRowView.m */; };
 		B25E13AD15CBB19B009751B9 /* CDMListTableCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = B25E13AC15CBB19B009751B9 /* CDMListTableCellView.m */; };
 		B25E13B815CBC2AF009751B9 /* CDMAddTaskView.m in Sources */ = {isa = PBXBuildFile; fileRef = B25E13B715CBC2AF009751B9 /* CDMAddTaskView.m */; };
-		B25E13BB15CBC514009751B9 /* CDMAddTaskTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = B25E13BA15CBC514009751B9 /* CDMAddTaskTextField.m */; };
 		B27CB9B115D9E2B600BC851F /* check.png in Resources */ = {isa = PBXBuildFile; fileRef = B27CB9AF15D9E2B600BC851F /* check.png */; };
 		B27CB9B215D9E2B600BC851F /* check@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B27CB9B015D9E2B600BC851F /* check@2x.png */; };
 		B2A18D9415D8B9C4002942A5 /* CDMCheckboxButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B2A18D9315D8B9C4002942A5 /* CDMCheckboxButtonCell.m */; };
@@ -175,14 +167,10 @@
 		0338833615D992EA001FC04B /* CDMSecureTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMSecureTextFieldCell.m; sourceTree = "<group>"; };
 		0338833815D99438001FC04B /* CDMSecureTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMSecureTextField.h; sourceTree = "<group>"; };
 		0338833915D99438001FC04B /* CDMSecureTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMSecureTextField.m; sourceTree = "<group>"; };
-		0338833B15D9971D001FC04B /* CDMTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMTextField.h; sourceTree = "<group>"; };
-		0338833C15D9971D001FC04B /* CDMTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMTextField.m; sourceTree = "<group>"; };
 		0338839615D99F9B001FC04B /* CDMFlatButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMFlatButton.h; sourceTree = "<group>"; };
 		0338839715D99F9B001FC04B /* CDMFlatButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMFlatButton.m; sourceTree = "<group>"; };
 		0338839915D99FA1001FC04B /* CDMFlatButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMFlatButtonCell.h; sourceTree = "<group>"; };
 		0338839A15D99FA1001FC04B /* CDMFlatButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMFlatButtonCell.m; sourceTree = "<group>"; };
-		0338839C15D9A7EB001FC04B /* CDMTextButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMTextButton.h; sourceTree = "<group>"; };
-		0338839D15D9A7EB001FC04B /* CDMTextButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMTextButton.m; sourceTree = "<group>"; };
 		0338839F15D9A7F6001FC04B /* CDMTextButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMTextButtonCell.h; sourceTree = "<group>"; };
 		033883A015D9A7F6001FC04B /* CDMTextButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMTextButtonCell.m; sourceTree = "<group>"; };
 		033883A715D9AAF7001FC04B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -209,14 +197,8 @@
 		B21FF52715BF7D7C00AEEA97 /* Cheddar.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Cheddar.xcdatamodel; sourceTree = "<group>"; };
 		B21FF52C15BF7D7C00AEEA97 /* INAppStoreWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = INAppStoreWindow.h; sourceTree = "<group>"; };
 		B21FF52D15BF7D7C00AEEA97 /* INAppStoreWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = INAppStoreWindow.m; sourceTree = "<group>"; };
-		B24970C015CBC6A9008388E5 /* textfield-focused.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "textfield-focused.png"; sourceTree = "<group>"; };
-		B24970C115CBC6A9008388E5 /* textfield-focused@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "textfield-focused@2x.png"; sourceTree = "<group>"; };
-		B24970C215CBC6A9008388E5 /* textfield.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = textfield.png; sourceTree = "<group>"; };
-		B24970C315CBC6A9008388E5 /* textfield@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "textfield@2x.png"; sourceTree = "<group>"; };
 		B24970C915CBC836008388E5 /* NSImage+CDMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage+CDMAdditions.h"; sourceTree = "<group>"; };
 		B24970CA15CBC836008388E5 /* NSImage+CDMAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSImage+CDMAdditions.m"; sourceTree = "<group>"; };
-		B249723115CBE117008388E5 /* CDMAddTaskTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMAddTaskTextFieldCell.h; sourceTree = "<group>"; };
-		B249723215CBE117008388E5 /* CDMAddTaskTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMAddTaskTextFieldCell.m; sourceTree = "<group>"; };
 		B249724D15CC0058008388E5 /* title.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = title.png; sourceTree = "<group>"; };
 		B249724E15CC0058008388E5 /* title@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "title@2x.png"; sourceTree = "<group>"; };
 		B249725115CC00D9008388E5 /* CDMTaskTableRowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMTaskTableRowView.h; sourceTree = "<group>"; };
@@ -231,8 +213,6 @@
 		B25E13AC15CBB19B009751B9 /* CDMListTableCellView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMListTableCellView.m; sourceTree = "<group>"; };
 		B25E13B615CBC2AF009751B9 /* CDMAddTaskView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMAddTaskView.h; sourceTree = "<group>"; };
 		B25E13B715CBC2AF009751B9 /* CDMAddTaskView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMAddTaskView.m; sourceTree = "<group>"; };
-		B25E13B915CBC513009751B9 /* CDMAddTaskTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMAddTaskTextField.h; sourceTree = "<group>"; };
-		B25E13BA15CBC514009751B9 /* CDMAddTaskTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMAddTaskTextField.m; sourceTree = "<group>"; };
 		B27CB9AF15D9E2B600BC851F /* check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check.png; sourceTree = "<group>"; };
 		B27CB9B015D9E2B600BC851F /* check@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "check@2x.png"; sourceTree = "<group>"; };
 		B2A18D9215D8B9C4002942A5 /* CDMCheckboxButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMCheckboxButtonCell.h; sourceTree = "<group>"; };
@@ -396,10 +376,6 @@
 				B2D2A4D815CC96140029D315 /* arches@2x.png */,
 				B249724D15CC0058008388E5 /* title.png */,
 				B249724E15CC0058008388E5 /* title@2x.png */,
-				B24970C015CBC6A9008388E5 /* textfield-focused.png */,
-				B24970C115CBC6A9008388E5 /* textfield-focused@2x.png */,
-				B24970C215CBC6A9008388E5 /* textfield.png */,
-				B24970C315CBC6A9008388E5 /* textfield@2x.png */,
 				B21FF2FB15BF7D7B00AEEA97 /* Cheddar.icns */,
 			);
 			path = Images;
@@ -484,8 +460,6 @@
 				0338839A15D99FA1001FC04B /* CDMFlatButtonCell.m */,
 				033882FE15D97CA9001FC04B /* CDMTextFieldCell.h */,
 				033882FF15D97CA9001FC04B /* CDMTextFieldCell.m */,
-				B249723115CBE117008388E5 /* CDMAddTaskTextFieldCell.h */,
-				B249723215CBE117008388E5 /* CDMAddTaskTextFieldCell.m */,
 				B2A18D9215D8B9C4002942A5 /* CDMCheckboxButtonCell.h */,
 				B2A18D9315D8B9C4002942A5 /* CDMCheckboxButtonCell.m */,
 				0338833515D992EA001FC04B /* CDMSecureTextFieldCell.h */,
@@ -505,20 +479,14 @@
 				B25E13AC15CBB19B009751B9 /* CDMListTableCellView.m */,
 				B25E13B615CBC2AF009751B9 /* CDMAddTaskView.h */,
 				B25E13B715CBC2AF009751B9 /* CDMAddTaskView.m */,
-				B25E13B915CBC513009751B9 /* CDMAddTaskTextField.h */,
-				B25E13BA15CBC514009751B9 /* CDMAddTaskTextField.m */,
 				B249725115CC00D9008388E5 /* CDMTaskTableRowView.h */,
 				B249725215CC00D9008388E5 /* CDMTaskTableRowView.m */,
 				B249725415CC02C0008388E5 /* CDMTaskTableCellView.h */,
 				B249725515CC02C0008388E5 /* CDMTaskTableCellView.m */,
 				0338833815D99438001FC04B /* CDMSecureTextField.h */,
 				0338833915D99438001FC04B /* CDMSecureTextField.m */,
-				0338833B15D9971D001FC04B /* CDMTextField.h */,
-				0338833C15D9971D001FC04B /* CDMTextField.m */,
 				0338839615D99F9B001FC04B /* CDMFlatButton.h */,
 				0338839715D99F9B001FC04B /* CDMFlatButton.m */,
-				0338839C15D9A7EB001FC04B /* CDMTextButton.h */,
-				0338839D15D9A7EB001FC04B /* CDMTextButton.m */,
 				B2B2E15B15D9B158008672DA /* CDMPreferencesRowView.h */,
 				B2B2E15C15D9B158008672DA /* CDMPreferencesRowView.m */,
 			);
@@ -659,10 +627,6 @@
 				B21FF57B15BF7D7C00AEEA97 /* MainWindow.xib in Resources */,
 				B21FF57C15BF7D7C00AEEA97 /* MainMenu.xib in Resources */,
 				B21FF57D15BF7D7C00AEEA97 /* SignIn.xib in Resources */,
-				B24970C415CBC6A9008388E5 /* textfield-focused.png in Resources */,
-				B24970C515CBC6A9008388E5 /* textfield-focused@2x.png in Resources */,
-				B24970C615CBC6A9008388E5 /* textfield.png in Resources */,
-				B24970C715CBC6A9008388E5 /* textfield@2x.png in Resources */,
 				B249724F15CC0058008388E5 /* title.png in Resources */,
 				B249725015CC0058008388E5 /* title@2x.png in Resources */,
 				B2D2A4D915CC96140029D315 /* arches.png in Resources */,
@@ -721,9 +685,7 @@
 				B25E136815CB98AD009751B9 /* CDMListTableRowView.m in Sources */,
 				B25E13AD15CBB19B009751B9 /* CDMListTableCellView.m in Sources */,
 				B25E13B815CBC2AF009751B9 /* CDMAddTaskView.m in Sources */,
-				B25E13BB15CBC514009751B9 /* CDMAddTaskTextField.m in Sources */,
 				B24970CB15CBC836008388E5 /* NSImage+CDMAdditions.m in Sources */,
-				B249723315CBE117008388E5 /* CDMAddTaskTextFieldCell.m in Sources */,
 				B249725315CC00D9008388E5 /* CDMTaskTableRowView.m in Sources */,
 				B249725615CC02C1008388E5 /* CDMTaskTableCellView.m in Sources */,
 				B25B9C5E15CF2784005FA4A2 /* CDMMainWindow.m in Sources */,
@@ -735,12 +697,10 @@
 				0338833415D98DA4001FC04B /* NSView+CDMAdditions.m in Sources */,
 				0338833715D992EA001FC04B /* CDMSecureTextFieldCell.m in Sources */,
 				0338833A15D99438001FC04B /* CDMSecureTextField.m in Sources */,
-				0338833D15D9971D001FC04B /* CDMTextField.m in Sources */,
 				B2A23D7915D997D900EA9D2D /* CDMAboutWindowController.m in Sources */,
 				B2A23D7C15D997E300EA9D2D /* CDMPreferencesWindowController.m in Sources */,
 				0338839815D99F9B001FC04B /* CDMFlatButton.m in Sources */,
 				0338839B15D99FA1001FC04B /* CDMFlatButtonCell.m in Sources */,
-				0338839E15D9A7EB001FC04B /* CDMTextButton.m in Sources */,
 				B2B2E12415D9A67C008672DA /* DBPrefsWindowController.m in Sources */,
 				033883A115D9A7F6001FC04B /* CDMTextButtonCell.m in Sources */,
 				B2B2E15D15D9B158008672DA /* CDMPreferencesRowView.m in Sources */,

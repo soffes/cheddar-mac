@@ -19,6 +19,7 @@ NSString* const kCDMTasksDragTypeMove = @"CDMTasksDragTypeMove";
 @synthesize arrayController = _arrayController;
 @synthesize tableView = _tableView;
 @synthesize selectedList = _selectedList;
+@synthesize taskField = _taskField;
 
 #pragma mark - NSObject
 
@@ -29,6 +30,13 @@ NSString* const kCDMTasksDragTypeMove = @"CDMTasksDragTypeMove";
 	self.arrayController.sortDescriptors = [CDKTask defaultSortDescriptors];
     [self.tableView registerForDraggedTypes:[NSArray arrayWithObject:kCDMTasksDragTypeRearrange]];
     _awakenFromNib = YES;
+}
+
+#pragma mark - Actions
+
+- (IBAction)addTask:(id)sender
+{
+    NSString *task = [self.taskField stringValue];
 }
 
 #pragma mark - Accessors
@@ -67,6 +75,7 @@ NSString* const kCDMTasksDragTypeMove = @"CDMTasksDragTypeMove";
     [pboard setData:objectData forType:kCDMTasksDragTypeMove];
     return YES;
 }
+
 
 - (NSDragOperation)tableView:(NSTableView *)aTableView validateDrop:(id < NSDraggingInfo >)info proposedRow:(NSInteger)row proposedDropOperation:(NSTableViewDropOperation)operation {
     return (operation == NSTableViewDropAbove) ? NSDragOperationMove : NSDragOperationNone;
