@@ -9,6 +9,7 @@
 #import "CDMListsViewController.h"
 #import "CDMListTableRowView.h"
 #import "CDMTasksViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 static NSString* const CDMListsDragTypeRearrange = @"CDMListsDragTypeRearrange";
 
@@ -89,7 +90,11 @@ static NSString* const CDMListsDragTypeRearrange = @"CDMListsDragTypeRearrange";
 	}
 	[self.arrayController.managedObjectContext save:nil];
 	[CDKList sortWithObjects:lists];
+    [NSAnimationContext beginGrouping];
+    [[NSAnimationContext currentContext] setDuration:kCDMTableViewAnimationDuration];
+    [[NSAnimationContext currentContext] setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
     [self.tableView moveRowAtIndex:originalListIndex toIndex:destinationRow];
+    [NSAnimationContext endGrouping];
     return YES;
 }
 

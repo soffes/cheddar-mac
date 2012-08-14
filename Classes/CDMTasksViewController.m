@@ -8,6 +8,7 @@
 
 #import "CDMTasksViewController.h"
 #import "CDMTaskTableRowView.h"
+#import <QuartzCore/QuartzCore.h>
 
 static NSString* const CDMTasksDragTypeRearrange = @"CDMTasksDragTypeRearrange";
 
@@ -84,7 +85,11 @@ static NSString* const CDMTasksDragTypeRearrange = @"CDMTasksDragTypeRearrange";
 	}
 	[self.arrayController.managedObjectContext save:nil];
 	[CDKTask sortWithObjects:tasks];
+    [NSAnimationContext beginGrouping];
+    [[NSAnimationContext currentContext] setDuration:kCDMTableViewAnimationDuration];
+    [[NSAnimationContext currentContext] setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
     [self.tableView moveRowAtIndex:originalListIndex toIndex:destinationRow];
+    [NSAnimationContext endGrouping];
     return YES;
 }
 
