@@ -9,7 +9,6 @@
 #import "CDMTextFieldCell.h"
 #import "NSBezierPath+MCAdditions.h"
 #import "NSColor+CDMAdditions.h"
-#import "NSView+CDMAdditions.h"
 
 static CGFloat const kCDMTextFieldCellXInset = 15.0f;
 static CGFloat const kCDMTextFieldCellCornerRadius = 4.0f;
@@ -63,7 +62,7 @@ static CGFloat const kCDMTextFieldCellOuterShadowBlurRadius = 2.0f;
 
 - (void)drawInteriorWithFrame:(NSRect)cellFrame inView:(NSView *)controlView {
     CGFloat scaleFactor = [[controlView window] backingScaleFactor];
-    BOOL firstResponder = [controlView isFirstResponder];
+    BOOL firstResponder = [self showsFirstResponder];
 
 	CGFloat inset = (kCDMTextFieldCellOuterShadowBlurRadius + 1.0f) * scaleFactor;
     NSRect drawingRect = NSInsetRect(cellFrame, inset, inset);
