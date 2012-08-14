@@ -49,6 +49,7 @@
 		033883A815D9AAF8001FC04B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 033883A715D9AAF7001FC04B /* QuartzCore.framework */; };
 		0338840815D9D53C001FC04B /* CDMListsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0338840715D9D53B001FC04B /* CDMListsViewController.m */; };
 		0338840B15D9D66F001FC04B /* CDMTasksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0338840A15D9D66F001FC04B /* CDMTasksViewController.m */; };
+		037252DE15D9FAA800E87D87 /* CDMBoolToTaskTextColorValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 037252DD15D9FAA800E87D87 /* CDMBoolToTaskTextColorValueTransformer.m */; };
 		B21FF2C515BF7D6500AEEA97 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B21FF2C415BF7D6500AEEA97 /* Cocoa.framework */; };
 		B21FF57115BF7D7C00AEEA97 /* CDMDefines.m in Sources */ = {isa = PBXBuildFile; fileRef = B21FF2EE15BF7D7B00AEEA97 /* CDMDefines.m */; };
 		B21FF57215BF7D7C00AEEA97 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B21FF2F015BF7D7B00AEEA97 /* main.m */; };
@@ -68,7 +69,6 @@
 		B25E13AD15CBB19B009751B9 /* CDMListTableCellView.m in Sources */ = {isa = PBXBuildFile; fileRef = B25E13AC15CBB19B009751B9 /* CDMListTableCellView.m */; };
 		B25E13B815CBC2AF009751B9 /* CDMAddTaskView.m in Sources */ = {isa = PBXBuildFile; fileRef = B25E13B715CBC2AF009751B9 /* CDMAddTaskView.m */; };
 		B27CBA1415D9EBCE00BC851F /* CDMConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = B27CBA1315D9EBCE00BC851F /* CDMConstants.m */; };
-		B27CBA2A15D9EFA300BC851F /* CDKTask+CDMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B27CBA2915D9EFA300BC851F /* CDKTask+CDMAdditions.m */; };
 		B27CBA3215D9F12800BC851F /* SNRFetchedResultsController.m in Sources */ = {isa = PBXBuildFile; fileRef = B27CBA2F15D9F12800BC851F /* SNRFetchedResultsController.m */; };
 		B2A23D1515D988AB00EA9D2D /* NSColor+CDMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B2A23D1415D988AB00EA9D2D /* NSColor+CDMAdditions.m */; };
 		B2A23D7915D997D900EA9D2D /* CDMAboutWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2A23D7815D997D900EA9D2D /* CDMAboutWindowController.m */; };
@@ -178,6 +178,8 @@
 		0338840715D9D53B001FC04B /* CDMListsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMListsViewController.m; sourceTree = "<group>"; };
 		0338840915D9D66F001FC04B /* CDMTasksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMTasksViewController.h; sourceTree = "<group>"; };
 		0338840A15D9D66F001FC04B /* CDMTasksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMTasksViewController.m; sourceTree = "<group>"; };
+		037252DC15D9FAA800E87D87 /* CDMBoolToTaskTextColorValueTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMBoolToTaskTextColorValueTransformer.h; sourceTree = "<group>"; };
+		037252DD15D9FAA800E87D87 /* CDMBoolToTaskTextColorValueTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMBoolToTaskTextColorValueTransformer.m; sourceTree = "<group>"; };
 		B21FF2C015BF7D6500AEEA97 /* Cheddar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cheddar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B21FF2C415BF7D6500AEEA97 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		B21FF2C715BF7D6500AEEA97 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -215,8 +217,6 @@
 		B25E13B715CBC2AF009751B9 /* CDMAddTaskView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMAddTaskView.m; sourceTree = "<group>"; };
 		B27CBA1215D9EBCE00BC851F /* CDMConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMConstants.h; sourceTree = "<group>"; };
 		B27CBA1315D9EBCE00BC851F /* CDMConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMConstants.m; sourceTree = "<group>"; };
-		B27CBA2815D9EFA300BC851F /* CDKTask+CDMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CDKTask+CDMAdditions.h"; sourceTree = "<group>"; };
-		B27CBA2915D9EFA300BC851F /* CDKTask+CDMAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CDKTask+CDMAdditions.m"; sourceTree = "<group>"; };
 		B27CBA2E15D9F12800BC851F /* SNRFetchedResultsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNRFetchedResultsController.h; sourceTree = "<group>"; };
 		B27CBA2F15D9F12800BC851F /* SNRFetchedResultsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SNRFetchedResultsController.m; sourceTree = "<group>"; };
 		B2A23D1315D988AB00EA9D2D /* NSColor+CDMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSColor+CDMAdditions.h"; sourceTree = "<group>"; };
@@ -270,6 +270,15 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
+		037252DB15D9FA8B00E87D87 /* Value Transformers */ = {
+			isa = PBXGroup;
+			children = (
+				037252DC15D9FAA800E87D87 /* CDMBoolToTaskTextColorValueTransformer.h */,
+				037252DD15D9FAA800E87D87 /* CDMBoolToTaskTextColorValueTransformer.m */,
+			);
+			name = "Value Transformers";
+			sourceTree = "<group>";
+		};
 		B21FF2B515BF7D6500AEEA97 = {
 			isa = PBXGroup;
 			children = (
@@ -306,6 +315,7 @@
 		B21FF2E615BF7D7B00AEEA97 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				037252DB15D9FA8B00E87D87 /* Value Transformers */,
 				B2A23D1115D9818500EA9D2D /* Application */,
 				B2A23D1015D9817F00EA9D2D /* Window Controllers */,
 				B27CB98815D9D90D00BC851F /* View Controllers */,
@@ -452,8 +462,6 @@
 				B2A23D1415D988AB00EA9D2D /* NSColor+CDMAdditions.m */,
 				0338833215D98DA4001FC04B /* NSView+CDMAdditions.h */,
 				0338833315D98DA4001FC04B /* NSView+CDMAdditions.m */,
-				B27CBA2815D9EFA300BC851F /* CDKTask+CDMAdditions.h */,
-				B27CBA2915D9EFA300BC851F /* CDKTask+CDMAdditions.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -716,8 +724,8 @@
 				0338840815D9D53C001FC04B /* CDMListsViewController.m in Sources */,
 				0338840B15D9D66F001FC04B /* CDMTasksViewController.m in Sources */,
 				B27CBA1415D9EBCE00BC851F /* CDMConstants.m in Sources */,
-				B27CBA2A15D9EFA300BC851F /* CDKTask+CDMAdditions.m in Sources */,
 				B27CBA3215D9F12800BC851F /* SNRFetchedResultsController.m in Sources */,
+				037252DE15D9FAA800E87D87 /* CDMBoolToTaskTextColorValueTransformer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
