@@ -400,7 +400,6 @@
 													<string key="NSFrame">{{1, 119}, {223, 15}}</string>
 													<reference key="NSSuperview" ref="672568933"/>
 													<reference key="NSWindow"/>
-													<reference key="NSNextKeyView"/>
 													<string key="NSReuseIdentifierKey">_NS:60</string>
 													<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 													<int key="NSsFlags">1</int>
@@ -685,7 +684,7 @@
 								<object class="NSTextField" id="411643406">
 									<reference key="NSNextResponder" ref="418552173"/>
 									<int key="NSvFlags">266</int>
-									<string key="NSFrame">{{35, 11}, {363, 17}}</string>
+									<string key="NSFrame">{{33, 12}, {363, 17}}</string>
 									<reference key="NSSuperview" ref="418552173"/>
 									<reference key="NSNextKeyView" ref="1055749869"/>
 									<string key="NSAntiCompressionPriority">{250, 750}</string>
