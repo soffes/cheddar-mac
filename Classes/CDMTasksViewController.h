@@ -6,10 +6,11 @@
 //  Copyright (c) 2012 Nothing Magical. All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
-
 @interface CDMTasksViewController : NSViewController
+
 @property (nonatomic, weak) IBOutlet NSArrayController *arrayController;
 @property (nonatomic, weak) IBOutlet NSTableView *tableView;
+
 @property (nonatomic, strong) CDKList *selectedList;
+
 @end

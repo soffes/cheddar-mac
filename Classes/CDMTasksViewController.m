@@ -11,10 +11,6 @@
 
 static NSString* const CDMTasksDragTypeRearrange = @"CDMTasksDragTypeRearrange";
 
-@interface CDMTasksViewController ()
-
-@end
-
 @implementation CDMTasksViewController {
     BOOL _awakenFromNib;
 }
@@ -22,8 +18,9 @@ static NSString* const CDMTasksDragTypeRearrange = @"CDMTasksDragTypeRearrange";
 @synthesize tableView = _tableView;
 @synthesize selectedList = _selectedList;
 
-- (void)awakeFromNib
-{
+#pragma mark - NSObject
+
+- (void)awakeFromNib {
     [super awakeFromNib];
     if (_awakenFromNib) { return; }
     self.arrayController.managedObjectContext = [CDKTask mainContext];
@@ -34,15 +31,15 @@ static NSString* const CDMTasksDragTypeRearrange = @"CDMTasksDragTypeRearrange";
 
 #pragma mark - Accessors
 
-- (void)setSelectedList:(CDKList *)selectedList
-{
-    if (_selectedList != selectedList) {
-        _selectedList = selectedList;
-        [[CDKHTTPClient sharedClient] getTasksWithList:_selectedList success:^(AFJSONRequestOperation *operation, id responseObject) {
-            self.arrayController.fetchPredicate = [NSPredicate predicateWithFormat:@"list = %@ AND archivedAt = nil", _selectedList];
-            [self.arrayController fetch:nil];
-        } failure:nil];
-    }
+- (void)setSelectedList:(CDKList *)selectedList {
+	if (_selectedList != selectedList) {
+		_selectedList = selectedList;
+	}
+	[[CDKHTTPClient sharedClient] getTasksWithList:_selectedList success:^(AFJSONRequestOperation *operation, id responseObject) {
+		[self.arrayController fetch:nil];
+	} failure:nil];
+	self.arrayController.fetchPredicate = [NSPredicate predicateWithFormat:@"list = %@ AND archivedAt = nil", _selectedList];
+	[self.arrayController fetch:nil];
 }
 
 #pragma mark - NSTableViewDelegate
@@ -51,22 +48,23 @@ static NSString* const CDMTasksDragTypeRearrange = @"CDMTasksDragTypeRearrange";
 	return [[CDMTaskTableRowView alloc] initWithFrame:CGRectZero];
 }
 
+
 - (CGFloat)tableView:(NSTableView *)tableView heightOfRow:(NSInteger)row {
 	return 38.0f;
 }
 
+
 #pragma mark - NSTableViewDataSource
 
-- (BOOL)tableView:(NSTableView *)aTableView writeRowsWithIndexes:(NSIndexSet *)rowIndexes toPasteboard:(NSPasteboard *)pboard
-{
+- (BOOL)tableView:(NSTableView *)aTableView writeRowsWithIndexes:(NSIndexSet *)rowIndexes toPasteboard:(NSPasteboard *)pboard {
     [pboard declareTypes:[NSArray arrayWithObject:CDMTasksDragTypeRearrange] owner:self];
     NSData *archivedData = [NSKeyedArchiver archivedDataWithRootObject:rowIndexes];
     [pboard setData:archivedData forType:CDMTasksDragTypeRearrange];
     return YES;
 }
 
-- (NSDragOperation)tableView:(NSTableView *)aTableView validateDrop:(id < NSDraggingInfo >)info proposedRow:(NSInteger)row proposedDropOperation:(NSTableViewDropOperation)operation
-{
+
+- (NSDragOperation)tableView:(NSTableView *)aTableView validateDrop:(id < NSDraggingInfo >)info proposedRow:(NSInteger)row proposedDropOperation:(NSTableViewDropOperation)operation {
     return (operation == NSTableViewDropAbove) ? NSDragOperationMove : NSDragOperationNone;
 }
 
@@ -89,4 +87,5 @@ static NSString* const CDMTasksDragTypeRearrange = @"CDMTasksDragTypeRearrange";
     [self.tableView moveRowAtIndex:originalListIndex toIndex:destinationRow];
     return YES;
 }
+
 @end
