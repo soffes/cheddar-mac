@@ -8,6 +8,8 @@
 
 #import "CDMPlusWindow.h"
 
+static CGFloat const kCDMPlusWindowCornerRadius = 4.f;
+
 @implementation CDMPlusWindow
 @synthesize parentWindow = _parentWindow;
 
@@ -33,8 +35,9 @@
 @implementation CDMPlusWindowContentView
 
 - (void)drawRect:(NSRect)dirtyRect {
-    [[NSColor colorWithDeviceWhite:0.f alpha:0.5f] set];
-    [NSBezierPath fillRect:[self bounds]];
+    NSBezierPath *path = [NSBezierPath bezierPathWithRoundedRect:[self bounds] xRadius:kCDMPlusWindowCornerRadius yRadius:kCDMPlusWindowCornerRadius];
+    NSGradient *gradient = [[NSGradient alloc] initWithStartingColor:[NSColor clearColor] endingColor:[NSColor colorWithDeviceWhite:0.f alpha:0.5f]];
+    [gradient drawInBezierPath:path relativeCenterPosition:NSMakePoint(0, 0)];
 }
 
 - (void)mouseDragged:(NSEvent *)theEvent
