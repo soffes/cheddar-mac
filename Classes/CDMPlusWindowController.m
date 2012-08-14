@@ -8,6 +8,7 @@
 
 #import "CDMPlusWindowController.h"
 #import "CDMPlusWindow.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface CDMPlusWindowController ()
 
@@ -15,6 +16,7 @@
 
 @implementation CDMPlusWindowController
 @synthesize parentWindow = _parentWindow;
+@synthesize dialogView = _dialogView;
 
 #pragma mark - NSWindowController
 
@@ -32,5 +34,17 @@
 - (NSWindow*)parentWindow
 {
     return [(CDMPlusWindow*)[self window] parentWindow];
+}
+
+#pragma mark - Actions
+
+- (IBAction)animateDialogViewOffScreen:(id)sender
+{
+    [NSAnimationContext beginGrouping];
+    [[NSAnimationContext currentContext] setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
+    NSRect newDialogFrame = [self.dialogView frame];
+    newDialogFrame.origin.y = NSMaxY([[[self window] contentView] bounds]);
+    [[self.dialogView animator] setFrame:newDialogFrame];
+    [NSAnimationContext endGrouping];
 }
 @end
