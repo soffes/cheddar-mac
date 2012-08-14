@@ -10,7 +10,8 @@
 #import "CDMTaskTableRowView.h"
 #import <QuartzCore/QuartzCore.h>
 
-static NSString* const CDMTasksDragTypeRearrange = @"CDMTasksDragTypeRearrange";
+static NSString* const kCDMTasksDragTypeRearrange = @"CDMTasksDragTypeRearrange";
+NSString* const kCDMTasksDragTypeMove = @"CDMTasksDragTypeMove";
 
 @implementation CDMTasksViewController {
     BOOL _awakenFromNib;
@@ -26,7 +27,7 @@ static NSString* const CDMTasksDragTypeRearrange = @"CDMTasksDragTypeRearrange";
     if (_awakenFromNib) { return; }
     self.arrayController.managedObjectContext = [CDKTask mainContext];
 	self.arrayController.sortDescriptors = [CDKTask defaultSortDescriptors];
-    [self.tableView registerForDraggedTypes:[NSArray arrayWithObject:CDMTasksDragTypeRearrange]];
+    [self.tableView registerForDraggedTypes:[NSArray arrayWithObject:kCDMTasksDragTypeRearrange]];
     _awakenFromNib = YES;
 }
 
@@ -58,12 +59,14 @@ static NSString* const CDMTasksDragTypeRearrange = @"CDMTasksDragTypeRearrange";
 #pragma mark - NSTableViewDataSource
 
 - (BOOL)tableView:(NSTableView *)aTableView writeRowsWithIndexes:(NSIndexSet *)rowIndexes toPasteboard:(NSPasteboard *)pboard {
-    [pboard declareTypes:[NSArray arrayWithObject:CDMTasksDragTypeRearrange] owner:self];
-    NSData *archivedData = [NSKeyedArchiver archivedDataWithRootObject:rowIndexes];
-    [pboard setData:archivedData forType:CDMTasksDragTypeRearrange];
+    [pboard declareTypes:[NSArray arrayWithObject:kCDMTasksDragTypeRearrange] owner:self];
+    NSData *rowData = [NSKeyedArchiver archivedDataWithRootObject:rowIndexes];
+    CDKTask *task = [self.arrayController.arrangedObjects objectAtIndex:[rowIndexes firstIndex]];
+    NSData *objectData = [NSKeyedArchiver archivedDataWithRootObject:[[task objectID] URIRepresentation]];
+    [pboard setData:rowData forType:kCDMTasksDragTypeRearrange];
+    [pboard setData:objectData forType:kCDMTasksDragTypeMove];
     return YES;
 }
-
 
 - (NSDragOperation)tableView:(NSTableView *)aTableView validateDrop:(id < NSDraggingInfo >)info proposedRow:(NSInteger)row proposedDropOperation:(NSTableViewDropOperation)operation {
     return (operation == NSTableViewDropAbove) ? NSDragOperationMove : NSDragOperationNone;
@@ -73,7 +76,7 @@ static NSString* const CDMTasksDragTypeRearrange = @"CDMTasksDragTypeRearrange";
 {
     NSMutableArray *tasks = [self.arrayController.arrangedObjects mutableCopy];
     NSPasteboard *pasteboard = [info draggingPasteboard];
-    NSIndexSet *originalIndexes = [NSKeyedUnarchiver unarchiveObjectWithData:[pasteboard dataForType:CDMTasksDragTypeRearrange]];
+    NSIndexSet *originalIndexes = [NSKeyedUnarchiver unarchiveObjectWithData:[pasteboard dataForType:kCDMTasksDragTypeRearrange]];
     NSUInteger originalListIndex = [originalIndexes firstIndex];
     NSUInteger destinationRow = (row > originalListIndex) ? row - 1 : row;
 	CDKTask *task = [self.arrayController.arrangedObjects objectAtIndex:originalListIndex];

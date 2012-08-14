@@ -6,6 +6,8 @@
 //  Copyright (c) 2012 Nothing Magical. All rights reserved.
 //
 
+extern NSString* const kCDMTasksDragTypeMove;
+
 @interface CDMTasksViewController : NSViewController
 
 @property (nonatomic, weak) IBOutlet NSArrayController *arrayController;

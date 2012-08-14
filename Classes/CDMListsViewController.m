@@ -11,7 +11,7 @@
 #import "CDMTasksViewController.h"
 #import <QuartzCore/QuartzCore.h>
 
-static NSString* const CDMListsDragTypeRearrange = @"CDMListsDragTypeRearrange";
+static NSString* const kCDMListsDragTypeRearrange = @"CDMListsDragTypeRearrange";
 
 @implementation CDMListsViewController {
     BOOL _awakenFromNib;
@@ -26,7 +26,7 @@ static NSString* const CDMListsDragTypeRearrange = @"CDMListsDragTypeRearrange";
 - (void)awakeFromNib {
     [super awakeFromNib];
     if (_awakenFromNib) { return; }
-    [self.tableView registerForDraggedTypes:[NSArray arrayWithObject:CDMListsDragTypeRearrange]];
+    [self.tableView registerForDraggedTypes:[NSArray arrayWithObjects:kCDMListsDragTypeRearrange, kCDMTasksDragTypeMove, nil]];
     self.arrayController.managedObjectContext = [CDKList mainContext];
 	self.arrayController.fetchPredicate = [NSPredicate predicateWithFormat:@"archivedAt = nil && user = %@", [CDKUser currentUser]];
 	self.arrayController.sortDescriptors = [CDKList defaultSortDescriptors];
@@ -63,39 +63,49 @@ static NSString* const CDMListsDragTypeRearrange = @"CDMListsDragTypeRearrange";
 
 - (BOOL)tableView:(NSTableView *)aTableView writeRowsWithIndexes:(NSIndexSet *)rowIndexes toPasteboard:(NSPasteboard *)pboard
 {
-    [pboard declareTypes:[NSArray arrayWithObject:CDMListsDragTypeRearrange] owner:self];
+    [pboard declareTypes:[NSArray arrayWithObject:kCDMListsDragTypeRearrange] owner:self];
     NSData *archivedData = [NSKeyedArchiver archivedDataWithRootObject:rowIndexes];
-    [pboard setData:archivedData forType:CDMListsDragTypeRearrange];
+    [pboard setData:archivedData forType:kCDMListsDragTypeRearrange];
     return YES;
 }
 
 - (NSDragOperation)tableView:(NSTableView *)aTableView validateDrop:(id < NSDraggingInfo >)info proposedRow:(NSInteger)row proposedDropOperation:(NSTableViewDropOperation)operation
 {
-    return (operation == NSTableViewDropAbove) ? NSDragOperationMove : NSDragOperationNone;
+    NSPasteboard *pboard = [info draggingPasteboard];
+    return ([pboard dataForType:kCDMTasksDragTypeMove] && operation == NSTableViewDropOn) || ([pboard dataForType:kCDMListsDragTypeRearrange] && operation == NSTableViewDropAbove);
 }
 
 - (BOOL)tableView:(NSTableView *)aTableView acceptDrop:(id < NSDraggingInfo >)info row:(NSInteger)row dropOperation:(NSTableViewDropOperation)operation
 {
-    NSMutableArray *lists = [self.arrayController.arrangedObjects mutableCopy];
     NSPasteboard *pasteboard = [info draggingPasteboard];
-    NSIndexSet *originalIndexes = [NSKeyedUnarchiver unarchiveObjectWithData:[pasteboard dataForType:CDMListsDragTypeRearrange]];
-    NSUInteger originalListIndex = [originalIndexes firstIndex];
-    NSUInteger destinationRow = (row > originalListIndex) ? row - 1 : row;
-	CDKList *list = [self.arrayController.arrangedObjects objectAtIndex:originalListIndex];
-	[lists removeObject:list];
-	[lists insertObject:list atIndex:destinationRow];
-	NSInteger i = 0;
-	for (list in lists) {
-		list.position = [NSNumber numberWithInteger:i++];
-	}
-	[self.arrayController.managedObjectContext save:nil];
-	[CDKList sortWithObjects:lists];
-    [NSAnimationContext beginGrouping];
-    [[NSAnimationContext currentContext] setDuration:kCDMTableViewAnimationDuration];
-    [[NSAnimationContext currentContext] setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
-    [self.tableView moveRowAtIndex:originalListIndex toIndex:destinationRow];
-    [NSAnimationContext endGrouping];
+    NSManagedObjectContext *context = [self.arrayController managedObjectContext];
+    if (operation == NSTableViewDropAbove) {
+        NSMutableArray *lists = [[self.arrayController arrangedObjects] mutableCopy];
+        NSIndexSet *originalIndexes = [NSKeyedUnarchiver unarchiveObjectWithData:[pasteboard dataForType:kCDMListsDragTypeRearrange]];
+        NSUInteger originalListIndex = [originalIndexes firstIndex];
+        NSUInteger destinationRow = (row > originalListIndex) ? row - 1 : row;
+        CDKList *list = [self.arrayController.arrangedObjects objectAtIndex:originalListIndex];
+        [lists removeObject:list];
+        [lists insertObject:list atIndex:destinationRow];
+        NSInteger i = 0;
+        for (list in lists) {
+            list.position = [NSNumber numberWithInteger:i++];
+        }
+        [context save:nil];
+        [CDKList sortWithObjects:lists];
+        [NSAnimationContext beginGrouping];
+        [[NSAnimationContext currentContext] setDuration:kCDMTableViewAnimationDuration];
+        [[NSAnimationContext currentContext] setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
+        [self.tableView moveRowAtIndex:originalListIndex toIndex:destinationRow];
+        [NSAnimationContext endGrouping];
+    } else {
+        NSURL *URI = [NSKeyedUnarchiver unarchiveObjectWithData:[pasteboard dataForType:kCDMTasksDragTypeMove]];
+        NSPersistentStoreCoordinator *coordinator = [context persistentStoreCoordinator];
+        NSManagedObjectID *objectID = [coordinator managedObjectIDForURIRepresentation:URI];
+        CDKTask *task = (CDKTask*)[context existingObjectWithID:objectID error:nil];
+        CDKList *list = [[self.arrayController arrangedObjects] objectAtIndex:row];
+        [task setList:list];
+    }
     return YES;
 }
-
 @end
