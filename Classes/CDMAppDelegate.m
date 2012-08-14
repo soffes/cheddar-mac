@@ -153,7 +153,7 @@
 		// Add observer for sign out
 		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(_userChanged:) name:kCDKCurrentUserChangedNotificationName object:nil];
 	});
-    [self _showPlusWindowIfNecessary];
+    [self performSelector:@selector(_showPlusWindowIfNecessary) withObject:nil afterDelay:0.25f];
 }
 
 
