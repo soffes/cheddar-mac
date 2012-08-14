@@ -31,9 +31,6 @@ void SSDrawGradientInRect(CGContextRef context, CGGradientRef gradient, CGRect r
 @synthesize listsViewController = _listsViewController;
 @synthesize tasksViewController = _tasksViewController;
 @synthesize splitViewLeft = _splitViewLeft;
-@synthesize createListPanel = _createListPanel;
-@synthesize createListButton = _createListButton;
-@synthesize cancelListButton = _cancelListButton;
 
 
 #pragma mark - NSObject
@@ -53,15 +50,6 @@ void SSDrawGradientInRect(CGContextRef context, CGGradientRef gradient, CGRect r
 }
 
 
-- (void)windowDidLoad {
-	[super windowDidLoad];
-
-//	self.createListPanel.backgroundColor = [NSColor cheddarArchesColor];
-	self.createListButton.buttonColor = [NSColor cheddarOrangeColor];
-	self.cancelListButton.buttonColor = [NSColor cheddarSteelColor];
-}
-
-
 - (void)showWindow:(id)sender {
 	if (![CDKUser currentUser]) {
 		return;
@@ -69,20 +57,6 @@ void SSDrawGradientInRect(CGContextRef context, CGGradientRef gradient, CGRect r
 
 	[super showWindow:sender];
 }
-
-
-#pragma mark - Actions
-
-- (IBAction)createList:(id)sender {
-	[NSApp beginSheet:self.createListPanel modalForWindow:self.window modalDelegate:nil didEndSelector:nil contextInfo:nil];
-}
-
-
-- (IBAction)closeCreateList:(id)sender {
-	[NSApp endSheet:self.createListPanel];
-	[self.createListPanel orderOut:self];
-}
-
 
 #pragma mark - Private
 

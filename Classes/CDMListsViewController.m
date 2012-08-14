@@ -12,6 +12,8 @@
 #import <QuartzCore/QuartzCore.h>
 
 static NSString* const kCDMListsDragTypeRearrange = @"CDMListsDragTypeRearrange";
+static CGFloat const kCDMTasksViewControllerAddListAnimationDuration = 0.1f;
+
 
 @implementation CDMListsViewController {
     BOOL _awakenFromNib;
@@ -19,7 +21,8 @@ static NSString* const kCDMListsDragTypeRearrange = @"CDMListsDragTypeRearrange"
 @synthesize arrayController = _arrayController;
 @synthesize tableView = _tableView;
 @synthesize tasksViewController = _tasksViewController;
-
+@synthesize addListView = _addListView;
+@synthesize addListField = _addListField;
 
 #pragma mark - NSObject
 
@@ -51,6 +54,85 @@ static NSString* const kCDMListsDragTypeRearrange = @"CDMListsDragTypeRearrange"
 	} failure:^(AFJSONRequestOperation *operation, NSError *error) {
 		NSLog(@"Failed to get lists: %@", error);
 	}];
+}
+
+
+- (IBAction)addList:(id)sender {
+    if ([self.addListView superview]) {
+        [self closeAddList:nil];
+        return;
+    }
+    NSScrollView *scrollView = [self.tableView enclosingScrollView];
+    NSRect beforeAddFrame = [self.addListView frame];
+    beforeAddFrame.origin.y = NSMaxY([scrollView frame]);
+    beforeAddFrame.size.width = [scrollView frame].size.width;
+    [self.addListView setFrame:beforeAddFrame];
+    [self.addListField setStringValue:@""];
+    NSView *parentView = [scrollView superview] ;
+    [parentView addSubview:self.addListView positioned:NSWindowBelow relativeTo:[[parentView subviews] objectAtIndex:0]];
+    NSRect newScrollFrame = [scrollView frame];
+    newScrollFrame.size.height -= [self.addListView frame].size.height;
+    NSRect newAddFrame = beforeAddFrame;
+    newAddFrame.origin.y = NSMaxY(newScrollFrame);
+    [NSAnimationContext beginGrouping];
+    [[NSAnimationContext currentContext] setDuration:kCDMTasksViewControllerAddListAnimationDuration];
+    [[NSAnimationContext currentContext] setCompletionHandler:^{
+        [[self.addListField window] makeFirstResponder:self.addListField];
+    }];
+    [[scrollView animator] setFrame:newScrollFrame];
+    [[self.addListView animator] setFrame:newAddFrame];
+    [NSAnimationContext endGrouping];
+}
+
+- (IBAction)closeAddList:(id)sender {
+    if (![self.addListView superview]) { return; }
+    NSScrollView *scrollView = [self.tableView enclosingScrollView];
+    NSRect newScrollFrame = [scrollView frame];
+    newScrollFrame.size.height += [self.addListView frame].size.height;
+    [[scrollView animator] setFrame:newScrollFrame];
+    NSRect newAddFrame = [self.addListView frame];
+    newAddFrame.origin.y = NSMaxY(newScrollFrame);
+    [NSAnimationContext beginGrouping];
+    [[NSAnimationContext currentContext] setDuration:kCDMTasksViewControllerAddListAnimationDuration];
+    [[NSAnimationContext currentContext] setCompletionHandler:^{
+        [self.addListView removeFromSuperview];
+    }];
+    [[scrollView animator] setFrame:newScrollFrame];
+    [[self.addListView animator] setFrame:newAddFrame];
+    [NSAnimationContext endGrouping];
+}
+
+- (IBAction)createList:(id)sender {
+    NSString *listName = [self.addListField stringValue];
+    [self.addListField setStringValue:@""];
+    [[self.tableView window] makeFirstResponder:self.tableView];
+    if ([listName length]) {
+        CDKList *list = [[CDKList alloc] init];
+        list.title = listName;
+        list.position = [NSNumber numberWithInteger:INT32_MAX];
+        list.user = [CDKUser currentUser];
+        [list createWithSuccess:^{
+            NSUInteger index = [[self.arrayController arrangedObjects] indexOfObject:list];
+            if (index != NSNotFound) {
+                [self.tableView selectRowIndexes:[NSIndexSet indexSetWithIndex:index] byExtendingSelection:NO];
+            }
+        } failure:^(AFJSONRequestOperation *remoteOperation, NSError *error) {
+            NSLog(@"Error creating list: %@, %@", error, [error userInfo]);
+        }];
+    }
+    [self closeAddList:nil];
+}
+
+
+#pragma mark - NSControlTextEditingDelegate
+
+- (BOOL)control:(NSControl *)control textView:(NSTextView *)textView doCommandBySelector:(SEL)command
+{
+    if (command == @selector(cancelOperation:)) {
+        [self closeAddList:nil];
+        return YES;
+    }
+    return NO;
 }
 
 

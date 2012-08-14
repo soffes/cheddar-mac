@@ -15,7 +15,6 @@
 static NSString* const kCDMTasksDragTypeRearrange = @"CDMTasksDragTypeRearrange";
 NSString* const kCDMTasksDragTypeMove = @"CDMTasksDragTypeMove";
 static NSString* const kCDMTaskCellIdentifier = @"TaskCell";
-static CGFloat const kCDMTasksViewControllerAddListAnimationDuration = 0.1f;
 
 @implementation CDMTasksViewController {
     BOOL _awakenFromNib;
@@ -24,8 +23,6 @@ static CGFloat const kCDMTasksViewControllerAddListAnimationDuration = 0.1f;
 @synthesize tableView = _tableView;
 @synthesize selectedList = _selectedList;
 @synthesize taskField = _taskField;
-@synthesize addListView = _addListView;
-@synthesize addListField = _addListField;
 
 #pragma mark - NSObject
 
@@ -45,76 +42,22 @@ static CGFloat const kCDMTasksViewControllerAddListAnimationDuration = 0.1f;
     NSString *taskText = [self.taskField stringValue];
     [self.taskField setStringValue:@""];
     [[self.taskField window] makeFirstResponder:self.tableView];
-    CDKTask *task = [[CDKTask alloc] init];
-    task.text = taskText;
-    task.displayText = taskText;
-    task.list = self.selectedList;
-    task.position = [NSNumber numberWithInteger:self.selectedList.highestPosition + 1];
-    // [self.tableView insertRowsAtIndexes:[NSIndexSet indexSetWithIndex:[self.tableView numberOfRows]] withAnimation:NSTableViewAnimationSlideDown];
-    [task createWithSuccess:^{
-        NSUInteger index = [[self.arrayController arrangedObjects] indexOfObject:task];
-        if (index != NSNotFound) {
-            [self.tableView reloadDataForRowIndexes:[NSIndexSet indexSetWithIndex:index] columnIndexes:[NSIndexSet indexSetWithIndex:0]];
-        }
-    } failure:^(AFJSONRequestOperation *remoteOperation, NSError *error) {
-        NSLog(@"Error creating task: %@, %@", error, [error userInfo]);
-    }];
-}
-
-- (IBAction)addList:(id)sender {
-    if ([self.addListView superview]) {
-        [self closeAddList:nil];
-        return;
+    if ([taskText length]) {
+        CDKTask *task = [[CDKTask alloc] init];
+        task.text = taskText;
+        task.displayText = taskText;
+        task.list = self.selectedList;
+        task.position = [NSNumber numberWithInteger:self.selectedList.highestPosition + 1];
+        // [self.tableView insertRowsAtIndexes:[NSIndexSet indexSetWithIndex:[self.tableView numberOfRows]] withAnimation:NSTableViewAnimationSlideDown];
+        [task createWithSuccess:^{
+            NSUInteger index = [[self.arrayController arrangedObjects] indexOfObject:task];
+            if (index != NSNotFound) {
+                [self.tableView reloadDataForRowIndexes:[NSIndexSet indexSetWithIndex:index] columnIndexes:[NSIndexSet indexSetWithIndex:0]];
+            }
+        } failure:^(AFJSONRequestOperation *remoteOperation, NSError *error) {
+            NSLog(@"Error creating task: %@, %@", error, [error userInfo]);
+        }];
     }
-    NSScrollView *scrollView = [self.tableView enclosingScrollView];
-    NSRect beforeAddFrame = [self.addListView frame];
-    beforeAddFrame.origin.y = NSMaxY([scrollView frame]);
-    beforeAddFrame.size.width = [scrollView frame].size.width;
-    [self.addListView setFrame:beforeAddFrame];
-    [self.addListField setStringValue:@""];
-    NSView *parentView = [scrollView superview] ;
-    [parentView addSubview:self.addListView positioned:NSWindowBelow relativeTo:[[parentView subviews] objectAtIndex:0]];
-    NSRect newScrollFrame = [scrollView frame];
-    newScrollFrame.size.height -= [self.addListView frame].size.height;
-    NSRect newAddFrame = beforeAddFrame;
-    newAddFrame.origin.y = NSMaxY(newScrollFrame);
-    [NSAnimationContext beginGrouping];
-    [[NSAnimationContext currentContext] setDuration:kCDMTasksViewControllerAddListAnimationDuration];
-    [[NSAnimationContext currentContext] setCompletionHandler:^{
-        [[self.addListField window] makeFirstResponder:self.addListField];
-    }];
-    [[scrollView animator] setFrame:newScrollFrame];
-    [[self.addListView animator] setFrame:newAddFrame];
-    [NSAnimationContext endGrouping];
-}
-
-- (IBAction)closeAddList:(id)sender {
-    if (![self.addListView superview]) { return; }
-    NSScrollView *scrollView = [self.tableView enclosingScrollView];
-    NSRect newScrollFrame = [scrollView frame];
-    newScrollFrame.size.height += [self.addListView frame].size.height;
-    [[scrollView animator] setFrame:newScrollFrame];
-    NSRect newAddFrame = [self.addListView frame];
-    newAddFrame.origin.y = NSMaxY(newScrollFrame);
-    [NSAnimationContext beginGrouping];
-    [[NSAnimationContext currentContext] setDuration:kCDMTasksViewControllerAddListAnimationDuration];
-    [[NSAnimationContext currentContext] setCompletionHandler:^{
-        [self.addListView removeFromSuperview];
-    }];
-    [[scrollView animator] setFrame:newScrollFrame];
-    [[self.addListView animator] setFrame:newAddFrame];
-    [NSAnimationContext endGrouping];
-}
-
-#pragma mark - NSControlTextEditingDelegate
-
-- (BOOL)control:(NSControl *)control textView:(NSTextView *)textView doCommandBySelector:(SEL)command
-{
-    if (command == @selector(cancelOperation:)) {
-        [self closeAddList:nil];
-        return YES;
-    }
-    return NO;
 }
 
 #pragma mark - Accessors

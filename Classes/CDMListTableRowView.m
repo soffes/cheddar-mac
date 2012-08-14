@@ -87,4 +87,8 @@
 	}
 }
 
+- (BOOL)isEmphasized
+{
+    return [super isEmphasized] && [[self window] isKeyWindow] && [NSApp isActive];
+}
 @end

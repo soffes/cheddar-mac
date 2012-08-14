@@ -13,7 +13,12 @@
 @property (nonatomic, weak) IBOutlet NSArrayController *arrayController;
 @property (nonatomic, weak) IBOutlet NSTableView *tableView;
 @property (nonatomic, weak) IBOutlet CDMTasksViewController *tasksViewController;
+@property (nonatomic, weak) IBOutlet NSView *addListView;
+@property (nonatomic, weak) IBOutlet NSTextField *addListField;
 
 - (IBAction)reload:(id)sender;
+- (IBAction)addList:(id)sender;
+- (IBAction)closeAddList:(id)sender;
 
+- (IBAction)createList:(id)sender;
 @end

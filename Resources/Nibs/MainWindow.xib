@@ -47,14 +47,15 @@
 			</object>
 			<object class="NSCustomView" id="154427372">
 				<reference key="NSNextResponder"/>
-				<int key="NSvFlags">268</int>
+				<int key="NSvFlags">266</int>
 				<array class="NSMutableArray" key="NSSubviews">
 					<object class="NSButton" id="74726422">
 						<reference key="NSNextResponder" ref="154427372"/>
 						<int key="NSvFlags">289</int>
-						<string key="NSFrame">{{575, 11}, {15, 15}}</string>
+						<string key="NSFrame">{{575, 15}, {15, 15}}</string>
 						<reference key="NSSuperview" ref="154427372"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSButtonCell" key="NSCell" id="617846072">
@@ -84,7 +85,7 @@
 					<object class="NSTextField" id="861775339">
 						<reference key="NSNextResponder" ref="154427372"/>
 						<int key="NSvFlags">266</int>
-						<string key="NSFrame">{{35, 10}, {526, 17}}</string>
+						<string key="NSFrame">{{9, 14}, {552, 17}}</string>
 						<reference key="NSSuperview" ref="154427372"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="74726422"/>
@@ -92,7 +93,7 @@
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSTextFieldCell" key="NSCell" id="847496308">
 							<int key="NSCellFlags">67108928</int>
-							<int key="NSCellFlags2">272668672</int>
+							<int key="NSCellFlags2">268474368</int>
 							<string key="NSContents"/>
 							<reference key="NSSupport" ref="1017777950"/>
 							<string key="NSPlaceholderString">Name Your List</string>
@@ -119,7 +120,7 @@
 						<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 					</object>
 				</array>
-				<string key="NSFrameSize">{603, 38}</string>
+				<string key="NSFrameSize">{603, 45}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="861775339"/>
@@ -469,6 +470,7 @@
 													<string key="NSFrame">{{1, 119}, {223, 15}}</string>
 													<reference key="NSSuperview" ref="672568933"/>
 													<reference key="NSWindow"/>
+													<reference key="NSNextKeyView"/>
 													<string key="NSReuseIdentifierKey">_NS:60</string>
 													<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 													<int key="NSsFlags">1</int>
@@ -591,6 +593,7 @@
 							<string key="NSFrame">{{238, 20}, {109, 40}}</string>
 							<reference key="NSSuperview" ref="1055725255"/>
 							<reference key="NSWindow"/>
+							<reference key="NSNextKeyView"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSButtonCell" key="NSCell" id="541000569">
@@ -993,6 +996,38 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
+						<string key="label">addListView</string>
+						<reference key="source" ref="845133359"/>
+						<reference key="destination" ref="154427372"/>
+					</object>
+					<int key="connectionID">371</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">addListField</string>
+						<reference key="source" ref="845133359"/>
+						<reference key="destination" ref="861775339"/>
+					</object>
+					<int key="connectionID">372</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">closeAddList:</string>
+						<reference key="source" ref="845133359"/>
+						<reference key="destination" ref="74726422"/>
+					</object>
+					<int key="connectionID">374</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">createList:</string>
+						<reference key="source" ref="845133359"/>
+						<reference key="destination" ref="861775339"/>
+					</object>
+					<int key="connectionID">375</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
 						<string key="label">arrayController</string>
 						<reference key="source" ref="666935639"/>
 						<reference key="destination" ref="543950420"/>
@@ -1040,30 +1075,6 @@
 					<int key="connectionID">352</int>
 				</object>
 				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">addListView</string>
-						<reference key="source" ref="666935639"/>
-						<reference key="destination" ref="154427372"/>
-					</object>
-					<int key="connectionID">361</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">addListField</string>
-						<reference key="source" ref="666935639"/>
-						<reference key="destination" ref="861775339"/>
-					</object>
-					<int key="connectionID">365</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">closeAddList:</string>
-						<reference key="source" ref="666935639"/>
-						<reference key="destination" ref="74726422"/>
-					</object>
-					<int key="connectionID">369</int>
-				</object>
-				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
 						<string key="label">value: objectValue.completed</string>
 						<reference key="source" ref="760301156"/>
@@ -1103,9 +1114,9 @@
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">delegate</string>
 						<reference key="source" ref="861775339"/>
-						<reference key="destination" ref="666935639"/>
+						<reference key="destination" ref="845133359"/>
 					</object>
-					<int key="connectionID">370</int>
+					<int key="connectionID">373</int>
 				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -1539,7 +1550,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">370</int>
+			<int key="maxID">375</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -1605,23 +1616,46 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">CDMListsViewController</string>
 					<string key="superclassName">NSViewController</string>
-					<object class="NSMutableDictionary" key="actions">
-						<string key="NS.key.0">reload:</string>
-						<string key="NS.object.0">id</string>
-					</object>
-					<object class="NSMutableDictionary" key="actionInfosByName">
-						<string key="NS.key.0">reload:</string>
-						<object class="IBActionInfo" key="NS.object.0">
+					<dictionary class="NSMutableDictionary" key="actions">
+						<string key="addList:">id</string>
+						<string key="closeAddList:">id</string>
+						<string key="createList:">id</string>
+						<string key="reload:">id</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="actionInfosByName">
+						<object class="IBActionInfo" key="addList:">
+							<string key="name">addList:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="closeAddList:">
+							<string key="name">closeAddList:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="createList:">
+							<string key="name">createList:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="reload:">
 							<string key="name">reload:</string>
 							<string key="candidateClassName">id</string>
 						</object>
-					</object>
+					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="addListField">NSTextField</string>
+						<string key="addListView">NSView</string>
 						<string key="arrayController">NSArrayController</string>
 						<string key="tableView">NSTableView</string>
 						<string key="tasksViewController">CDMTasksViewController</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="addListField">
+							<string key="name">addListField</string>
+							<string key="candidateClassName">NSTextField</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="addListView">
+							<string key="name">addListView</string>
+							<string key="candidateClassName">NSView</string>
+						</object>
 						<object class="IBToOneOutletInfo" key="arrayController">
 							<string key="name">arrayController</string>
 							<string key="candidateClassName">NSArrayController</string>
@@ -1651,41 +1685,12 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">CDMMainWindowController</string>
 					<string key="superclassName">NSWindowController</string>
-					<dictionary class="NSMutableDictionary" key="actions">
-						<string key="closeCreateList:">id</string>
-						<string key="createList:">id</string>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="actionInfosByName">
-						<object class="IBActionInfo" key="closeCreateList:">
-							<string key="name">closeCreateList:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="createList:">
-							<string key="name">createList:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
-						<string key="cancelListButton">CDMFlatButton</string>
-						<string key="createListButton">CDMFlatButton</string>
-						<string key="createListPanel">NSPanel</string>
 						<string key="listsViewController">CDMListsViewController</string>
 						<string key="splitViewLeft">NSView</string>
 						<string key="tasksViewController">CDMTasksViewController</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<object class="IBToOneOutletInfo" key="cancelListButton">
-							<string key="name">cancelListButton</string>
-							<string key="candidateClassName">CDMFlatButton</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="createListButton">
-							<string key="name">createListButton</string>
-							<string key="candidateClassName">CDMFlatButton</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="createListPanel">
-							<string key="name">createListPanel</string>
-							<string key="candidateClassName">NSPanel</string>
-						</object>
 						<object class="IBToOneOutletInfo" key="listsViewController">
 							<string key="name">listsViewController</string>
 							<string key="candidateClassName">CDMListsViewController</string>
@@ -1723,41 +1728,23 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">CDMTasksViewController</string>
 					<string key="superclassName">NSViewController</string>
-					<dictionary class="NSMutableDictionary" key="actions">
-						<string key="addList:">id</string>
-						<string key="addTask:">id</string>
-						<string key="closeAddList:">id</string>
-					</dictionary>
-					<dictionary class="NSMutableDictionary" key="actionInfosByName">
-						<object class="IBActionInfo" key="addList:">
-							<string key="name">addList:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-						<object class="IBActionInfo" key="addTask:">
+					<object class="NSMutableDictionary" key="actions">
+						<string key="NS.key.0">addTask:</string>
+						<string key="NS.object.0">id</string>
+					</object>
+					<object class="NSMutableDictionary" key="actionInfosByName">
+						<string key="NS.key.0">addTask:</string>
+						<object class="IBActionInfo" key="NS.object.0">
 							<string key="name">addTask:</string>
 							<string key="candidateClassName">id</string>
 						</object>
-						<object class="IBActionInfo" key="closeAddList:">
-							<string key="name">closeAddList:</string>
-							<string key="candidateClassName">id</string>
-						</object>
-					</dictionary>
+					</object>
 					<dictionary class="NSMutableDictionary" key="outlets">
-						<string key="addListField">NSTextField</string>
-						<string key="addListView">NSView</string>
 						<string key="arrayController">NSArrayController</string>
 						<string key="tableView">NSTableView</string>
 						<string key="taskField">NSTextField</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<object class="IBToOneOutletInfo" key="addListField">
-							<string key="name">addListField</string>
-							<string key="candidateClassName">NSTextField</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="addListView">
-							<string key="name">addListView</string>
-							<string key="candidateClassName">NSView</string>
-						</object>
 						<object class="IBToOneOutletInfo" key="arrayController">
 							<string key="name">arrayController</string>
 							<string key="candidateClassName">NSArrayController</string>
