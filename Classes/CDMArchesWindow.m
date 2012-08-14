@@ -118,7 +118,7 @@ static CGFloat const kCDMArchesWindowShakeVigour = 0.05f;
 {
     if ((self = [super
                  initWithContentRect:contentRect
-                 styleMask:NSBorderlessWindowMask
+                 styleMask:NSBorderlessWindowMask | NSTitledWindowMask
                  backing:bufferingType
                  defer:deferCreation])) {
         [self setOpaque:NO];
@@ -139,15 +139,17 @@ static CGFloat const kCDMArchesWindowShakeVigour = 0.05f;
 {
     [super awakeFromNib];
     [[[self contentView] superview] addSubview:_trafficLightContainer];
+    [self _repositionContentView];
 }
 
 - (void)_registerNotifications
 {
     // This notification gets sent when the user changes the color scheme (Aqua or Graphite)
     // Tip from <http://www.cocoabuilder.com/archive/cocoa/13836-notification-of-aqua-graphite-preference-changed.html#13835>
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(_resetAlternateButtonImages)
-                                                 name:NSControlTintDidChangeNotification object:nil];
+    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+    [nc addObserver:self selector:@selector(_resetAlternateButtonImages) name:NSControlTintDidChangeNotification object:nil];
+    [nc addObserver:self selector:@selector(_repositionContentView) name:NSWindowDidResizeNotification object:self];
+    [nc addObserver:self selector:@selector(_repositionContentView) name:NSWindowDidMoveNotification object:self];
 }
 
 - (void)dealloc
@@ -223,7 +225,7 @@ static CGFloat const kCDMArchesWindowShakeVigour = 0.05f;
     return YES;
 }
 
-- (BOOL)acceptsFirstResponder
+- (BOOL)canBecomeMainWindow
 {
     return YES;
 }
@@ -253,6 +255,16 @@ static CGFloat const kCDMArchesWindowShakeVigour = 0.05f;
 }
 
 #pragma mark - Private
+
+- (void)_repositionContentView
+{
+    NSView *contentView = [self contentView];
+    NSRect windowFrame = [self frame];
+    NSRect newFrame = [contentView frame];
+    newFrame.size.height = windowFrame.size.height;
+    [contentView setFrame:newFrame];
+    [contentView setNeedsDisplay:YES];
+}
 
 - (void)_createAndPositionTrafficLights
 {
