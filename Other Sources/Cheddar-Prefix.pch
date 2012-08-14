@@ -6,4 +6,5 @@
 	#import <Cocoa/Cocoa.h>
 	#import <CheddarKit/CheddarKit.h>
 	#import "CDMDefines.h"
+	#import "CDMConstants.h"
 #endif
