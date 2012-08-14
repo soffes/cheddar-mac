@@ -14,7 +14,7 @@
 #import "CDMFlatButton.h"
 
 #define CDMSignInWindowControllerLabelTextColor [NSColor colorWithDeviceWhite:0.267f alpha:1.f]
-#define CDMSignInWindowControllerFont [NSFont fontWithName:kCDMRegularFontName size:16.0]
+#define CDMSignInWindowControllerFont [NSFont fontWithName:kCDMRegularFontName size:14.0]
 
 @implementation CDMSignInWindowController
 

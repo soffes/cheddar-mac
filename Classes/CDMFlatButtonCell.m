@@ -9,23 +9,22 @@
 #import "CDMFlatButtonCell.h"
 
 static CGFloat const CDMFlatButtonCellCornerRadius = 4.0f;
-#define CDMFlatButtonCellTextFont [NSFont fontWithName:kCDMBoldFontName size:16.0]
+#define CDMFlatButtonCellTextFont [NSFont fontWithName:kCDMRegularFontName size:14.0]
 #define CDMFlatButtonCellTextColor [NSColor whiteColor]
 #define CDMFlatButtonCellOverlayColor [NSColor colorWithDeviceWhite:0.f alpha:0.2f]
 
 @implementation CDMFlatButtonCell
 @synthesize buttonColor = _buttonColor;
 
-- (id)init
-{
+- (id)init {
     if ((self = [super init])) {
         [self setBordered:NO];
     }
     return self;
 }
 
-- (void)drawWithFrame:(NSRect)cellFrame inView:(NSView *)controlView
-{
+
+- (void)drawWithFrame:(NSRect)cellFrame inView:(NSView *)controlView {
     NSBezierPath *path = [NSBezierPath bezierPathWithRoundedRect:cellFrame xRadius:CDMFlatButtonCellCornerRadius yRadius:CDMFlatButtonCellCornerRadius];
     [self.buttonColor set];
     [path fill];
@@ -35,11 +34,12 @@ static CGFloat const CDMFlatButtonCellCornerRadius = 4.0f;
     NSDictionary *attributes = [NSDictionary dictionaryWithObjectsAndKeys:style, NSParagraphStyleAttributeName, CDMFlatButtonCellTextColor, NSForegroundColorAttributeName, CDMFlatButtonCellTextFont, NSFontAttributeName, nil];
     NSAttributedString *attrTitle = [[NSAttributedString alloc] initWithString:[self title] attributes:attributes];
     NSSize titleSize = [attrTitle size];
-    NSRect titleRect = NSMakeRect(0.f, NSMidY(cellFrame) - (titleSize.height / 2.f) + 1.f, cellFrame.size.width, titleSize.height);
+    NSRect titleRect = NSMakeRect(0.f, NSMidY(cellFrame) - (titleSize.height / 2.f) - 1.0f, cellFrame.size.width, titleSize.height);
     [attrTitle drawInRect:NSIntegralRect(titleRect)];
     if ([self isHighlighted]) {
         [CDMFlatButtonCellOverlayColor set];
         [path fill];
     }
 }
+
 @end

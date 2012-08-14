@@ -21,10 +21,9 @@ static CGFloat const kCDMTextFieldCellOuterShadowBlurRadius = 2.0f;
 
 @implementation CDMTextFieldCell
 
-- (id)initWithCoder:(NSCoder *)aDecoder
-{
+- (id)initWithCoder:(NSCoder *)aDecoder {
     if ((self = [super initWithCoder:aDecoder])) {
-        self.font = [NSFont fontWithName:kCDMRegularFontName size:16.0];
+        self.font = [NSFont fontWithName:kCDMRegularFontName size:14.0];
         self.textColor = [NSColor colorWithCalibratedRed:0.200 green:0.200 blue:0.200 alpha:1];
         [self setDrawsBackground:NO];
         [self setBordered:NO];
@@ -34,6 +33,7 @@ static CGFloat const kCDMTextFieldCellOuterShadowBlurRadius = 2.0f;
     }
     return self;
 }
+
 
 // From http://stackoverflow.com/a/8626071/118631
 - (NSRect)adjustedFrameToVerticallyCenterText:(NSRect)frame {
