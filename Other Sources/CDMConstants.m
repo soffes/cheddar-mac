@@ -9,3 +9,4 @@
 #import "CDMConstants.h"
 
 CGFloat const kCDMTableViewAnimationDuration = 0.2f;
+NSString* const kCDMURLScheme = @"cheddar://";

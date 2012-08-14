@@ -10,5 +10,5 @@
 #define CDMCONSTANTS
 
 extern CGFloat const kCDMTableViewAnimationDuration;
-
+extern NSString* const kCDMURLScheme;
 #endif

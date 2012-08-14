@@ -75,6 +75,13 @@
             [attributedString addAttribute: NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlinePatternSolid | NSUnderlineStyleSingle] range:range];
             [attributedString addAttribute:NSCursorAttributeName value:[NSCursor pointingHandCursor] range:range];
         }
+        else if ([type isEqualToString:@"tag"]) {
+            NSString *tagName = [entity valueForKey:@"tag_name"];
+            NSString *tagURL = [NSString stringWithFormat:@"%@tags/%@", kCDMURLScheme, tagName];
+            [attributedString addAttribute:NSLinkAttributeName value:tagURL range:range];
+            [attributedString addAttribute:NSForegroundColorAttributeName value:[NSColor cheddarBlueColor] range:range];
+            [attributedString addAttribute:NSCursorAttributeName value:[NSCursor pointingHandCursor] range:range];
+        }
 	}
 }
 
