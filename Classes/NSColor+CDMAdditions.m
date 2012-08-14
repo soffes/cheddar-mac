@@ -24,4 +24,9 @@
 	return [self colorWithPatternImage:[NSImage imageNamed:@"arches"]];
 }
 
+
++ (NSColor *)cheddarTextColor {
+	return [self colorWithCalibratedWhite:0.267f alpha:1.0f];
+}
+
 @end
