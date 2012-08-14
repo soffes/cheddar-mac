@@ -53,8 +53,6 @@
 
 - (IBAction)signIn:(id)sender {
 	[[CDKHTTPClient sharedClient] signInWithLogin:self.usernameTextField.stringValue password:self.passwordTextField.stringValue success:^(AFJSONRequestOperation *operation, id responseObject) {
-		CDMAppDelegate *appDelegate = [CDMAppDelegate sharedAppDelegate];
-		[appDelegate.mainWindowController showWindow:nil];
 		[self close];
 	} failure:^(AFJSONRequestOperation *operation, NSError *error) {
 		NSLog(@"Failed: %@", error);

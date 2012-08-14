@@ -57,7 +57,7 @@
 	// Setup the OAuth credentials
 	[[CDKHTTPClient sharedClient] setClientID:kCDMAPIClientID secret:kCDMAPIClientSecret];
 
-	_mainWindowController = [[CDMMainWindowController alloc] initWithWindowNibName:@"MainWindow"];
+	_mainWindowController = [[CDMMainWindowController alloc] init];
 	[_mainWindowController showWindow:nil];
 
 	if (![CDKUser currentUser]) {

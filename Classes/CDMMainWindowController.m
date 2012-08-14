@@ -20,14 +20,32 @@ void SSDrawGradientInRect(CGContextRef context, CGGradientRef gradient, CGRect r
 	CGContextRestoreGState(context);
 }
 
+@interface CDMMainWindowController ()
+- (void)_userChanged:(NSNotification *)notification;
+@end
+
 @implementation CDMMainWindowController
 
 @synthesize listsViewController = _listsViewController;
 @synthesize tasksViewController = _tasksViewController;
 @synthesize splitViewLeft = _splitViewLeft;
 
+#pragma mark - NSObject
+
+- (id)init {
+	if ((self = [super init])) {
+		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(_userChanged:) name:kCDKCurrentUserChangedNotificationName object:nil];
+	}
+	return self;
+}
+
 
 #pragma mark - NSWindowController
+
+- (NSString *)windowNibName {
+	return @"MainWindow";
+}
+
 
 - (void)showWindow:(id)sender {
 	if (![CDKUser currentUser]) {
@@ -35,6 +53,17 @@ void SSDrawGradientInRect(CGContextRef context, CGGradientRef gradient, CGRect r
 	}
 
 	[super showWindow:sender];
+}
+
+
+#pragma mark - Private
+
+- (void)_userChanged:(NSNotification *)notification {
+	if ([CDKUser currentUser]) {
+		[self showWindow:nil];
+	} else {
+		[self close];
+	}
 }
 
 
