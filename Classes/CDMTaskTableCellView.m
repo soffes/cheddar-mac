@@ -7,7 +7,6 @@
 //
 
 #import "CDMTaskTableCellView.h"
-#import "CDKTask+CDMAdditions.h"
 
 @implementation CDMTaskTableCellView
 
