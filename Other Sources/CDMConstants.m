@@ -9,3 +9,7 @@
 #import "CDMConstants.h"
 
 CGFloat const kCDMTableViewAnimationDuration = 0.2f;
+NSString* const kCDMRegularFontName = @"Gotham-Book";
+NSString *const kCDMBoldFontName = @"Gotham-Bold";
+NSString *const kCDMItalicFontName = @"Gotham-BookItalic";
+NSString *const kCDMBoldItalicFontName = @"Gotham-BoldItalic";

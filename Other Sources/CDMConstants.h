@@ -10,5 +10,8 @@
 #define CDMCONSTANTS
 
 extern CGFloat const kCDMTableViewAnimationDuration;
-
+extern NSString *const kCDMRegularFontName;
+extern NSString *const kCDMBoldFontName;
+extern NSString *const kCDMItalicFontName;
+extern NSString *const kCDMBoldItalicFontName;
 #endif
