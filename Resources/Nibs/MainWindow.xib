@@ -45,8 +45,8 @@
 			<object class="NSCustomObject" id="1004">
 				<string key="NSClassName">NSApplication</string>
 			</object>
-			<object class="NSViewController" id="902849984"/>
-			<object class="NSViewController" id="690095281"/>
+			<object class="NSViewController" id="171319993"/>
+			<object class="NSViewController" id="559123489"/>
 			<object class="NSWindowTemplate" id="1005">
 				<int key="NSWindowStyleMask">15</int>
 				<int key="NSWindowBacking">2</int>
@@ -439,6 +439,7 @@
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<bool key="NSIsVertical">YES</bool>
 							<int key="NSDividerStyle">2</int>
+							<string key="NSAutosaveName">MainSplitView</string>
 							<object class="NSMutableDictionary" key="NSHoldingPriorities">
 								<integer value="0" key="NS.key.0"/>
 								<real value="250" key="NS.object.0"/>
@@ -450,9 +451,10 @@
 					<reference key="NSWindow"/>
 					<reference key="NSNextKeyView" ref="964323735"/>
 				</object>
-				<string key="NSScreenRect">{{0, 0}, {2560, 1418}}</string>
+				<string key="NSScreenRect">{{0, 0}, {1440, 878}}</string>
 				<string key="NSMinSize">{300, 322}</string>
 				<string key="NSMaxSize">{10000000000000, 10000000000000}</string>
+				<string key="NSFrameAutosaveName">MainWindow</string>
 				<int key="NSWindowCollectionBehavior">128</int>
 				<bool key="NSWindowIsRestorable">YES</bool>
 			</object>
@@ -526,7 +528,7 @@
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">listsViewController</string>
 						<reference key="source" ref="1001"/>
-						<reference key="destination" ref="902849984"/>
+						<reference key="destination" ref="171319993"/>
 					</object>
 					<int key="connectionID">306</int>
 				</object>
@@ -534,7 +536,7 @@
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">tasksViewController</string>
 						<reference key="source" ref="1001"/>
-						<reference key="destination" ref="690095281"/>
+						<reference key="destination" ref="559123489"/>
 					</object>
 					<int key="connectionID">309</int>
 				</object>
@@ -558,7 +560,7 @@
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">dataSource</string>
 						<reference key="source" ref="532599080"/>
-						<reference key="destination" ref="902849984"/>
+						<reference key="destination" ref="171319993"/>
 					</object>
 					<int key="connectionID">316</int>
 				</object>
@@ -566,7 +568,7 @@
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">delegate</string>
 						<reference key="source" ref="532599080"/>
-						<reference key="destination" ref="902849984"/>
+						<reference key="destination" ref="171319993"/>
 					</object>
 					<int key="connectionID">317</int>
 				</object>
@@ -645,7 +647,7 @@
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">dataSource</string>
 						<reference key="source" ref="1038655729"/>
-						<reference key="destination" ref="690095281"/>
+						<reference key="destination" ref="559123489"/>
 					</object>
 					<int key="connectionID">314</int>
 				</object>
@@ -653,7 +655,7 @@
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">delegate</string>
 						<reference key="source" ref="1038655729"/>
-						<reference key="destination" ref="690095281"/>
+						<reference key="destination" ref="559123489"/>
 					</object>
 					<int key="connectionID">315</int>
 				</object>
@@ -734,7 +736,7 @@
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">arrayController</string>
-						<reference key="source" ref="902849984"/>
+						<reference key="source" ref="171319993"/>
 						<reference key="destination" ref="442710232"/>
 					</object>
 					<int key="connectionID">305</int>
@@ -742,7 +744,7 @@
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">view</string>
-						<reference key="source" ref="902849984"/>
+						<reference key="source" ref="171319993"/>
 						<reference key="destination" ref="56518651"/>
 					</object>
 					<int key="connectionID">310</int>
@@ -750,7 +752,7 @@
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">tableView</string>
-						<reference key="source" ref="902849984"/>
+						<reference key="source" ref="171319993"/>
 						<reference key="destination" ref="532599080"/>
 					</object>
 					<int key="connectionID">312</int>
@@ -758,7 +760,7 @@
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">arrayController</string>
-						<reference key="source" ref="690095281"/>
+						<reference key="source" ref="559123489"/>
 						<reference key="destination" ref="543950420"/>
 					</object>
 					<int key="connectionID">308</int>
@@ -766,7 +768,7 @@
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">view</string>
-						<reference key="source" ref="690095281"/>
+						<reference key="source" ref="559123489"/>
 						<reference key="destination" ref="672568933"/>
 					</object>
 					<int key="connectionID">311</int>
@@ -774,7 +776,7 @@
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">tableView</string>
-						<reference key="source" ref="690095281"/>
+						<reference key="source" ref="559123489"/>
 						<reference key="destination" ref="1038655729"/>
 					</object>
 					<int key="connectionID">313</int>
@@ -1025,12 +1027,12 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">304</int>
-						<reference key="object" ref="902849984"/>
+						<reference key="object" ref="171319993"/>
 						<reference key="parent" ref="0"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">307</int>
-						<reference key="object" ref="690095281"/>
+						<reference key="object" ref="559123489"/>
 						<reference key="parent" ref="0"/>
 					</object>
 				</array>
