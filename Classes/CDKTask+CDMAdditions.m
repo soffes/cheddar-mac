@@ -18,7 +18,7 @@
 	}
     
 	NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:self.displayText];
-    [attributedString addAttribute:NSFontAttributeName value:[NSFont fontWithName:kCDMRegularFontName size:13.f] range:NSMakeRange(0, [self.displayText length])];
+    [attributedString addAttribute:NSFontAttributeName value:[NSFont fontWithName:kCDMRegularFontName size:15.f] range:NSMakeRange(0, [self.displayText length])];
 	[self addEntitiesToAttributedString:attributedString];
 	return attributedString;
 }
@@ -40,17 +40,17 @@
         
 		// Italic
 		if ([type isEqualToString:@"emphasis"]) {
-			[attributedString addAttribute:NSFontAttributeName value:[NSFont fontWithName:kCDMItalicFontName size:13.f] range:range];
+			[attributedString addAttribute:NSFontAttributeName value:[NSFont fontWithName:kCDMItalicFontName size:15.f] range:range];
 		}
         
 		// Bold
 		else if ([type isEqualToString:@"double_emphasis"]) {
-			[attributedString addAttribute:NSFontAttributeName value:[NSFont fontWithName:kCDMBoldFontName size:13.f] range:range];
+			[attributedString addAttribute:NSFontAttributeName value:[NSFont fontWithName:kCDMBoldFontName size:15.f] range:range];
 		}
         
 		// Bold Italic
 		else if ([type isEqualToString:@"triple_emphasis"]) {
-			[attributedString addAttribute:NSFontAttributeName value:[NSFont fontWithName:kCDMBoldItalicFontName size:13.f] range:range];
+			[attributedString addAttribute:NSFontAttributeName value:[NSFont fontWithName:kCDMBoldItalicFontName size:15.f] range:range];
 		}
         
 		// Strikethrough
@@ -60,7 +60,7 @@
         
 		// Code
 		else if ([type isEqualToString:@"code"]) {
-			[attributedString addAttribute:NSFontAttributeName value:[NSFont fontWithName:@"Courier" size:13.f] range:range];
+			[attributedString addAttribute:NSFontAttributeName value:[NSFont fontWithName:@"Courier" size:15.f] range:range];
 		}
 	}
 }

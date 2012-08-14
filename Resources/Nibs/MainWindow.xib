@@ -742,22 +742,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
-						<string key="label">value: objectValue.displayText</string>
-						<reference key="source" ref="411643406"/>
-						<reference key="destination" ref="418552173"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="411643406"/>
-							<reference key="NSDestination" ref="418552173"/>
-							<string key="NSLabel">value: objectValue.displayText</string>
-							<string key="NSBinding">value</string>
-							<string key="NSKeyPath">objectValue.displayText</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">275</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
 						<string key="label">textColor: objectValue.completed</string>
 						<reference key="source" ref="411643406"/>
 						<reference key="destination" ref="418552173"/>
@@ -1215,6 +1199,17 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">CDMListsViewController</string>
 					<string key="superclassName">NSViewController</string>
+					<object class="NSMutableDictionary" key="actions">
+						<string key="NS.key.0">reload:</string>
+						<string key="NS.object.0">id</string>
+					</object>
+					<object class="NSMutableDictionary" key="actionInfosByName">
+						<string key="NS.key.0">reload:</string>
+						<object class="IBActionInfo" key="NS.object.0">
+							<string key="name">reload:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</object>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="arrayController">NSArrayController</string>
 						<string key="tableView">NSTableView</string>

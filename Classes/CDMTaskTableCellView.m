@@ -7,13 +7,23 @@
 //
 
 #import "CDMTaskTableCellView.h"
+#import "CDKTask+CDMAdditions.h"
 
 @implementation CDMTaskTableCellView
 
 - (void)awakeFromNib {
 	[super awakeFromNib];
-	self.textField.font = [NSFont fontWithName:kCDMRegularFontName size:15.0];
-	self.textField.textColor = [NSColor colorWithCalibratedRed:0.200 green:0.200 blue:0.200 alpha:1];
+    [self addObserver:self forKeyPath:@"objectValue.displayText" options:0 context:NULL];
 }
 
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    CDKTask *task = [self objectValue];
+    [self.textField setAttributedStringValue:[task attributedDisplayText]];
+}
+
+- (void)dealloc
+{
+    [self removeObserver:self forKeyPath:@"objectValue.displayText"];
+}
 @end
