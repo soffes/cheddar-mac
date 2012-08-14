@@ -23,4 +23,13 @@ void SSDrawGradientInRect(CGContextRef context, CGGradientRef gradient, CGRect r
 @implementation CDMMainWindowController
 @synthesize listsViewController = _listsViewController;
 @synthesize tasksViewController = _tasksViewController;
+@synthesize splitViewLeft = _splitViewLeft;
+
+#pragma mark - NSSplitViewDelegate
+
+- (BOOL)splitView:(NSSplitView *)splitView shouldAdjustSizeOfSubview:(NSView *)subview
+{
+    // Don't resize the sidebar
+    return subview != self.splitViewLeft;
+}
 @end
