@@ -8,6 +8,11 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface CDMTaskTextField : NSTextField
+@interface CDMTaskTextField : NSTextField <NSTextFieldDelegate>
 
+@end
+
+@protocol CDMTaskTextFieldDelegate
+@optional
+- (NSString *)editingTextForTextField:(NSTextField*)textField;
 @end

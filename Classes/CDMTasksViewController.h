@@ -8,7 +8,7 @@
 
 extern NSString* const kCDMTasksDragTypeMove;
 
-@interface CDMTasksViewController : NSViewController
+@interface CDMTasksViewController : NSViewController <NSTextFieldDelegate>
 
 @property (nonatomic, weak) IBOutlet NSArrayController *arrayController;
 @property (nonatomic, weak) IBOutlet NSTableView *tableView;
@@ -17,5 +17,4 @@ extern NSString* const kCDMTasksDragTypeMove;
 @property (nonatomic, strong) CDKList *selectedList;
 - (IBAction)addTask:(id)sender;
 - (IBAction)focusTaskField:(id)sender;
-- (IBAction)endedEditingTextField:(id)sender;
 @end

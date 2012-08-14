@@ -14,7 +14,7 @@
 - (NSText*)setUpFieldEditorAttributes:(NSText *)textObj
 {
     NSTextView *textView = (NSTextView*)textObj;
-    NSDictionary *linkAttributes = [NSDictionary dictionaryWithObjectsAndKeys:[NSFont fontWithName:kCDMRegularFontName size:15.f], NSFontAttributeName, [NSColor cheddarBlueColor] , NSForegroundColorAttributeName, [NSNumber numberWithInteger:NSUnderlinePatternSolid | NSUnderlineStyleSingle], NSUnderlineStyleAttributeName, [NSCursor pointingHandCursor], NSCursorAttributeName, nil];
+    NSDictionary *linkAttributes = [NSDictionary dictionaryWithObjectsAndKeys:[NSFont fontWithName:kCDMRegularFontName size:15.f], NSFontAttributeName, [NSColor cheddarBlueColor] , NSForegroundColorAttributeName, [NSCursor pointingHandCursor], NSCursorAttributeName, nil];
     [textView setLinkTextAttributes:linkAttributes];
     return textView;
 }

@@ -826,7 +826,7 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = CDM;
-				LastUpgradeCheck = 0450;
+				LastUpgradeCheck = 0440;
 				ORGANIZATIONNAME = "Nothing Magical";
 			};
 			buildConfigurationList = B21FF2BA15BF7D6500AEEA97 /* Build configuration list for PBXProject "Cheddar for Mac" */;

@@ -72,7 +72,6 @@
         else if ([type isEqualToString:@"link"]) {
             [attributedString addAttribute:NSLinkAttributeName value:[entity valueForKey:@"url"] range:range];
             [attributedString addAttribute:NSForegroundColorAttributeName value:[NSColor cheddarBlueColor] range:range];
-            [attributedString addAttribute: NSUnderlineStyleAttributeName value:[NSNumber numberWithInteger:NSUnderlinePatternSolid | NSUnderlineStyleSingle] range:range];
             [attributedString addAttribute:NSCursorAttributeName value:[NSCursor pointingHandCursor] range:range];
         }
         else if ([type isEqualToString:@"tag"]) {
