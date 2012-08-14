@@ -6,25 +6,31 @@
 //  Copyright (c) 2012 Nothing Magical. All rights reserved.
 //
 
-#define CDMPlusDialogView
-
 #import "CDMPlusDialogView.h"
+#import "NSColor+CDMAdditions.h"
+
+#define kCDMPlusDialogViewShadowOffset NSMakeSize(0.f, -3.f)
+#define kCDMPlusDialogViewShadowColor [NSColor colorWithDeviceWhite:0.f alpha:0.3f]
+
+static NSString* const kCDMPlusDialogViewImageNameArches = @"arches";
+static CGFloat const kCDMPlusDialogViewCornerRadius = 6.f;
+static CGFloat const kCDMPlusDialogViewShadowBlurRadius = 4.f;
 
 @implementation CDMPlusDialogView
 
-- (id)initWithFrame:(NSRect)frame
-{
-    self = [super initWithFrame:frame];
-    if (self) {
-        // Initialization code here.
-    }
-    
-    return self;
-}
-
-- (void)drawRect:(NSRect)dirtyRect
-{
-    // Drawing code here.
+- (void)drawRect:(NSRect)dirtyRect {
+    CGFloat blurRadius = kCDMPlusDialogViewShadowBlurRadius;
+    NSSize offset = kCDMPlusDialogViewShadowOffset;
+    NSRect drawingRect = NSInsetRect([self bounds], blurRadius, blurRadius);
+    drawingRect.origin.y -= offset.height;
+    NSBezierPath *path = [NSBezierPath bezierPathWithRoundedRect:drawingRect xRadius:kCDMPlusDialogViewCornerRadius yRadius:kCDMPlusDialogViewCornerRadius];
+    NSShadow *shadow = [NSShadow new];
+    [shadow setShadowColor:kCDMPlusDialogViewShadowColor];
+    [shadow setShadowBlurRadius:blurRadius];
+    [shadow setShadowOffset:offset];
+    [shadow set];
+    [[NSColor cheddarArchesColor] set];
+    [path fill];
 }
 
 @end

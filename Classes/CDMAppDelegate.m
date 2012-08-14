@@ -18,6 +18,7 @@
 @interface CDMAppDelegate ()
 - (void)_userChanged:(NSNotification *)notification;
 - (void)_showPlusWindowIfNecessary;
+- (void)_mainWindowResized:(NSNotification*)notification;
 @end
 
 @implementation CDMAppDelegate {
@@ -82,6 +83,7 @@
 - (void)_showPlusWindowIfNecessary
 {
     NSWindow *mainWindow = [_mainWindowController window];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(_mainWindowResized:) name:NSWindowDidResizeNotification object:mainWindow];
     _plusWindowController = [[CDMPlusWindowController alloc] init];
     _plusWindowController.parentWindow = mainWindow;
     NSWindow *overlayWindow = [_plusWindowController window];
@@ -90,6 +92,13 @@
     [mainWindow addChildWindow:overlayWindow ordered:NSWindowAbove];
     [overlayWindow makeKeyAndOrderFront:nil];
     [[overlayWindow animator] setAlphaValue:1.f];
+}
+
+- (void)_mainWindowResized:(NSNotification*)notification
+{
+    NSWindow *mainWindow = [_mainWindowController window];
+    NSWindow *overlayWindow = [_plusWindowController window];
+    [overlayWindow setFrame:[mainWindow frame] display:YES animate:NO];
 }
 
 #pragma mark - NSMenuDelegate
