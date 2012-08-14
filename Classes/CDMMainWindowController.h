@@ -8,6 +8,7 @@
 
 @class CDMListsViewController;
 @class CDMTasksViewController;
+@class CDMFlatButton;
 
 @interface CDMMainWindowController : NSWindowController
 
@@ -15,7 +16,10 @@
 @property (nonatomic, strong) IBOutlet CDMTasksViewController *tasksViewController;
 @property (nonatomic, weak) IBOutlet NSView *splitViewLeft;
 @property (nonatomic, weak) IBOutlet NSPanel *createListPanel;
+@property (nonatomic, weak) IBOutlet CDMFlatButton *createListButton;
+@property (nonatomic, weak) IBOutlet CDMFlatButton *cancelListButton;
 
 - (IBAction)createList:(id)sender;
+- (IBAction)closeCreateList:(id)sender;
 
 @end

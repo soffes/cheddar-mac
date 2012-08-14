@@ -484,7 +484,7 @@
 			<object class="NSWindowTemplate" id="290181433">
 				<int key="NSWindowStyleMask">31</int>
 				<int key="NSWindowBacking">2</int>
-				<string key="NSWindowRect">{{272, 172}, {367, 143}}</string>
+				<string key="NSWindowRect">{{272, 172}, {367, 140}}</string>
 				<int key="NSWTFlags">-1535638528</int>
 				<string key="NSWindowTitle">Create List</string>
 				<string key="NSWindowClass">NSPanel</string>
@@ -497,10 +497,10 @@
 						<object class="NSTextField" id="125683233">
 							<reference key="NSNextResponder" ref="1055725255"/>
 							<int key="NSvFlags">258</int>
-							<string key="NSFrame">{{20, 83}, {327, 40}}</string>
+							<string key="NSFrame">{{20, 80}, {327, 40}}</string>
 							<reference key="NSSuperview" ref="1055725255"/>
 							<reference key="NSWindow"/>
-							<reference key="NSNextKeyView" ref="771441868"/>
+							<reference key="NSNextKeyView" ref="882113657"/>
 							<string key="NSReuseIdentifierKey">_NS:9</string>
 							<bool key="NSEnabled">YES</bool>
 							<object class="NSTextFieldCell" key="NSCell" id="347546766">
@@ -520,7 +520,7 @@
 						<object class="NSButton" id="771441868">
 							<reference key="NSNextResponder" ref="1055725255"/>
 							<int key="NSvFlags">268</int>
-							<string key="NSFrame">{{219, 20}, {128, 43}}</string>
+							<string key="NSFrame">{{238, 20}, {109, 40}}</string>
 							<reference key="NSSuperview" ref="1055725255"/>
 							<reference key="NSWindow"/>
 							<reference key="NSNextKeyView"/>
@@ -542,8 +542,33 @@
 							</object>
 							<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 						</object>
+						<object class="NSButton" id="882113657">
+							<reference key="NSNextResponder" ref="1055725255"/>
+							<int key="NSvFlags">268</int>
+							<string key="NSFrame">{{145, 20}, {83, 40}}</string>
+							<reference key="NSSuperview" ref="1055725255"/>
+							<reference key="NSWindow"/>
+							<reference key="NSNextKeyView" ref="771441868"/>
+							<string key="NSReuseIdentifierKey">_NS:9</string>
+							<bool key="NSEnabled">YES</bool>
+							<object class="NSButtonCell" key="NSCell" id="51082437">
+								<int key="NSCellFlags">67108864</int>
+								<int key="NSCellFlags2">134217728</int>
+								<string key="NSContents">Cancel</string>
+								<reference key="NSSupport" ref="1017777950"/>
+								<string key="NSCellIdentifier">_NS:9</string>
+								<reference key="NSControlView" ref="882113657"/>
+								<int key="NSButtonFlags">-2038284288</int>
+								<int key="NSButtonFlags2">134</int>
+								<string key="NSAlternateContents"/>
+								<string type="base64-UTF8" key="NSKeyEquivalent">DQ</string>
+								<int key="NSPeriodicDelay">200</int>
+								<int key="NSPeriodicInterval">25</int>
+							</object>
+							<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
+						</object>
 					</array>
-					<string key="NSFrameSize">{367, 143}</string>
+					<string key="NSFrameSize">{367, 140}</string>
 					<reference key="NSSuperview"/>
 					<reference key="NSWindow"/>
 					<reference key="NSNextKeyView" ref="125683233"/>
@@ -627,6 +652,38 @@
 						<reference key="destination" ref="290181433"/>
 					</object>
 					<int key="connectionID">353</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">createListButton</string>
+						<reference key="source" ref="1001"/>
+						<reference key="destination" ref="771441868"/>
+					</object>
+					<int key="connectionID">355</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">cancelListButton</string>
+						<reference key="source" ref="1001"/>
+						<reference key="destination" ref="882113657"/>
+					</object>
+					<int key="connectionID">358</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">closeCreateList:</string>
+						<reference key="source" ref="1001"/>
+						<reference key="destination" ref="882113657"/>
+					</object>
+					<int key="connectionID">359</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">delegate</string>
+						<reference key="source" ref="1005"/>
+						<reference key="destination" ref="1001"/>
+					</object>
+					<int key="connectionID">354</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -1204,6 +1261,7 @@
 						<array class="NSMutableArray" key="children">
 							<reference ref="125683233"/>
 							<reference ref="771441868"/>
+							<reference ref="882113657"/>
 						</array>
 						<reference key="parent" ref="290181433"/>
 					</object>
@@ -1232,6 +1290,19 @@
 						<int key="objectID">351</int>
 						<reference key="object" ref="347546766"/>
 						<reference key="parent" ref="125683233"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">356</int>
+						<reference key="object" ref="882113657"/>
+						<array class="NSMutableArray" key="children">
+							<reference ref="51082437"/>
+						</array>
+						<reference key="parent" ref="1055725255"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">357</int>
+						<reference key="object" ref="51082437"/>
+						<reference key="parent" ref="882113657"/>
 					</object>
 				</array>
 			</object>
@@ -1299,6 +1370,9 @@
 				<string key="350.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="351.CustomClassName">CDMTextFieldCell</string>
 				<string key="351.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="356.CustomClassName">CDMFlatButton</string>
+				<string key="356.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
+				<string key="357.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="80.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="80.ibExternalFetchPredicateFormat"/>
 			</dictionary>
@@ -1306,7 +1380,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">353</int>
+			<int key="maxID">359</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -1394,12 +1468,41 @@
 				<object class="IBPartialClassDescription">
 					<string key="className">CDMMainWindowController</string>
 					<string key="superclassName">NSWindowController</string>
+					<dictionary class="NSMutableDictionary" key="actions">
+						<string key="closeCreateList:">id</string>
+						<string key="createList:">id</string>
+					</dictionary>
+					<dictionary class="NSMutableDictionary" key="actionInfosByName">
+						<object class="IBActionInfo" key="closeCreateList:">
+							<string key="name">closeCreateList:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+						<object class="IBActionInfo" key="createList:">
+							<string key="name">createList:</string>
+							<string key="candidateClassName">id</string>
+						</object>
+					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
+						<string key="cancelListButton">CDMFlatButton</string>
+						<string key="createListButton">CDMFlatButton</string>
+						<string key="createListPanel">NSPanel</string>
 						<string key="listsViewController">CDMListsViewController</string>
 						<string key="splitViewLeft">NSView</string>
 						<string key="tasksViewController">CDMTasksViewController</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<object class="IBToOneOutletInfo" key="cancelListButton">
+							<string key="name">cancelListButton</string>
+							<string key="candidateClassName">CDMFlatButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="createListButton">
+							<string key="name">createListButton</string>
+							<string key="candidateClassName">CDMFlatButton</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="createListPanel">
+							<string key="name">createListPanel</string>
+							<string key="candidateClassName">NSPanel</string>
+						</object>
 						<object class="IBToOneOutletInfo" key="listsViewController">
 							<string key="name">listsViewController</string>
 							<string key="candidateClassName">CDMListsViewController</string>

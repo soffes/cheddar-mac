@@ -10,11 +10,12 @@
 #import "CDMFlatButtonCell.h"
 
 @implementation CDMFlatButton
+
 @synthesize buttonColor = _buttonColor;
 
-- (void)awakeFromNib
-{
+- (void)awakeFromNib {
     [super awakeFromNib];
+
     CDMFlatButtonCell *cell = [[CDMFlatButtonCell alloc] init];
     [cell setAttributedTitle:[self attributedTitle]];
     [cell setTitle:[self title]];
@@ -23,20 +24,21 @@
     [self setCell:cell];
 }
 
-+ (Class)cellClass
-{
+
++ (Class)cellClass {
     return [CDMFlatButtonCell class];
 }
 
+
 #pragma mark - Accessors
 
-- (void)setButtonColor:(NSColor *)buttonColor
-{
+- (void)setButtonColor:(NSColor *)buttonColor {
     [[self cell] setButtonColor:buttonColor];
 }
 
-- (NSColor*)buttonColor
-{
+
+- (NSColor*)buttonColor {
     return [[self cell] buttonColor];
 }
+
 @end

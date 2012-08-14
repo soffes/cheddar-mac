@@ -10,5 +10,6 @@
 
 + (NSColor *)cheddarOrangeColor;
 + (NSColor *)cheddarSteelColor;
++ (NSColor *)cheddarArchesColor;
 
 @end

@@ -10,6 +10,8 @@
 #import "INAppStoreWindow.h"
 #import "CDMListsViewController.h"
 #import "CDMTasksViewController.h"
+#import "CDMFlatButton.h"
+#import "NSColor+CDMAdditions.h"
 
 void SSDrawGradientInRect(CGContextRef context, CGGradientRef gradient, CGRect rect) {
 	CGContextSaveGState(context);
@@ -30,6 +32,8 @@ void SSDrawGradientInRect(CGContextRef context, CGGradientRef gradient, CGRect r
 @synthesize tasksViewController = _tasksViewController;
 @synthesize splitViewLeft = _splitViewLeft;
 @synthesize createListPanel = _createListPanel;
+@synthesize createListButton = _createListButton;
+@synthesize cancelListButton = _cancelListButton;
 
 
 #pragma mark - NSObject
@@ -49,6 +53,15 @@ void SSDrawGradientInRect(CGContextRef context, CGGradientRef gradient, CGRect r
 }
 
 
+- (void)windowDidLoad {
+	[super windowDidLoad];
+
+//	self.createListPanel.backgroundColor = [NSColor cheddarArchesColor];
+	self.createListButton.buttonColor = [NSColor cheddarOrangeColor];
+	self.cancelListButton.buttonColor = [NSColor cheddarSteelColor];
+}
+
+
 - (void)showWindow:(id)sender {
 	if (![CDKUser currentUser]) {
 		return;
@@ -62,6 +75,12 @@ void SSDrawGradientInRect(CGContextRef context, CGGradientRef gradient, CGRect r
 
 - (IBAction)createList:(id)sender {
 	[NSApp beginSheet:self.createListPanel modalForWindow:self.window modalDelegate:nil didEndSelector:nil contextInfo:nil];
+}
+
+
+- (IBAction)closeCreateList:(id)sender {
+	[NSApp endSheet:self.createListPanel];
+	[self.createListPanel orderOut:self];
 }
 
 
@@ -82,13 +101,5 @@ void SSDrawGradientInRect(CGContextRef context, CGGradientRef gradient, CGRect r
     // Don't resize the sidebar
     return subview != self.splitViewLeft;
 }
-
-
-#pragma mark - NSWindowDelegate
-
-//- (NSRect)window:(NSWindow *)window willPositionSheet:(NSWindow *)sheet usingRect:(NSRect)rect {
-//	CGFloat width = rect.size.width;
-//	return CGRectMake(roundf((window.frame.size.width - width) / 2.0f), 40.0f, width, 1.0f);
-//}
 
 @end

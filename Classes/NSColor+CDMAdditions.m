@@ -19,4 +19,9 @@
 	return [NSColor colorWithCalibratedRed:0.526 green:0.541 blue:0.598 alpha:1.000];
 }
 
+
++ (NSColor *)cheddarArchesColor {
+	return [self colorWithPatternImage:[NSImage imageNamed:@"arches"]];
+}
+
 @end

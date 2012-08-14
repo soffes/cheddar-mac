@@ -6,8 +6,8 @@
 //  Copyright (c) 2012 Nothing Magical. All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
-
 @interface CDMFlatButton : NSButton
+
 @property (nonatomic, strong) NSColor *buttonColor;
+
 @end

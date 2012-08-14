@@ -7,10 +7,10 @@
 //
 
 #import "CDMArchesWindow.h"
+#import "NSColor+CDMAdditions.h"
 #import <Carbon/Carbon.h>
 #import <QuartzCore/QuartzCore.h>
 
-static NSString* const kCDMArchesWindowImageNameArches = @"arches";
 static NSString* const kCDMArchesWindowImageNameTrafficNormal = @"traffic-normal";
 static NSString* const kCDMArchesWindowImageNameTrafficClose = @"traffic-close";
 static NSString* const kCDMArchesWindowImageNameTrafficMinimize = @"traffic-minimize";
@@ -37,8 +37,7 @@ static CGFloat const kCDMArchesWindowShakeVigour = 0.05f;
 
 - (void)drawRect:(NSRect)dirtyRect
 {
-    NSImage *arches = [NSImage imageNamed:kCDMArchesWindowImageNameArches];
-    NSColor *archesColor = [NSColor colorWithPatternImage:arches];
+    NSColor *archesColor = [NSColor cheddarArchesColor];
     NSBezierPath *path = [NSBezierPath bezierPathWithRoundedRect:[self bounds] xRadius:kCDMArchesWindowCornerRadius yRadius:kCDMArchesWindowCornerRadius];
     [archesColor setFill];
     [path fill];
