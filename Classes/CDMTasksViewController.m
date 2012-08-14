@@ -15,10 +15,7 @@
 static NSString* const kCDMTasksDragTypeRearrange = @"CDMTasksDragTypeRearrange";
 NSString* const kCDMTasksDragTypeMove = @"CDMTasksDragTypeMove";
 static NSString* const kCDMTaskCellIdentifier = @"TaskCell";
-
-@interface CDMTasksViewController ()
-- (void)closeAddListView;
-@end
+static CGFloat const kCDMTasksViewControllerAddListAnimationDuration = 0.1f;
 
 @implementation CDMTasksViewController {
     BOOL _awakenFromNib;
@@ -28,6 +25,7 @@ static NSString* const kCDMTaskCellIdentifier = @"TaskCell";
 @synthesize selectedList = _selectedList;
 @synthesize taskField = _taskField;
 @synthesize addListView = _addListView;
+@synthesize addListField = _addListField;
 
 #pragma mark - NSObject
 
@@ -65,11 +63,16 @@ static NSString* const kCDMTaskCellIdentifier = @"TaskCell";
 
 - (IBAction)addList:(id)sender
 {
+    if ([self.addListView superview]) {
+        [self closeAddList:nil];
+        return;
+    }
     NSScrollView *scrollView = [self.tableView enclosingScrollView];
     NSRect beforeAddFrame = [self.addListView frame];
     beforeAddFrame.origin.y = NSMaxY([scrollView frame]);
     beforeAddFrame.size.width = [scrollView frame].size.width;
     [self.addListView setFrame:beforeAddFrame];
+    [self.addListField setStringValue:@""];
     NSView *parentView = [scrollView superview] ;
     [parentView addSubview:self.addListView positioned:NSWindowBelow relativeTo:[[parentView subviews] objectAtIndex:0]];
     NSRect newScrollFrame = [scrollView frame];
@@ -77,17 +80,32 @@ static NSString* const kCDMTaskCellIdentifier = @"TaskCell";
     NSRect newAddFrame = beforeAddFrame;
     newAddFrame.origin.y = NSMaxY(newScrollFrame);
     [NSAnimationContext beginGrouping];
+    [[NSAnimationContext currentContext] setDuration:kCDMTasksViewControllerAddListAnimationDuration];
+    [[NSAnimationContext currentContext] setCompletionHandler:^{
+        [[self.addListField window] makeFirstResponder:self.addListField];
+    }];
     [[scrollView animator] setFrame:newScrollFrame];
     [[self.addListView animator] setFrame:newAddFrame];
     [NSAnimationContext endGrouping];
 }
 
-- (void)closeAddListView
+- (IBAction)closeAddList:(id)sender
 {
+    if (![self.addListView superview]) { return; }
     NSScrollView *scrollView = [self.tableView enclosingScrollView];
     NSRect newScrollFrame = [scrollView frame];
     newScrollFrame.size.height += [self.addListView frame].size.height;
     [[scrollView animator] setFrame:newScrollFrame];
+    NSRect newAddFrame = [self.addListView frame];
+    newAddFrame.origin.y = NSMaxY(newScrollFrame);
+    [NSAnimationContext beginGrouping];
+    [[NSAnimationContext currentContext] setDuration:kCDMTasksViewControllerAddListAnimationDuration];
+    [[NSAnimationContext currentContext] setCompletionHandler:^{
+        [self.addListView removeFromSuperview];
+    }];
+    [[scrollView animator] setFrame:newScrollFrame];
+    [[self.addListView animator] setFrame:newAddFrame];
+    [NSAnimationContext endGrouping];
 }
 
 #pragma mark - Accessors
