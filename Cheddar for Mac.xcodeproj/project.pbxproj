@@ -327,6 +327,7 @@
 			children = (
 				B2A23D1115D9818500EA9D2D /* Application */,
 				B2A23D1015D9817F00EA9D2D /* Window Controllers */,
+				B27CB98815D9D90D00BC851F /* View Controllers */,
 				0338828015D961E1001FC04B /* Windows */,
 				B25E13AA15CBB185009751B9 /* Views */,
 				B249723015CBE10B008388E5 /* Cells */,
@@ -526,6 +527,17 @@
 			name = Views;
 			sourceTree = "<group>";
 		};
+		B27CB98815D9D90D00BC851F /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				0338840615D9D53B001FC04B /* CDMListsViewController.h */,
+				0338840715D9D53B001FC04B /* CDMListsViewController.m */,
+				0338840915D9D66F001FC04B /* CDMTasksViewController.h */,
+				0338840A15D9D66F001FC04B /* CDMTasksViewController.m */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
 		B2A23D1015D9817F00EA9D2D /* Window Controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -537,10 +549,6 @@
 				B2A23D7815D997D900EA9D2D /* CDMAboutWindowController.m */,
 				B2A23D7A15D997E300EA9D2D /* CDMPreferencesWindowController.h */,
 				B2A23D7B15D997E300EA9D2D /* CDMPreferencesWindowController.m */,
-				0338840615D9D53B001FC04B /* CDMListsViewController.h */,
-				0338840715D9D53B001FC04B /* CDMListsViewController.m */,
-				0338840915D9D66F001FC04B /* CDMTasksViewController.h */,
-				0338840A15D9D66F001FC04B /* CDMTasksViewController.m */,
 			);
 			name = "Window Controllers";
 			sourceTree = "<group>";

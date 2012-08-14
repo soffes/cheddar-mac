@@ -12,17 +12,16 @@
 
 static NSString* const CDMListsDragTypeRearrange = @"CDMListsDragTypeRearrange";
 
-@interface CDMListsViewController ()
-
-@end
-
 @implementation CDMListsViewController
+
 @synthesize arrayController = _arrayController;
 @synthesize tableView = _tableView;
 @synthesize tasksViewController = _tasksViewController;
 
-- (void)awakeFromNib
-{
+
+#pragma mark - NSObject
+
+- (void)awakeFromNib {
     [super awakeFromNib];
     [self.tableView registerForDraggedTypes:[NSArray arrayWithObject:CDMListsDragTypeRearrange]];
     self.arrayController.managedObjectContext = [CDKList mainContext];
@@ -35,10 +34,10 @@ static NSString* const CDMListsDragTypeRearrange = @"CDMListsDragTypeRearrange";
 	}];
 }
 
+
 #pragma mark - NSTableViewDelegate
 
-- (void)tableViewSelectionDidChange:(NSNotification *)notification
-{
+- (void)tableViewSelectionDidChange:(NSNotification *)notification {
     NSInteger selectedRow = [self.tableView selectedRow];
     if (selectedRow != -1) {
         CDKList *list = [[self.arrayController arrangedObjects] objectAtIndex:selectedRow];
@@ -46,9 +45,11 @@ static NSString* const CDMListsDragTypeRearrange = @"CDMListsDragTypeRearrange";
     }
 }
 
+
 - (NSTableRowView *)tableView:(NSTableView *)tableView rowViewForRow:(NSInteger)row {
 	return [[CDMListTableRowView alloc] initWithFrame:CGRectZero];
 }
+
 
 - (CGFloat)tableView:(NSTableView *)tableView heightOfRow:(NSInteger)row {
 	return 45.f;
@@ -75,4 +76,5 @@ static NSString* const CDMListsDragTypeRearrange = @"CDMListsDragTypeRearrange";
     NSLog(@"dropped index: %ld", row);
     return YES;
 }
+
 @end
