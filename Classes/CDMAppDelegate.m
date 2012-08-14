@@ -60,6 +60,15 @@
 	[CDKPushController setDevelopmentModeEnabled:YES];
 #endif
 
+	NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+	[userDefaults registerDefaults:[[NSDictionary alloc] initWithObjectsAndKeys:
+									[NSNumber numberWithBool:YES], @"SUEnableAutomaticChecks",
+									[NSNumber numberWithBool:YES], @"SUAllowsAutomaticUpdates",
+									[NSNumber numberWithBool:NO], @"SUEnableSystemProfiling",
+									nil]];
+
+	[userDefaults synchronize];
+
 	// Initialize Core Data
 	[SSManagedObject mainContext];
 	

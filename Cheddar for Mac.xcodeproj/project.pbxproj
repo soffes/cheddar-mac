@@ -56,6 +56,8 @@
 		03B3951F15DABFD900A8A7D4 /* CDMTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 03B3951E15DABFD800A8A7D4 /* CDMTextField.m */; };
 		03CB266315DA1FAC00FEDF25 /* CDMAddListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CB266215DA1FAC00FEDF25 /* CDMAddListView.m */; };
 		03CB269015DA248E00FEDF25 /* CDMAddListTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CB268F15DA248E00FEDF25 /* CDMAddListTextFieldCell.m */; };
+		B209670B15DAB8E600E73B93 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B209670015DAB8BE00E73B93 /* Sparkle.framework */; };
+		B209670C15DABAAE00E73B93 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B209670015DAB8BE00E73B93 /* Sparkle.framework */; };
 		B21FF2C515BF7D6500AEEA97 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B21FF2C415BF7D6500AEEA97 /* Cocoa.framework */; };
 		B21FF57115BF7D7C00AEEA97 /* CDMDefines.m in Sources */ = {isa = PBXBuildFile; fileRef = B21FF2EE15BF7D7B00AEEA97 /* CDMDefines.m */; };
 		B21FF57215BF7D7C00AEEA97 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B21FF2F015BF7D7B00AEEA97 /* main.m */; };
@@ -93,9 +95,52 @@
 		B2D2A4DA15CC96140029D315 /* arches@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B2D2A4D815CC96140029D315 /* arches@2x.png */; };
 		B2D8D5F315BF7FAE00A61836 /* CheddarKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2D8D5F015BF7F9100A61836 /* CheddarKit.framework */; };
 		B2D8D5F515BF7FBD00A61836 /* CheddarKit.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B2D8D5F015BF7F9100A61836 /* CheddarKit.framework */; };
+		B2F1F86D15DAC697002B9733 /* dsa_pub.pem in Resources */ = {isa = PBXBuildFile; fileRef = B2F1F86C15DAC697002B9733 /* dsa_pub.pem */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		B20966FF15DAB8BE00E73B93 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B209661815DAB8BD00E73B93 /* Sparkle.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8DC2EF5B0486A6940098B216;
+			remoteInfo = Sparkle;
+		};
+		B209670115DAB8BE00E73B93 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B209661815DAB8BD00E73B93 /* Sparkle.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 61B5F90209C4CEE200B25A18;
+			remoteInfo = "Sparkle Test App";
+		};
+		B209670315DAB8BE00E73B93 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B209661815DAB8BD00E73B93 /* Sparkle.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 612279D90DB5470200AB99EA;
+			remoteInfo = "Sparkle Unit Tests";
+		};
+		B209670515DAB8BE00E73B93 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B209661815DAB8BD00E73B93 /* Sparkle.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5D06E8D00FD68C7C005AE3F6;
+			remoteInfo = BinaryDelta;
+		};
+		B209670715DAB8BE00E73B93 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B209661815DAB8BD00E73B93 /* Sparkle.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 55C14BB7136EEF1500649790;
+			remoteInfo = finish_installation;
+		};
+		B209670915DAB8DC00E73B93 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B209661815DAB8BD00E73B93 /* Sparkle.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
+			remoteInfo = Sparkle;
+		};
 		B21FF72015BF7D7D00AEEA97 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B21FF52115BF7D7C00AEEA97 /* CheddarKit.xcodeproj */;
@@ -197,6 +242,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				B2D8D5F515BF7FBD00A61836 /* CheddarKit.framework in CopyFiles */,
+				B209670C15DABAAE00E73B93 /* Sparkle.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +315,7 @@
 		03CB266215DA1FAC00FEDF25 /* CDMAddListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMAddListView.m; sourceTree = "<group>"; };
 		03CB268E15DA248E00FEDF25 /* CDMAddListTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMAddListTextFieldCell.h; sourceTree = "<group>"; };
 		03CB268F15DA248E00FEDF25 /* CDMAddListTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMAddListTextFieldCell.m; sourceTree = "<group>"; };
+		B209661815DAB8BD00E73B93 /* Sparkle.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Sparkle.xcodeproj; sourceTree = "<group>"; };
 		B21FF2C015BF7D6500AEEA97 /* Cheddar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cheddar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B21FF2C415BF7D6500AEEA97 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		B21FF2C715BF7D6500AEEA97 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -333,6 +380,7 @@
 		B2D2A4D715CC96140029D315 /* arches.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arches.png; sourceTree = "<group>"; };
 		B2D2A4D815CC96140029D315 /* arches@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "arches@2x.png"; sourceTree = "<group>"; };
 		B2D8D60B15BF80D000A61836 /* CDMDefines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CDMDefines.h; sourceTree = "<group>"; };
+		B2F1F86C15DAC697002B9733 /* dsa_pub.pem */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dsa_pub.pem; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -340,6 +388,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B209670B15DAB8E600E73B93 /* Sparkle.framework in Frameworks */,
 				033883A815D9AAF8001FC04B /* QuartzCore.framework in Frameworks */,
 				0338830215D97D57001FC04B /* Carbon.framework in Frameworks */,
 				B2D8D5F315BF7FAE00A61836 /* CheddarKit.framework in Frameworks */,
@@ -369,6 +418,26 @@
 				037252DD15D9FAA800E87D87 /* CDMBoolToTaskTextColorValueTransformer.m */,
 			);
 			name = "Value Transformers";
+			sourceTree = "<group>";
+		};
+		B209654A15DAB8BD00E73B93 /* Sparkle */ = {
+			isa = PBXGroup;
+			children = (
+				B209661815DAB8BD00E73B93 /* Sparkle.xcodeproj */,
+			);
+			path = Sparkle;
+			sourceTree = "<group>";
+		};
+		B209661915DAB8BD00E73B93 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B209670015DAB8BE00E73B93 /* Sparkle.framework */,
+				B209670215DAB8BE00E73B93 /* Sparkle Test App.app */,
+				B209670415DAB8BE00E73B93 /* Sparkle Unit Tests.octest */,
+				B209670615DAB8BE00E73B93 /* BinaryDelta */,
+				B209670815DAB8BE00E73B93 /* finish_installation.app */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		B21FF2B515BF7D6500AEEA97 = {
@@ -441,6 +510,7 @@
 				B21FF2F215BF7D7B00AEEA97 /* Cheddar-Info.plist */,
 				B21FF2F315BF7D7B00AEEA97 /* Cheddar.entitlements */,
 				03B3951B15DAB73000A8A7D4 /* Localizable.strings */,
+				B2F1F86C15DAC697002B9733 /* dsa_pub.pem */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -491,8 +561,8 @@
 		B21FF2FC15BF7D7B00AEEA97 /* Nibs */ = {
 			isa = PBXGroup;
 			children = (
-				B21FF2FD15BF7D7B00AEEA97 /* MainWindow.xib */,
 				B21FF2FE15BF7D7B00AEEA97 /* MainMenu.xib */,
+				B21FF2FD15BF7D7B00AEEA97 /* MainWindow.xib */,
 				B21FF2FF15BF7D7B00AEEA97 /* SignIn.xib */,
 				B2A23DA315D9997700EA9D2D /* About.xib */,
 				B2A23DA515D9997E00EA9D2D /* Preferences.xib */,
@@ -503,6 +573,7 @@
 		B21FF30015BF7D7B00AEEA97 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				B209654A15DAB8BD00E73B93 /* Sparkle */,
 				B27CBA5F15DA0A1B00BC851F /* RBSplitView */,
 				B27CBA2B15D9F12800BC851F /* SNRFetchedResultsController */,
 				B21FF30115BF7D7B00AEEA97 /* CheddarKit */,
@@ -711,6 +782,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				B209670A15DAB8DC00E73B93 /* PBXTargetDependency */,
 				B2D8D5F215BF7FAA00A61836 /* PBXTargetDependency */,
 			);
 			name = "Cheddar for Mac";
@@ -735,6 +807,38 @@
 			knownRegions = (
 				en,
 				English,
+				ca,
+				cs,
+				cy,
+				da,
+				de,
+				el,
+				es,
+				fi,
+				fr,
+				he,
+				hu,
+				id,
+				is,
+				it,
+				ja,
+				ko,
+				nl,
+				no,
+				pl,
+				"pt-BR",
+				pt_BR,
+				pt_PT,
+				ro,
+				ru,
+				sk,
+				sl,
+				sv,
+				th,
+				tr,
+				uk,
+				zh_CN,
+				zh_TW,
 			);
 			mainGroup = B21FF2B515BF7D6500AEEA97;
 			productRefGroup = B21FF2C115BF7D6500AEEA97 /* Products */;
@@ -748,6 +852,10 @@
 					ProductGroup = B27CBA7B15DA0A1B00BC851F /* Products */;
 					ProjectRef = B27CBA7A15DA0A1B00BC851F /* RBSplitView.xcodeproj */;
 				},
+				{
+					ProductGroup = B209661915DAB8BD00E73B93 /* Products */;
+					ProjectRef = B209661815DAB8BD00E73B93 /* Sparkle.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -757,6 +865,41 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		B209670015DAB8BE00E73B93 /* Sparkle.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Sparkle.framework;
+			remoteRef = B20966FF15DAB8BE00E73B93 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B209670215DAB8BE00E73B93 /* Sparkle Test App.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = "Sparkle Test App.app";
+			remoteRef = B209670115DAB8BE00E73B93 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B209670415DAB8BE00E73B93 /* Sparkle Unit Tests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "Sparkle Unit Tests.octest";
+			remoteRef = B209670315DAB8BE00E73B93 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B209670615DAB8BE00E73B93 /* BinaryDelta */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = BinaryDelta;
+			remoteRef = B209670515DAB8BE00E73B93 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B209670815DAB8BE00E73B93 /* finish_installation.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = finish_installation.app;
+			remoteRef = B209670715DAB8BE00E73B93 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		B21FF72115BF7D7D00AEEA97 /* libCheddarKit.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -891,6 +1034,7 @@
 				B27CBB4E15DA233C00BC851F /* x.png in Resources */,
 				B27CBB4F15DA233C00BC851F /* x@2x.png in Resources */,
 				03B3951C15DAB73000A8A7D4 /* Localizable.strings in Resources */,
+				B2F1F86D15DAC697002B9733 /* dsa_pub.pem in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -945,6 +1089,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		B209670A15DAB8DC00E73B93 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Sparkle;
+			targetProxy = B209670915DAB8DC00E73B93 /* PBXContainerItemProxy */;
+		};
 		B2D8D5F215BF7FAA00A61836 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = CheddarKitMac;
