@@ -63,8 +63,10 @@
 		self.passwordTextField.stringValue = @"";
 	} failure:^(AFJSONRequestOperation *operation, NSError *error) {
 		CDMArchesWindow *archesWindow = (CDMArchesWindow *)self.window;
-		[archesWindow shake:nil];
-	}];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [archesWindow shake:nil];
+        });
+    }];
 }
 
 
