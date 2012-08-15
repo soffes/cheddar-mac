@@ -49,8 +49,13 @@ static inline CGImageRef _createNoiseImageRef(NSUInteger width, NSUInteger heigh
 	self.titleBarHeight = 44.0f;
 	self.centerFullScreenButton = YES;
 	self.fullScreenButtonRightMargin = 10.0f;
+    __block __unsafe_unretained NSWindow *blockSelf = self;
 	[self setTitleBarDrawingBlock:^(BOOL drawsAsMainWindow, CGRect drawingRect, CGPathRef clippingPath){
 		CGContextRef context = (CGContextRef)[[NSGraphicsContext currentContext] graphicsPort];
+        if (([blockSelf styleMask] & NSFullScreenWindowMask) == NSFullScreenWindowMask) {
+            CGContextSetFillColorWithColor(context, CGColorGetConstantColor(kCGColorBlack));
+            CGContextFillRect(context, drawingRect);
+        }
 		CGContextSaveGState(context);
 		CGContextAddPath(context, clippingPath);
 		CGContextClip(context);
