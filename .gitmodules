@@ -13,3 +13,6 @@
 [submodule "Vendor/Sparkle"]
 	path = Vendor/Sparkle
 	url = https://github.com/andymatuschak/Sparkle.git
+[submodule "Vendor/LetsMove"]
+	path = Vendor/LetsMove
+	url = https://github.com/samsoffes/LetsMove.git
