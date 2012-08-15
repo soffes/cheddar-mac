@@ -12,6 +12,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "CDKTask+CDMAdditions.h"
 #import "CDMColorView.h"
+#import "CDMTagFilterBar.h"
 
 static NSString* const kCDMTasksDragTypeRearrange = @"CDMTasksDragTypeRearrange";
 NSString* const kCDMTasksDragTypeMove = @"CDMTasksDragTypeMove";
@@ -19,7 +20,8 @@ static NSString* const kCDMTaskCellIdentifier = @"TaskCell";
 static CGFloat const kCDMTasksViewControllerTagBarAnimationDuration = 0.3f;
 
 @interface CDMTasksViewController ()
-- (void)setTagBarVisible:(BOOL)visible;
+- (void)_setTagBarVisible:(BOOL)visible;
+- (void)_clearTagFilter;
 @end
 
 @implementation CDMTasksViewController {
@@ -85,11 +87,11 @@ static CGFloat const kCDMTasksViewControllerTagBarAnimationDuration = 0.3f;
     if (tag) {
         [self.tagNameField setStringValue:[@"#" stringByAppendingString:tagName]];
         [self.arrayController setFilterPredicate:[NSPredicate predicateWithFormat:@"%@ IN tags", tag]];
-        [self setTagBarVisible:YES];
+        [self _setTagBarVisible:YES];
     }
 }
 
-- (void)setTagBarVisible:(BOOL)visible {
+- (void)_setTagBarVisible:(BOOL)visible {
     NSView *parentView = [self.addTaskView superview];
     NSScrollView *scrollView = [self.tableView enclosingScrollView];
     if (visible && ![self.tagFilterBar superview]) {
@@ -130,6 +132,18 @@ static CGFloat const kCDMTasksViewControllerTagBarAnimationDuration = 0.3f;
     }
 }
 
+- (void)_clearTagFilter
+{
+    self.arrayController.filterPredicate = nil;
+    [self _setTagBarVisible:NO];
+}
+
+#pragma mark - CDMTagFilterBarDelegate
+
+- (void)tagFilterBarClicked:(CDMTagFilterBar*)bar {
+    [self _clearTagFilter];
+}
+
 #pragma mark - Accessors
 
 - (void)setSelectedList:(CDKList *)selectedList {
@@ -140,8 +154,7 @@ static CGFloat const kCDMTasksViewControllerTagBarAnimationDuration = 0.3f;
 		[self.arrayController fetch:nil];
 	} failure:nil];
 	self.arrayController.fetchPredicate = [NSPredicate predicateWithFormat:@"list = %@ AND archivedAt = nil", _selectedList];
-    self.arrayController.filterPredicate = nil;
-    [self setTagBarVisible:NO];
+    [self _clearTagFilter];
 	[self.arrayController fetch:nil];
 }
 

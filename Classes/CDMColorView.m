@@ -11,10 +11,15 @@
 @implementation CDMColorView
 @synthesize color = _color;
 
-- (void)drawRect:(NSRect)dirtyRect
-{
+- (void)drawRect:(NSRect)dirtyRect {
     [self.color set];
     [NSBezierPath fillRect:[self bounds]];
 }
 
+- (void)setColor:(NSColor *)color {
+    if (_color != color) {
+        _color = color;
+        [self setNeedsDisplay:YES];
+    }
+}
 @end

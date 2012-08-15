@@ -8,6 +8,12 @@
 
 #import <Cocoa/Cocoa.h>
 
+@protocol CDMTagFilterBarDelegate;
 @interface CDMTagFilterBar : NSView
+@property (nonatomic, assign) IBOutlet id<CDMTagFilterBarDelegate> delegate;
+@end
 
+@protocol CDMTagFilterBarDelegate <NSObject>
+@optional
+- (void)tagFilterBarClicked:(CDMTagFilterBar*)bar;
 @end

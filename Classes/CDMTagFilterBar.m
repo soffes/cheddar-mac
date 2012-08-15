@@ -12,6 +12,7 @@
 #define CDMTagFilterBarTopColor [NSColor colorWithCalibratedRed:0.082 green:0.654 blue:0.887 alpha:1.000]
 
 @implementation CDMTagFilterBar
+@synthesize delegate = _delegate;
 
 - (void)drawRect:(NSRect)dirtyRect
 {
@@ -19,4 +20,10 @@
     [gradient drawInRect:[self bounds] angle:90.f];
 }
 
+- (void)mouseDown:(NSEvent *)theEvent
+{
+    if ([self.delegate respondsToSelector:@selector(tagFilterBarClicked:)]) {
+        [self.delegate tagFilterBarClicked:self];
+    }
+}
 @end
