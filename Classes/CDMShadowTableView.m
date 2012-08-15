@@ -11,7 +11,21 @@
 #define CDMShadowTableViewBottomColor [NSColor colorWithDeviceWhite:0.937f alpha:0.0f]
 #define CDMShadowTableViewTopColor [NSColor colorWithDeviceWhite:0.937f alpha:0.8f]
 
+@interface CDMShadowTableView ()
+- (void)_redrawView;
+@end
+
 @implementation CDMShadowTableView
+
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    if ((self = [super initWithCoder:aDecoder])) {
+        NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+        [nc addObserver:self selector:@selector(_redrawView) name:NSWindowDidBecomeKeyNotification object:[self window]];
+        [nc addObserver:self selector:@selector(_redrawView) name:NSWindowDidResignKeyNotification object:[self window]];
+    }
+    return self;
+}
 
 - (void)drawRect:(NSRect)dirtyRect {
     [super drawRect:dirtyRect];
@@ -24,4 +38,11 @@
     }
 }
 
+- (void)_redrawView {
+    [self setNeedsDisplay:YES];
+}
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 @end

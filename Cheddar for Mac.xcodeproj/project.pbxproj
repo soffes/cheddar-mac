@@ -420,6 +420,88 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		031E242D15DB69A300EEA810 /* Table View */ = {
+			isa = PBXGroup;
+			children = (
+				037253A615DA1C4000E87D87 /* CDMShadowTableView.h */,
+				037253A715DA1C4000E87D87 /* CDMShadowTableView.m */,
+				B25E136615CB98AD009751B9 /* CDMListTableRowView.h */,
+				B25E136715CB98AD009751B9 /* CDMListTableRowView.m */,
+				B25E13AB15CBB19B009751B9 /* CDMListTableCellView.h */,
+				B25E13AC15CBB19B009751B9 /* CDMListTableCellView.m */,
+				B249725115CC00D9008388E5 /* CDMTaskTableRowView.h */,
+				B249725215CC00D9008388E5 /* CDMTaskTableRowView.m */,
+				B249725415CC02C0008388E5 /* CDMTaskTableCellView.h */,
+				B249725515CC02C0008388E5 /* CDMTaskTableCellView.m */,
+				B2B2E15B15D9B158008672DA /* CDMPreferencesRowView.h */,
+				B2B2E15C15D9B158008672DA /* CDMPreferencesRowView.m */,
+			);
+			name = "Table View";
+			sourceTree = "<group>";
+		};
+		031E242E15DB69B000EEA810 /* Text Fields */ = {
+			isa = PBXGroup;
+			children = (
+				0338833815D99438001FC04B /* CDMSecureTextField.h */,
+				0338833915D99438001FC04B /* CDMSecureTextField.m */,
+				03B3952615DAC66E00A8A7D4 /* CDMTaskTextField.h */,
+				03B3952715DAC66E00A8A7D4 /* CDMTaskTextField.m */,
+				031E242A15DB690F00EEA810 /* CDMTextField.h */,
+				031E242B15DB690F00EEA810 /* CDMTextField.m */,
+			);
+			name = "Text Fields";
+			sourceTree = "<group>";
+		};
+		031E242F15DB69C800EEA810 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				B25E13B615CBC2AF009751B9 /* CDMAddTaskView.h */,
+				B25E13B715CBC2AF009751B9 /* CDMAddTaskView.m */,
+				03CB266115DA1FAC00FEDF25 /* CDMAddListView.h */,
+				03CB266215DA1FAC00FEDF25 /* CDMAddListView.m */,
+				03B3951815DAAA2F00A8A7D4 /* CDMWhiteOverlayView.h */,
+				03B3951915DAAA2F00A8A7D4 /* CDMWhiteOverlayView.m */,
+				03F2D97115DAE30E00EEC543 /* CDMPlusDialogView.h */,
+				03F2D97215DAE30E00EEC543 /* CDMPlusDialogView.m */,
+			);
+			name = "Custom Views";
+			sourceTree = "<group>";
+		};
+		031E243015DB69D500EEA810 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				0338839615D99F9B001FC04B /* CDMFlatButton.h */,
+				0338839715D99F9B001FC04B /* CDMFlatButton.m */,
+			);
+			name = Buttons;
+			sourceTree = "<group>";
+		};
+		031E243115DB69DE00EEA810 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				0338839915D99FA1001FC04B /* CDMFlatButtonCell.h */,
+				0338839A15D99FA1001FC04B /* CDMFlatButtonCell.m */,
+				0338839F15D9A7F6001FC04B /* CDMTextButtonCell.h */,
+				033883A015D9A7F6001FC04B /* CDMTextButtonCell.m */,
+			);
+			name = Buttons;
+			sourceTree = "<group>";
+		};
+		031E243215DB69F600EEA810 /* Text Fields */ = {
+			isa = PBXGroup;
+			children = (
+				033882FE15D97CA9001FC04B /* CDMTextFieldCell.h */,
+				033882FF15D97CA9001FC04B /* CDMTextFieldCell.m */,
+				0338833515D992EA001FC04B /* CDMSecureTextFieldCell.h */,
+				0338833615D992EA001FC04B /* CDMSecureTextFieldCell.m */,
+				03CB268E15DA248E00FEDF25 /* CDMAddListTextFieldCell.h */,
+				03CB268F15DA248E00FEDF25 /* CDMAddListTextFieldCell.m */,
+				03F2D98D15DB027400EEC543 /* CDMTaskTextFieldCell.h */,
+				03F2D98E15DB027400EEC543 /* CDMTaskTextFieldCell.m */,
+			);
+			name = "Text Fields";
+			sourceTree = "<group>";
+		};
 		0338828015D961E1001FC04B /* Windows */ = {
 			isa = PBXGroup;
 			children = (
@@ -662,18 +744,8 @@
 		B249723015CBE10B008388E5 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				0338839915D99FA1001FC04B /* CDMFlatButtonCell.h */,
-				0338839A15D99FA1001FC04B /* CDMFlatButtonCell.m */,
-				033882FE15D97CA9001FC04B /* CDMTextFieldCell.h */,
-				033882FF15D97CA9001FC04B /* CDMTextFieldCell.m */,
-				0338833515D992EA001FC04B /* CDMSecureTextFieldCell.h */,
-				0338833615D992EA001FC04B /* CDMSecureTextFieldCell.m */,
-				0338839F15D9A7F6001FC04B /* CDMTextButtonCell.h */,
-				033883A015D9A7F6001FC04B /* CDMTextButtonCell.m */,
-				03CB268E15DA248E00FEDF25 /* CDMAddListTextFieldCell.h */,
-				03CB268F15DA248E00FEDF25 /* CDMAddListTextFieldCell.m */,
-				03F2D98D15DB027400EEC543 /* CDMTaskTextFieldCell.h */,
-				03F2D98E15DB027400EEC543 /* CDMTaskTextFieldCell.m */,
+				031E243215DB69F600EEA810 /* Text Fields */,
+				031E243115DB69DE00EEA810 /* Buttons */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -681,34 +753,10 @@
 		B25E13AA15CBB185009751B9 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				037253A615DA1C4000E87D87 /* CDMShadowTableView.h */,
-				037253A715DA1C4000E87D87 /* CDMShadowTableView.m */,
-				B25E136615CB98AD009751B9 /* CDMListTableRowView.h */,
-				B25E136715CB98AD009751B9 /* CDMListTableRowView.m */,
-				B25E13AB15CBB19B009751B9 /* CDMListTableCellView.h */,
-				B25E13AC15CBB19B009751B9 /* CDMListTableCellView.m */,
-				B25E13B615CBC2AF009751B9 /* CDMAddTaskView.h */,
-				B25E13B715CBC2AF009751B9 /* CDMAddTaskView.m */,
-				B249725115CC00D9008388E5 /* CDMTaskTableRowView.h */,
-				B249725215CC00D9008388E5 /* CDMTaskTableRowView.m */,
-				B249725415CC02C0008388E5 /* CDMTaskTableCellView.h */,
-				B249725515CC02C0008388E5 /* CDMTaskTableCellView.m */,
-				0338833815D99438001FC04B /* CDMSecureTextField.h */,
-				0338833915D99438001FC04B /* CDMSecureTextField.m */,
-				0338839615D99F9B001FC04B /* CDMFlatButton.h */,
-				0338839715D99F9B001FC04B /* CDMFlatButton.m */,
-				B2B2E15B15D9B158008672DA /* CDMPreferencesRowView.h */,
-				B2B2E15C15D9B158008672DA /* CDMPreferencesRowView.m */,
-				03CB266115DA1FAC00FEDF25 /* CDMAddListView.h */,
-				03CB266215DA1FAC00FEDF25 /* CDMAddListView.m */,
-				03B3951815DAAA2F00A8A7D4 /* CDMWhiteOverlayView.h */,
-				03B3951915DAAA2F00A8A7D4 /* CDMWhiteOverlayView.m */,
-				03B3952615DAC66E00A8A7D4 /* CDMTaskTextField.h */,
-				03B3952715DAC66E00A8A7D4 /* CDMTaskTextField.m */,
-				03F2D97115DAE30E00EEC543 /* CDMPlusDialogView.h */,
-				03F2D97215DAE30E00EEC543 /* CDMPlusDialogView.m */,
-				031E242A15DB690F00EEA810 /* CDMTextField.h */,
-				031E242B15DB690F00EEA810 /* CDMTextField.m */,
+				031E243015DB69D500EEA810 /* Buttons */,
+				031E242F15DB69C800EEA810 /* Custom Views */,
+				031E242E15DB69B000EEA810 /* Text Fields */,
+				031E242D15DB69A300EEA810 /* Table View */,
 			);
 			name = Views;
 			sourceTree = "<group>";
