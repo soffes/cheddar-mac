@@ -28,17 +28,22 @@ static NSString* const kCDMTaskCellIdentifier = @"TaskCell";
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    if (_awakenFromNib) { return; }
+
+	if (_awakenFromNib) {
+		return;
+	}
+
     self.arrayController.managedObjectContext = [CDKTask mainContext];
 	self.arrayController.sortDescriptors = [CDKTask defaultSortDescriptors];
     [self.tableView registerForDraggedTypes:[NSArray arrayWithObject:kCDMTasksDragTypeRearrange]];
-    _awakenFromNib = YES;
+
+	_awakenFromNib = YES;
 }
+
 
 #pragma mark - Actions
 
-- (IBAction)addTask:(id)sender
-{
+- (IBAction)addTask:(id)sender {
     NSString *taskText = [self.taskField stringValue];
     [self.taskField setStringValue:@""];
     if ([taskText length]) {
@@ -57,6 +62,7 @@ static NSString* const kCDMTaskCellIdentifier = @"TaskCell";
         }];
     }
 }
+
 
 - (IBAction)focusTaskField:(id)sender {
     [[self.taskField window] makeFirstResponder:self.taskField];
@@ -87,6 +93,7 @@ static NSString* const kCDMTaskCellIdentifier = @"TaskCell";
 }
 
 
+
 #pragma mark - Accessors
 
 - (void)setSelectedList:(CDKList *)selectedList {
@@ -100,6 +107,7 @@ static NSString* const kCDMTaskCellIdentifier = @"TaskCell";
 	[self.arrayController fetch:nil];
 }
 
+
 #pragma mark - NSTableViewDelegate
 
 - (NSTableRowView *)tableView:(NSTableView *)tableView rowViewForRow:(NSInteger)row {
@@ -111,8 +119,8 @@ static NSString* const kCDMTaskCellIdentifier = @"TaskCell";
 	return 38.0f;
 }
 
-- (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row
-{
+
+- (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
     CDMTaskTableCellView *cellView = [tableView makeViewWithIdentifier:kCDMTaskCellIdentifier owner:self];
     CDKTask *task = [[self.arrayController arrangedObjects] objectAtIndex:row];
     [cellView.textField setAttributedStringValue:[task attributedDisplayText]];
@@ -124,12 +132,15 @@ static NSString* const kCDMTaskCellIdentifier = @"TaskCell";
 
 - (BOOL)tableView:(NSTableView *)aTableView writeRowsWithIndexes:(NSIndexSet *)rowIndexes toPasteboard:(NSPasteboard *)pboard {
     [pboard declareTypes:[NSArray arrayWithObject:kCDMTasksDragTypeRearrange] owner:self];
+
     NSData *rowData = [NSKeyedArchiver archivedDataWithRootObject:rowIndexes];
     CDKTask *task = [self.arrayController.arrangedObjects objectAtIndex:[rowIndexes firstIndex]];
-    NSData *objectData = [NSKeyedArchiver archivedDataWithRootObject:[[task objectID] URIRepresentation]];
+
+	NSData *objectData = [NSKeyedArchiver archivedDataWithRootObject:[[task objectID] URIRepresentation]];
     [pboard setData:rowData forType:kCDMTasksDragTypeRearrange];
     [pboard setData:objectData forType:kCDMTasksDragTypeMove];
-    return YES;
+
+	return YES;
 }
 
 
@@ -144,6 +155,7 @@ static NSString* const kCDMTaskCellIdentifier = @"TaskCell";
     NSIndexSet *originalIndexes = [NSKeyedUnarchiver unarchiveObjectWithData:[pasteboard dataForType:kCDMTasksDragTypeRearrange]];
     NSUInteger originalListIndex = [originalIndexes firstIndex];
     NSUInteger destinationRow = (row > originalListIndex) ? row - 1 : row;
+
 	CDKTask *task = [self.arrayController.arrangedObjects objectAtIndex:originalListIndex];
 	[tasks removeObject:task];
 	[tasks insertObject:task atIndex:destinationRow];
@@ -151,14 +163,18 @@ static NSString* const kCDMTaskCellIdentifier = @"TaskCell";
 	for (task in tasks) {
 		task.position = [NSNumber numberWithInteger:i++];
 	}
+
 	[self.arrayController.managedObjectContext save:nil];
+
 	[CDKTask sortWithObjects:tasks];
-    [NSAnimationContext beginGrouping];
+
+	[NSAnimationContext beginGrouping];
     [[NSAnimationContext currentContext] setDuration:kCDMTableViewAnimationDuration];
     [[NSAnimationContext currentContext] setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
     [self.tableView moveRowAtIndex:originalListIndex toIndex:destinationRow];
     [NSAnimationContext endGrouping];
-    return YES;
+
+	return YES;
 }
 
 @end

@@ -193,20 +193,25 @@ static CGFloat const kCDMTasksViewControllerAddListAnimationDuration = 0.15f;
 - (BOOL)tableView:(NSTableView *)aTableView acceptDrop:(id < NSDraggingInfo >)info row:(NSInteger)row dropOperation:(NSTableViewDropOperation)operation {
     NSPasteboard *pasteboard = [info draggingPasteboard];
     NSManagedObjectContext *context = [self.arrayController managedObjectContext];
-    if (operation == NSTableViewDropAbove) {
+
+	if (operation == NSTableViewDropAbove) {
         NSMutableArray *lists = [[self.arrayController arrangedObjects] mutableCopy];
         NSIndexSet *originalIndexes = [NSKeyedUnarchiver unarchiveObjectWithData:[pasteboard dataForType:kCDMListsDragTypeRearrange]];
         NSUInteger originalListIndex = [originalIndexes firstIndex];
         NSUInteger destinationRow = (row > originalListIndex) ? row - 1 : row;
-        CDKList *list = [self.arrayController.arrangedObjects objectAtIndex:originalListIndex];
+
+		CDKList *list = [self.arrayController.arrangedObjects objectAtIndex:originalListIndex];
         [lists removeObject:list];
         [lists insertObject:list atIndex:destinationRow];
+		
         NSInteger i = 0;
         for (list in lists) {
             list.position = [NSNumber numberWithInteger:i++];
         }
         [context save:nil];
+		
         [CDKList sortWithObjects:lists];
+		
         [NSAnimationContext beginGrouping];
         [[NSAnimationContext currentContext] setDuration:kCDMTableViewAnimationDuration];
         [[NSAnimationContext currentContext] setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
@@ -216,9 +221,10 @@ static CGFloat const kCDMTasksViewControllerAddListAnimationDuration = 0.15f;
         NSURL *URI = [NSKeyedUnarchiver unarchiveObjectWithData:[pasteboard dataForType:kCDMTasksDragTypeMove]];
         NSPersistentStoreCoordinator *coordinator = [context persistentStoreCoordinator];
         NSManagedObjectID *objectID = [coordinator managedObjectIDForURIRepresentation:URI];
-        CDKTask *task = (CDKTask*)[context existingObjectWithID:objectID error:nil];
+
+		CDKTask *task = (CDKTask*)[context existingObjectWithID:objectID error:nil];
         CDKList *list = [[self.arrayController arrangedObjects] objectAtIndex:row];
-        [task setList:list];
+        [task moveToList:list];
     }
     return YES;
 }

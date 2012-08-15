@@ -12,8 +12,8 @@
 
 static CGFloat const kCDMTextFieldCellXInset = 8.0f;
 static CGFloat const kCDMTextFieldCellCornerRadius = 4.0f;
-static CGFloat const kCDMTextFieldCellInnerShadowBlurRadius = 2.0f;
-static CGFloat const kCDMTextFieldCellOuterShadowBlurRadius = 2.0f;
+static CGFloat const kCDMTextFieldCellInnerShadowBlurRadius = 4.0f;
+static CGFloat const kCDMTextFieldCellOuterShadowBlurRadius = 4.0f;
 #define kCDMTextFieldCellInnerShadowColor [NSColor colorWithDeviceWhite:0.0 alpha:0.2f]
 #define kCDMTextFieldCellOuterShadowColor [[NSColor cheddarOrangeColor] colorWithAlphaComponent:0.5f]
 #define kCDMTextFieldCellFillColor [NSColor whiteColor]
