@@ -8,4 +8,5 @@
 
 @interface CDMTaskTableCellView : NSTableCellView
 @property (nonatomic, weak) IBOutlet NSView *reorderView;
+@property (nonatomic, weak) IBOutlet NSButton *checkbox;
 @end
