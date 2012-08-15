@@ -150,6 +150,16 @@ static CGFloat const kCDMTasksViewControllerAddListAnimationDuration = 0.15f;
     return NO;
 }
 
+- (void)controlTextDidEndEditing:(NSNotification *)aNotification
+{
+    id sender = [aNotification object];
+    NSInteger row = [self.tableView rowForView:sender];
+    if (row != -1) {
+        CDKList *list = [[self.arrayController arrangedObjects] objectAtIndex:row];
+        [list save];
+        [list update];
+    }
+}
 
 #pragma mark - NSTableViewDelegate
 

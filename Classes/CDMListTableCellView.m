@@ -7,22 +7,27 @@
 //
 
 #import "CDMListTableCellView.h"
+#import "NSColor+CDMAdditions.h"
 
 @implementation CDMListTableCellView
 
 - (void)awakeFromNib {
 	[super awakeFromNib];
 	self.textField.font = [NSFont fontWithName:kCDMRegularFontName size:15.0];
-	self.textField.textColor = [NSColor colorWithCalibratedRed:0.333 green:0.333 blue:0.333 alpha:1];;
+	self.textField.textColor = [NSColor cheddarLightTextColor];
 }
 
-
-- (void)drawRect:(NSRect)dirtyRect {
-    if (self.backgroundStyle == NSBackgroundStyleDark) {
+- (void)setBackgroundStyle:(NSBackgroundStyle)backgroundStyle
+{
+    [super setBackgroundStyle:backgroundStyle];
+    if ([[[self.textField window] firstResponder] isKindOfClass:[NSTextView class]]
+        && [[self.textField window] fieldEditor:NO forObject:nil]!=nil
+        && [self.textField isEqualTo:(id)[(NSTextView *)[[self.textField window] firstResponder] delegate]]) {
+        self.textField.textColor = [NSColor cheddarLightTextColor];
+    } else if (backgroundStyle == NSBackgroundStyleDark) {
         [self.textField setTextColor:[NSColor whiteColor]];
-    } else if(self.backgroundStyle == NSBackgroundStyleLight) {
-        self.textField.textColor = [NSColor colorWithCalibratedRed:0.333 green:0.333 blue:0.333 alpha:1];
+    } else if(backgroundStyle == NSBackgroundStyleLight) {
+        self.textField.textColor = [NSColor cheddarLightTextColor];
     }
 }
-
 @end

@@ -68,32 +68,6 @@ static NSString* const kCDMTaskCellIdentifier = @"TaskCell";
     [[self.taskField window] makeFirstResponder:self.taskField];
 }
 
-- (NSString *)editingTextForTextField:(NSTextField*)textField
-{
-    NSInteger row = [self.tableView rowForView:textField];
-    if (row != -1) {
-        CDKTask *task = [[[self arrayController] arrangedObjects] objectAtIndex:row];
-        return [task text];
-    }
-    return @"";
-}
-
-- (void)controlTextDidEndEditing:(NSNotification *)aNotification
-{
-    id sender = [aNotification object];
-    NSInteger row = [self.tableView rowForView:sender];
-    if (row != -1) {
-        NSString *text = [sender stringValue];
-        CDKTask *task = [[self.arrayController arrangedObjects] objectAtIndex:row];
-        task.text = text;
-        [task save];
-        [task update];
-        [self.tableView reloadDataForRowIndexes:[NSIndexSet indexSetWithIndex:row] columnIndexes:[NSIndexSet indexSetWithIndex:0]];
-    }
-}
-
-
-
 #pragma mark - Accessors
 
 - (void)setSelectedList:(CDKList *)selectedList {
