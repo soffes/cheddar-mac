@@ -91,8 +91,8 @@ static CGFloat const kCDMTasksViewControllerTagBarAnimationDuration = 0.3f;
 
 - (void)setTagBarVisible:(BOOL)visible {
     NSView *parentView = [self.addTaskView superview];
+    NSScrollView *scrollView = [self.tableView enclosingScrollView];
     if (visible && ![self.tagFilterBar superview]) {
-        NSScrollView *scrollView = [self.tableView enclosingScrollView];
         NSRect beforeTagFrame = [self.tagFilterBar frame];
         beforeTagFrame.size = [self.addTaskView frame].size;
         beforeTagFrame.origin.y = NSMaxY([scrollView frame]) - beforeTagFrame.size.height;
@@ -113,15 +113,20 @@ static CGFloat const kCDMTasksViewControllerTagBarAnimationDuration = 0.3f;
         [[self.tagFilterBar animator] setFrame:[self.addTaskView frame]];
         [NSAnimationContext endGrouping];
     } else if (!visible && [self.tagFilterBar superview]) {
-      /*  NSRect newScrollFrame = [scrollView frame];
-        newScrollFrame.size.height += [self.tagFilterBar frame].size.height;
         NSRect newTagFrame = [self.tagFilterBar frame];
-        newTagFrame.origin.y = NSMaxY(newScrollFrame);
+        newTagFrame.origin.y = NSMaxY([scrollView frame]) - newTagFrame.size.height;
         [NSAnimationContext beginGrouping];
+        [[NSAnimationContext currentContext] setCompletionHandler:^{
+            [self.tagFilterBar removeFromSuperview];
+            [_overlayView removeFromSuperview];
+            _overlayView = nil;
+        }];
         [[NSAnimationContext currentContext] setDuration:kCDMTasksViewControllerTagBarAnimationDuration];
-        [[scrollView animator] setFrame:newScrollFrame];
+        [[NSAnimationContext currentContext] setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
+        [self.addTaskView setHidden:NO];
+        [[_overlayView animator] setAlphaValue:0.f];
         [[self.tagFilterBar animator] setFrame:newTagFrame];
-        [NSAnimationContext endGrouping];*/
+        [NSAnimationContext endGrouping];
     }
 }
 
@@ -135,6 +140,8 @@ static CGFloat const kCDMTasksViewControllerTagBarAnimationDuration = 0.3f;
 		[self.arrayController fetch:nil];
 	} failure:nil];
 	self.arrayController.fetchPredicate = [NSPredicate predicateWithFormat:@"list = %@ AND archivedAt = nil", _selectedList];
+    self.arrayController.filterPredicate = nil;
+    [self setTagBarVisible:NO];
 	[self.arrayController fetch:nil];
 }
 
