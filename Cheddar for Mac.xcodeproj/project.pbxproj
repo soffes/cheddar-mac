@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		031E242C15DB690F00EEA810 /* CDMTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 031E242B15DB690F00EEA810 /* CDMTextField.m */; };
 		0338827F15D9611F001FC04B /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 0338827E15D9611F001FC04B /* Fonts */; };
 		0338828315D96201001FC04B /* CDMArchesWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 0338828215D96201001FC04B /* CDMArchesWindow.m */; };
 		033882C615D968A6001FC04B /* sign-in-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 033882AA15D968A6001FC04B /* sign-in-logo.png */; };
@@ -256,6 +257,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		031E242A15DB690F00EEA810 /* CDMTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMTextField.h; sourceTree = "<group>"; };
+		031E242B15DB690F00EEA810 /* CDMTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMTextField.m; sourceTree = "<group>"; };
 		0338827E15D9611F001FC04B /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
 		0338828115D96201001FC04B /* CDMArchesWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDMArchesWindow.h; path = Classes/CDMArchesWindow.h; sourceTree = "<group>"; };
 		0338828215D96201001FC04B /* CDMArchesWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDMArchesWindow.m; path = Classes/CDMArchesWindow.m; sourceTree = "<group>"; };
@@ -704,6 +707,8 @@
 				03B3952715DAC66E00A8A7D4 /* CDMTaskTextField.m */,
 				03F2D97115DAE30E00EEC543 /* CDMPlusDialogView.h */,
 				03F2D97215DAE30E00EEC543 /* CDMPlusDialogView.m */,
+				031E242A15DB690F00EEA810 /* CDMTextField.h */,
+				031E242B15DB690F00EEA810 /* CDMTextField.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -1119,6 +1124,7 @@
 				03F2D97015DAD8C500EEC543 /* CDMPlusWindow.m in Sources */,
 				03F2D97315DAE30E00EEC543 /* CDMPlusDialogView.m in Sources */,
 				03F2D98F15DB027400EEC543 /* CDMTaskTextFieldCell.m in Sources */,
+				031E242C15DB690F00EEA810 /* CDMTextField.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
