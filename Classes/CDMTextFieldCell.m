@@ -61,10 +61,9 @@ static CGFloat const kCDMTextFieldCellOuterShadowBlurRadius = 4.0f;
 
 
 - (void)drawInteriorWithFrame:(NSRect)cellFrame inView:(NSView *)controlView {
-    CGFloat scaleFactor = [[controlView window] backingScaleFactor];
     BOOL firstResponder = [self showsFirstResponder];
 
-	CGFloat inset = (kCDMTextFieldCellOuterShadowBlurRadius + 1.0f) * scaleFactor;
+	CGFloat inset = (kCDMTextFieldCellOuterShadowBlurRadius + 1.0f);
     NSRect drawingRect = NSInsetRect(cellFrame, inset, inset);
 	NSBezierPath *path = [NSBezierPath bezierPathWithRoundedRect:drawingRect xRadius:kCDMTextFieldCellCornerRadius yRadius:kCDMTextFieldCellCornerRadius];
 	
@@ -75,7 +74,7 @@ static CGFloat const kCDMTextFieldCellOuterShadowBlurRadius = 4.0f;
 	
     if (firstResponder) {
         NSShadow *outerShadow = [NSShadow new];
-        [outerShadow setShadowBlurRadius:kCDMTextFieldCellOuterShadowBlurRadius * scaleFactor];
+        [outerShadow setShadowBlurRadius:kCDMTextFieldCellOuterShadowBlurRadius];
         [outerShadow setShadowColor:kCDMTextFieldCellOuterShadowColor];
         [outerShadow set];
     }
@@ -85,7 +84,7 @@ static CGFloat const kCDMTextFieldCellOuterShadowBlurRadius = 4.0f;
     [path fill];
 	
     NSShadow *shadow = [NSShadow new];
-    [shadow setShadowBlurRadius:kCDMTextFieldCellInnerShadowBlurRadius * scaleFactor];
+    [shadow setShadowBlurRadius:kCDMTextFieldCellInnerShadowBlurRadius];
     [shadow setShadowColor:kCDMTextFieldCellInnerShadowColor];
 	
     NSBezierPath *shadowPath = [NSBezierPath bezierPathWithRect:drawingRect];
