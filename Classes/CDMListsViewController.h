@@ -12,7 +12,7 @@
 
 @property (nonatomic, weak) IBOutlet NSArrayController *arrayController;
 @property (nonatomic, weak) IBOutlet NSTableView *tableView;
-@property (nonatomic, weak) IBOutlet CDMTasksViewController *tasksViewController;
+@property (nonatomic, assign) IBOutlet CDMTasksViewController *tasksViewController;
 @property (nonatomic, weak) IBOutlet NSView *addListView;
 @property (nonatomic, weak) IBOutlet NSTextField *addListField;
 

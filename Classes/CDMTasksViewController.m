@@ -68,6 +68,7 @@ static NSString* const kCDMTaskCellIdentifier = @"TaskCell";
     [[self.taskField window] makeFirstResponder:self.taskField];
 }
 
+
 #pragma mark - Accessors
 
 - (void)setSelectedList:(CDKList *)selectedList {
