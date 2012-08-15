@@ -131,19 +131,20 @@ static NSString* const kCDMTaskCellIdentifier = @"TaskCell";
     NSUInteger originalListIndex = [originalIndexes firstIndex];
     NSUInteger destinationRow = (row > originalListIndex) ? row - 1 : row;
 
-	CDKTask *task = [self.arrayController.arrangedObjects objectAtIndex:originalListIndex];
-	[tasks removeObject:task];
-	[tasks insertObject:task atIndex:destinationRow];
-	NSInteger i = 0;
-	for (task in tasks) {
-		task.position = [NSNumber numberWithInteger:i++];
-	}
-
-	[self.arrayController.managedObjectContext save:nil];
-
-	[CDKTask sortWithObjects:tasks];
-
 	[NSAnimationContext beginGrouping];
+    [[NSAnimationContext currentContext] setCompletionHandler:^{
+        CDKTask *task = [self.arrayController.arrangedObjects objectAtIndex:originalListIndex];
+        [tasks removeObject:task];
+        [tasks insertObject:task atIndex:destinationRow];
+        NSInteger i = 0;
+        for (task in tasks) {
+            task.position = [NSNumber numberWithInteger:i++];
+        }
+        
+        [self.arrayController.managedObjectContext save:nil];
+        
+        [CDKTask sortWithObjects:tasks];
+    }];
     [[NSAnimationContext currentContext] setDuration:kCDMTableViewAnimationDuration];
     [[NSAnimationContext currentContext] setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
     [self.tableView moveRowAtIndex:originalListIndex toIndex:destinationRow];

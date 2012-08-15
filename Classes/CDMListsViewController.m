@@ -208,23 +208,29 @@ static CGFloat const kCDMTasksViewControllerAddListAnimationDuration = 0.15f;
         NSMutableArray *lists = [[self.arrayController arrangedObjects] mutableCopy];
         NSIndexSet *originalIndexes = [NSKeyedUnarchiver unarchiveObjectWithData:[pasteboard dataForType:kCDMListsDragTypeRearrange]];
         NSUInteger originalListIndex = [originalIndexes firstIndex];
+        NSUInteger selectedRow = [aTableView selectedRow];
         NSUInteger destinationRow = (row > originalListIndex) ? row - 1 : row;
-
-		CDKList *list = [self.arrayController.arrangedObjects objectAtIndex:originalListIndex];
-        [lists removeObject:list];
-        [lists insertObject:list atIndex:destinationRow];
-		
-        NSInteger i = 0;
-        for (list in lists) {
-            list.position = [NSNumber numberWithInteger:i++];
-        }
-        [context save:nil];
-		
-        [CDKList sortWithObjects:lists];
-		
         [NSAnimationContext beginGrouping];
         [[NSAnimationContext currentContext] setDuration:kCDMTableViewAnimationDuration];
         [[NSAnimationContext currentContext] setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
+        [[NSAnimationContext currentContext] setCompletionHandler:^{
+            CDKList *list = [self.arrayController.arrangedObjects objectAtIndex:originalListIndex];
+            [lists removeObject:list];
+            [lists insertObject:list atIndex:destinationRow];
+            
+            NSInteger i = 0;
+            for (list in lists) {
+                list.position = [NSNumber numberWithInteger:i++];
+            }
+            [context save:nil];
+            
+            [CDKList sortWithObjects:lists];
+            if (selectedRow == originalListIndex) {
+                
+                [self.tableView selectRowIndexes:[NSIndexSet indexSetWithIndex:destinationRow] byExtendingSelection:NO];
+                [self tableViewSelectionDidChange:nil];
+            }
+        }];
         [self.tableView moveRowAtIndex:originalListIndex toIndex:destinationRow];
         [NSAnimationContext endGrouping];
     } else {
