@@ -1246,11 +1246,12 @@
 		B21FF2DF15BF7D6500AEEA97 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_ENTITLEMENTS = Resources/Cheddar.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Other Sources/Cheddar-Prefix.pch";
 				INFOPLIST_FILE = "Resources/Cheddar-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = Cheddar;
 				WRAPPER_EXTENSION = app;
 			};
@@ -1259,11 +1260,12 @@
 		B21FF2E015BF7D6500AEEA97 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_ENTITLEMENTS = Resources/Cheddar.entitlements;
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Other Sources/Cheddar-Prefix.pch";
 				INFOPLIST_FILE = "Resources/Cheddar-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = Cheddar;
 				WRAPPER_EXTENSION = app;
 			};
