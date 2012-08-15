@@ -9,5 +9,6 @@
 #import <Cocoa/Cocoa.h>
 
 @interface NSTextView (CDMAdditions)
-+ (void)swizzle;
+- (NSMenu*)menuForEvent_swizzle:(NSEvent *)event;
+@property (nonatomic, assign) BOOL useCustomContextMenu;
 @end

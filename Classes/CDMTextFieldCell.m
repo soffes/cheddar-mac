@@ -9,6 +9,7 @@
 #import "CDMTextFieldCell.h"
 #import "NSBezierPath+MCAdditions.h"
 #import "NSColor+CDMAdditions.h"
+#import "NSTextView+CDMAdditions.h"
 
 static CGFloat const kCDMTextFieldCellXInset = 12.0f;
 static CGFloat const kCDMTextFieldCellCornerRadius = 4.0f;
@@ -33,13 +34,19 @@ static CGFloat const kCDMTextFieldCellOuterShadowBlurRadius = 4.0f;
     return self;
 }
 
-
 - (void)setPlaceholderString:(NSString *)string {
 	NSDictionary *placeholderAttributes = [[NSDictionary alloc] initWithObjectsAndKeys:
 										   [NSColor cheddarSteelColor], NSForegroundColorAttributeName,
 										   nil];
 	NSAttributedString *placeholder = [[NSAttributedString alloc] initWithString:string attributes:placeholderAttributes];
 	[self setPlaceholderAttributedString:placeholder];
+}
+
+
+- (NSText*)setUpFieldEditorAttributes:(NSText *)textObj {
+    NSTextView *textView = (NSTextView*)[super setUpFieldEditorAttributes:textObj];
+    [textView setUseCustomContextMenu:NO];
+    return textView;
 }
 
 

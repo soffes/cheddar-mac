@@ -8,6 +8,7 @@
 
 #import "CDMTaskTextFieldCell.h"
 #import "NSColor+CDMAdditions.h"
+#import "NSTextView+CDMAdditions.h"
 
 @implementation CDMTaskTextFieldCell
 
@@ -15,6 +16,7 @@
     NSTextView *textView = (NSTextView*)[super setUpFieldEditorAttributes:textObj];
     NSDictionary *linkAttributes = [NSDictionary dictionaryWithObjectsAndKeys:[NSFont fontWithName:kCDMRegularFontName size:15.f], NSFontAttributeName, [NSColor cheddarBlueColor] , NSForegroundColorAttributeName, [NSCursor pointingHandCursor], NSCursorAttributeName, nil];
     [textView setLinkTextAttributes:linkAttributes];
+    [textView setUseCustomContextMenu:YES];
     return textView;
 }
 

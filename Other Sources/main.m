@@ -11,6 +11,5 @@
 
 int main(int argc, char *argv[])
 {
-    [NSTextView swizzle];
 	return NSApplicationMain(argc, (const char **)argv);
 }

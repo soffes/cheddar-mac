@@ -12,6 +12,7 @@
 #import "CDMTasksViewController.h"
 #import "CDMFlatButton.h"
 #import "NSColor+CDMAdditions.h"
+#import "NSTextView+CDMAdditions.h"
 
 static CGFloat const kCDMMainWindowControllerMinLeftWidth = 100.f;
 static NSString* const kCDMLastDividerPositionKey = @"CDMLastDividerPosition";
@@ -135,5 +136,4 @@ void SSDrawGradientInRect(CGContextRef context, CGGradientRef gradient, CGRect r
 	}
 	return YES;
 }
-
 @end
