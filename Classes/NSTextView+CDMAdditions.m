@@ -7,10 +7,8 @@
 //
 
 #import "NSTextView+CDMAdditions.h"
-#import "NSObject+AssociatedObjects.h"
 #import "JRSwizzle.h"
 
-static void* kCDMTextViewUseCustomContextMenuKey = @"CDMUseCustomContextMenu";
 
 @implementation NSTextView (CDMAdditions)
 
@@ -22,27 +20,11 @@ static void* kCDMTextViewUseCustomContextMenuKey = @"CDMUseCustomContextMenu";
 
 - (NSMenu*)menuForEvent_swizzle:(NSEvent *)event
 {
-    // This gets a reference to the original menu created by NSTextView in case we want to take items from it
-    NSMenu *superMenu = [self menuForEvent_swizzle:event];
     // Return our own custom menu if that property has been set, otherwise return the default one 
-    if ([self useCustomContextMenu]) {
-        NSMenu *menu = [[NSMenu alloc] initWithTitle:@"Testing"];
-        [menu addItemWithTitle:@"Testing" action:nil keyEquivalent:@""];
-        [menu setAllowsContextMenuPlugIns:NO];
-        return menu;
+    if ([self isFieldEditor] && [[self window] firstResponder] == self) {
+        NSTextField *textField = (NSTextField*)[self delegate];
+        if ([textField menu]) { return [textField menu]; }
     }
-    return superMenu;
-}
-
-#pragma mark - Accessors
-
-- (void)setUseCustomContextMenu:(BOOL)useCustomContextMenu
-{
-    [self associateValue:[NSNumber numberWithBool:useCustomContextMenu] withKey:kCDMTextViewUseCustomContextMenuKey];
-}
-
-- (BOOL)useCustomContextMenu
-{
-    return [[self associatedValueForKey:kCDMTextViewUseCustomContextMenuKey] boolValue];
+    return [self menuForEvent_swizzle:event];
 }
 @end

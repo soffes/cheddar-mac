@@ -10,7 +10,6 @@
 		031E242C15DB690F00EEA810 /* CDMTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 031E242B15DB690F00EEA810 /* CDMTextField.m */; };
 		031E243815DB786500EEA810 /* NSTextView+CDMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 031E243715DB786500EEA810 /* NSTextView+CDMAdditions.m */; };
 		032D15A815DC09670015912A /* JRSwizzle.m in Sources */ = {isa = PBXBuildFile; fileRef = 032D15A715DC09670015912A /* JRSwizzle.m */; };
-		032D15E515DC11480015912A /* NSObject+AssociatedObjects.m in Sources */ = {isa = PBXBuildFile; fileRef = 032D15E415DC11480015912A /* NSObject+AssociatedObjects.m */; };
 		0338827F15D9611F001FC04B /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 0338827E15D9611F001FC04B /* Fonts */; };
 		0338828315D96201001FC04B /* CDMArchesWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 0338828215D96201001FC04B /* CDMArchesWindow.m */; };
 		033882C615D968A6001FC04B /* sign-in-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 033882AA15D968A6001FC04B /* sign-in-logo.png */; };
@@ -196,8 +195,6 @@
 		031E243715DB786500EEA810 /* NSTextView+CDMAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTextView+CDMAdditions.m"; sourceTree = "<group>"; };
 		032D15A615DC09670015912A /* JRSwizzle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JRSwizzle.h; path = JRSwizzle/JRSwizzle.h; sourceTree = "<group>"; };
 		032D15A715DC09670015912A /* JRSwizzle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JRSwizzle.m; path = JRSwizzle/JRSwizzle.m; sourceTree = "<group>"; };
-		032D15E315DC11480015912A /* NSObject+AssociatedObjects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+AssociatedObjects.h"; sourceTree = "<group>"; };
-		032D15E415DC11480015912A /* NSObject+AssociatedObjects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+AssociatedObjects.m"; sourceTree = "<group>"; };
 		0338827E15D9611F001FC04B /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
 		0338828115D96201001FC04B /* CDMArchesWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDMArchesWindow.h; path = Classes/CDMArchesWindow.h; sourceTree = "<group>"; };
 		0338828215D96201001FC04B /* CDMArchesWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDMArchesWindow.m; path = Classes/CDMArchesWindow.m; sourceTree = "<group>"; };
@@ -686,8 +683,6 @@
 				037252E015D9FCF700E87D87 /* CDKTask+CDMAdditions.m */,
 				031E243615DB786500EEA810 /* NSTextView+CDMAdditions.h */,
 				031E243715DB786500EEA810 /* NSTextView+CDMAdditions.m */,
-				032D15E315DC11480015912A /* NSObject+AssociatedObjects.h */,
-				032D15E415DC11480015912A /* NSObject+AssociatedObjects.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -1027,7 +1022,6 @@
 				031E242C15DB690F00EEA810 /* CDMTextField.m in Sources */,
 				031E243815DB786500EEA810 /* NSTextView+CDMAdditions.m in Sources */,
 				032D15A815DC09670015912A /* JRSwizzle.m in Sources */,
-				032D15E515DC11480015912A /* NSObject+AssociatedObjects.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

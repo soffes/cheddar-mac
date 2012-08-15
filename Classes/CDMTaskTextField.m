@@ -14,8 +14,12 @@
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
     if ((self = [super initWithCoder:aDecoder])) {
-        self.textColor = [NSColor cheddarLightTextColor];
-        self.font = [NSFont fontWithName:kCDMRegularFontName size:15.f];
+        NSMenu *menu = [[NSMenu alloc] initWithTitle:@"Testing"];
+        [menu addItemWithTitle:@"Copy" action:@selector(copy:) keyEquivalent:@""];
+        [menu addItemWithTitle:@"Edit" action:nil keyEquivalent:@""];
+        [menu addItemWithTitle:@"Archive" action:nil keyEquivalent:@""];
+        [menu setAllowsContextMenuPlugIns:NO];
+        [self setMenu:menu];
     }
     return self;
 }
