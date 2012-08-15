@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		031E242C15DB690F00EEA810 /* CDMTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 031E242B15DB690F00EEA810 /* CDMTextField.m */; };
+		032D16CF15DC3CE80015912A /* CDMTagFilterBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 032D16CE15DC3CE80015912A /* CDMTagFilterBar.m */; };
+		032D16D215DC4D170015912A /* NSURL+SSToolkitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 032D16D115DC4D160015912A /* NSURL+SSToolkitAdditions.m */; };
+		032D16D515DC4D6E0015912A /* NSDictionary+SSToolkitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 032D16D415DC4D6D0015912A /* NSDictionary+SSToolkitAdditions.m */; };
+		032D16D815DC4E220015912A /* NSString+SSToolkitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 032D16D715DC4E220015912A /* NSString+SSToolkitAdditions.m */; };
+		032D16DB15DC50DA0015912A /* CDMTagTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 032D16DA15DC50DA0015912A /* CDMTagTextFieldCell.m */; };
+		032D16DE15DC52270015912A /* CDMColorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 032D16DD15DC52260015912A /* CDMColorView.m */; };
 		0338827F15D9611F001FC04B /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = 0338827E15D9611F001FC04B /* Fonts */; };
 		0338828315D96201001FC04B /* CDMArchesWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 0338828215D96201001FC04B /* CDMArchesWindow.m */; };
 		033882C615D968A6001FC04B /* sign-in-logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 033882AA15D968A6001FC04B /* sign-in-logo.png */; };
@@ -51,7 +57,6 @@
 		0338840B15D9D66F001FC04B /* CDMTasksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0338840A15D9D66F001FC04B /* CDMTasksViewController.m */; };
 		037252E115D9FCF700E87D87 /* CDKTask+CDMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 037252E015D9FCF700E87D87 /* CDKTask+CDMAdditions.m */; };
 		037253A815DA1C4000E87D87 /* CDMShadowTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 037253A715DA1C4000E87D87 /* CDMShadowTableView.m */; };
-		03B3951A15DAAA2F00A8A7D4 /* CDMWhiteOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03B3951915DAAA2F00A8A7D4 /* CDMWhiteOverlayView.m */; };
 		03B3951C15DAB73000A8A7D4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 03B3951B15DAB73000A8A7D4 /* Localizable.strings */; };
 		03B3952815DAC66E00A8A7D4 /* CDMTaskTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 03B3952715DAC66E00A8A7D4 /* CDMTaskTextField.m */; };
 		03B3952E15DAC97900A8A7D4 /* CDMBoolToTaskTextColorValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 03B3952D15DAC97000A8A7D4 /* CDMBoolToTaskTextColorValueTransformer.m */; };
@@ -259,6 +264,18 @@
 /* Begin PBXFileReference section */
 		031E242A15DB690F00EEA810 /* CDMTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMTextField.h; sourceTree = "<group>"; };
 		031E242B15DB690F00EEA810 /* CDMTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMTextField.m; sourceTree = "<group>"; };
+		032D16CD15DC3CE80015912A /* CDMTagFilterBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMTagFilterBar.h; sourceTree = "<group>"; };
+		032D16CE15DC3CE80015912A /* CDMTagFilterBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMTagFilterBar.m; sourceTree = "<group>"; };
+		032D16D015DC4D160015912A /* NSURL+SSToolkitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSURL+SSToolkitAdditions.h"; sourceTree = "<group>"; };
+		032D16D115DC4D160015912A /* NSURL+SSToolkitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSURL+SSToolkitAdditions.m"; sourceTree = "<group>"; };
+		032D16D315DC4D6D0015912A /* NSDictionary+SSToolkitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+SSToolkitAdditions.h"; sourceTree = "<group>"; };
+		032D16D415DC4D6D0015912A /* NSDictionary+SSToolkitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+SSToolkitAdditions.m"; sourceTree = "<group>"; };
+		032D16D615DC4E220015912A /* NSString+SSToolkitAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SSToolkitAdditions.h"; sourceTree = "<group>"; };
+		032D16D715DC4E220015912A /* NSString+SSToolkitAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SSToolkitAdditions.m"; sourceTree = "<group>"; };
+		032D16D915DC50DA0015912A /* CDMTagTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMTagTextFieldCell.h; sourceTree = "<group>"; };
+		032D16DA15DC50DA0015912A /* CDMTagTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMTagTextFieldCell.m; sourceTree = "<group>"; };
+		032D16DC15DC52260015912A /* CDMColorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMColorView.h; sourceTree = "<group>"; };
+		032D16DD15DC52260015912A /* CDMColorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMColorView.m; sourceTree = "<group>"; };
 		0338827E15D9611F001FC04B /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
 		0338828115D96201001FC04B /* CDMArchesWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDMArchesWindow.h; path = Classes/CDMArchesWindow.h; sourceTree = "<group>"; };
 		0338828215D96201001FC04B /* CDMArchesWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDMArchesWindow.m; path = Classes/CDMArchesWindow.m; sourceTree = "<group>"; };
@@ -314,8 +331,6 @@
 		037252E015D9FCF700E87D87 /* CDKTask+CDMAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CDKTask+CDMAdditions.m"; sourceTree = "<group>"; };
 		037253A615DA1C4000E87D87 /* CDMShadowTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMShadowTableView.h; sourceTree = "<group>"; };
 		037253A715DA1C4000E87D87 /* CDMShadowTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMShadowTableView.m; sourceTree = "<group>"; };
-		03B3951815DAAA2F00A8A7D4 /* CDMWhiteOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMWhiteOverlayView.h; sourceTree = "<group>"; };
-		03B3951915DAAA2F00A8A7D4 /* CDMWhiteOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMWhiteOverlayView.m; sourceTree = "<group>"; };
 		03B3951B15DAB73000A8A7D4 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		03B3952615DAC66E00A8A7D4 /* CDMTaskTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMTaskTextField.h; sourceTree = "<group>"; };
 		03B3952715DAC66E00A8A7D4 /* CDMTaskTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMTaskTextField.m; sourceTree = "<group>"; };
@@ -459,10 +474,12 @@
 				B25E13B715CBC2AF009751B9 /* CDMAddTaskView.m */,
 				03CB266115DA1FAC00FEDF25 /* CDMAddListView.h */,
 				03CB266215DA1FAC00FEDF25 /* CDMAddListView.m */,
-				03B3951815DAAA2F00A8A7D4 /* CDMWhiteOverlayView.h */,
-				03B3951915DAAA2F00A8A7D4 /* CDMWhiteOverlayView.m */,
 				03F2D97115DAE30E00EEC543 /* CDMPlusDialogView.h */,
 				03F2D97215DAE30E00EEC543 /* CDMPlusDialogView.m */,
+				032D16CD15DC3CE80015912A /* CDMTagFilterBar.h */,
+				032D16CE15DC3CE80015912A /* CDMTagFilterBar.m */,
+				032D16DC15DC52260015912A /* CDMColorView.h */,
+				032D16DD15DC52260015912A /* CDMColorView.m */,
 			);
 			name = "Custom Views";
 			sourceTree = "<group>";
@@ -498,6 +515,8 @@
 				03CB268F15DA248E00FEDF25 /* CDMAddListTextFieldCell.m */,
 				03F2D98D15DB027400EEC543 /* CDMTaskTextFieldCell.h */,
 				03F2D98E15DB027400EEC543 /* CDMTaskTextFieldCell.m */,
+				032D16D915DC50DA0015912A /* CDMTagTextFieldCell.h */,
+				032D16DA15DC50DA0015912A /* CDMTagTextFieldCell.m */,
 			);
 			name = "Text Fields";
 			sourceTree = "<group>";
@@ -737,6 +756,12 @@
 				B2A23D1415D988AB00EA9D2D /* NSColor+CDMAdditions.m */,
 				037252DF15D9FCF700E87D87 /* CDKTask+CDMAdditions.h */,
 				037252E015D9FCF700E87D87 /* CDKTask+CDMAdditions.m */,
+				032D16D015DC4D160015912A /* NSURL+SSToolkitAdditions.h */,
+				032D16D115DC4D160015912A /* NSURL+SSToolkitAdditions.m */,
+				032D16D315DC4D6D0015912A /* NSDictionary+SSToolkitAdditions.h */,
+				032D16D415DC4D6D0015912A /* NSDictionary+SSToolkitAdditions.m */,
+				032D16D615DC4E220015912A /* NSString+SSToolkitAdditions.h */,
+				032D16D715DC4E220015912A /* NSString+SSToolkitAdditions.m */,
 			);
 			name = Categories;
 			sourceTree = "<group>";
@@ -1165,7 +1190,6 @@
 				037253A815DA1C4000E87D87 /* CDMShadowTableView.m in Sources */,
 				03CB266315DA1FAC00FEDF25 /* CDMAddListView.m in Sources */,
 				03CB269015DA248E00FEDF25 /* CDMAddListTextFieldCell.m in Sources */,
-				03B3951A15DAAA2F00A8A7D4 /* CDMWhiteOverlayView.m in Sources */,
 				03B3952815DAC66E00A8A7D4 /* CDMTaskTextField.m in Sources */,
 				03B3952E15DAC97900A8A7D4 /* CDMBoolToTaskTextColorValueTransformer.m in Sources */,
 				03F2D96B15DAD88C00EEC543 /* CDMPlusWindowController.m in Sources */,
@@ -1173,6 +1197,12 @@
 				03F2D97315DAE30E00EEC543 /* CDMPlusDialogView.m in Sources */,
 				03F2D98F15DB027400EEC543 /* CDMTaskTextFieldCell.m in Sources */,
 				031E242C15DB690F00EEA810 /* CDMTextField.m in Sources */,
+				032D16CF15DC3CE80015912A /* CDMTagFilterBar.m in Sources */,
+				032D16D215DC4D170015912A /* NSURL+SSToolkitAdditions.m in Sources */,
+				032D16D515DC4D6E0015912A /* NSDictionary+SSToolkitAdditions.m in Sources */,
+				032D16D815DC4E220015912A /* NSString+SSToolkitAdditions.m in Sources */,
+				032D16DB15DC50DA0015912A /* CDMTagTextFieldCell.m in Sources */,
+				032D16DE15DC52270015912A /* CDMColorView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

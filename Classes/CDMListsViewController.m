@@ -9,16 +9,16 @@
 #import "CDMListsViewController.h"
 #import "CDMListTableRowView.h"
 #import "CDMTasksViewController.h"
-#import "CDMWhiteOverlayView.h"
+#import "CDMColorView.h"
 #import <QuartzCore/QuartzCore.h>
 
 static NSString* const kCDMListsDragTypeRearrange = @"CDMListsDragTypeRearrange";
-static CGFloat const kCDMTasksViewControllerAddListAnimationDuration = 0.15f;
+static CGFloat const kCDMListsViewControllerAddListAnimationDuration = 0.15f;
 
 
 @implementation CDMListsViewController {
     BOOL _awakenFromNib;
-    CDMWhiteOverlayView *_overlayView;
+    CDMColorView *_overlayView;
 }
 @synthesize arrayController = _arrayController;
 @synthesize tableView = _tableView;
@@ -74,7 +74,8 @@ static CGFloat const kCDMTasksViewControllerAddListAnimationDuration = 0.15f;
     [self.addListField setStringValue:@""];
     NSView *parentView = [scrollView superview] ;
     [parentView addSubview:self.addListView positioned:NSWindowBelow relativeTo:[[parentView subviews] objectAtIndex:0]];
-    _overlayView = [[CDMWhiteOverlayView alloc] initWithFrame:[scrollView frame]];
+    _overlayView = [[CDMColorView alloc] initWithFrame:[scrollView frame]];
+    [_overlayView setColor:[NSColor colorWithDeviceWhite:1.f alpha:0.9f]];
     [_overlayView setAlphaValue:0.f];
     [_overlayView setAutoresizingMask:[scrollView autoresizingMask]];
     [parentView addSubview:_overlayView positioned:NSWindowAbove relativeTo:scrollView];
@@ -83,7 +84,7 @@ static CGFloat const kCDMTasksViewControllerAddListAnimationDuration = 0.15f;
     NSRect newAddFrame = beforeAddFrame;
     newAddFrame.origin.y = NSMaxY(newScrollFrame);
     [NSAnimationContext beginGrouping];
-    [[NSAnimationContext currentContext] setDuration:kCDMTasksViewControllerAddListAnimationDuration];
+    [[NSAnimationContext currentContext] setDuration:kCDMListsViewControllerAddListAnimationDuration];
     [[NSAnimationContext currentContext] setCompletionHandler:^{
         [[self.addListField window] makeFirstResponder:self.addListField];
     }];
@@ -103,7 +104,7 @@ static CGFloat const kCDMTasksViewControllerAddListAnimationDuration = 0.15f;
     NSRect newAddFrame = [self.addListView frame];
     newAddFrame.origin.y = NSMaxY(newScrollFrame);
     [NSAnimationContext beginGrouping];
-    [[NSAnimationContext currentContext] setDuration:kCDMTasksViewControllerAddListAnimationDuration];
+    [[NSAnimationContext currentContext] setDuration:kCDMListsViewControllerAddListAnimationDuration];
     [[NSAnimationContext currentContext] setCompletionHandler:^{
         [self.addListView removeFromSuperview];
         [_overlayView removeFromSuperview];

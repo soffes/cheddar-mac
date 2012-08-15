@@ -12,6 +12,7 @@
 #import "CDMTasksViewController.h"
 #import "CDMFlatButton.h"
 #import "NSColor+CDMAdditions.h"
+#import "NSURL+SSToolkitAdditions.h"
 
 static CGFloat const kCDMMainWindowControllerMinLeftWidth = 100.f;
 static NSString* const kCDMLastDividerPositionKey = @"CDMLastDividerPosition";
@@ -42,6 +43,7 @@ void SSDrawGradientInRect(CGContextRef context, CGGradientRef gradient, CGRect r
 - (id)init {
 	if ((self = [super init])) {
 		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(_userChanged:) name:kCDKCurrentUserChangedNotificationName object:nil];
+        [[NSAppleEventManager sharedAppleEventManager] setEventHandler:self andSelector:@selector(handleURLEvent:withReplyEvent:) forEventClass:kInternetEventClass andEventID:kAEGetURL];
 	}
 	return self;
 }
@@ -136,4 +138,18 @@ void SSDrawGradientInRect(CGContextRef context, CGGradientRef gradient, CGRect r
 	return YES;
 }
 
+#pragma mark - URL Handling
+
+- (void)handleURLEvent:(NSAppleEventDescriptor*)event withReplyEvent:(NSAppleEventDescriptor*)replyEvent
+{
+    NSString *address = [[event paramDescriptorForKeyword:keyDirectObject] stringValue];
+    NSURL *url = [NSURL URLWithString:address];
+    if ([[url host] isEqualToString:@"lists"]) {
+        NSDictionary *query = [url queryDictionary];
+        NSString *tagName = [query valueForKey:@"tag"];
+        if ([tagName length]) {
+            [_tasksViewController filterToTagWithName:tagName];
+        }
+    }
+}
 @end

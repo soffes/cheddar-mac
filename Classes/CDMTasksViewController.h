@@ -13,8 +13,12 @@ extern NSString* const kCDMTasksDragTypeMove;
 @property (nonatomic, weak) IBOutlet NSArrayController *arrayController;
 @property (nonatomic, weak) IBOutlet NSTableView *tableView;
 @property (nonatomic, weak) IBOutlet NSTextField *taskField;
+@property (nonatomic, weak) IBOutlet NSView *tagFilterBar;
+@property (nonatomic, weak) IBOutlet NSTextField *tagNameField;
+@property (nonatomic, weak) IBOutlet NSView *addTaskView;
 
 @property (nonatomic, strong) CDKList *selectedList;
 - (IBAction)addTask:(id)sender;
 - (IBAction)focusTaskField:(id)sender;
+- (void)filterToTagWithName:(NSString*)tagName;
 @end

@@ -76,7 +76,7 @@
         }
         else if ([type isEqualToString:@"tag"]) {
             NSString *tagName = [entity valueForKey:@"tag_name"];
-            NSString *tagURL = [NSString stringWithFormat:@"%@tags/%@", kCDMURLScheme, tagName];
+            NSString *tagURL = [NSString stringWithFormat:@"%@lists/%@?tag=%@", kCDMURLScheme, self.list.remoteID, tagName];
             [attributedString addAttribute:NSLinkAttributeName value:tagURL range:range];
             [attributedString addAttribute:NSForegroundColorAttributeName value:[NSColor cheddarBlueColor] range:range];
             [attributedString addAttribute:NSCursorAttributeName value:[NSCursor pointingHandCursor] range:range];

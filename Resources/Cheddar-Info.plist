@@ -36,6 +36,17 @@
 	<string>NSApplication</string>
 	<key>SUFeedURL</key>
 	<string>https://cheddarapp.com/mac/appcast.xml</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>cheddar</string>
+			</array>
+			<key>CFBundleURLName</key>
+			<string>Cheddar</string>
+		</dict>
+	</array>
 	<key>SUPublicDSAKeyFile</key>
 	<string>dsa_pub.pem</string>
 </dict>

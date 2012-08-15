@@ -11,18 +11,28 @@
 #import "CDMTaskTableCellView.h"
 #import <QuartzCore/QuartzCore.h>
 #import "CDKTask+CDMAdditions.h"
+#import "CDMColorView.h"
 
 static NSString* const kCDMTasksDragTypeRearrange = @"CDMTasksDragTypeRearrange";
 NSString* const kCDMTasksDragTypeMove = @"CDMTasksDragTypeMove";
 static NSString* const kCDMTaskCellIdentifier = @"TaskCell";
+static CGFloat const kCDMTasksViewControllerTagBarAnimationDuration = 0.3f;
+
+@interface CDMTasksViewController ()
+- (void)setTagBarVisible:(BOOL)visible;
+@end
 
 @implementation CDMTasksViewController {
     BOOL _awakenFromNib;
+    CDMColorView *_overlayView;
 }
 @synthesize arrayController = _arrayController;
 @synthesize tableView = _tableView;
 @synthesize selectedList = _selectedList;
 @synthesize taskField = _taskField;
+@synthesize tagFilterBar = _tagFilterBar;
+@synthesize tagNameField = _tagNameField;
+@synthesize addTaskView = _addTaskView;
 
 #pragma mark - NSObject
 
@@ -68,6 +78,52 @@ static NSString* const kCDMTaskCellIdentifier = @"TaskCell";
     [[self.taskField window] makeFirstResponder:self.taskField];
 }
 
+#pragma mark - Tags
+
+- (void)filterToTagWithName:(NSString*)tagName {
+    CDKTag *tag = [CDKTag existingTagWithName:tagName];
+    if (tag) {
+        [self.tagNameField setStringValue:[@"#" stringByAppendingString:tagName]];
+        [self.arrayController setFilterPredicate:[NSPredicate predicateWithFormat:@"%@ IN tags", tag]];
+        [self setTagBarVisible:YES];
+    }
+}
+
+- (void)setTagBarVisible:(BOOL)visible {
+    NSView *parentView = [self.addTaskView superview];
+    if (visible && ![self.tagFilterBar superview]) {
+        NSScrollView *scrollView = [self.tableView enclosingScrollView];
+        NSRect beforeTagFrame = [self.tagFilterBar frame];
+        beforeTagFrame.size = [self.addTaskView frame].size;
+        beforeTagFrame.origin.y = NSMaxY([scrollView frame]) - beforeTagFrame.size.height;
+        [self.tagFilterBar setFrame:beforeTagFrame];
+        _overlayView = [[CDMColorView alloc] initWithFrame:[self.addTaskView frame]];
+        [_overlayView setColor:[NSColor colorWithDeviceWhite:0.f alpha:0.8f]];
+        [_overlayView setAlphaValue:0.f];
+        [_overlayView setAutoresizingMask:[self.addTaskView autoresizingMask]];
+        [parentView addSubview:self.tagFilterBar positioned:NSWindowAbove relativeTo:self.addTaskView];
+        [parentView addSubview:_overlayView positioned:NSWindowBelow relativeTo:self.tagFilterBar];
+        [NSAnimationContext beginGrouping];
+        [[NSAnimationContext currentContext] setCompletionHandler:^{
+            [self.addTaskView setHidden:YES];
+        }];
+        [[NSAnimationContext currentContext] setDuration:kCDMTasksViewControllerTagBarAnimationDuration];
+        [[NSAnimationContext currentContext] setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
+        [[_overlayView animator] setAlphaValue:1.f];
+        [[self.tagFilterBar animator] setFrame:[self.addTaskView frame]];
+        [NSAnimationContext endGrouping];
+    } else if (!visible && [self.tagFilterBar superview]) {
+      /*  NSRect newScrollFrame = [scrollView frame];
+        newScrollFrame.size.height += [self.tagFilterBar frame].size.height;
+        NSRect newTagFrame = [self.tagFilterBar frame];
+        newTagFrame.origin.y = NSMaxY(newScrollFrame);
+        [NSAnimationContext beginGrouping];
+        [[NSAnimationContext currentContext] setDuration:kCDMTasksViewControllerTagBarAnimationDuration];
+        [[scrollView animator] setFrame:newScrollFrame];
+        [[self.tagFilterBar animator] setFrame:newTagFrame];
+        [NSAnimationContext endGrouping];*/
+    }
+}
 
 #pragma mark - Accessors
 
