@@ -7,8 +7,10 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "NSTextView+CDMAdditions.h"
 
 int main(int argc, char *argv[])
 {
+    [NSTextView swizzle];
 	return NSApplicationMain(argc, (const char **)argv);
 }

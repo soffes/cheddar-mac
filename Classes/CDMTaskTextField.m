@@ -9,9 +9,7 @@
 #import "CDMTaskTextField.h"
 #import "NSColor+CDMAdditions.h"
 
-@implementation CDMTaskTextField {
-    BOOL _clickEditingEnabled;
-}
+@implementation CDMTaskTextField
 
 - (id)initWithCoder:(NSCoder *)aDecoder
 {
@@ -20,25 +18,5 @@
         self.font = [NSFont fontWithName:kCDMRegularFontName size:15.f];
     }
     return self;
-}
-
-#pragma mark - Mouse Events
-
-- (void)mouseDown:(NSEvent *)theEvent
-{
-    if ([self.delegate respondsToSelector:@selector(editingTextForTextField:)] && [theEvent clickCount] == 2) {
-        [self setAttributedStringValue:nil];
-        [self setStringValue:[(id)self.delegate editingTextForTextField:self]];
-        [self setEditable:YES];
-        [[self window] makeFirstResponder:self];
-    } else {
-        [super mouseDown:theEvent];
-    }
-}
-
-- (void)textDidEndEditing:(NSNotification *)notification
-{
-    [super textDidEndEditing:notification];
-    [self setEditable:NO];
 }
 @end

@@ -16,3 +16,6 @@
 [submodule "Vendor/LetsMove"]
 	path = Vendor/LetsMove
 	url = https://github.com/samsoffes/LetsMove.git
+[submodule "Vendor/JRSwizzle"]
+	path = Vendor/JRSwizzle
+	url = git://github.com/rentzsch/jrswizzle.git
