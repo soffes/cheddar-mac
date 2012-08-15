@@ -10,5 +10,4 @@
 
 @interface NSTextView (CDMAdditions)
 - (NSMenu*)menuForEvent_swizzle:(NSEvent *)event;
-@property (nonatomic, assign) BOOL useCustomContextMenu;
 @end

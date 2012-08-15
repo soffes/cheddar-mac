@@ -9,7 +9,6 @@
 #import "NSTextView+CDMAdditions.h"
 #import "JRSwizzle.h"
 
-
 @implementation NSTextView (CDMAdditions)
 
 + (void)load {
