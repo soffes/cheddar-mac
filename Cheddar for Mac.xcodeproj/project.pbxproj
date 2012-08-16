@@ -57,6 +57,7 @@
 		0338840B15D9D66F001FC04B /* CDMTasksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0338840A15D9D66F001FC04B /* CDMTasksViewController.m */; };
 		037252E115D9FCF700E87D87 /* CDKTask+CDMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 037252E015D9FCF700E87D87 /* CDKTask+CDMAdditions.m */; };
 		037253A815DA1C4000E87D87 /* CDMShadowTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 037253A715DA1C4000E87D87 /* CDMShadowTableView.m */; };
+		038FF74915DDA596004B7316 /* CDMTrafficLightsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 038FF74815DDA596004B7316 /* CDMTrafficLightsView.m */; };
 		03B3951C15DAB73000A8A7D4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 03B3951B15DAB73000A8A7D4 /* Localizable.strings */; };
 		03B3952815DAC66E00A8A7D4 /* CDMTaskTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 03B3952715DAC66E00A8A7D4 /* CDMTaskTextField.m */; };
 		03B3952E15DAC97900A8A7D4 /* CDMBoolToTaskTextColorValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 03B3952D15DAC97000A8A7D4 /* CDMBoolToTaskTextColorValueTransformer.m */; };
@@ -335,6 +336,8 @@
 		037252E015D9FCF700E87D87 /* CDKTask+CDMAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CDKTask+CDMAdditions.m"; sourceTree = "<group>"; };
 		037253A615DA1C4000E87D87 /* CDMShadowTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMShadowTableView.h; sourceTree = "<group>"; };
 		037253A715DA1C4000E87D87 /* CDMShadowTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMShadowTableView.m; sourceTree = "<group>"; };
+		038FF74715DDA596004B7316 /* CDMTrafficLightsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDMTrafficLightsView.h; path = Classes/CDMTrafficLightsView.h; sourceTree = "<group>"; };
+		038FF74815DDA596004B7316 /* CDMTrafficLightsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDMTrafficLightsView.m; path = Classes/CDMTrafficLightsView.m; sourceTree = "<group>"; };
 		03B3951B15DAB73000A8A7D4 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		03B3952615DAC66E00A8A7D4 /* CDMTaskTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMTaskTextField.h; sourceTree = "<group>"; };
 		03B3952715DAC66E00A8A7D4 /* CDMTaskTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMTaskTextField.m; sourceTree = "<group>"; };
@@ -538,6 +541,8 @@
 				0338828215D96201001FC04B /* CDMArchesWindow.m */,
 				03F2D96E15DAD8C500EEC543 /* CDMPlusWindow.h */,
 				03F2D96F15DAD8C500EEC543 /* CDMPlusWindow.m */,
+				038FF74715DDA596004B7316 /* CDMTrafficLightsView.h */,
+				038FF74815DDA596004B7316 /* CDMTrafficLightsView.m */,
 			);
 			name = Windows;
 			path = ..;
@@ -1219,6 +1224,7 @@
 				032D16D815DC4E220015912A /* NSString+SSToolkitAdditions.m in Sources */,
 				032D16DB15DC50DA0015912A /* CDMTagTextFieldCell.m in Sources */,
 				032D16DE15DC52270015912A /* CDMColorView.m in Sources */,
+				038FF74915DDA596004B7316 /* CDMTrafficLightsView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
