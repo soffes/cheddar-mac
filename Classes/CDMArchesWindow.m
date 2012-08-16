@@ -72,7 +72,6 @@ static CGFloat const kCDMArchesWindowShakeVigour = 0.05f;
     // This notification gets sent when the user changes the color scheme (Aqua or Graphite)
     // Tip from <http://www.cocoabuilder.com/archive/cocoa/13836-notification-of-aqua-graphite-preference-changed.html#13835>
     NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
-    [nc addObserver:self selector:@selector(_resetAlternateButtonImages) name:NSControlTintDidChangeNotification object:nil];
     [nc addObserver:self selector:@selector(_repositionContentView) name:NSWindowDidResizeNotification object:self];
     [nc addObserver:self selector:@selector(_repositionContentView) name:NSWindowDidMoveNotification object:self];
 }

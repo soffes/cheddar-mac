@@ -7,6 +7,12 @@
 //
 
 #import "CDMMainWindow.h"
+#import "CDMTrafficLightsView.h"
+
+@interface INAppStoreWindow (INAppStoreWindowInternal)
+- (void)_layoutTrafficLightsAndContent;
+- (void)_doInitialWindowSetup;
+@end
 
 // Copied from INAppStoreWindow
 static inline CGImageRef _createNoiseImageRef(NSUInteger width, NSUInteger height, CGFloat factor) {
@@ -27,11 +33,12 @@ static inline CGImageRef _createNoiseImageRef(NSUInteger width, NSUInteger heigh
 }
 
 
-@implementation CDMMainWindow
+@implementation CDMMainWindow {
+    CDMTrafficLightsView *_trafficLightsContainer;
+}
 
 - (void)awakeFromNib {
 	[super awakeFromNib];
-	
 	NSColorList *colorList = [[NSColorList alloc] initWithName:NSStringFromClass([self class])];
 
 	[colorList setColor:[NSColor colorWithCalibratedRed:0.914 green:0.545 blue:0.448 alpha:1.000] forKey:@"topInset"];
@@ -125,4 +132,30 @@ static inline CGImageRef _createNoiseImageRef(NSUInteger width, NSUInteger heigh
 	}];
 }
 
+#pragma mark - Private
+
+- (void)_doInitialWindowSetup
+{
+    [super _doInitialWindowSetup];
+    [self _createAndPositionTrafficLights];
+}
+- (void)_layoutTrafficLightsAndContent
+{
+    [super _layoutTrafficLightsAndContent];
+    NSButton *close = [self standardWindowButton:NSWindowCloseButton];
+    NSButton *minimize = [self standardWindowButton:NSWindowMiniaturizeButton];
+    NSButton *zoom = [self standardWindowButton:NSWindowZoomButton];
+    [close setHidden:YES];
+    [minimize setHidden:YES];
+    [zoom setHidden:YES];
+}
+
+- (void)_createAndPositionTrafficLights
+{
+    NSSize imageSize = [[NSImage imageNamed:@"traffic-normal"] size];
+    NSRect trafficLightContainerRect = NSMakeRect(kCDMWindowTrafficLightsSpacing,  floor(NSMidY([self.titleBarView bounds]) - (imageSize.height / 2.f)), (imageSize.width * 3.f) + (kCDMWindowTrafficLightsSpacing * 2.f), imageSize.height);
+    _trafficLightsContainer = [[CDMTrafficLightsView alloc] initWithFrame:trafficLightContainerRect];
+    [_trafficLightsContainer setAutoresizingMask:NSViewMaxXMargin | NSViewMaxYMargin | NSViewMinYMargin];
+    [self.titleBarView addSubview:_trafficLightsContainer];
+}
 @end

@@ -52,6 +52,7 @@ static NSString* const kCDMTrafficLightsViewImageNameTrafficZoomPressedGraphite 
         [self addSubview:_closeButton];
         [self addSubview:_minimizeButton];
         [self addSubview:_zoomButton];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(_resetAlternateButtonImages) name:NSControlTintDidChangeNotification object:nil];
     }
     return self;
 }
