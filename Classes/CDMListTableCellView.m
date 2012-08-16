@@ -17,8 +17,8 @@
 	self.textField.textColor = [NSColor cheddarLightTextColor];
 }
 
-- (void)setBackgroundStyle:(NSBackgroundStyle)backgroundStyle
-{
+
+- (void)setBackgroundStyle:(NSBackgroundStyle)backgroundStyle {
     [super setBackgroundStyle:backgroundStyle];
     if ([[[self.textField window] firstResponder] isKindOfClass:[NSTextView class]]
         && [[self.textField window] fieldEditor:NO forObject:nil]!=nil
@@ -30,4 +30,5 @@
         self.textField.textColor = [NSColor cheddarLightTextColor];
     }
 }
+
 @end

@@ -46,7 +46,7 @@ static inline CGImageRef _createNoiseImageRef(NSUInteger width, NSUInteger heigh
 	[colorList setColor:[NSColor colorWithCalibratedWhite:0.878 alpha:1.000] forKey:@"bottomInsetUnemphasized"];
 	[colorList setColor:[NSColor colorWithCalibratedWhite:0.590 alpha:1.000] forKey:@"bottomBorderUnemphasized"];
 	
-	self.titleBarHeight = 44.0f;
+	self.titleBarHeight = 36.0f;
 	self.centerFullScreenButton = YES;
 	self.fullScreenButtonRightMargin = 10.0f;
     __block __unsafe_unretained NSWindow *blockSelf = self;
@@ -117,7 +117,8 @@ static inline CGImageRef _createNoiseImageRef(NSUInteger width, NSUInteger heigh
 
 		// Title
 		NSImage *image = [NSImage imageNamed:@"title"];
-		rect = CGRectMake(roundf((drawingRect.size.width - 135.0f) / 2.0f), roundf((drawingRect.size.height - 24.0f) / 2.0f) + 1.0f, 135.0f, 24.0f);
+		CGSize imageSize = image.size;
+		rect = CGRectMake(roundf((drawingRect.size.width - imageSize.width) / 2.0f), roundf((drawingRect.size.height - imageSize.height) / 2.0f), imageSize.width, imageSize.height);
 		[image drawInRect:rect fromRect:CGRectZero operation:NSCompositeSourceOver fraction:1.0f];
 
 		CGContextRestoreGState(context);

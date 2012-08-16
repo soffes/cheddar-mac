@@ -179,7 +179,7 @@ static CGFloat const kCDMListsViewControllerAddListAnimationDuration = 0.15f;
 
 
 - (CGFloat)tableView:(NSTableView *)tableView heightOfRow:(NSInteger)row {
-	return 45.0f;
+	return 38.0f;
 }
 
 
