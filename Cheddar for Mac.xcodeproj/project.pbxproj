@@ -91,6 +91,10 @@
 		B27CBA3215D9F12800BC851F /* SNRFetchedResultsController.m in Sources */ = {isa = PBXBuildFile; fileRef = B27CBA2F15D9F12800BC851F /* SNRFetchedResultsController.m */; };
 		B27CBB4E15DA233C00BC851F /* x.png in Resources */ = {isa = PBXBuildFile; fileRef = B27CBB4C15DA233C00BC851F /* x.png */; };
 		B27CBB4F15DA233C00BC851F /* x@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B27CBB4D15DA233C00BC851F /* x@2x.png */; };
+		B27D6AF515DC7E6E0090D88E /* tag.png in Resources */ = {isa = PBXBuildFile; fileRef = B27D6AF415DC7E6E0090D88E /* tag.png */; };
+		B27D6AF715DC83DE0090D88E /* tag@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B27D6AF615DC83DE0090D88E /* tag@2x.png */; };
+		B27D6AFA15DC84800090D88E /* tag-x.png in Resources */ = {isa = PBXBuildFile; fileRef = B27D6AF815DC84800090D88E /* tag-x.png */; };
+		B27D6AFB15DC84800090D88E /* tag-x@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B27D6AF915DC84800090D88E /* tag-x@2x.png */; };
 		B2A23D1515D988AB00EA9D2D /* NSColor+CDMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B2A23D1415D988AB00EA9D2D /* NSColor+CDMAdditions.m */; };
 		B2A23D7915D997D900EA9D2D /* CDMAboutWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2A23D7815D997D900EA9D2D /* CDMAboutWindowController.m */; };
 		B2A23D7C15D997E300EA9D2D /* CDMPreferencesWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = B2A23D7B15D997E300EA9D2D /* CDMPreferencesWindowController.m */; };
@@ -392,6 +396,10 @@
 		B27CBA7A15DA0A1B00BC851F /* RBSplitView.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = RBSplitView.xcodeproj; sourceTree = "<group>"; };
 		B27CBB4C15DA233C00BC851F /* x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = x.png; sourceTree = "<group>"; };
 		B27CBB4D15DA233C00BC851F /* x@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "x@2x.png"; sourceTree = "<group>"; };
+		B27D6AF415DC7E6E0090D88E /* tag.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tag.png; sourceTree = "<group>"; };
+		B27D6AF615DC83DE0090D88E /* tag@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tag@2x.png"; sourceTree = "<group>"; };
+		B27D6AF815DC84800090D88E /* tag-x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tag-x.png"; sourceTree = "<group>"; };
+		B27D6AF915DC84800090D88E /* tag-x@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tag-x@2x.png"; sourceTree = "<group>"; };
 		B2A23D1315D988AB00EA9D2D /* NSColor+CDMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSColor+CDMAdditions.h"; sourceTree = "<group>"; };
 		B2A23D1415D988AB00EA9D2D /* NSColor+CDMAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSColor+CDMAdditions.m"; sourceTree = "<group>"; };
 		B2A23D7715D997D900EA9D2D /* CDMAboutWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMAboutWindowController.h; sourceTree = "<group>"; };
@@ -642,6 +650,10 @@
 		B21FF2FA15BF7D7B00AEEA97 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				B27D6AF815DC84800090D88E /* tag-x.png */,
+				B27D6AF915DC84800090D88E /* tag-x@2x.png */,
+				B27D6AF615DC83DE0090D88E /* tag@2x.png */,
+				B27D6AF415DC7E6E0090D88E /* tag.png */,
 				B2DCE53215DB12CE00468BF5 /* move-arrow.png */,
 				B2DCE53315DB12CE00468BF5 /* move-arrow@2x.png */,
 				B27CBB4C15DA233C00BC851F /* x.png */,
@@ -1145,6 +1157,10 @@
 				03F2D96D15DAD89900EEC543 /* Plus.xib in Resources */,
 				B2DCE53415DB12CE00468BF5 /* move-arrow.png in Resources */,
 				B2DCE53515DB12CE00468BF5 /* move-arrow@2x.png in Resources */,
+				B27D6AF515DC7E6E0090D88E /* tag.png in Resources */,
+				B27D6AF715DC83DE0090D88E /* tag@2x.png in Resources */,
+				B27D6AFA15DC84800090D88E /* tag-x.png in Resources */,
+				B27D6AFB15DC84800090D88E /* tag-x@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
