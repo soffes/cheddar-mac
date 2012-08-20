@@ -198,7 +198,8 @@
 
 - (BOOL)applicationShouldHandleReopen:(NSApplication *)theApplication hasVisibleWindows:(BOOL)flag
 {
-    [_mainWindowController.window makeKeyAndOrderFront:nil];
+    if ([CDKUser currentUser])
+        [_mainWindowController.window makeKeyAndOrderFront:nil];
     return YES;
 }
 @end
