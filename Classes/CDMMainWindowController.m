@@ -36,6 +36,7 @@ void SSDrawGradientInRect(CGContextRef context, CGGradientRef gradient, CGRect r
 @synthesize tasksViewController = _tasksViewController;
 @synthesize splitViewLeft = _splitViewLeft;
 @synthesize splitView = _splitView;
+@synthesize taskTextField = _taskTextField;
 
 
 #pragma mark - NSObject

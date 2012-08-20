@@ -28,6 +28,7 @@
 @synthesize signInWindowController = _signInWindowController;
 @synthesize mainWindowController = _mainWindowController;
 @synthesize viewMenu = _viewMenu;
+@synthesize taskTextField = _taskTextField;
 
 
 - (CDMSignInWindowController *)signInWindowController {
@@ -92,6 +93,7 @@
     _plusWindowController = [[CDMPlusWindowController alloc] init];
     _plusWindowController.parentWindow = mainWindow;
 
+    [self.mainWindowController.taskTextField setEnabled:NO];
     NSWindow *overlayWindow = [_plusWindowController window];
     [overlayWindow setAlphaValue:0.f];
     [overlayWindow setFrame:[mainWindow frame] display:YES animate:NO];
@@ -110,6 +112,7 @@
     [NSAnimationContext beginGrouping];
     [[NSAnimationContext currentContext] setCompletionHandler:^{
         [mainWindow removeChildWindow:overlayWindow];
+        [self.mainWindowController.taskTextField setEnabled:YES];
         [overlayWindow close];
         _plusWindowController = nil;
         [[NSNotificationCenter defaultCenter] removeObserver:self name:NSWindowDidResizeNotification object:mainWindow];

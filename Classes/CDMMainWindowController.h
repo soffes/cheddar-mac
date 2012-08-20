@@ -15,5 +15,6 @@
 @property (nonatomic, strong) IBOutlet CDMTasksViewController *tasksViewController;
 @property (nonatomic, weak) IBOutlet NSView *splitViewLeft;
 @property (nonatomic, weak) IBOutlet NSSplitView *splitView;
+@property (nonatomic, weak) IBOutlet NSTextField *taskTextField;
 - (IBAction)toggleSidebar:(id)sender;
 @end
