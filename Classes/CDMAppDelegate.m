@@ -28,7 +28,6 @@
 @synthesize signInWindowController = _signInWindowController;
 @synthesize mainWindowController = _mainWindowController;
 @synthesize viewMenu = _viewMenu;
-@synthesize taskTextField = _taskTextField;
 
 
 - (CDMSignInWindowController *)signInWindowController {
