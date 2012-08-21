@@ -68,6 +68,9 @@
 		03F2D97015DAD8C500EEC543 /* CDMPlusWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 03F2D96F15DAD8C500EEC543 /* CDMPlusWindow.m */; };
 		03F2D97315DAE30E00EEC543 /* CDMPlusDialogView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03F2D97215DAE30E00EEC543 /* CDMPlusDialogView.m */; };
 		03F2D98F15DB027400EEC543 /* CDMTaskTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 03F2D98E15DB027400EEC543 /* CDMTaskTextFieldCell.m */; };
+		03F7954015E41FA600C9F652 /* tag-x-unfocused.png in Resources */ = {isa = PBXBuildFile; fileRef = 03F7953D15E41FA600C9F652 /* tag-x-unfocused.png */; };
+		03F7954115E41FA600C9F652 /* tag-x-unfocused@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 03F7953E15E41FA600C9F652 /* tag-x-unfocused@2x.png */; };
+		03F7954215E41FA600C9F652 /* About.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03F7953F15E41FA600C9F652 /* About.xib */; };
 		B209670B15DAB8E600E73B93 /* Sparkle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B209670015DAB8BE00E73B93 /* Sparkle.framework */; };
 		B209670C15DABAAE00E73B93 /* Sparkle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = B209670015DAB8BE00E73B93 /* Sparkle.framework */; };
 		B21FF2C515BF7D6500AEEA97 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B21FF2C415BF7D6500AEEA97 /* Cocoa.framework */; };
@@ -356,6 +359,9 @@
 		03F2D97215DAE30E00EEC543 /* CDMPlusDialogView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMPlusDialogView.m; sourceTree = "<group>"; };
 		03F2D98D15DB027400EEC543 /* CDMTaskTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMTaskTextFieldCell.h; sourceTree = "<group>"; };
 		03F2D98E15DB027400EEC543 /* CDMTaskTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMTaskTextFieldCell.m; sourceTree = "<group>"; };
+		03F7953D15E41FA600C9F652 /* tag-x-unfocused.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tag-x-unfocused.png"; sourceTree = "<group>"; };
+		03F7953E15E41FA600C9F652 /* tag-x-unfocused@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tag-x-unfocused@2x.png"; sourceTree = "<group>"; };
+		03F7953F15E41FA600C9F652 /* About.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = About.xib; path = Resources/Nibs/About.xib; sourceTree = SOURCE_ROOT; };
 		B209661815DAB8BD00E73B93 /* Sparkle.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Sparkle.xcodeproj; sourceTree = "<group>"; };
 		B21FF2C015BF7D6500AEEA97 /* Cheddar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cheddar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B21FF2C415BF7D6500AEEA97 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -657,6 +663,9 @@
 			children = (
 				B27D6AF815DC84800090D88E /* tag-x.png */,
 				B27D6AF915DC84800090D88E /* tag-x@2x.png */,
+				03F7953D15E41FA600C9F652 /* tag-x-unfocused.png */,
+				03F7953E15E41FA600C9F652 /* tag-x-unfocused@2x.png */,
+				03F7953F15E41FA600C9F652 /* About.xib */,
 				B27D6AF615DC83DE0090D88E /* tag@2x.png */,
 				B27D6AF415DC7E6E0090D88E /* tag.png */,
 				B2DCE53215DB12CE00468BF5 /* move-arrow.png */,
@@ -1166,6 +1175,9 @@
 				B27D6AF715DC83DE0090D88E /* tag@2x.png in Resources */,
 				B27D6AFA15DC84800090D88E /* tag-x.png in Resources */,
 				B27D6AFB15DC84800090D88E /* tag-x@2x.png in Resources */,
+				03F7954015E41FA600C9F652 /* tag-x-unfocused.png in Resources */,
+				03F7954115E41FA600C9F652 /* tag-x-unfocused@2x.png in Resources */,
+				03F7954215E41FA600C9F652 /* About.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
