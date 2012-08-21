@@ -51,9 +51,7 @@ static CGFloat const kCDMListsViewControllerAddListAnimationDuration = 0.15f;
 #pragma mark - Actions
 
 - (IBAction)reload:(id)sender {
-	[[CDKHTTPClient sharedClient] getListsWithSuccess:^(AFJSONRequestOperation *operation, id responseObject) {
-		NSLog(@"Got lists");
-	} failure:^(AFJSONRequestOperation *operation, NSError *error) {
+	[[CDKHTTPClient sharedClient] getListsWithSuccess:nil failure:^(AFJSONRequestOperation *operation, NSError *error) {
 		NSLog(@"Failed to get lists: %@", error);
 	}];
 
