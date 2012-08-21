@@ -17,11 +17,15 @@
 static NSString* const kCDMTasksDragTypeRearrange = @"CDMTasksDragTypeRearrange";
 NSString* const kCDMTasksDragTypeMove = @"CDMTasksDragTypeMove";
 static NSString* const kCDMTaskCellIdentifier = @"TaskCell";
+
 static CGFloat const kCDMTasksViewControllerTagBarAnimationDuration = 0.3f;
+static NSString* const kCDMTasksViewControllerImageTagX = @"tag-x";
+static NSString* const kCDMTasksViewControllerImageTagXUnfocused = @"tag-x-unfocused";
 
 @interface CDMTasksViewController ()
 - (void)_setTagBarVisible:(BOOL)visible;
 - (void)_clearTagFilter;
+- (void)_resetTagXButtonImage;
 @end
 
 @implementation CDMTasksViewController {
@@ -36,6 +40,7 @@ static CGFloat const kCDMTasksViewControllerTagBarAnimationDuration = 0.3f;
 @synthesize tagFilterBar = _tagFilterBar;
 @synthesize tagNameField = _tagNameField;
 @synthesize addTaskView = _addTaskView;
+@synthesize tagXImageView = _tagXImageView;
 
 #pragma mark - NSObject
 
@@ -50,8 +55,18 @@ static CGFloat const kCDMTasksViewControllerTagBarAnimationDuration = 0.3f;
     self.arrayController.managedObjectContext = [CDKTask mainContext];
 	self.arrayController.sortDescriptors = [CDKTask defaultSortDescriptors];
     [self.tableView registerForDraggedTypes:[NSArray arrayWithObject:kCDMTasksDragTypeRearrange]];
+    
+    NSWindow *window = [self.tableView window];
+    NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
+    [nc addObserver:self selector:@selector(_resetTagXButtonImage) name:NSWindowDidBecomeKeyNotification object:window];
+    [nc addObserver:self selector:@selector(_resetTagXButtonImage) name:NSWindowDidResignKeyNotification object:window];
 
 	_awakenFromNib = YES;
+}
+
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 
@@ -80,6 +95,13 @@ static CGFloat const kCDMTasksViewControllerTagBarAnimationDuration = 0.3f;
 
 - (IBAction)focusTaskField:(id)sender {
     [[self.taskField window] makeFirstResponder:self.taskField];
+}
+
+- (void)_resetTagXButtonImage
+{
+    BOOL active = [[self.tableView window] isKeyWindow] && [NSApp isActive];
+    NSImage *image = [NSImage imageNamed:active ? kCDMTasksViewControllerImageTagX : kCDMTasksViewControllerImageTagXUnfocused];
+    [self.tagXImageView setImage:image];
 }
 
 #pragma mark - Tags
