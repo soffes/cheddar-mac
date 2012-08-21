@@ -27,6 +27,7 @@ static CGFloat const kCDMTasksViewControllerTagBarAnimationDuration = 0.3f;
 @implementation CDMTasksViewController {
     BOOL _awakenFromNib;
     CDMColorView *_overlayView;
+    NSMutableArray *_filterTags;
 }
 @synthesize arrayController = _arrayController;
 @synthesize tableView = _tableView;
@@ -45,6 +46,7 @@ static CGFloat const kCDMTasksViewControllerTagBarAnimationDuration = 0.3f;
 		return;
 	}
 
+    _filterTags = [NSMutableArray array];
     self.arrayController.managedObjectContext = [CDKTask mainContext];
 	self.arrayController.sortDescriptors = [CDKTask defaultSortDescriptors];
     [self.tableView registerForDraggedTypes:[NSArray arrayWithObject:kCDMTasksDragTypeRearrange]];
@@ -82,11 +84,23 @@ static CGFloat const kCDMTasksViewControllerTagBarAnimationDuration = 0.3f;
 
 #pragma mark - Tags
 
-- (void)filterToTagWithName:(NSString*)tagName {
-    CDKTag *tag = [CDKTag existingTagWithName:tagName];
-    if (tag) {
-        [self.tagNameField setStringValue:[@"#" stringByAppendingString:tagName]];
-        [self.arrayController setFilterPredicate:[NSPredicate predicateWithFormat:@"%@ IN tags", tag]];
+- (void)addFilterForTag:(CDKTag*)tag
+{
+    [_filterTags addObject:tag];
+    [self _resetTagFilter];
+}
+
+- (void)_resetTagFilter
+{
+    if ([_filterTags count]) {
+        NSString *text = [[NSString stringWithFormat:@"#%@", [[_filterTags valueForKey:@"name"] componentsJoinedByString:@" #"]] lowercaseString];
+        [self.tagNameField setStringValue:text];
+        NSMutableArray *subpredicates = [NSMutableArray arrayWithCapacity:[_filterTags count]];
+        for (CDKTag *tag in _filterTags) {
+            NSPredicate *predicate = [NSPredicate predicateWithFormat:@"%@ in tags", tag];
+            [subpredicates addObject:predicate];
+        }
+        [self.arrayController setFilterPredicate:[NSCompoundPredicate andPredicateWithSubpredicates:subpredicates]];
         [self _setTagBarVisible:YES];
     }
 }
@@ -135,6 +149,7 @@ static CGFloat const kCDMTasksViewControllerTagBarAnimationDuration = 0.3f;
 - (void)_clearTagFilter
 {
     self.arrayController.filterPredicate = nil;
+    [_filterTags removeAllObjects];
     [self _setTagBarVisible:NO];
 }
 

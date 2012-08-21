@@ -20,5 +20,5 @@ extern NSString* const kCDMTasksDragTypeMove;
 @property (nonatomic, strong) CDKList *selectedList;
 - (IBAction)addTask:(id)sender;
 - (IBAction)focusTaskField:(id)sender;
-- (void)filterToTagWithName:(NSString*)tagName;
+- (void)addFilterForTag:(CDKTag*)tag;
 @end

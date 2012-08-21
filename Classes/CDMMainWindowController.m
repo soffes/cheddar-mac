@@ -149,7 +149,10 @@ void SSDrawGradientInRect(CGContextRef context, CGGradientRef gradient, CGRect r
         NSDictionary *query = [url queryDictionary];
         NSString *tagName = [query valueForKey:@"tag"];
         if ([tagName length]) {
-            [_tasksViewController filterToTagWithName:tagName];
+            CDKTag *tag = [CDKTag existingTagWithName:tagName];
+            if (tag) {
+                [_tasksViewController addFilterForTag:tag];
+            }
         }
     }
 }
