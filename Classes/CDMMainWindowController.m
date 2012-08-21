@@ -37,6 +37,7 @@ void SSDrawGradientInRect(CGContextRef context, CGGradientRef gradient, CGRect r
 @synthesize splitViewLeft = _splitViewLeft;
 @synthesize splitView = _splitView;
 @synthesize taskTextField = _taskTextField;
+@synthesize listMenu = _listMenu;
 
 
 #pragma mark - NSObject
@@ -69,6 +70,7 @@ void SSDrawGradientInRect(CGContextRef context, CGGradientRef gradient, CGRect r
 - (void)windowDidLoad {
     [super windowDidLoad];
     [[NSUserDefaults standardUserDefaults] setFloat:NSMaxX([self.splitViewLeft frame]) forKey:kCDMLastDividerPositionKey];
+    self.listMenu.delegate = self.listsViewController;
 }
 
 

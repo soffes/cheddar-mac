@@ -8,7 +8,7 @@
 
 @class CDMTasksViewController;
 
-@interface CDMListsViewController : NSViewController <NSTableViewDataSource, NSTableViewDelegate>
+@interface CDMListsViewController : NSViewController <NSTableViewDataSource, NSTableViewDelegate, NSMenuDelegate>
 
 @property (nonatomic, weak) IBOutlet NSArrayController *arrayController;
 @property (nonatomic, weak) IBOutlet NSTableView *tableView;

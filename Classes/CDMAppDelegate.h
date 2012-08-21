@@ -14,6 +14,7 @@
 @property (nonatomic, strong, readonly) CDMSignInWindowController *signInWindowController;
 @property (nonatomic, strong, readonly) CDMMainWindowController *mainWindowController;
 @property (nonatomic, weak) IBOutlet NSMenu *viewMenu;
+@property (nonatomic, weak) IBOutlet NSMenu *listMenu;
 
 + (CDMAppDelegate *)sharedAppDelegate;
 

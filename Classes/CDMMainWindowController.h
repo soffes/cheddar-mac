@@ -16,5 +16,6 @@
 @property (nonatomic, weak) IBOutlet NSView *splitViewLeft;
 @property (nonatomic, weak) IBOutlet NSSplitView *splitView;
 @property (nonatomic, weak) IBOutlet NSTextField *taskTextField;
+@property (nonatomic, weak) NSMenu *listMenu;
 - (IBAction)toggleSidebar:(id)sender;
 @end

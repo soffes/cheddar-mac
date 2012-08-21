@@ -167,6 +167,7 @@
 
 	_mainWindowController = [[CDMMainWindowController alloc] init];
     self.viewMenu.delegate = _mainWindowController;
+    _mainWindowController.listMenu = self.listMenu;
 	[_mainWindowController showWindow:nil];
 
 	if (![CDKUser currentUser]) {
@@ -182,7 +183,6 @@
 		[self _userChanged:nil];
 	});
 }
-
 
 - (NSUndoManager *)windowWillReturnUndoManager:(NSWindow *)window {
 	return [[SSManagedObject mainContext] undoManager];

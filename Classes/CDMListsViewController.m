@@ -12,9 +12,24 @@
 #import "CDMColorView.h"
 #import <QuartzCore/QuartzCore.h>
 
+enum {
+    CDMListsRenameListItemTag = 0,
+    CDMListsArchiveAllTasksItemTag = 1,
+    CDMListsArchiveCompletedTasksItemTag = 2,
+    CDMListsArchiveListItemTag = 3
+};
+typedef NSUInteger CDMListsMenuItemTag;
+
 static NSString* const kCDMListsDragTypeRearrange = @"CDMListsDragTypeRearrange";
 static CGFloat const kCDMListsViewControllerAddListAnimationDuration = 0.15f;
 
+@interface CDMListsViewController ()
+// Menu Item Actions
+- (void)_renameList:(NSMenuItem *)menuItem;
+- (void)_archiveAllTasks:(NSMenuItem *)menuItem;
+- (void)_archiveCompletedTasks:(NSMenuItem *)menuItem;
+- (void)_archiveList:(NSMenuItem *)menuItem;
+@end
 
 @implementation CDMListsViewController {
     BOOL _awakenFromNib;
@@ -243,5 +258,68 @@ static CGFloat const kCDMListsViewControllerAddListAnimationDuration = 0.15f;
     }
     return YES;
 }
+
+#pragma mark - NSMenuDelegate
+
+- (void)menuNeedsUpdate:(NSMenu *)menu
+{
+    BOOL enableItem = [self.tableView selectedRow] != -1 && [[self.tableView window] isVisible] && [[(CDKList *)[[_arrayController arrangedObjects] objectAtIndex:[self.tableView selectedRow]] tasks] count];
+    for (NSMenuItem *item in [menu itemArray]) {
+        [item setEnabled:enableItem];
+        [item setTarget:self];
+        switch ([item tag]) {
+            case CDMListsRenameListItemTag:
+                [item setAction:@selector(_renameList:)];
+                break;
+            case CDMListsArchiveAllTasksItemTag:
+                [item setAction:@selector(_archiveAllTasks:)];
+                break;
+            case CDMListsArchiveCompletedTasksItemTag:
+                [item setAction:@selector(_archiveCompletedTasks:)];
+                break;
+            case CDMListsArchiveListItemTag:
+                [item setAction:@selector(_archiveList:)];
+                break;
+            default:
+                break;
+        }
+    }
+}
+
+
+- (void)_renameList:(NSMenuItem *)menuItem {
+    NSTableRowView *row = [self.tableView rowViewAtRow:[self.tableView selectedRow] makeIfNecessary:NO];
+    NSTableCellView *cell = [row viewAtColumn:0];
+    [[cell.textField window] makeFirstResponder:cell.textField];
+}
+
+
+- (void)_archiveAllTasks:(NSMenuItem *)menuItem {
+    
+    NSInteger row = [self.tableView selectedRow];
+    CDKList *list = [[_arrayController arrangedObjects] objectAtIndex:row];
+    [list archiveAllTasks];
+    [list save];
+    [list update];
+}
+
+
+- (void)_archiveCompletedTasks:(NSMenuItem *)menuItem {
+    NSInteger row = [self.tableView selectedRow];
+    CDKList *list = [[_arrayController arrangedObjects] objectAtIndex:row];
+    [list archiveCompletedTasks];
+    [list save];
+    [list update];
+}
+
+
+- (void)_archiveList:(NSMenuItem *)menuItem {
+    CDKList *list = [[_arrayController arrangedObjects] objectAtIndex:[self.tableView selectedRow]];
+    list.archivedAt = [NSDate date];
+	[list save];
+	[list update];
+    [self.tableView reloadData];
+}
+
 
 @end
