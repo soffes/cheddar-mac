@@ -299,8 +299,6 @@ static CGFloat const kCDMListsViewControllerAddListAnimationDuration = 0.15f;
     NSInteger row = [self.tableView selectedRow];
     CDKList *list = [[_arrayController arrangedObjects] objectAtIndex:row];
     [list archiveAllTasks];
-    [list save];
-    [list update];
 }
 
 
@@ -308,8 +306,6 @@ static CGFloat const kCDMListsViewControllerAddListAnimationDuration = 0.15f;
     NSInteger row = [self.tableView selectedRow];
     CDKList *list = [[_arrayController arrangedObjects] objectAtIndex:row];
     [list archiveCompletedTasks];
-    [list save];
-    [list update];
 }
 
 
