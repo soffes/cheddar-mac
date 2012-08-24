@@ -9,6 +9,8 @@
 #import "CDMMainWindow.h"
 #import "CDMTrafficLightsView.h"
 
+static NSString* const kCDMUserDefaultsKeyWindowAlwaysOnTop = @"windowAlwaysOnTop";
+
 @interface INAppStoreWindow (INAppStoreWindowInternal)
 - (void)_layoutTrafficLightsAndContent;
 - (void)_doInitialWindowSetup;
@@ -137,6 +139,8 @@ static inline CGImageRef _createNoiseImageRef(NSUInteger width, NSUInteger heigh
 - (void)_doInitialWindowSetup
 {
     [super _doInitialWindowSetup];
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:kCDMUserDefaultsKeyWindowAlwaysOnTop])
+        [self setLevel:NSFloatingWindowLevel];
     [self _createAndPositionTrafficLights];
 }
 - (void)_layoutTrafficLightsAndContent
