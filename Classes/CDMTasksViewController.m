@@ -181,6 +181,29 @@ static NSString* const kCDMTasksViewControllerImageTagXUnfocused = @"tag-x-unfoc
     [self _clearTagFilter];
 }
 
+#pragma mark - CDMTaskTextFieldDelegate
+
+- (NSString *)editingTextForTextField:(NSTextField*)textField
+{
+    NSInteger row = [self.tableView rowForView:textField];
+    if (row != -1) {
+        CDKTask *task = [[self.arrayController arrangedObjects] objectAtIndex:row];
+        return task.text;
+    }
+    return nil;
+}
+
+- (void)controlTextDidEndEditing:(NSNotification *)obj
+{
+    NSTextField *textField = [obj object];
+    NSInteger row = [self.tableView rowForView:textField];
+    if (row != -1) {
+        CDKTask *task = [[self.arrayController arrangedObjects] objectAtIndex:row];
+        task.text = [textField stringValue];
+        [textField setAttributedStringValue:task.attributedDisplayText];
+    }
+}
+
 #pragma mark - Accessors
 
 - (void)setSelectedList:(CDKList *)selectedList {

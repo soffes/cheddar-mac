@@ -8,6 +8,8 @@
 
 #import "CDMTaskTableRowView.h"
 
+#define kCDMTasksTableRowBackgroundColor [NSColor colorWithCalibratedRed:1.0 green:1.0 blue:0.747 alpha:1.0]
+
 @interface CDMTaskTableRowView ()
 @property (nonatomic, strong) NSColorList *colorList;
 @end
@@ -44,6 +46,7 @@
 	[[self.colorList colorWithKey:@"border"] set];
 	[NSBezierPath fillRect:separatorRect];
 }
+
 
 - (void)updateTrackingAreas {
     [super updateTrackingAreas];

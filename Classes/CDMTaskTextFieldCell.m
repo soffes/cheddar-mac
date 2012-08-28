@@ -17,5 +17,4 @@
     [textView setLinkTextAttributes:linkAttributes];
     return textView;
 }
-
 @end

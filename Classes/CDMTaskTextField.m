@@ -26,11 +26,17 @@
 
 - (void)mouseDown:(NSEvent *)theEvent
 {
-    if ([self.delegate respondsToSelector:@selector(editingTextForTextField:)] && [theEvent clickCount] == 2) {
-        [self setAttributedStringValue:nil];
-        [self setStringValue:[(id)self.delegate editingTextForTextField:self]];
+    if ([theEvent clickCount] == 2) {
         [self setEditable:YES];
+        [self setBackgroundColor:[NSColor whiteColor]];
+        if ([self.delegate respondsToSelector:@selector(editingTextForTextField:)]) {
+            [self setAttributedStringValue:nil];
+            [self setStringValue:[(id)self.delegate editingTextForTextField:self]];
+            [self setEditable:YES];
+        }
         [[self window] makeFirstResponder:self];
+        NSTextView *fieldEditor = (NSTextView*)[[self window] fieldEditor:NO forObject:self];
+        [fieldEditor scrollRangeToVisible:NSMakeRange ([[fieldEditor string] length], 0)];
     } else {
         [super mouseDown:theEvent];
     }
