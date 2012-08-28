@@ -7,6 +7,7 @@
 //
 
 #import "CDMPreferencesWindowController.h"
+#import "MASShortcutView+UserDefaults.h"
 
 @implementation CDMPreferencesWindowController
 
@@ -14,6 +15,7 @@
 @synthesize accountPreferenceView = _accountPreferenceView;
 @synthesize updatesPreferenceView = _updatesPreferenceView;
 @synthesize usernameLabel = _usernameLabel;
+@synthesize quickAddShortcutView = _quickAddShortcutView;
 
 
 #pragma mark - NSWindowController
@@ -29,6 +31,7 @@
 - (void)windowDidLoad {
 	[super windowDidLoad];
 	self.usernameLabel.stringValue = [NSString stringWithFormat:@"You are signed in as %@.", [CDKUser currentUser].username];
+    self.quickAddShortcutView.associatedUserDefaultsKey = @"quickAddShortcut";
 }
 
 

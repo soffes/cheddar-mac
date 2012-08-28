@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0306DBB515EC830A00D6409B /* MASShortcut+UserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 0306DBAC15EC830A00D6409B /* MASShortcut+UserDefaults.m */; };
+		0306DBB615EC830A00D6409B /* MASShortcut.m in Sources */ = {isa = PBXBuildFile; fileRef = 0306DBAE15EC830A00D6409B /* MASShortcut.m */; };
+		0306DBB715EC830A00D6409B /* MASShortcutView+UserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 0306DBB015EC830A00D6409B /* MASShortcutView+UserDefaults.m */; };
+		0306DBB815EC830A00D6409B /* MASShortcutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0306DBB215EC830A00D6409B /* MASShortcutView.m */; };
 		031E242C15DB690F00EEA810 /* CDMTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 031E242B15DB690F00EEA810 /* CDMTextField.m */; };
 		032D16CF15DC3CE80015912A /* CDMTagFilterBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 032D16CE15DC3CE80015912A /* CDMTagFilterBar.m */; };
 		032D16D215DC4D170015912A /* NSURL+SSToolkitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 032D16D115DC4D160015912A /* NSURL+SSToolkitAdditions.m */; };
@@ -270,6 +274,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0306DBAB15EC830A00D6409B /* MASShortcut+UserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MASShortcut+UserDefaults.h"; sourceTree = "<group>"; };
+		0306DBAC15EC830A00D6409B /* MASShortcut+UserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MASShortcut+UserDefaults.m"; sourceTree = "<group>"; };
+		0306DBAD15EC830A00D6409B /* MASShortcut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASShortcut.h; sourceTree = "<group>"; };
+		0306DBAE15EC830A00D6409B /* MASShortcut.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASShortcut.m; sourceTree = "<group>"; };
+		0306DBAF15EC830A00D6409B /* MASShortcutView+UserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MASShortcutView+UserDefaults.h"; sourceTree = "<group>"; };
+		0306DBB015EC830A00D6409B /* MASShortcutView+UserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MASShortcutView+UserDefaults.m"; sourceTree = "<group>"; };
+		0306DBB115EC830A00D6409B /* MASShortcutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASShortcutView.h; sourceTree = "<group>"; };
+		0306DBB215EC830A00D6409B /* MASShortcutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASShortcutView.m; sourceTree = "<group>"; };
 		031E242A15DB690F00EEA810 /* CDMTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMTextField.h; sourceTree = "<group>"; };
 		031E242B15DB690F00EEA810 /* CDMTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMTextField.m; sourceTree = "<group>"; };
 		032D16CD15DC3CE80015912A /* CDMTagFilterBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMTagFilterBar.h; sourceTree = "<group>"; };
@@ -452,6 +464,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0306DBA915EC830A00D6409B /* MASShortcut */ = {
+			isa = PBXGroup;
+			children = (
+				0306DBAB15EC830A00D6409B /* MASShortcut+UserDefaults.h */,
+				0306DBAC15EC830A00D6409B /* MASShortcut+UserDefaults.m */,
+				0306DBAD15EC830A00D6409B /* MASShortcut.h */,
+				0306DBAE15EC830A00D6409B /* MASShortcut.m */,
+				0306DBAF15EC830A00D6409B /* MASShortcutView+UserDefaults.h */,
+				0306DBB015EC830A00D6409B /* MASShortcutView+UserDefaults.m */,
+				0306DBB115EC830A00D6409B /* MASShortcutView.h */,
+				0306DBB215EC830A00D6409B /* MASShortcutView.m */,
+			);
+			path = MASShortcut;
+			sourceTree = "<group>";
+		};
 		031E242D15DB69A300EEA810 /* Table View */ = {
 			isa = PBXGroup;
 			children = (
@@ -726,6 +753,7 @@
 		B21FF30015BF7D7B00AEEA97 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
+				0306DBA915EC830A00D6409B /* MASShortcut */,
 				B209654A15DAB8BD00E73B93 /* Sparkle */,
 				B27CBA5F15DA0A1B00BC851F /* RBSplitView */,
 				B27CBA2B15D9F12800BC851F /* SNRFetchedResultsController */,
@@ -1237,6 +1265,10 @@
 				032D16DB15DC50DA0015912A /* CDMTagTextFieldCell.m in Sources */,
 				032D16DE15DC52270015912A /* CDMColorView.m in Sources */,
 				038FF74915DDA596004B7316 /* CDMTrafficLightsView.m in Sources */,
+				0306DBB515EC830A00D6409B /* MASShortcut+UserDefaults.m in Sources */,
+				0306DBB615EC830A00D6409B /* MASShortcut.m in Sources */,
+				0306DBB715EC830A00D6409B /* MASShortcutView+UserDefaults.m in Sources */,
+				0306DBB815EC830A00D6409B /* MASShortcutView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

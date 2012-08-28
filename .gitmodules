@@ -16,3 +16,6 @@
 [submodule "Vendor/LetsMove"]
 	path = Vendor/LetsMove
 	url = https://github.com/samsoffes/LetsMove.git
+[submodule "Vendor/MASShortcut"]
+	path = Vendor/MASShortcut
+	url = git://github.com/shpakovski/MASShortcut.git
