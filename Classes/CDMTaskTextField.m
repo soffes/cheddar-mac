@@ -11,6 +11,7 @@
 
 @implementation CDMTaskTextField {
     BOOL _clickEditingEnabled;
+    NSTextView *_hitTestTextView;
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder
@@ -20,8 +21,22 @@
         self.font = [NSFont fontWithName:kCDMRegularFontName size:15.f];
         self.backgroundColor = [NSColor clearColor];
         self.drawsBackground = NO;
+        _hitTestTextView = [[NSTextView alloc] initWithFrame:[self frame]];
+        [[_hitTestTextView textContainer] setContainerSize:NSMakeSize(FLT_MAX, FLT_MAX)];
+        [[_hitTestTextView textContainer] setWidthTracksTextView:NO];
+        [_hitTestTextView setHorizontallyResizable:YES];
+        [self setPostsFrameChangedNotifications:YES];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(_textFieldFrameChanged:) name:NSViewFrameDidChangeNotification object:self];
+        [_hitTestTextView bind:@"attributedString" toObject:self withKeyPath:@"attributedStringValue" options:nil];
+        [self addObserver:self forKeyPath:@"attributedStringValue" options:0 context:nil];
     }
     return self;
+}
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [_hitTestTextView unbind:@"attributedString"];
 }
 
 #pragma mark - Mouse Events
@@ -39,7 +54,22 @@
         NSTextView *fieldEditor = (NSTextView*)[[self window] fieldEditor:NO forObject:self];
         [fieldEditor scrollRangeToVisible:NSMakeRange ([[fieldEditor string] length], 0)];
     } else {
-        [super mouseDown:theEvent];
+        // Largely based on this sample code
+        // <https://developer.apple.com/library/mac/#samplecode/LayoutManagerDemo/Listings/LayoutManagerDemo_MouseOverTextView_m.html#//apple_ref/doc/uid/DTS10000394-LayoutManagerDemo_MouseOverTextView_m-DontLinkElementID_6>
+        NSLayoutManager *layoutManager = [_hitTestTextView layoutManager];
+        NSTextContainer *textContainer = [_hitTestTextView textContainer];
+        NSPoint point = [self convertPoint:[theEvent locationInWindow] fromView:nil];
+        point.x -= [_hitTestTextView textContainerOrigin].x;
+        point.y -= [_hitTestTextView textContainerOrigin].y;
+        NSUInteger glyphIndex = [layoutManager glyphIndexForPoint:point inTextContainer:textContainer];
+        NSUInteger charIndex = [layoutManager characterIndexForGlyphAtIndex:glyphIndex];
+        NSDictionary *attributes = [[_hitTestTextView attributedString] attributesAtIndex:charIndex effectiveRange:NULL];
+        NSString *link = [attributes valueForKey:NSLinkAttributeName];
+        if (link) {
+            [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:link]];
+        } else {
+            [super mouseDown:theEvent];
+        }
     }
 }
 
@@ -47,5 +77,34 @@
 {
     [super textDidEndEditing:notification];
     [self setEditable:NO];
+}
+
+- (void)resetCursorRects
+{
+    [super resetCursorRects];
+    NSAttributedString *string = [_hitTestTextView attributedString];
+    NSLayoutManager *layoutManager = [_hitTestTextView layoutManager];
+    [string enumerateAttribute:NSLinkAttributeName inRange:NSMakeRange(0, [string length]) options:0 usingBlock:^(id value, NSRange range, BOOL *stop) {
+        if (value) {
+            NSRange glyphRange = [layoutManager glyphRangeForCharacterRange:range actualCharacterRange:NULL];
+            NSRect boundingRect = [layoutManager boundingRectForGlyphRange:glyphRange inTextContainer:[_hitTestTextView textContainer]];
+            [self addCursorRect:boundingRect cursor:[NSCursor pointingHandCursor]];
+        }
+    }];
+}
+
+#pragma mark - KVO
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    if ([keyPath isEqualToString:@"attributedStringValue"]) {
+        [self resetCursorRects];
+    }
+}
+#pragma mark - Private
+
+- (void)_textFieldFrameChanged:(NSNotification *)notification
+{
+    [_hitTestTextView setFrame:[self frame]];
 }
 @end

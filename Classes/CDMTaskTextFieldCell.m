@@ -19,11 +19,4 @@
     }
     return self;
 }
-
-- (NSText*)setUpFieldEditorAttributes:(NSText *)textObj {
-    NSTextView *textView = (NSTextView*)[super setUpFieldEditorAttributes:textObj];
-    NSDictionary *linkAttributes = [NSDictionary dictionaryWithObjectsAndKeys:[NSFont fontWithName:kCDMRegularFontName size:15.f], NSFontAttributeName, [NSColor cheddarBlueColor] , NSForegroundColorAttributeName, [NSCursor pointingHandCursor], NSCursorAttributeName, nil];
-    [textView setLinkTextAttributes:linkAttributes];
-    return textView;
-}
 @end
