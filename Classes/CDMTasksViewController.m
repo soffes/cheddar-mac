@@ -200,7 +200,7 @@ static NSString* const kCDMTasksViewControllerImageTagXUnfocused = @"tag-x-unfoc
     if (row != -1) {
         CDKTask *task = [[self.arrayController arrangedObjects] objectAtIndex:row];
         task.text = [textField stringValue];
-        [textField setAttributedStringValue:task.attributedDisplayText];
+        [self.tableView reloadDataForRowIndexes:[NSIndexSet indexSetWithIndex:row] columnIndexes:[NSIndexSet indexSetWithIndex:0]];
     }
 }
 

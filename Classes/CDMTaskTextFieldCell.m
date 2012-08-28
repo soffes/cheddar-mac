@@ -9,14 +9,27 @@
 #import "CDMTaskTextFieldCell.h"
 #import "NSColor+CDMAdditions.h"
 
+static CGFloat const kCDMTextFieldCellXInset = 12.0f;
+
 @implementation CDMTaskTextFieldCell
 
-- (id)initWithCoder:(NSCoder *)aDecoder
+- (NSRect)adjustedFrameToVerticallyCenterText:(NSRect)frame {
+	NSInteger offset = floor((NSHeight(frame) - ([[self font] ascender] - [[self font] descender])) / 2);
+	return NSInsetRect(frame, 0.f, offset);
+}
+
+
+- (void)editWithFrame:(NSRect)aRect inView:(NSView *)controlView editor:(NSText *)editor delegate:(id)delegate event:(NSEvent *)event {
+	[super editWithFrame:[self adjustedFrameToVerticallyCenterText:aRect] inView:controlView editor:editor delegate:delegate event:event];
+}
+
+
+- (void)selectWithFrame:(NSRect)aRect inView:(NSView *)controlView editor:(NSText *)editor delegate:(id)delegate start:(NSInteger)start length:(NSInteger)length {
+	[super selectWithFrame:[self adjustedFrameToVerticallyCenterText:aRect] inView:controlView editor:editor delegate:delegate start:start length:length];
+}
+
+- (void)drawInteriorWithFrame:(NSRect)cellFrame inView:(NSView *)controlView
 {
-    if ((self = [super initWithCoder:aDecoder])) {
-        [self setDrawsBackground:NO];
-        [self setBackgroundColor:[NSColor clearColor]];
-    }
-    return self;
+    [super drawInteriorWithFrame:[self adjustedFrameToVerticallyCenterText:cellFrame] inView:controlView];
 }
 @end

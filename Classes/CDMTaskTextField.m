@@ -36,6 +36,7 @@
 - (void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+    [self removeObserver:self forKeyPath:@"attributedStringValue"];
     [_hitTestTextView unbind:@"attributedString"];
 }
 
@@ -63,12 +64,14 @@
         point.y -= [_hitTestTextView textContainerOrigin].y;
         NSUInteger glyphIndex = [layoutManager glyphIndexForPoint:point inTextContainer:textContainer];
         NSUInteger charIndex = [layoutManager characterIndexForGlyphAtIndex:glyphIndex];
-        NSDictionary *attributes = [[_hitTestTextView attributedString] attributesAtIndex:charIndex effectiveRange:NULL];
-        NSString *link = [attributes valueForKey:NSLinkAttributeName];
-        if (link) {
-            [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:link]];
-        } else {
-            [super mouseDown:theEvent];
+        if (charIndex != NSNotFound && charIndex < [[_hitTestTextView attributedString] length]) {
+            NSDictionary *attributes = [[_hitTestTextView attributedString] attributesAtIndex:charIndex effectiveRange:NULL];
+            NSString *link = [attributes valueForKey:NSLinkAttributeName];
+            if (link) {
+                [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:link]];
+            } else {
+                [super mouseDown:theEvent];
+            }
         }
     }
 }
