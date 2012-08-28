@@ -8,6 +8,10 @@
 
 #import "CDMPreferencesWindowController.h"
 #import "MASShortcutView+UserDefaults.h"
+#import "MASShortcut+UserDefaults.h"
+#import <Carbon/Carbon.h>
+
+static NSString* const kCDMUserDefaultsQuickAddShortcutKey = @"quickAddShortcut";
 
 @implementation CDMPreferencesWindowController
 
@@ -31,7 +35,13 @@
 - (void)windowDidLoad {
 	[super windowDidLoad];
 	self.usernameLabel.stringValue = [NSString stringWithFormat:@"You are signed in as %@.", [CDKUser currentUser].username];
-    self.quickAddShortcutView.associatedUserDefaultsKey = @"quickAddShortcut";
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    if (![[ud objectForKey:kCDMUserDefaultsQuickAddShortcutKey] isKindOfClass:[NSData class]]) {
+        // Set up the default search shortcut
+        MASShortcut *shortcut = [MASShortcut shortcutWithKeyCode:kVK_ANSI_N modifierFlags:NSCommandKeyMask | NSAlternateKeyMask | NSShiftKeyMask];
+        [ud setObject:[shortcut data] forKey:kCDMUserDefaultsQuickAddShortcutKey];
+    }
+    self.quickAddShortcutView.associatedUserDefaultsKey = kCDMUserDefaultsQuickAddShortcutKey;
 }
 
 

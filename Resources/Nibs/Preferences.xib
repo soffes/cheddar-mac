@@ -54,7 +54,6 @@
 						<string key="NSFrame">{{149, 131}, {163, 19}}</string>
 						<reference key="NSSuperview" ref="484696813"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<string key="NSClassName">MASShortcutView</string>
 					</object>
@@ -360,7 +359,6 @@
 								<string key="NSFrame">{{141, 23}, {178, 32}}</string>
 								<reference key="NSSuperview" ref="640147172"/>
 								<reference key="NSWindow"/>
-								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:9</string>
 								<bool key="NSEnabled">YES</bool>
 								<object class="NSButtonCell" key="NSCell" id="796852134">
@@ -614,6 +612,14 @@
 						<reference key="destination" ref="767369440"/>
 					</object>
 					<int key="connectionID">426</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBOutletConnection" key="connection">
+						<string key="label">quickAddShortcutView</string>
+						<reference key="source" ref="764871119"/>
+						<reference key="destination" ref="896935794"/>
+					</object>
+					<int key="connectionID">428</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -1073,7 +1079,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">427</int>
+			<int key="maxID">428</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -1105,6 +1111,7 @@
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="accountPreferenceView">NSView</string>
 						<string key="generalPreferenceView">NSView</string>
+						<string key="quickAddShortcutView">MASShortcutView</string>
 						<string key="updatesPreferenceView">NSView</string>
 						<string key="usernameLabel">NSTextField</string>
 					</dictionary>
@@ -1116,6 +1123,10 @@
 						<object class="IBToOneOutletInfo" key="generalPreferenceView">
 							<string key="name">generalPreferenceView</string>
 							<string key="candidateClassName">NSView</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="quickAddShortcutView">
+							<string key="name">quickAddShortcutView</string>
+							<string key="candidateClassName">MASShortcutView</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="updatesPreferenceView">
 							<string key="name">updatesPreferenceView</string>

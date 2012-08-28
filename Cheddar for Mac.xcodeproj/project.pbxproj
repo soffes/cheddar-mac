@@ -11,6 +11,7 @@
 		0306DBB615EC830A00D6409B /* MASShortcut.m in Sources */ = {isa = PBXBuildFile; fileRef = 0306DBAE15EC830A00D6409B /* MASShortcut.m */; };
 		0306DBB715EC830A00D6409B /* MASShortcutView+UserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 0306DBB015EC830A00D6409B /* MASShortcutView+UserDefaults.m */; };
 		0306DBB815EC830A00D6409B /* MASShortcutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0306DBB215EC830A00D6409B /* MASShortcutView.m */; };
+		0306DBBE15EC87F400D6409B /* CDMQuickAddWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0306DBBD15EC87F400D6409B /* CDMQuickAddWindowController.m */; };
 		031E242C15DB690F00EEA810 /* CDMTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 031E242B15DB690F00EEA810 /* CDMTextField.m */; };
 		032D16CF15DC3CE80015912A /* CDMTagFilterBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 032D16CE15DC3CE80015912A /* CDMTagFilterBar.m */; };
 		032D16D215DC4D170015912A /* NSURL+SSToolkitAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 032D16D115DC4D160015912A /* NSURL+SSToolkitAdditions.m */; };
@@ -59,6 +60,7 @@
 		033883A815D9AAF8001FC04B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 033883A715D9AAF7001FC04B /* QuartzCore.framework */; };
 		0338840815D9D53C001FC04B /* CDMListsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0338840715D9D53B001FC04B /* CDMListsViewController.m */; };
 		0338840B15D9D66F001FC04B /* CDMTasksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0338840A15D9D66F001FC04B /* CDMTasksViewController.m */; };
+		03457A8315EC8AE300645547 /* QuickAdd.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03457A8215EC8AE300645547 /* QuickAdd.xib */; };
 		037252E115D9FCF700E87D87 /* CDKTask+CDMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 037252E015D9FCF700E87D87 /* CDKTask+CDMAdditions.m */; };
 		037253A815DA1C4000E87D87 /* CDMShadowTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 037253A715DA1C4000E87D87 /* CDMShadowTableView.m */; };
 		038FF74915DDA596004B7316 /* CDMTrafficLightsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 038FF74815DDA596004B7316 /* CDMTrafficLightsView.m */; };
@@ -282,6 +284,8 @@
 		0306DBB015EC830A00D6409B /* MASShortcutView+UserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MASShortcutView+UserDefaults.m"; sourceTree = "<group>"; };
 		0306DBB115EC830A00D6409B /* MASShortcutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASShortcutView.h; sourceTree = "<group>"; };
 		0306DBB215EC830A00D6409B /* MASShortcutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASShortcutView.m; sourceTree = "<group>"; };
+		0306DBBC15EC87F400D6409B /* CDMQuickAddWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMQuickAddWindowController.h; sourceTree = "<group>"; };
+		0306DBBD15EC87F400D6409B /* CDMQuickAddWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMQuickAddWindowController.m; sourceTree = "<group>"; };
 		031E242A15DB690F00EEA810 /* CDMTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMTextField.h; sourceTree = "<group>"; };
 		031E242B15DB690F00EEA810 /* CDMTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMTextField.m; sourceTree = "<group>"; };
 		032D16CD15DC3CE80015912A /* CDMTagFilterBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMTagFilterBar.h; sourceTree = "<group>"; };
@@ -347,6 +351,7 @@
 		0338840715D9D53B001FC04B /* CDMListsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMListsViewController.m; sourceTree = "<group>"; };
 		0338840915D9D66F001FC04B /* CDMTasksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMTasksViewController.h; sourceTree = "<group>"; };
 		0338840A15D9D66F001FC04B /* CDMTasksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMTasksViewController.m; sourceTree = "<group>"; };
+		03457A8215EC8AE300645547 /* QuickAdd.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuickAdd.xib; sourceTree = "<group>"; };
 		037252DF15D9FCF700E87D87 /* CDKTask+CDMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CDKTask+CDMAdditions.h"; sourceTree = "<group>"; };
 		037252E015D9FCF700E87D87 /* CDKTask+CDMAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CDKTask+CDMAdditions.m"; sourceTree = "<group>"; };
 		037253A615DA1C4000E87D87 /* CDMShadowTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMShadowTableView.h; sourceTree = "<group>"; };
@@ -746,6 +751,7 @@
 				B2A23DA315D9997700EA9D2D /* About.xib */,
 				B2A23DA515D9997E00EA9D2D /* Preferences.xib */,
 				03F2D96C15DAD89900EEC543 /* Plus.xib */,
+				03457A8215EC8AE300645547 /* QuickAdd.xib */,
 			);
 			path = Nibs;
 			sourceTree = "<group>";
@@ -898,6 +904,8 @@
 				B2A23D7B15D997E300EA9D2D /* CDMPreferencesWindowController.m */,
 				03F2D96915DAD88C00EEC543 /* CDMPlusWindowController.h */,
 				03F2D96A15DAD88C00EEC543 /* CDMPlusWindowController.m */,
+				0306DBBC15EC87F400D6409B /* CDMQuickAddWindowController.h */,
+				0306DBBD15EC87F400D6409B /* CDMQuickAddWindowController.m */,
 			);
 			name = "Window Controllers";
 			sourceTree = "<group>";
@@ -1206,6 +1214,7 @@
 				03F7954015E41FA600C9F652 /* tag-x-unfocused.png in Resources */,
 				03F7954115E41FA600C9F652 /* tag-x-unfocused@2x.png in Resources */,
 				03F7954215E41FA600C9F652 /* About.xib in Resources */,
+				03457A8315EC8AE300645547 /* QuickAdd.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1269,6 +1278,7 @@
 				0306DBB615EC830A00D6409B /* MASShortcut.m in Sources */,
 				0306DBB715EC830A00D6409B /* MASShortcutView+UserDefaults.m in Sources */,
 				0306DBB815EC830A00D6409B /* MASShortcutView.m in Sources */,
+				0306DBBE15EC87F400D6409B /* CDMQuickAddWindowController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
