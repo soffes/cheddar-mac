@@ -61,6 +61,7 @@
 		0338840815D9D53C001FC04B /* CDMListsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0338840715D9D53B001FC04B /* CDMListsViewController.m */; };
 		0338840B15D9D66F001FC04B /* CDMTasksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0338840A15D9D66F001FC04B /* CDMTasksViewController.m */; };
 		03457A8315EC8AE300645547 /* QuickAdd.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03457A8215EC8AE300645547 /* QuickAdd.xib */; };
+		0371CF8815ED60A400B304CC /* CDMTasksTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0371CF8715ED60A400B304CC /* CDMTasksTableView.m */; };
 		037252E115D9FCF700E87D87 /* CDKTask+CDMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 037252E015D9FCF700E87D87 /* CDKTask+CDMAdditions.m */; };
 		037253A815DA1C4000E87D87 /* CDMShadowTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 037253A715DA1C4000E87D87 /* CDMShadowTableView.m */; };
 		038FF74915DDA596004B7316 /* CDMTrafficLightsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 038FF74815DDA596004B7316 /* CDMTrafficLightsView.m */; };
@@ -352,6 +353,8 @@
 		0338840915D9D66F001FC04B /* CDMTasksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMTasksViewController.h; sourceTree = "<group>"; };
 		0338840A15D9D66F001FC04B /* CDMTasksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMTasksViewController.m; sourceTree = "<group>"; };
 		03457A8215EC8AE300645547 /* QuickAdd.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuickAdd.xib; sourceTree = "<group>"; };
+		0371CF8615ED60A300B304CC /* CDMTasksTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMTasksTableView.h; sourceTree = "<group>"; };
+		0371CF8715ED60A400B304CC /* CDMTasksTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMTasksTableView.m; sourceTree = "<group>"; };
 		037252DF15D9FCF700E87D87 /* CDKTask+CDMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CDKTask+CDMAdditions.h"; sourceTree = "<group>"; };
 		037252E015D9FCF700E87D87 /* CDKTask+CDMAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CDKTask+CDMAdditions.m"; sourceTree = "<group>"; };
 		037253A615DA1C4000E87D87 /* CDMShadowTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMShadowTableView.h; sourceTree = "<group>"; };
@@ -499,6 +502,8 @@
 				B249725515CC02C0008388E5 /* CDMTaskTableCellView.m */,
 				B2B2E15B15D9B158008672DA /* CDMPreferencesRowView.h */,
 				B2B2E15C15D9B158008672DA /* CDMPreferencesRowView.m */,
+				0371CF8615ED60A300B304CC /* CDMTasksTableView.h */,
+				0371CF8715ED60A400B304CC /* CDMTasksTableView.m */,
 			);
 			name = "Table View";
 			sourceTree = "<group>";
@@ -1279,6 +1284,7 @@
 				0306DBB715EC830A00D6409B /* MASShortcutView+UserDefaults.m in Sources */,
 				0306DBB815EC830A00D6409B /* MASShortcutView.m in Sources */,
 				0306DBBE15EC87F400D6409B /* CDMQuickAddWindowController.m in Sources */,
+				0371CF8815ED60A400B304CC /* CDMTasksTableView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,4 +7,6 @@
 //
 
 @interface CDMTaskTableRowView : NSTableRowView
+@property (nonatomic, assign) BOOL taskSelected;
+@property (nonatomic, assign) NSInteger rowIndex;
 @end

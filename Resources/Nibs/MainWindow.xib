@@ -65,6 +65,7 @@
 						<string key="NSFrame">{{456, 14}, {16, 17}}</string>
 						<reference key="NSSuperview" ref="364424689"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSImageCell" key="NSCell" id="211742878">
@@ -175,6 +176,7 @@
 						<string key="NSFrame">{{575, 15}, {15, 15}}</string>
 						<reference key="NSSuperview" ref="154427372"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSButtonCell" key="NSCell" id="617846072">
@@ -521,6 +523,7 @@
 													<string key="NSFrame">{{1, 119}, {223, 15}}</string>
 													<reference key="NSSuperview" ref="672568933"/>
 													<reference key="NSWindow"/>
+													<reference key="NSNextKeyView"/>
 													<string key="NSReuseIdentifierKey">_NS:60</string>
 													<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 													<int key="NSsFlags">1</int>
@@ -859,7 +862,7 @@
 									<int key="NSvFlags">266</int>
 									<string key="NSFrame">{{34, 9}, {348, 20}}</string>
 									<reference key="NSSuperview" ref="418552173"/>
-									<reference key="NSNextKeyView"/>
+									<reference key="NSNextKeyView" ref="1055749869"/>
 									<string key="NSAntiCompressionPriority">{250, 750}</string>
 									<bool key="NSEnabled">YES</bool>
 									<object class="NSTextFieldCell" key="NSCell" id="539052915">
@@ -1492,7 +1495,7 @@
 				<string key="261.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="264.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="265.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="266.CustomClassName">CDMShadowTableView</string>
+				<string key="266.CustomClassName">CDMTasksTableView</string>
 				<string key="266.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<boolean value="YES" key="266.ibExternalAutomaticallyCalculatesRowSizeFromViewHeight"/>
 				<string key="267.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -1779,6 +1782,14 @@
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">./Classes/CDMTaskTextFieldCell.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">CDMTasksTableView</string>
+					<string key="superclassName">CDMShadowTableView</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/CDMTasksTableView.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">

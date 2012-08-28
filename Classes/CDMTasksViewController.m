@@ -222,7 +222,10 @@ static NSString* const kCDMTasksViewControllerImageTagXUnfocused = @"tag-x-unfoc
 #pragma mark - NSTableViewDelegate
 
 - (NSTableRowView *)tableView:(NSTableView *)tableView rowViewForRow:(NSInteger)row {
-	return [[CDMTaskTableRowView alloc] initWithFrame:CGRectZero];
+	CDMTaskTableRowView *rowView = [[CDMTaskTableRowView alloc] initWithFrame:CGRectZero];
+    rowView.rowIndex = row;
+    rowView.taskSelected = NO;
+    return rowView;
 }
 
 

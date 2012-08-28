@@ -18,6 +18,8 @@
     if ((self = [super initWithCoder:aDecoder])) {
         self.textColor = [NSColor cheddarLightTextColor];
         self.font = [NSFont fontWithName:kCDMRegularFontName size:15.f];
+        self.backgroundColor = [NSColor clearColor];
+        self.drawsBackground = NO;
     }
     return self;
 }
@@ -28,7 +30,6 @@
 {
     if ([theEvent clickCount] == 2) {
         [self setEditable:YES];
-        [self setBackgroundColor:[NSColor whiteColor]];
         if ([self.delegate respondsToSelector:@selector(editingTextForTextField:)]) {
             [self setAttributedStringValue:nil];
             [self setStringValue:[(id)self.delegate editingTextForTextField:self]];

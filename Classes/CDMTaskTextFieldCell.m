@@ -11,6 +11,15 @@
 
 @implementation CDMTaskTextFieldCell
 
+- (id)initWithCoder:(NSCoder *)aDecoder
+{
+    if ((self = [super initWithCoder:aDecoder])) {
+        [self setDrawsBackground:NO];
+        [self setBackgroundColor:[NSColor clearColor]];
+    }
+    return self;
+}
+
 - (NSText*)setUpFieldEditorAttributes:(NSText *)textObj {
     NSTextView *textView = (NSTextView*)[super setUpFieldEditorAttributes:textObj];
     NSDictionary *linkAttributes = [NSDictionary dictionaryWithObjectsAndKeys:[NSFont fontWithName:kCDMRegularFontName size:15.f], NSFontAttributeName, [NSColor cheddarBlueColor] , NSForegroundColorAttributeName, [NSCursor pointingHandCursor], NSCursorAttributeName, nil];
