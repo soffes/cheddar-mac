@@ -73,6 +73,8 @@
             } else {
                 [super mouseDown:theEvent];
             }
+        } else {
+            [super mouseDown:theEvent];
         }
     }
 }
