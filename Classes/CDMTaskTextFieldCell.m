@@ -9,9 +9,17 @@
 #import "CDMTaskTextFieldCell.h"
 #import "NSColor+CDMAdditions.h"
 
-static CGFloat const kCDMTextFieldCellXInset = 12.0f;
-
 @implementation CDMTaskTextFieldCell
+
+- (NSText *)setUpFieldEditorAttributes:(NSText *)textObj
+{
+    NSTextView *textView = (NSTextView *)[super setUpFieldEditorAttributes:textObj];
+  //  [textView setDrawsBackground:NO];
+    [textView setBackgroundColor:[NSColor clearColor]];
+  //  [[textView enclosingScrollView] setDrawsBackground:NO];
+    [[textView enclosingScrollView] setBackgroundColor:[NSColor clearColor]];
+    return textView;
+}
 
 - (NSRect)adjustedFrameToVerticallyCenterText:(NSRect)frame {
 	NSInteger offset = floor((NSHeight(frame) - ([[self font] ascender] - [[self font] descender])) / 2);

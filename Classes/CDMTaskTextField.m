@@ -60,12 +60,13 @@
         NSLayoutManager *layoutManager = [_hitTestTextView layoutManager];
         NSTextContainer *textContainer = [_hitTestTextView textContainer];
         NSPoint point = [self convertPoint:[theEvent locationInWindow] fromView:nil];
-        point.x -= [_hitTestTextView textContainerOrigin].x;
-        point.y -= [_hitTestTextView textContainerOrigin].y;
+        point.y = NSMidY([_hitTestTextView bounds]);
         NSUInteger glyphIndex = [layoutManager glyphIndexForPoint:point inTextContainer:textContainer];
         NSUInteger charIndex = [layoutManager characterIndexForGlyphAtIndex:glyphIndex];
-        if (charIndex != NSNotFound && charIndex < [[_hitTestTextView attributedString] length]) {
-            NSDictionary *attributes = [[_hitTestTextView attributedString] attributesAtIndex:charIndex effectiveRange:NULL];
+        NSAttributedString *string = [_hitTestTextView attributedString];
+        NSRect boundingRect = NSMakeRect(0.f, 0.f, [string size].width, [_hitTestTextView frame].size.height);
+        if (NSPointInRect(point, boundingRect) && charIndex != NSNotFound && charIndex < [string length]) {
+            NSDictionary *attributes = [string attributesAtIndex:charIndex effectiveRange:NULL];
             NSString *link = [attributes valueForKey:NSLinkAttributeName];
             if (link) {
                 [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:link]];
