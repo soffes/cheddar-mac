@@ -65,6 +65,7 @@
             [item setRepresentedObject:list];
             if (selectedList && [list isEqual:selectedList]) {
                 selectedItem = item;
+                _selectedList = list;
             }
         }
         [self.listPopUpButton setMenu:menu];
