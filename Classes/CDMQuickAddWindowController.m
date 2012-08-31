@@ -20,6 +20,7 @@
 @implementation CDMQuickAddWindowController {
     NSArrayController *_arrayController;
     CDKList *_selectedList;
+    BOOL _closeWhenFinished;
 }
 @synthesize listPopUpButton = _listPopUpButton;
 @synthesize addTaskField = _addTaskField;
@@ -90,11 +91,20 @@
     [self.addTaskField setStringValue:@""];
     [[self _tasksViewController] addTaskWithName:taskText inList:_selectedList];
     [[self window] close];
+    if (_closeWhenFinished) {
+        [NSApp hide:nil];
+    }
 }
 
 - (void)activate
 {
-    [NSApp activateIgnoringOtherApps:YES];
+    if (![NSApp isActive]) {
+        for (NSWindow *window in [NSApp windows]) {
+            _closeWhenFinished = YES;
+            [window orderOut:nil];
+        }
+        [NSApp activateIgnoringOtherApps:YES];
+    }
     [self showWindow:nil];
     [[self window] makeFirstResponder:self.addTaskField];
 }
