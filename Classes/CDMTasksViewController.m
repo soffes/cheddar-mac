@@ -128,8 +128,10 @@ static NSString* const kCDMTasksViewControllerImageTagXUnfocused = @"tag-x-unfoc
 
 - (void)addFilterForTag:(CDKTag*)tag
 {
-    [_filterTags addObject:tag];
-    [self _resetTagFilter];
+    if (![_filterTags containsObject:tag]) {
+        [_filterTags addObject:tag];
+        [self _resetTagFilter];
+    }
 }
 
 - (void)_resetTagFilter
