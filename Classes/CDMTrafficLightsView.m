@@ -7,6 +7,7 @@
 //
 
 #import "CDMTrafficLightsView.h"
+#import <QuartzCore/QuartzCore.h>
 
 static NSString* const kCDMTrafficLightsViewImageNameTrafficNormal = @"traffic-normal";
 static NSString* const kCDMTrafficLightsViewImageNameTrafficClose = @"traffic-close";
@@ -21,6 +22,8 @@ static NSString* const kCDMTrafficLightsViewImageNameTrafficZoomGraphite = @"tra
 static NSString* const kCDMTrafficLightsViewImageNameTrafficClosePressedGraphite = @"traffic-close-graphite-pressed";
 static NSString* const kCDMTrafficLightsViewImageNameTrafficMinimizePressedGraphite = @"traffic-minimize-graphite-pressed";
 static NSString* const kCDMTrafficLightsViewImageNameTrafficZoomPressedGraphite = @"traffic-zoom-graphite-pressed";
+
+static CGFloat const kCDMTrafficLightsViewAnimationDuration = 0.1f;
 
 @interface CDMTrafficLightsView ()
 - (NSButton*)_borderlessButtonWithRect:(NSRect)rect;
@@ -84,26 +87,65 @@ static NSString* const kCDMTrafficLightsViewImageNameTrafficZoomPressedGraphite 
 
 #pragma mark - Mouse Events
 
-- (void)mouseEntered:(NSEvent *)theEvent
-{
-    BOOL graphite = [self _isGraphite];
-	if ([_closeButton isEnabled]) {
-        [_closeButton setImage:[NSImage imageNamed:graphite ? kCDMTrafficLightsViewImageNameTrafficCloseGraphite : kCDMTrafficLightsViewImageNameTrafficClose]];
-    }
-    if ([_minimizeButton isEnabled]) {
-        [_minimizeButton setImage:[NSImage imageNamed:graphite ? kCDMTrafficLightsViewImageNameTrafficMinimizeGraphite : kCDMTrafficLightsViewImageNameTrafficMinimize]];
-    }
-	if ([_zoomButton isEnabled]) {
-        [_zoomButton setImage:[NSImage imageNamed:graphite ? kCDMTrafficLightsViewImageNameTrafficZoomGraphite : kCDMTrafficLightsViewImageNameTrafficZoom]];
-    }
+- (void)mouseEntered:(NSEvent *)theEvent {
+    [self _animateButtonsWithState:YES];
 }
 
-- (void)mouseExited:(NSEvent *)theEvent
-{
+- (void)mouseExited:(NSEvent *)theEvent {
+    [self _animateButtonsWithState:NO];
+}
+
+- (void)_animateButtonsWithState:(BOOL)state {
+    BOOL graphite = [self _isGraphite];
+    NSButton *newCloseButton = nil;
+    NSButton *newMinButton = nil;
+    NSButton *newZoomButton = nil;
     NSImage *trafficNormal = [NSImage imageNamed:kCDMTrafficLightsViewImageNameTrafficNormal];
-    [_closeButton setImage:trafficNormal];
-    [_minimizeButton setImage:trafficNormal];
-    [_zoomButton setImage:trafficNormal];
+	if ([_closeButton isEnabled]) {
+        NSImage *closeImage = state ? [NSImage imageNamed:graphite ? kCDMTrafficLightsViewImageNameTrafficCloseGraphite : kCDMTrafficLightsViewImageNameTrafficClose] : trafficNormal;
+        newCloseButton = [self _borderlessButtonWithRect:[_closeButton frame]];
+        [newCloseButton setAlternateImage:[_closeButton alternateImage]];
+        [newCloseButton setAlphaValue:0.f];
+        [newCloseButton setImage:closeImage];
+        [self addSubview:newCloseButton];
+    }
+    if ([_minimizeButton isEnabled]) {
+        NSImage *minImage = state ? [NSImage imageNamed:graphite ? kCDMTrafficLightsViewImageNameTrafficMinimizeGraphite : kCDMTrafficLightsViewImageNameTrafficMinimize] : trafficNormal;
+        newMinButton = [self _borderlessButtonWithRect:[_minimizeButton frame]];
+        [newMinButton setAlternateImage:[_minimizeButton alternateImage]];
+        [newMinButton setAlphaValue:0.f];
+        [newMinButton setImage:minImage];
+        [self addSubview:newMinButton];
+    }
+	if ([_zoomButton isEnabled]) {
+        NSImage *zoomImage = state ? [NSImage imageNamed:graphite ? kCDMTrafficLightsViewImageNameTrafficZoomGraphite : kCDMTrafficLightsViewImageNameTrafficZoom] : trafficNormal;
+        newZoomButton = [self _borderlessButtonWithRect:[_zoomButton frame]];
+        [newZoomButton setAlternateImage:[_zoomButton alternateImage]];
+        [newZoomButton setAlphaValue:0.f];
+        [newZoomButton setImage:zoomImage];
+        [self addSubview:newZoomButton];
+    }
+    [NSAnimationContext beginGrouping];
+    [[NSAnimationContext currentContext] setDuration:kCDMTableViewAnimationDuration];
+    [[NSAnimationContext currentContext] setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
+    [[NSAnimationContext currentContext] setCompletionHandler:^{
+        if (newCloseButton) {
+            [_closeButton removeFromSuperview];
+            _closeButton = newCloseButton;
+        }
+        if (newMinButton) {
+            [_minimizeButton removeFromSuperview];
+            _minimizeButton = newMinButton;
+        }
+        if (newZoomButton) {
+            [_zoomButton removeFromSuperview];
+            _zoomButton = newZoomButton;
+        }
+    }];
+    [[newCloseButton animator] setAlphaValue:1.f];
+    [[newMinButton animator] setAlphaValue:1.f];
+    [[newZoomButton animator] setAlphaValue:1.f];
+    [NSAnimationContext endGrouping];
 }
 
 #pragma mark - Private
