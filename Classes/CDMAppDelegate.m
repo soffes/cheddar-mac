@@ -14,6 +14,9 @@
 #import "CDMListsViewController.h"
 #import "CDMTasksViewController.h"
 #import "CDMPlusWindowController.h"
+#import "CDMQuickAddWindowController.h"
+#import "MASShortcutView+UserDefaults.h"
+#import "MASShortcut+UserDefaults.h"
 
 @interface CDMAppDelegate ()
 - (void)_userChanged:(NSNotification *)notification;
@@ -23,6 +26,7 @@
 
 @implementation CDMAppDelegate {
     CDMPlusWindowController *_plusWindowController;
+    CDMQuickAddWindowController *_quickAddWindowController;
 }
 
 @synthesize signInWindowController = _signInWindowController;
@@ -169,10 +173,24 @@
     self.viewMenu.delegate = _mainWindowController;
     _mainWindowController.listMenu = self.listMenu;
 	[_mainWindowController showWindow:nil];
+    
+    _quickAddWindowController = [[CDMQuickAddWindowController alloc] init];
 
 	if (![CDKUser currentUser]) {
 		[self.signInWindowController showWindow:nil];
 	}
+    
+    
+    // Configure shortcuts
+    NSUserDefaults *ud = [NSUserDefaults standardUserDefaults];
+    if (![[ud objectForKey:kCDMUserDefaultsQuickAddShortcutKey] isKindOfClass:[NSData class]]) {
+        // Set up the default search shortcut
+        MASShortcut *shortcut = [MASShortcut shortcutWithKeyCode:kVK_ANSI_N modifierFlags:NSCommandKeyMask | NSAlternateKeyMask | NSShiftKeyMask];
+        [ud setObject:[shortcut data] forKey:kCDMUserDefaultsQuickAddShortcutKey];
+    }
+    [MASShortcut registerGlobalShortcutWithUserDefaultsKey:kCDMUserDefaultsQuickAddShortcutKey handler:^{
+        [_quickAddWindowController showWindow:nil];
+    }];
 
 	dispatch_async(dispatch_get_main_queue(), ^{
 		// Initialize the connection to Pusher

@@ -107,6 +107,8 @@ static CGFloat const kCDMTrafficLightsViewAnimationDuration = 0.1f;
         [newCloseButton setAlternateImage:[_closeButton alternateImage]];
         [newCloseButton setAlphaValue:0.f];
         [newCloseButton setImage:closeImage];
+        [newCloseButton setAction:[_closeButton action]];
+        [newCloseButton setTarget:[_closeButton target]];
         [self addSubview:newCloseButton];
     }
     if ([_minimizeButton isEnabled]) {
@@ -115,6 +117,8 @@ static CGFloat const kCDMTrafficLightsViewAnimationDuration = 0.1f;
         [newMinButton setAlternateImage:[_minimizeButton alternateImage]];
         [newMinButton setAlphaValue:0.f];
         [newMinButton setImage:minImage];
+        [newMinButton setAction:[_minimizeButton action]];
+        [newMinButton setTarget:[_minimizeButton target]];
         [self addSubview:newMinButton];
     }
 	if ([_zoomButton isEnabled]) {
@@ -123,6 +127,8 @@ static CGFloat const kCDMTrafficLightsViewAnimationDuration = 0.1f;
         [newZoomButton setAlternateImage:[_zoomButton alternateImage]];
         [newZoomButton setAlphaValue:0.f];
         [newZoomButton setImage:zoomImage];
+        [newZoomButton setAction:[_zoomButton action]];
+        [newZoomButton setTarget:[_zoomButton target]];
         [self addSubview:newZoomButton];
     }
     [NSAnimationContext beginGrouping];

@@ -13,4 +13,5 @@ extern CGFloat const kCDMTableViewAnimationDuration;
 extern NSString* const kCDMURLScheme;
 extern CGFloat const kCDMWindowTrafficLightsSpacing;
 extern CGFloat const kCDMWindowTrafficLightsYInset;
+extern NSString* const kCDMUserDefaultsQuickAddShortcutKey;
 #endif
