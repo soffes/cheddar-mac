@@ -91,18 +91,17 @@
     [self.addTaskField setStringValue:@""];
     [[self _tasksViewController] addTaskWithName:taskText inList:_selectedList];
     [[self window] close];
-    if (_closeWhenFinished) {
-        [NSApp hide:nil];
-    }
 }
 
 - (void)activate
 {
     if (![NSApp isActive]) {
         for (NSWindow *window in [NSApp windows]) {
-            _closeWhenFinished = YES;
-            [window orderOut:nil];
+            if (![window isVisible]) {
+                [window close];
+            }
         }
+        _closeWhenFinished = YES;
         [NSApp activateIgnoringOtherApps:YES];
     }
     [self showWindow:nil];

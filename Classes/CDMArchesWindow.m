@@ -122,7 +122,8 @@ static CGFloat const kCDMArchesWindowShakeVigour = 0.05f;
 
 #pragma mark - NSResponder
 
-- (BOOL)canBecomeKeyWindow {
+- (BOOL)canBecomeKeyWindow
+{
     return YES;
 }
 
