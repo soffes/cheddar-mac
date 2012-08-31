@@ -91,17 +91,17 @@ static NSString* const kCDMTasksViewControllerImageTagXUnfocused = @"tag-x-unfoc
 - (IBAction)addTask:(id)sender {
     NSString *taskText = [self.taskField stringValue];
     [self.taskField setStringValue:@""];
-    [self addTaskWithName:taskText];
+    [self addTaskWithName:taskText inList:self.selectedList];
 }
 
-- (void)addTaskWithName:(NSString *)name
+- (void)addTaskWithName:(NSString *)name inList:(CDKList *)list
 {
     if ([name length]) {
         CDKTask *task = [[CDKTask alloc] init];
         task.text = name;
         task.displayText = name;
-        task.list = self.selectedList;
-        task.position = [NSNumber numberWithInteger:self.selectedList.highestPosition + 1];
+        task.list = list;
+        task.position = [NSNumber numberWithInteger:list.highestPosition + 1];
         [task createWithSuccess:^{
             NSUInteger index = [[self.arrayController arrangedObjects] indexOfObject:task];
             if (index != NSNotFound) {

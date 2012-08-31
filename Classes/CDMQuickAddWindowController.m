@@ -87,7 +87,7 @@
 - (IBAction)addTask:(id)sender {
     NSString *taskText = [self.addTaskField stringValue];
     [self.addTaskField setStringValue:@""];
-    [[self _tasksViewController] addTaskWithName:taskText];
+    [[self _tasksViewController] addTaskWithName:taskText inList:_selectedList];
     [[self window] close];
 }
 
