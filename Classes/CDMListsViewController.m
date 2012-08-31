@@ -210,6 +210,8 @@ static CGFloat const kCDMListsViewControllerAddListAnimationDuration = 0.15f;
 #pragma mark - NSTableViewDelegate
 
 - (void)tableViewSelectionDidChange:(NSNotification *)notification {
+    [self willChangeValueForKey:@"selectedList"];
+    [self didChangeValueForKey:@"selectedList"];
     NSInteger selectedRow = [self.tableView selectedRow];
     if (selectedRow != -1) {
         CDKList *list = [[self.arrayController arrangedObjects] objectAtIndex:selectedRow];

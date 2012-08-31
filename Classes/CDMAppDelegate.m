@@ -191,7 +191,7 @@
         [ud setObject:[shortcut data] forKey:kCDMUserDefaultsQuickAddShortcutKey];
     }
     [MASShortcut registerGlobalShortcutWithUserDefaultsKey:kCDMUserDefaultsQuickAddShortcutKey handler:^{
-        [_quickAddWindowController showWindow:nil];
+        [_quickAddWindowController activate];
     }];
 
 	dispatch_async(dispatch_get_main_queue(), ^{

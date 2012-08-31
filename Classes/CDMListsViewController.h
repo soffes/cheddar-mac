@@ -17,8 +17,7 @@
 @property (nonatomic, weak) IBOutlet NSTextField *addListField;
 @property (nonatomic, strong) IBOutlet NSView *noListsView;
 @property (nonatomic, strong) IBOutlet NSView *loadingListsView;
-
-- (CDKList *)selectedList;
+@property (nonatomic, strong, readonly) CDKList *selectedList;
 
 - (IBAction)reload:(id)sender;
 - (IBAction)addList:(id)sender;
