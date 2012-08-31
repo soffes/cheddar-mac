@@ -175,6 +175,7 @@ static CGFloat const kCDMListsViewControllerAddListAnimationDuration = 0.15f;
 
 - (BOOL)control:(NSControl *)control textView:(NSTextView *)textView doCommandBySelector:(SEL)command {
     if (command == @selector(cancelOperation:)) {
+        [[control window] makeFirstResponder:[control window]];
         [self closeAddList:nil];
         return YES;
     }

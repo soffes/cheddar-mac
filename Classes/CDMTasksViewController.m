@@ -240,6 +240,15 @@ static NSString* const kCDMTasksViewControllerImageTagXUnfocused = @"tag-x-unfoc
     }
 }
 
+- (BOOL)control:(NSControl *)control textView:(NSTextView *)textView doCommandBySelector:(SEL)command
+{
+    if (command == @selector(cancelOperation:)) {
+        [[control window] makeFirstResponder:[control window]];
+        return YES;
+    }
+    return NO;
+}
+
 #pragma mark - Accessors
 
 - (void)setSelectedList:(CDKList *)selectedList {
