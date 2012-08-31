@@ -21,11 +21,13 @@ enum {
 typedef NSUInteger CDMListsMenuItemTag;
 
 static NSString* const kCDMNoListsNibName = @"NoLists";
+static NSString* const kCDMLoadingListsNibName = @"LoadingLists";
 static NSString* const kCDMListsDragTypeRearrange = @"CDMListsDragTypeRearrange";
 static CGFloat const kCDMListsViewControllerAddListAnimationDuration = 0.15f;
 
 @interface CDMListsViewController ()
 - (void)_setNoListsViewVisible:(BOOL)visible;
+- (void)_setLoadingListsViewVisible:(BOOL)visible;
 // Menu Item Actions
 - (void)_renameList:(NSMenuItem *)menuItem;
 - (void)_archiveAllTasks:(NSMenuItem *)menuItem;
@@ -35,6 +37,7 @@ static CGFloat const kCDMListsViewControllerAddListAnimationDuration = 0.15f;
 
 @implementation CDMListsViewController {
     BOOL _awakenFromNib;
+    BOOL _isLoading;
     CDMColorView *_overlayView;
 }
 @synthesize arrayController = _arrayController;
@@ -43,6 +46,7 @@ static CGFloat const kCDMListsViewControllerAddListAnimationDuration = 0.15f;
 @synthesize addListView = _addListView;
 @synthesize addListField = _addListField;
 @synthesize noListsView = _noListsView;
+@synthesize loadingListsView = _loadingListsView;
 
 #pragma mark - NSObject
 
@@ -58,7 +62,7 @@ static CGFloat const kCDMListsViewControllerAddListAnimationDuration = 0.15f;
     self.arrayController.managedObjectContext = [CDKList mainContext];
 	self.arrayController.fetchPredicate = [NSPredicate predicateWithFormat:@"archivedAt = nil && user = %@", [CDKUser currentUser]];
 	self.arrayController.sortDescriptors = [CDKList defaultSortDescriptors];
-    [self addObserver:self forKeyPath:@"arrayController.arrangedObjects" options:0 context:NULL];
+    [self.arrayController addObserver:self forKeyPath:@"arrangedObjects" options:0 context:NULL];
 
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reload:) name:kCDKCurrentUserChangedNotificationName object:nil];
 
@@ -68,25 +72,27 @@ static CGFloat const kCDMListsViewControllerAddListAnimationDuration = 0.15f;
 
 - (void)dealloc
 {
-    [self removeObserver:self forKeyPath:@"arrayController.arrangedObjects"];
+    [_arrayController removeObserver:self forKeyPath:@"arrangedObjects"];
 }
-
-#pragma mark - KVO
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
-    if ([keyPath isEqualToString:@"arrayController.arrangedObjects"]) {
-        [self _setNoListsViewVisible:[[self.arrayController arrangedObjects] count] == 0];
+    if ([keyPath isEqualToString:@"arrangedObjects"]) {
+        [self _setLoadingListsViewVisible:_isLoading && [[self.arrayController arrangedObjects] count] == 0];
     }
 }
 
 #pragma mark - Actions
 
 - (IBAction)reload:(id)sender {
-	[[CDKHTTPClient sharedClient] getListsWithSuccess:nil failure:^(AFJSONRequestOperation *operation, NSError *error) {
-		NSLog(@"Failed to get lists: %@", error);
-	}];
-
+    [self _setLoadingListsViewVisible:[[self.arrayController arrangedObjects] count] == 0];
+    [[CDKHTTPClient sharedClient] getListsWithSuccess:^(AFJSONRequestOperation *operation, id responseObject) {
+        [self _setLoadingListsViewVisible:NO];
+        [self _setNoListsViewVisible:[[self.arrayController arrangedObjects] count] == 0];
+    } failure:^(AFJSONRequestOperation *operation, NSError *error) {
+        NSLog(@"Failed to get lists: %@", error);
+        [self _setLoadingListsViewVisible:NO];
+    }];
 	[[CDKHTTPClient sharedClient] updateCurrentUserWithSuccess:nil failure:nil];
 }
 
@@ -353,6 +359,23 @@ static CGFloat const kCDMListsViewControllerAddListAnimationDuration = 0.15f;
         }];
         [[self.noListsView animator] setAlphaValue:0.f];
         [NSAnimationContext endGrouping];
+    }
+}
+
+- (void)_setLoadingListsViewVisible:(BOOL)visible
+{
+    if (visible && ![self.loadingListsView superview]) {
+        _isLoading = YES;
+        if (!self.loadingListsView) {
+            [NSBundle loadNibNamed:kCDMLoadingListsNibName owner:self];
+        }
+        NSScrollView *scrollView = [self.tableView enclosingScrollView];
+        [self.loadingListsView setFrame:[scrollView frame]];
+        [self.loadingListsView setAutoresizingMask:NSViewHeightSizable | NSViewWidthSizable | NSViewMaxYMargin];
+        [scrollView addSubview:self.loadingListsView];
+    } else if (!visible && [self.loadingListsView superview]) {
+        _isLoading = NO;
+        [self.loadingListsView removeFromSuperview];
     }
 }
 

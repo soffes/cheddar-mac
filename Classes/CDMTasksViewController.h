@@ -18,6 +18,7 @@ extern NSString* const kCDMTasksDragTypeMove;
 @property (nonatomic, weak) IBOutlet NSView *addTaskView;
 @property (nonatomic, weak) IBOutlet NSImageView *tagXImageView;
 @property (nonatomic, strong) IBOutlet NSView *noTasksView;
+@property (nonatomic, strong) IBOutlet NSView *loadingTasksView;
 
 @property (nonatomic, strong) CDKList *selectedList;
 - (IBAction)addTask:(id)sender;

@@ -16,6 +16,7 @@
 @property (nonatomic, weak) IBOutlet NSView *addListView;
 @property (nonatomic, weak) IBOutlet NSTextField *addListField;
 @property (nonatomic, strong) IBOutlet NSView *noListsView;
+@property (nonatomic, strong) IBOutlet NSView *loadingListsView;
 
 - (IBAction)reload:(id)sender;
 - (IBAction)addList:(id)sender;

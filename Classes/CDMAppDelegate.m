@@ -173,6 +173,8 @@
     self.viewMenu.delegate = _mainWindowController;
     _mainWindowController.listMenu = self.listMenu;
 	[_mainWindowController showWindow:nil];
+    [[_mainWindowController window] makeKeyAndOrderFront:nil];
+    [_mainWindowController.tasksViewController focusTaskField:nil];
     
     _quickAddWindowController = [[CDMQuickAddWindowController alloc] init];
 
