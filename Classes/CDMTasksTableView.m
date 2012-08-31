@@ -68,5 +68,10 @@
     NSInteger row = self.selectedTaskRow - 1;
     self.selectedTaskRow = (row < 0) ? [self numberOfRows] - 1 : row;
 }
+
+- (void)cancelOperation:(id)sender
+{
+    self.selectedTaskRow = -1;
+}
 @end
 

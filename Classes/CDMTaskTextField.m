@@ -73,7 +73,6 @@
 
 - (void)beginEditing
 {
-    [self setEditable:YES];
     if ([self.delegate respondsToSelector:@selector(editingTextForTextField:)]) {
         [self setAttributedStringValue:nil];
         [self setStringValue:[(id)self.delegate editingTextForTextField:self]];
