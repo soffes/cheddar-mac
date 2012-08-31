@@ -13,6 +13,7 @@
 #import "CDKTask+CDMAdditions.h"
 #import "CDMColorView.h"
 #import "CDMTagFilterBar.h"
+#import "CDMTaskTextField.h"
 
 static NSString* const kCDMTasksDragTypeRearrange = @"CDMTasksDragTypeRearrange";
 NSString* const kCDMTasksDragTypeMove = @"CDMTasksDragTypeMove";
@@ -290,6 +291,37 @@ static NSString* const kCDMTasksViewControllerImageTagXUnfocused = @"tag-x-unfoc
     [NSAnimationContext endGrouping];
 
 	return YES;
+}
+
+#pragma mark - Menu Items
+
+- (IBAction)editTask:(id)sender
+{
+    NSInteger row = [self.tableView clickedRow];
+    if (row != -1) {
+        NSTableRowView *rowView = [self.tableView rowViewAtRow:row makeIfNecessary:NO];
+        NSTableCellView *cellView = [rowView viewAtColumn:0];
+        CDMTaskTextField *textField = (CDMTaskTextField *)cellView.textField;
+        [textField beginEditing];
+    }
+}
+
+- (IBAction)archiveTask:(id)sender
+{
+    NSInteger row = [self.tableView clickedRow];
+    if (row != -1) {
+        CDKTask *task = [[self.arrayController arrangedObjects] objectAtIndex:row];
+        task.archivedAt = [NSDate date];
+    }
+}
+
+- (IBAction)deleteTask:(id)sender
+{
+    NSInteger row = [self.tableView clickedRow];
+    if (row != -1) {
+        CDKTask *task = [[self.arrayController arrangedObjects] objectAtIndex:row];
+        [task delete];
+    }
 }
 
 @end

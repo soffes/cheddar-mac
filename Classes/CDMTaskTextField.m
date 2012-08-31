@@ -45,15 +45,7 @@
 - (void)mouseDown:(NSEvent *)theEvent
 {
     if ([theEvent clickCount] == 2) {
-        [self setEditable:YES];
-        if ([self.delegate respondsToSelector:@selector(editingTextForTextField:)]) {
-            [self setAttributedStringValue:nil];
-            [self setStringValue:[(id)self.delegate editingTextForTextField:self]];
-            [self setEditable:YES];
-        }
-        [[self window] makeFirstResponder:self];
-        NSTextView *fieldEditor = (NSTextView*)[[self window] fieldEditor:NO forObject:self];
-        [fieldEditor scrollRangeToVisible:NSMakeRange ([[fieldEditor string] length], 0)];
+        [self beginEditing];
     } else {
         // Largely based on this sample code
         // <https://developer.apple.com/library/mac/#samplecode/LayoutManagerDemo/Listings/LayoutManagerDemo_MouseOverTextView_m.html#//apple_ref/doc/uid/DTS10000394-LayoutManagerDemo_MouseOverTextView_m-DontLinkElementID_6>
@@ -77,6 +69,19 @@
             [super mouseDown:theEvent];
         }
     }
+}
+
+- (void)beginEditing
+{
+    [self setEditable:YES];
+    if ([self.delegate respondsToSelector:@selector(editingTextForTextField:)]) {
+        [self setAttributedStringValue:nil];
+        [self setStringValue:[(id)self.delegate editingTextForTextField:self]];
+        [self setEditable:YES];
+    }
+    [[self window] makeFirstResponder:self];
+    NSTextView *fieldEditor = (NSTextView*)[[self window] fieldEditor:NO forObject:self];
+    [fieldEditor scrollRangeToVisible:NSMakeRange ([[fieldEditor string] length], 0)];
 }
 
 - (void)textDidEndEditing:(NSNotification *)notification

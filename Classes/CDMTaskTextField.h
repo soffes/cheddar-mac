@@ -9,7 +9,7 @@
 #import <Cocoa/Cocoa.h>
 
 @interface CDMTaskTextField : NSTextField <NSTextFieldDelegate>
-
+- (void)beginEditing;
 @end
 
 @protocol CDMTaskTextFieldDelegate

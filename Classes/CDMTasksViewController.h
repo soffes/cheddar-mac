@@ -22,4 +22,9 @@ extern NSString* const kCDMTasksDragTypeMove;
 - (IBAction)addTask:(id)sender;
 - (IBAction)focusTaskField:(id)sender;
 - (void)addFilterForTag:(CDKTag*)tag;
+
+// Menu items
+- (IBAction)editTask:(id)sender;
+- (IBAction)archiveTask:(id)sender;
+- (IBAction)deleteTask:(id)sender;
 @end
