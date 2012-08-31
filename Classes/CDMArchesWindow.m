@@ -84,10 +84,10 @@ static CGFloat const kCDMArchesWindowShakeVigour = 0.05f;
 
 - (void)sendEvent:(NSEvent *)theEvent {
     // Detect Command + W to close window
-    if (self.closeEnabled && [theEvent type] == NSKeyDown) {
+    if (([self styleMask] & NSClosableWindowMask) && [theEvent type] == NSKeyDown) {
         NSUInteger modifierFlags = [theEvent modifierFlags];
         unsigned short keyCode = [theEvent keyCode];
-        if ((modifierFlags & NSCommandKeyMask) == NSCommandKeyMask && keyCode == kVK_ANSI_W) {
+        if (keyCode == kVK_Escape || ((modifierFlags & NSCommandKeyMask) && keyCode == kVK_ANSI_W)) {
             [self close];
             return;
         }

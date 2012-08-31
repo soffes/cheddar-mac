@@ -9,5 +9,5 @@
 #import <Cocoa/Cocoa.h>
 
 @interface CDMQuickAddWindowController : NSWindowController
-
+@property (nonatomic, weak) IBOutlet NSPopUpButton *listPopUpButton;
 @end

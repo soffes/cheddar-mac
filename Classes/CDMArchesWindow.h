@@ -8,10 +8,6 @@
 
 @interface CDMArchesWindow : NSWindow
 
-@property (nonatomic, assign) BOOL closeEnabled;
-@property (nonatomic, assign) BOOL minimizeEnabled;
-@property (nonatomic, assign) BOOL zoomEnabled;
-
 - (IBAction)shake:(id)sender;
 
 @end

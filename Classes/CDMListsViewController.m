@@ -84,6 +84,14 @@ static CGFloat const kCDMListsViewControllerAddListAnimationDuration = 0.15f;
 
 #pragma mark - Actions
 
+- (CDKList *)selectedList {
+    NSInteger row = [self.tableView selectedRow];
+    if (row != -1) {
+        return [[self.arrayController arrangedObjects] objectAtIndex:row];
+    }
+    return nil;
+}
+
 - (IBAction)reload:(id)sender {
     [self _setLoadingListsViewVisible:[[self.arrayController arrangedObjects] count] == 0];
     [[CDKHTTPClient sharedClient] getListsWithSuccess:^(AFJSONRequestOperation *operation, id responseObject) {

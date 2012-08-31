@@ -18,6 +18,8 @@
 @property (nonatomic, strong) IBOutlet NSView *noListsView;
 @property (nonatomic, strong) IBOutlet NSView *loadingListsView;
 
+- (CDKList *)selectedList;
+
 - (IBAction)reload:(id)sender;
 - (IBAction)addList:(id)sender;
 - (IBAction)closeAddList:(id)sender;
