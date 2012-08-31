@@ -21,4 +21,7 @@
 - (IBAction)closeAddList:(id)sender;
 - (IBAction)createList:(id)sender;
 
+- (IBAction)renameList:(id)sender;
+- (IBAction)archiveList:(id)sener;
+- (IBAction)deleteList:(id)sender;
 @end

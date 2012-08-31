@@ -312,6 +312,9 @@ static NSString* const kCDMTasksViewControllerImageTagXUnfocused = @"tag-x-unfoc
     if (row != -1) {
         CDKTask *task = [[self.arrayController arrangedObjects] objectAtIndex:row];
         task.archivedAt = [NSDate date];
+        [task save];
+        [task update];
+        [self.tableView reloadData];
     }
 }
 
@@ -321,6 +324,7 @@ static NSString* const kCDMTasksViewControllerImageTagXUnfocused = @"tag-x-unfoc
     if (row != -1) {
         CDKTask *task = [[self.arrayController arrangedObjects] objectAtIndex:row];
         [task delete];
+        [self.tableView reloadData];
     }
 }
 

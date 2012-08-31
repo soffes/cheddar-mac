@@ -317,5 +317,38 @@ static CGFloat const kCDMListsViewControllerAddListAnimationDuration = 0.15f;
     [self.tableView reloadData];
 }
 
+#pragma mark - Table View Menu Items
+
+- (IBAction)renameList:(id)sender
+{
+    NSInteger row = [self.tableView clickedRow];
+    if (row != -1) {
+        NSTableRowView *rowView = [self.tableView rowViewAtRow:row makeIfNecessary:NO];
+        NSTableCellView *cellView = [rowView viewAtColumn:0];
+        [[self.tableView window] makeFirstResponder:cellView.textField];
+    }
+}
+
+- (IBAction)archiveList:(id)sener
+{
+    NSInteger row = [self.tableView clickedRow];
+    if (row != -1) {
+        CDKList *list = [[self.arrayController arrangedObjects] objectAtIndex:row];
+        list.archivedAt = [NSDate date];
+        [list save];
+        [list update];
+        [self.tableView reloadData];
+    }
+}
+
+- (IBAction)deleteList:(id)sender
+{
+    NSInteger row = [self.tableView clickedRow];
+    if (row != -1) {
+        CDKList *list = [[self.arrayController arrangedObjects] objectAtIndex:row];
+        [list delete];
+        [self.tableView reloadData];
+    }
+}
 
 @end
