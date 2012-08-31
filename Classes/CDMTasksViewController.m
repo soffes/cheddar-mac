@@ -18,6 +18,7 @@
 static NSString* const kCDMTasksDragTypeRearrange = @"CDMTasksDragTypeRearrange";
 NSString* const kCDMTasksDragTypeMove = @"CDMTasksDragTypeMove";
 static NSString* const kCDMTaskCellIdentifier = @"TaskCell";
+static NSString* const kCDMNoTasksNibName = @"NoTasks";
 
 static CGFloat const kCDMTasksViewControllerTagBarAnimationDuration = 0.3f;
 static NSString* const kCDMTasksViewControllerImageTagX = @"tag-x";
@@ -27,6 +28,7 @@ static NSString* const kCDMTasksViewControllerImageTagXUnfocused = @"tag-x-unfoc
 - (void)_setTagBarVisible:(BOOL)visible;
 - (void)_clearTagFilter;
 - (void)_resetTagXButtonImage;
+- (void)_setNoTasksViewVisible:(BOOL)visible;
 @end
 
 @implementation CDMTasksViewController {
@@ -42,6 +44,7 @@ static NSString* const kCDMTasksViewControllerImageTagXUnfocused = @"tag-x-unfoc
 @synthesize tagNameField = _tagNameField;
 @synthesize addTaskView = _addTaskView;
 @synthesize tagXImageView = _tagXImageView;
+@synthesize noTasksView = _noTasksView;
 
 #pragma mark - NSObject
 
@@ -56,6 +59,7 @@ static NSString* const kCDMTasksViewControllerImageTagXUnfocused = @"tag-x-unfoc
     self.arrayController.managedObjectContext = [CDKTask mainContext];
 	self.arrayController.sortDescriptors = [CDKTask defaultSortDescriptors];
     [self.tableView registerForDraggedTypes:[NSArray arrayWithObject:kCDMTasksDragTypeRearrange]];
+    [self addObserver:self forKeyPath:@"arrayController.arrangedObjects" options:0 context:NULL];
     
     NSWindow *window = [self.tableView window];
     NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
@@ -67,9 +71,19 @@ static NSString* const kCDMTasksViewControllerImageTagXUnfocused = @"tag-x-unfoc
 
 
 - (void)dealloc {
+    [self removeObserver:self forKeyPath:@"arrayController.arrangedObjects"];
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
+
+#pragma mark - KVO
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    if ([keyPath isEqualToString:@"arrayController.arrangedObjects"]) {
+        [self _setNoTasksViewVisible:[[self.arrayController arrangedObjects] count] == 0];
+    }
+}
 
 #pragma mark - Actions
 
@@ -174,6 +188,27 @@ static NSString* const kCDMTasksViewControllerImageTagXUnfocused = @"tag-x-unfoc
     self.arrayController.filterPredicate = nil;
     [_filterTags removeAllObjects];
     [self _setTagBarVisible:NO];
+}
+
+- (void)_setNoTasksViewVisible:(BOOL)visible {
+    if (visible && ![self.noTasksView superview]) {
+        if (!self.noTasksView) {
+            [NSBundle loadNibNamed:kCDMNoTasksNibName owner:self];
+        }
+        NSScrollView *scrollView = [self.tableView enclosingScrollView];
+        [self.noTasksView setFrame:[scrollView frame]];
+        [self.noTasksView setAutoresizingMask:NSViewHeightSizable | NSViewWidthSizable | NSViewMaxYMargin];
+        [self.noTasksView setAlphaValue:0.f];
+        [scrollView addSubview:self.noTasksView];
+        [[self.noTasksView animator] setAlphaValue:1.f];
+    } else if (!visible && [self.noTasksView superview]) {
+        [NSAnimationContext beginGrouping];
+        [[NSAnimationContext currentContext] setCompletionHandler:^{
+            [self.noTasksView removeFromSuperview];
+        }];
+        [[self.noTasksView animator] setAlphaValue:0.f];
+        [NSAnimationContext endGrouping];
+    }
 }
 
 #pragma mark - CDMTagFilterBarDelegate

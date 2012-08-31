@@ -65,6 +65,8 @@
 		037252E115D9FCF700E87D87 /* CDKTask+CDMAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 037252E015D9FCF700E87D87 /* CDKTask+CDMAdditions.m */; };
 		037253A815DA1C4000E87D87 /* CDMShadowTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 037253A715DA1C4000E87D87 /* CDMShadowTableView.m */; };
 		038FF74915DDA596004B7316 /* CDMTrafficLightsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 038FF74815DDA596004B7316 /* CDMTrafficLightsView.m */; };
+		0391100415F08AC300A3EA7B /* NoTasks.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0391100315F08AC300A3EA7B /* NoTasks.xib */; };
+		0391100615F08CA300A3EA7B /* NoLists.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0391100515F08CA300A3EA7B /* NoLists.xib */; };
 		03B3951C15DAB73000A8A7D4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 03B3951B15DAB73000A8A7D4 /* Localizable.strings */; };
 		03B3952815DAC66E00A8A7D4 /* CDMTaskTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 03B3952715DAC66E00A8A7D4 /* CDMTaskTextField.m */; };
 		03B3952E15DAC97900A8A7D4 /* CDMBoolToTaskTextColorValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 03B3952D15DAC97000A8A7D4 /* CDMBoolToTaskTextColorValueTransformer.m */; };
@@ -290,6 +292,8 @@
 		037253A715DA1C4000E87D87 /* CDMShadowTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMShadowTableView.m; sourceTree = "<group>"; };
 		038FF74715DDA596004B7316 /* CDMTrafficLightsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDMTrafficLightsView.h; path = Classes/CDMTrafficLightsView.h; sourceTree = "<group>"; };
 		038FF74815DDA596004B7316 /* CDMTrafficLightsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDMTrafficLightsView.m; path = Classes/CDMTrafficLightsView.m; sourceTree = "<group>"; };
+		0391100315F08AC300A3EA7B /* NoTasks.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoTasks.xib; sourceTree = "<group>"; };
+		0391100515F08CA300A3EA7B /* NoLists.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoLists.xib; sourceTree = "<group>"; };
 		03B3951B15DAB73000A8A7D4 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		03B3952615DAC66E00A8A7D4 /* CDMTaskTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMTaskTextField.h; sourceTree = "<group>"; };
 		03B3952715DAC66E00A8A7D4 /* CDMTaskTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMTaskTextField.m; sourceTree = "<group>"; };
@@ -683,6 +687,8 @@
 				B2A23DA515D9997E00EA9D2D /* Preferences.xib */,
 				03F2D96C15DAD89900EEC543 /* Plus.xib */,
 				03457A8215EC8AE300645547 /* QuickAdd.xib */,
+				0391100315F08AC300A3EA7B /* NoTasks.xib */,
+				0391100515F08CA300A3EA7B /* NoLists.xib */,
 			);
 			path = Nibs;
 			sourceTree = "<group>";
@@ -1036,6 +1042,8 @@
 				03F7954115E41FA600C9F652 /* tag-x-unfocused@2x.png in Resources */,
 				03F7954215E41FA600C9F652 /* About.xib in Resources */,
 				03457A8315EC8AE300645547 /* QuickAdd.xib in Resources */,
+				0391100415F08AC300A3EA7B /* NoTasks.xib in Resources */,
+				0391100615F08CA300A3EA7B /* NoLists.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

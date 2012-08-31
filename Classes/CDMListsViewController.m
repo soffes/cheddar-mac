@@ -20,10 +20,12 @@ enum {
 };
 typedef NSUInteger CDMListsMenuItemTag;
 
+static NSString* const kCDMNoListsNibName = @"NoLists";
 static NSString* const kCDMListsDragTypeRearrange = @"CDMListsDragTypeRearrange";
 static CGFloat const kCDMListsViewControllerAddListAnimationDuration = 0.15f;
 
 @interface CDMListsViewController ()
+- (void)_setNoListsViewVisible:(BOOL)visible;
 // Menu Item Actions
 - (void)_renameList:(NSMenuItem *)menuItem;
 - (void)_archiveAllTasks:(NSMenuItem *)menuItem;
@@ -40,6 +42,7 @@ static CGFloat const kCDMListsViewControllerAddListAnimationDuration = 0.15f;
 @synthesize tasksViewController = _tasksViewController;
 @synthesize addListView = _addListView;
 @synthesize addListField = _addListField;
+@synthesize noListsView = _noListsView;
 
 #pragma mark - NSObject
 
@@ -55,6 +58,7 @@ static CGFloat const kCDMListsViewControllerAddListAnimationDuration = 0.15f;
     self.arrayController.managedObjectContext = [CDKList mainContext];
 	self.arrayController.fetchPredicate = [NSPredicate predicateWithFormat:@"archivedAt = nil && user = %@", [CDKUser currentUser]];
 	self.arrayController.sortDescriptors = [CDKList defaultSortDescriptors];
+    [self addObserver:self forKeyPath:@"arrayController.arrangedObjects" options:0 context:NULL];
 
 	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reload:) name:kCDKCurrentUserChangedNotificationName object:nil];
 
@@ -62,6 +66,19 @@ static CGFloat const kCDMListsViewControllerAddListAnimationDuration = 0.15f;
     _awakenFromNib = YES;
 }
 
+- (void)dealloc
+{
+    [self removeObserver:self forKeyPath:@"arrayController.arrangedObjects"];
+}
+
+#pragma mark - KVO
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    if ([keyPath isEqualToString:@"arrayController.arrangedObjects"]) {
+        [self _setNoListsViewVisible:[[self.arrayController arrangedObjects] count] == 0];
+    }
+}
 
 #pragma mark - Actions
 
@@ -315,6 +332,27 @@ static CGFloat const kCDMListsViewControllerAddListAnimationDuration = 0.15f;
 	[list save];
 	[list update];
     [self.tableView reloadData];
+}
+
+- (void)_setNoListsViewVisible:(BOOL)visible {
+    if (visible && ![self.noListsView superview]) {
+        if (!self.noListsView) {
+            [NSBundle loadNibNamed:kCDMNoListsNibName owner:self];
+        }
+        NSScrollView *scrollView = [self.tableView enclosingScrollView];
+        [self.noListsView setFrame:[scrollView frame]];
+        [self.noListsView setAutoresizingMask:NSViewHeightSizable | NSViewWidthSizable | NSViewMaxYMargin];
+        [self.noListsView setAlphaValue:0.f];
+        [scrollView addSubview:self.noListsView];
+        [[self.noListsView animator] setAlphaValue:1.f];
+    } else if (!visible && [self.noListsView superview]) {
+        [NSAnimationContext beginGrouping];
+        [[NSAnimationContext currentContext] setCompletionHandler:^{
+            [self.noListsView removeFromSuperview];
+        }];
+        [[self.noListsView animator] setAlphaValue:0.f];
+        [NSAnimationContext endGrouping];
+    }
 }
 
 #pragma mark - Table View Menu Items
