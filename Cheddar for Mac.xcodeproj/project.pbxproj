@@ -1190,12 +1190,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = Resources/Cheddar.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer: Sam Soffes (Q38FNQXFZH)";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Other Sources/Cheddar-Prefix.pch";
 				INFOPLIST_FILE = "Resources/Cheddar-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = Cheddar;
+				PROVISIONING_PROFILE = "CE3CD265-187A-47BF-9468-C89F894BBFF1";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1204,12 +1206,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = Resources/Cheddar.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer: Sam Soffes (Q38FNQXFZH)";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Other Sources/Cheddar-Prefix.pch";
 				INFOPLIST_FILE = "Resources/Cheddar-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = Cheddar;
+				PROVISIONING_PROFILE = "CE3CD265-187A-47BF-9468-C89F894BBFF1";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

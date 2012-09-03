@@ -19,11 +19,22 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>0.1</string>
+	<string>0.3</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>Cheddar</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>cheddar</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
-	<string>0.1.0</string>
+	<string>0.3.0</string>
 	<key>LSApplicationCategoryType</key>
 	<string>public.app-category.productivity</string>
 	<key>LSMinimumSystemVersion</key>
@@ -36,17 +47,6 @@
 	<string>NSApplication</string>
 	<key>SUFeedURL</key>
 	<string>https://cheddarapp.com/mac/appcast.xml</string>
-	<key>CFBundleURLTypes</key>
-	<array>
-		<dict>
-			<key>CFBundleURLSchemes</key>
-			<array>
-				<string>cheddar</string>
-			</array>
-			<key>CFBundleURLName</key>
-			<string>Cheddar</string>
-		</dict>
-	</array>
 	<key>SUPublicDSAKeyFile</key>
 	<string>dsa_pub.pem</string>
 </dict>
