@@ -95,11 +95,16 @@ static CGFloat const kCDMListsViewControllerAddListAnimationDuration = 0.15f;
 - (IBAction)reload:(id)sender {
     [self _setLoadingListsViewVisible:[[self.arrayController arrangedObjects] count] == 0];
     [[CDKHTTPClient sharedClient] getListsWithSuccess:^(AFJSONRequestOperation *operation, id responseObject) {
-        [self _setLoadingListsViewVisible:NO];
-        [self _setNoListsViewVisible:[[self.arrayController arrangedObjects] count] == 0];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.arrayController fetch:nil];
+            [self _setLoadingListsViewVisible:NO];
+            [self _setNoListsViewVisible:[[self.arrayController arrangedObjects] count] == 0];
+        });
     } failure:^(AFJSONRequestOperation *operation, NSError *error) {
         NSLog(@"Failed to get lists: %@", error);
-        [self _setLoadingListsViewVisible:NO];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self _setLoadingListsViewVisible:NO];
+        });
     }];
 	[[CDKHTTPClient sharedClient] updateCurrentUserWithSuccess:nil failure:nil];
 }

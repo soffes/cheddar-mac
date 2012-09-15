@@ -281,11 +281,15 @@ static NSString* const kCDMTasksViewControllerImageTagXUnfocused = @"tag-x-unfoc
 	}
     [self _setLoadingTasksViewVisible:[[self.arrayController arrangedObjects] count] == 0];
 	[[CDKHTTPClient sharedClient] getTasksWithList:_selectedList success:^(AFJSONRequestOperation *operation, id responseObject) {
-        [self _setLoadingTasksViewVisible:NO];
-        [self _setNoTasksViewVisible:[[self.arrayController arrangedObjects] count] == 0];
-		[self.arrayController fetch:nil];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.arrayController fetch:nil];
+            [self _setLoadingTasksViewVisible:NO];
+            [self _setNoTasksViewVisible:[[self.arrayController arrangedObjects] count] == 0];
+        });
 	} failure:^(AFJSONRequestOperation *operation, NSError *error) {
-        [self _setLoadingTasksViewVisible:NO];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self _setLoadingTasksViewVisible:NO];
+        });
     }];
 	self.arrayController.fetchPredicate = [NSPredicate predicateWithFormat:@"list = %@ AND archivedAt = nil", _selectedList];
     [self _clearTagFilter];
