@@ -30,11 +30,11 @@ static NSString* const kCDMTasksViewControllerImageTagXUnfocused = @"tag-x-unfoc
 - (void)_clearTagFilter;
 - (void)_resetTagXButtonImage;
 - (void)_setNoTasksViewVisible:(BOOL)visible;
+- (void)_resetArrayController;
 @end
 
 @implementation CDMTasksViewController {
     BOOL _awakenFromNib;
-    BOOL _isLoading;
     CDMColorView *_overlayView;
     NSMutableArray *_filterTags;
 }
@@ -59,10 +59,9 @@ static NSString* const kCDMTasksViewControllerImageTagXUnfocused = @"tag-x-unfoc
 	}
 
     _filterTags = [NSMutableArray array];
-    self.arrayController.managedObjectContext = [CDKTask mainContext];
-	self.arrayController.sortDescriptors = [CDKTask defaultSortDescriptors];
-    [self.arrayController addObserver:self forKeyPath:@"arrangedObjects" options:0 context:NULL];
     [self.tableView registerForDraggedTypes:[NSArray arrayWithObject:kCDMTasksDragTypeRearrange]];
+    [self addObserver:self forKeyPath:@"arrayController.arrangedObjects" options:0 context:NULL];
+    [self.tableView bind:@"content" toObject:self withKeyPath:@"arrayController.arrangedObjects" options:nil];
     
     NSWindow *window = [self.tableView window];
     NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
@@ -75,16 +74,18 @@ static NSString* const kCDMTasksViewControllerImageTagXUnfocused = @"tag-x-unfoc
 
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
-    [_arrayController removeObserver:self forKeyPath:@"arrangedObjects"];
+    [_tableView unbind:@"content"];
+    [self removeObserver:self forKeyPath:@"arrayController.arrangedObjects"];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
-    if ([keyPath isEqualToString:@"arrangedObjects"]) {
-        [self _setLoadingTasksViewVisible:_isLoading && [[self.arrayController arrangedObjects] count] == 0];
+    if ([keyPath isEqualToString:@"arrayController.arrangedObjects"]) {
+        if ([self.loadingTasksView superview])
+            [self _setLoadingTasksViewVisible:![[self.arrayController arrangedObjects] count]];
+        [self _setNoTasksViewVisible:![[self.arrayController arrangedObjects] count]];
     }
 }
-
 
 #pragma mark - Actions
 
@@ -132,6 +133,19 @@ static NSString* const kCDMTasksViewControllerImageTagXUnfocused = @"tag-x-unfoc
         [_filterTags addObject:tag];
         [self _resetTagFilter];
     }
+}
+
+- (void)_resetArrayController
+{
+    self.arrayController = [NSArrayController new];
+    self.arrayController.managedObjectContext = [CDKTask mainContext];
+    self.arrayController.sortDescriptors = [CDKTask defaultSortDescriptors];
+    self.arrayController.entityName = @"Task";
+    self.arrayController.fetchPredicate = [NSPredicate predicateWithFormat:@"list = %@ AND archivedAt = nil", _selectedList];
+    self.arrayController.clearsFilterPredicateOnInsertion = YES;
+    self.arrayController.automaticallyRearrangesObjects = YES;
+    self.arrayController.automaticallyPreparesContent = YES;
+    [self _clearTagFilter];
 }
 
 - (void)_resetTagFilter
@@ -205,23 +219,15 @@ static NSString* const kCDMTasksViewControllerImageTagXUnfocused = @"tag-x-unfoc
         NSScrollView *scrollView = [self.tableView enclosingScrollView];
         [self.noTasksView setFrame:[scrollView frame]];
         [self.noTasksView setAutoresizingMask:NSViewHeightSizable | NSViewWidthSizable | NSViewMaxYMargin];
-        [self.noTasksView setAlphaValue:0.f];
         [scrollView addSubview:self.noTasksView];
-        [[self.noTasksView animator] setAlphaValue:1.f];
     } else if (!visible && [self.noTasksView superview]) {
-        [NSAnimationContext beginGrouping];
-        [[NSAnimationContext currentContext] setCompletionHandler:^{
-            [self.noTasksView removeFromSuperview];
-        }];
-        [[self.noTasksView animator] setAlphaValue:0.f];
-        [NSAnimationContext endGrouping];
+        [self.noTasksView removeFromSuperview];
     }
 }
 
 - (void)_setLoadingTasksViewVisible:(BOOL)visible
 {
     if (visible && ![self.loadingTasksView superview]) {
-        _isLoading = YES;
         if (!self.loadingTasksView) {
             [NSBundle loadNibNamed:kCDMLoadingTasksNibName owner:self];
         }
@@ -230,7 +236,6 @@ static NSString* const kCDMTasksViewControllerImageTagXUnfocused = @"tag-x-unfoc
         [self.loadingTasksView setAutoresizingMask:NSViewHeightSizable | NSViewWidthSizable | NSViewMaxYMargin];
         [scrollView addSubview:self.loadingTasksView];
     } else if (!visible && [self.loadingTasksView superview]) {
-        _isLoading = NO;
         [self.loadingTasksView removeFromSuperview];
     }
 }
@@ -278,22 +283,21 @@ static NSString* const kCDMTasksViewControllerImageTagXUnfocused = @"tag-x-unfoc
 - (void)setSelectedList:(CDKList *)selectedList {
 	if (_selectedList != selectedList) {
 		_selectedList = selectedList;
+        [self _resetArrayController];
+        [self _setLoadingTasksViewVisible:![[self.arrayController arrangedObjects] count]];
+        [self _setNoTasksViewVisible:NO];
+        [[CDKHTTPClient sharedClient] getTasksWithList:_selectedList success:^(AFJSONRequestOperation *operation, id responseObject) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self.arrayController fetch:nil];
+                [self _setLoadingTasksViewVisible:NO];
+                [self _setNoTasksViewVisible:![[self.arrayController arrangedObjects] count]];
+            });
+        } failure:^(AFJSONRequestOperation *operation, NSError *error) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self _setLoadingTasksViewVisible:NO];
+            });
+        }];
 	}
-    [self _setLoadingTasksViewVisible:[[self.arrayController arrangedObjects] count] == 0];
-	[[CDKHTTPClient sharedClient] getTasksWithList:_selectedList success:^(AFJSONRequestOperation *operation, id responseObject) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self.arrayController fetch:nil];
-            [self _setLoadingTasksViewVisible:NO];
-            [self _setNoTasksViewVisible:[[self.arrayController arrangedObjects] count] == 0];
-        });
-	} failure:^(AFJSONRequestOperation *operation, NSError *error) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-            [self _setLoadingTasksViewVisible:NO];
-        });
-    }];
-	self.arrayController.fetchPredicate = [NSPredicate predicateWithFormat:@"list = %@ AND archivedAt = nil", _selectedList];
-    [self _clearTagFilter];
-	[self.arrayController fetch:nil];
 }
 
 

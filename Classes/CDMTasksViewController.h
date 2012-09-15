@@ -10,7 +10,7 @@ extern NSString* const kCDMTasksDragTypeMove;
 
 @interface CDMTasksViewController : NSViewController <NSTextFieldDelegate>
 
-@property (nonatomic, weak) IBOutlet NSArrayController *arrayController;
+@property (nonatomic, strong) NSArrayController *arrayController;
 @property (nonatomic, weak) IBOutlet NSTableView *tableView;
 @property (nonatomic, weak) IBOutlet NSTextField *taskField;
 @property (nonatomic, weak) IBOutlet NSView *tagFilterBar;

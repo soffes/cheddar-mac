@@ -78,7 +78,9 @@ static CGFloat const kCDMListsViewControllerAddListAnimationDuration = 0.15f;
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
     if ([keyPath isEqualToString:@"arrangedObjects"]) {
-        [self _setLoadingListsViewVisible:_isLoading && [[self.arrayController arrangedObjects] count] == 0];
+        if ([self.loadingListsView superview])
+            [self _setLoadingListsViewVisible:![[self.arrayController arrangedObjects] count]];
+        [self _setNoListsViewVisible:![[self.arrayController arrangedObjects] count]];
     }
 }
 
@@ -93,12 +95,13 @@ static CGFloat const kCDMListsViewControllerAddListAnimationDuration = 0.15f;
 }
 
 - (IBAction)reload:(id)sender {
-    [self _setLoadingListsViewVisible:[[self.arrayController arrangedObjects] count] == 0];
+    [self _setLoadingListsViewVisible:![[self.arrayController arrangedObjects] count]];
+    [self _setNoListsViewVisible:NO];
     [[CDKHTTPClient sharedClient] getListsWithSuccess:^(AFJSONRequestOperation *operation, id responseObject) {
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.arrayController fetch:nil];
             [self _setLoadingListsViewVisible:NO];
-            [self _setNoListsViewVisible:[[self.arrayController arrangedObjects] count] == 0];
+            [self _setNoListsViewVisible:![self.arrayController arrangedObjects]];
         });
     } failure:^(AFJSONRequestOperation *operation, NSError *error) {
         NSLog(@"Failed to get lists: %@", error);
@@ -364,16 +367,9 @@ static CGFloat const kCDMListsViewControllerAddListAnimationDuration = 0.15f;
         NSScrollView *scrollView = [self.tableView enclosingScrollView];
         [self.noListsView setFrame:[scrollView frame]];
         [self.noListsView setAutoresizingMask:NSViewHeightSizable | NSViewWidthSizable | NSViewMaxYMargin];
-        [self.noListsView setAlphaValue:0.f];
         [scrollView addSubview:self.noListsView];
-        [[self.noListsView animator] setAlphaValue:1.f];
     } else if (!visible && [self.noListsView superview]) {
-        [NSAnimationContext beginGrouping];
-        [[NSAnimationContext currentContext] setCompletionHandler:^{
-            [self.noListsView removeFromSuperview];
-        }];
-        [[self.noListsView animator] setAlphaValue:0.f];
-        [NSAnimationContext endGrouping];
+        [self.noListsView removeFromSuperview];
     }
 }
 

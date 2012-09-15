@@ -67,6 +67,7 @@
 						<string key="NSFrame">{{456, 14}, {16, 17}}</string>
 						<reference key="NSSuperview" ref="364424689"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSImageCell" key="NSCell" id="211742878">
@@ -168,7 +169,7 @@
 				<string key="NSClassName">CDMTagFilterBar</string>
 			</object>
 			<object class="NSCustomView" id="154427372">
-				<reference key="NSNextResponder"/>
+				<nil key="NSNextResponder"/>
 				<int key="NSvFlags">266</int>
 				<array class="NSMutableArray" key="NSSubviews">
 					<object class="NSButton" id="74726422">
@@ -176,7 +177,6 @@
 						<int key="NSvFlags">289</int>
 						<string key="NSFrame">{{575, 15}, {15, 15}}</string>
 						<reference key="NSSuperview" ref="154427372"/>
-						<reference key="NSWindow"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSButtonCell" key="NSCell" id="617846072">
@@ -204,7 +204,6 @@
 						<int key="NSvFlags">266</int>
 						<string key="NSFrame">{{9, 14}, {552, 17}}</string>
 						<reference key="NSSuperview" ref="154427372"/>
-						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="74726422"/>
 						<string key="NSAntiCompressionPriority">{250, 750}</string>
 						<bool key="NSEnabled">YES</bool>
@@ -222,8 +221,6 @@
 					</object>
 				</array>
 				<string key="NSFrameSize">{603, 45}</string>
-				<reference key="NSSuperview"/>
-				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="861775339"/>
 				<string key="NSReuseIdentifierKey">_NS:9</string>
 				<string key="NSClassName">CDMAddListView</string>
@@ -523,6 +520,7 @@
 													<string key="NSFrame">{{1, 119}, {223, 15}}</string>
 													<reference key="NSSuperview" ref="672568933"/>
 													<reference key="NSWindow"/>
+													<reference key="NSNextKeyView"/>
 													<string key="NSReuseIdentifierKey">_NS:60</string>
 													<bool key="NSAllowsLogicalLayoutDirection">NO</bool>
 													<int key="NSsFlags">1</int>
@@ -637,17 +635,6 @@
 				<bool key="_NSIsUsingManagedProxy">YES</bool>
 				<bool key="NSAvoidsEmptySelection">YES</bool>
 				<bool key="NSPreservesSelection">YES</bool>
-				<bool key="NSFilterRestrictsInsertion">YES</bool>
-				<bool key="NSClearsFilterPredicateOnInsertion">YES</bool>
-				<bool key="NSAutomaticallyRearrangesObjects">YES</bool>
-			</object>
-			<object class="NSArrayController" id="543950420">
-				<bool key="NSEditable">YES</bool>
-				<bool key="NSAutomaticallyPreparesContent">YES</bool>
-				<object class="_NSManagedProxy" key="_NSManagedProxy">
-					<string key="NSEntityName">Task</string>
-				</object>
-				<bool key="_NSIsUsingManagedProxy">YES</bool>
 				<bool key="NSFilterRestrictsInsertion">YES</bool>
 				<bool key="NSClearsFilterPredicateOnInsertion">YES</bool>
 				<bool key="NSAutomaticallyRearrangesObjects">YES</bool>
@@ -890,30 +877,6 @@
 					<int key="connectionID">386</int>
 				</object>
 				<object class="IBConnectionRecord">
-					<object class="IBBindingConnection" key="connection">
-						<string key="label">content: arrangedObjects</string>
-						<reference key="source" ref="1038655729"/>
-						<reference key="destination" ref="543950420"/>
-						<object class="NSNibBindingConnector" key="connector">
-							<reference key="NSSource" ref="1038655729"/>
-							<reference key="NSDestination" ref="543950420"/>
-							<string key="NSLabel">content: arrangedObjects</string>
-							<string key="NSBinding">content</string>
-							<string key="NSKeyPath">arrangedObjects</string>
-							<int key="NSNibBindingConnectorVersion">2</int>
-						</object>
-					</object>
-					<int key="connectionID">277</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">dataSource</string>
-						<reference key="source" ref="1038655729"/>
-						<reference key="destination" ref="666935639"/>
-					</object>
-					<int key="connectionID">314</int>
-				</object>
-				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">delegate</string>
 						<reference key="source" ref="1038655729"/>
@@ -1097,14 +1060,6 @@
 						<reference key="destination" ref="559389883"/>
 					</object>
 					<int key="connectionID">421</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBOutletConnection" key="connection">
-						<string key="label">arrayController</string>
-						<reference key="source" ref="666935639"/>
-						<reference key="destination" ref="543950420"/>
-					</object>
-					<int key="connectionID">308</int>
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBOutletConnection" key="connection">
@@ -1302,12 +1257,6 @@
 						<reference key="object" ref="442710232"/>
 						<reference key="parent" ref="0"/>
 						<string key="objectName">Lists</string>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">118</int>
-						<reference key="object" ref="543950420"/>
-						<reference key="parent" ref="0"/>
-						<string key="objectName">Tasks</string>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">208</int>
@@ -1656,8 +1605,6 @@
 				<string key="1.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="1.IBWindowTemplateEditedContentRect">{{357, 418}, {480, 270}}</string>
 				<integer value="1" key="1.NSWindowTemplate.visibleAtLaunch"/>
-				<string key="118.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="118.ibExternalFetchPredicateFormat"/>
 				<string key="2.CustomClassName">CDMArchesWindowContentView</string>
 				<string key="2.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="208.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -1838,6 +1785,7 @@
 						<string key="addListField">NSTextField</string>
 						<string key="addListView">NSView</string>
 						<string key="arrayController">NSArrayController</string>
+						<string key="loadingListsView">NSView</string>
 						<string key="noListsView">NSView</string>
 						<string key="tableView">NSTableView</string>
 						<string key="tasksViewController">CDMTasksViewController</string>
@@ -1854,6 +1802,10 @@
 						<object class="IBToOneOutletInfo" key="arrayController">
 							<string key="name">arrayController</string>
 							<string key="candidateClassName">NSArrayController</string>
+						</object>
+						<object class="IBToOneOutletInfo" key="loadingListsView">
+							<string key="name">loadingListsView</string>
+							<string key="candidateClassName">NSView</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="noListsView">
 							<string key="name">noListsView</string>
@@ -2041,7 +1993,7 @@
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="addTaskView">NSView</string>
-						<string key="arrayController">NSArrayController</string>
+						<string key="loadingTasksView">NSView</string>
 						<string key="noTasksView">NSView</string>
 						<string key="tableView">NSTableView</string>
 						<string key="tagFilterBar">NSView</string>
@@ -2054,9 +2006,9 @@
 							<string key="name">addTaskView</string>
 							<string key="candidateClassName">NSView</string>
 						</object>
-						<object class="IBToOneOutletInfo" key="arrayController">
-							<string key="name">arrayController</string>
-							<string key="candidateClassName">NSArrayController</string>
+						<object class="IBToOneOutletInfo" key="loadingTasksView">
+							<string key="name">loadingTasksView</string>
+							<string key="candidateClassName">NSView</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="noTasksView">
 							<string key="name">noTasksView</string>
