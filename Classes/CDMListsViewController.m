@@ -60,7 +60,6 @@ static CGFloat const kCDMListsViewControllerAddListAnimationDuration = 0.15f;
     }
 		
     self.arrayController.managedObjectContext = [CDKList mainContext];
-	self.arrayController.fetchPredicate = [NSPredicate predicateWithFormat:@"archivedAt = nil && user = %@", [CDKUser currentUser]];
 	self.arrayController.sortDescriptors = [CDKList defaultSortDescriptors];
     [self.arrayController addObserver:self forKeyPath:@"arrangedObjects" options:0 context:NULL];
 
@@ -97,6 +96,7 @@ static CGFloat const kCDMListsViewControllerAddListAnimationDuration = 0.15f;
 - (IBAction)reload:(id)sender {
     [self _setLoadingListsViewVisible:![[self.arrayController arrangedObjects] count]];
     [self _setNoListsViewVisible:NO];
+    self.arrayController.fetchPredicate = [NSPredicate predicateWithFormat:@"archivedAt = nil && user = %@", [CDKUser currentUser]];
     [[CDKHTTPClient sharedClient] getListsWithSuccess:^(AFJSONRequestOperation *operation, id responseObject) {
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.arrayController fetch:nil];
