@@ -95,15 +95,6 @@
 
 - (void)activate
 {
-    if (![NSApp isActive]) {
-        for (NSWindow *window in [NSApp windows]) {
-            if (![window isVisible]) {
-                [window close];
-            }
-        }
-        _closeWhenFinished = YES;
-        [NSApp activateIgnoringOtherApps:YES];
-    }
     [self showWindow:nil];
     [[self window] makeFirstResponder:self.addTaskField];
 }

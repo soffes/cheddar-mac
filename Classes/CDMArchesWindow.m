@@ -49,7 +49,7 @@ static CGFloat const kCDMArchesWindowShakeVigour = 0.05f;
 {
     if ((self = [super
                  initWithContentRect:contentRect
-                 styleMask:NSBorderlessWindowMask | windowStyle
+                 styleMask:NSNonactivatingPanelMask | windowStyle
                  backing:bufferingType
                  defer:deferCreation])) {
         [self setOpaque:NO];

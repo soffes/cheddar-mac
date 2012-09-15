@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 Nothing Magical. All rights reserved.
 //
 
-@interface CDMArchesWindow : NSWindow
+@interface CDMArchesWindow : NSPanel
 
 - (IBAction)shake:(id)sender;
 
