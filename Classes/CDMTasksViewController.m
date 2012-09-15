@@ -328,6 +328,17 @@ static NSString* const kCDMTasksViewControllerImageTagXUnfocused = @"tag-x-unfoc
 
 #pragma mark - NSTableViewDataSource
 
+// Stub implementations to avoid assertion failure before the bindings have been made
+- (NSInteger)numberOfRowsInTableView:(NSTableView *)aTableView
+{
+    return 0;
+}
+
+- (id)tableView:(NSTableView *)aTableView objectValueForTableColumn:(NSTableColumn *)aTableColumn row:(NSInteger)rowIndex
+{
+    return nil;
+}
+
 - (BOOL)tableView:(NSTableView *)aTableView writeRowsWithIndexes:(NSIndexSet *)rowIndexes toPasteboard:(NSPasteboard *)pboard {
     [pboard declareTypes:[NSArray arrayWithObject:kCDMTasksDragTypeRearrange] owner:self];
 
