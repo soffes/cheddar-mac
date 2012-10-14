@@ -76,6 +76,7 @@
         for (NSMenuItem *item in [self.listPopUpButton itemArray]) {
             if ([[item representedObject] isEqual:selectedList]) {
                 [self.listPopUpButton selectItem:item];
+                _selectedList = [item representedObject];
                 break;
             }
         }
