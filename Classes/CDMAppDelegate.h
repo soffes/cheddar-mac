@@ -21,5 +21,5 @@
 - (IBAction)showMainWindow:(id)sender;
 - (IBAction)addList:(id)sender;
 - (IBAction)addTask:(id)sender;
-- (IBAction)dismissPlusWindow:(id)sender;
+
 @end

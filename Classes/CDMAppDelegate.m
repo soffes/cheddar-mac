@@ -13,19 +13,15 @@
 #import "CDMDefines.h"
 #import "CDMListsViewController.h"
 #import "CDMTasksViewController.h"
-#import "CDMPlusWindowController.h"
 #import "CDMQuickAddWindowController.h"
 #import "MASShortcutView+UserDefaults.h"
 #import "MASShortcut+UserDefaults.h"
 
 @interface CDMAppDelegate ()
 - (void)_userChanged:(NSNotification *)notification;
-- (void)_showPlusWindowIfNecessary;
-- (void)_mainWindowResized:(NSNotification*)notification;
 @end
 
 @implementation CDMAppDelegate {
-    CDMPlusWindowController *_plusWindowController;
     CDMQuickAddWindowController *_quickAddWindowController;
 }
 
@@ -81,54 +77,7 @@
 - (void)_userChanged:(NSNotification *)notification {
 	if (![CDKUser currentUser]) {
 		[self.signInWindowController showWindow:nil];
-	} else {
-		if ([[[CDKUser currentUser] hasPlus] boolValue] == NO) {
-			[self performSelector:@selector(_showPlusWindowIfNecessary) withObject:nil afterDelay:0.25f];
-		}
 	}
-}
-
-
-- (void)_showPlusWindowIfNecessary {
-    NSWindow *mainWindow = [_mainWindowController window];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(_mainWindowResized:) name:NSWindowDidResizeNotification object:mainWindow];
-
-    _plusWindowController = [[CDMPlusWindowController alloc] init];
-    _plusWindowController.parentWindow = mainWindow;
-
-    [self.mainWindowController.taskTextField setEnabled:NO];
-    NSWindow *overlayWindow = [_plusWindowController window];
-    [overlayWindow setAlphaValue:0.f];
-    [overlayWindow setFrame:[mainWindow frame] display:YES animate:NO];
-    [mainWindow addChildWindow:overlayWindow ordered:NSWindowAbove];
-    [overlayWindow makeKeyAndOrderFront:nil];
-    [[overlayWindow animator] setAlphaValue:1.f];
-}
-
-
-- (IBAction)dismissPlusWindow:(id)sender {
-    if (!_plusWindowController) {
-		return;
-	}
-    NSWindow *mainWindow = [_mainWindowController window];
-    NSWindow *overlayWindow = [_plusWindowController window];
-    [NSAnimationContext beginGrouping];
-    [[NSAnimationContext currentContext] setCompletionHandler:^{
-        [mainWindow removeChildWindow:overlayWindow];
-        [self.mainWindowController.taskTextField setEnabled:YES];
-        [overlayWindow close];
-        _plusWindowController = nil;
-        [[NSNotificationCenter defaultCenter] removeObserver:self name:NSWindowDidResizeNotification object:mainWindow];
-    }];
-    [[overlayWindow animator] setAlphaValue:0.f];
-    [NSAnimationContext endGrouping];
-}
-
-
-- (void)_mainWindowResized:(NSNotification*)notification {
-    NSWindow *mainWindow = [_mainWindowController window];
-    NSWindow *overlayWindow = [_plusWindowController window];
-    [overlayWindow setFrame:[mainWindow frame] display:YES animate:NO];
 }
 
 

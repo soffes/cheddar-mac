@@ -74,8 +74,6 @@
 		03B3952E15DAC97900A8A7D4 /* CDMBoolToTaskTextColorValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 03B3952D15DAC97000A8A7D4 /* CDMBoolToTaskTextColorValueTransformer.m */; };
 		03CB266315DA1FAC00FEDF25 /* CDMAddListView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CB266215DA1FAC00FEDF25 /* CDMAddListView.m */; };
 		03CB269015DA248E00FEDF25 /* CDMAddListTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 03CB268F15DA248E00FEDF25 /* CDMAddListTextFieldCell.m */; };
-		03F2D96B15DAD88C00EEC543 /* CDMPlusWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03F2D96A15DAD88C00EEC543 /* CDMPlusWindowController.m */; };
-		03F2D96D15DAD89900EEC543 /* Plus.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03F2D96C15DAD89900EEC543 /* Plus.xib */; };
 		03F2D97015DAD8C500EEC543 /* CDMPlusWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 03F2D96F15DAD8C500EEC543 /* CDMPlusWindow.m */; };
 		03F2D97315DAE30E00EEC543 /* CDMPlusDialogView.m in Sources */ = {isa = PBXBuildFile; fileRef = 03F2D97215DAE30E00EEC543 /* CDMPlusDialogView.m */; };
 		03F2D98F15DB027400EEC543 /* CDMTaskTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 03F2D98E15DB027400EEC543 /* CDMTaskTextFieldCell.m */; };
@@ -307,9 +305,6 @@
 		03CB266215DA1FAC00FEDF25 /* CDMAddListView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMAddListView.m; sourceTree = "<group>"; };
 		03CB268E15DA248E00FEDF25 /* CDMAddListTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMAddListTextFieldCell.h; sourceTree = "<group>"; };
 		03CB268F15DA248E00FEDF25 /* CDMAddListTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMAddListTextFieldCell.m; sourceTree = "<group>"; };
-		03F2D96915DAD88C00EEC543 /* CDMPlusWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMPlusWindowController.h; sourceTree = "<group>"; };
-		03F2D96A15DAD88C00EEC543 /* CDMPlusWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMPlusWindowController.m; sourceTree = "<group>"; };
-		03F2D96C15DAD89900EEC543 /* Plus.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Plus.xib; sourceTree = "<group>"; };
 		03F2D96E15DAD8C500EEC543 /* CDMPlusWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CDMPlusWindow.h; path = Classes/CDMPlusWindow.h; sourceTree = "<group>"; };
 		03F2D96F15DAD8C500EEC543 /* CDMPlusWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CDMPlusWindow.m; path = Classes/CDMPlusWindow.m; sourceTree = "<group>"; };
 		03F2D97115DAE30E00EEC543 /* CDMPlusDialogView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMPlusDialogView.h; sourceTree = "<group>"; };
@@ -689,7 +684,6 @@
 				B21FF2FF15BF7D7B00AEEA97 /* SignIn.xib */,
 				B2A23DA315D9997700EA9D2D /* About.xib */,
 				B2A23DA515D9997E00EA9D2D /* Preferences.xib */,
-				03F2D96C15DAD89900EEC543 /* Plus.xib */,
 				03457A8215EC8AE300645547 /* QuickAdd.xib */,
 				0391100315F08AC300A3EA7B /* NoTasks.xib */,
 				0391100515F08CA300A3EA7B /* NoLists.xib */,
@@ -809,8 +803,6 @@
 				B2A23D7815D997D900EA9D2D /* CDMAboutWindowController.m */,
 				B2A23D7A15D997E300EA9D2D /* CDMPreferencesWindowController.h */,
 				B2A23D7B15D997E300EA9D2D /* CDMPreferencesWindowController.m */,
-				03F2D96915DAD88C00EEC543 /* CDMPlusWindowController.h */,
-				03F2D96A15DAD88C00EEC543 /* CDMPlusWindowController.m */,
 				0306DBBC15EC87F400D6409B /* CDMQuickAddWindowController.h */,
 				0306DBBD15EC87F400D6409B /* CDMQuickAddWindowController.m */,
 			);
@@ -1037,7 +1029,6 @@
 				B27CBB4F15DA233C00BC851F /* x@2x.png in Resources */,
 				03B3951C15DAB73000A8A7D4 /* Localizable.strings in Resources */,
 				B2F1F86D15DAC697002B9733 /* dsa_pub.pem in Resources */,
-				03F2D96D15DAD89900EEC543 /* Plus.xib in Resources */,
 				B2DCE53415DB12CE00468BF5 /* move-arrow.png in Resources */,
 				B2DCE53515DB12CE00468BF5 /* move-arrow@2x.png in Resources */,
 				B27D6AF515DC7E6E0090D88E /* tag.png in Resources */,
@@ -1098,7 +1089,6 @@
 				03CB269015DA248E00FEDF25 /* CDMAddListTextFieldCell.m in Sources */,
 				03B3952815DAC66E00A8A7D4 /* CDMTaskTextField.m in Sources */,
 				03B3952E15DAC97900A8A7D4 /* CDMBoolToTaskTextColorValueTransformer.m in Sources */,
-				03F2D96B15DAD88C00EEC543 /* CDMPlusWindowController.m in Sources */,
 				03F2D97015DAD8C500EEC543 /* CDMPlusWindow.m in Sources */,
 				03F2D97315DAE30E00EEC543 /* CDMPlusDialogView.m in Sources */,
 				03F2D98F15DB027400EEC543 /* CDMTaskTextFieldCell.m in Sources */,

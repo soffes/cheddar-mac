@@ -11,6 +11,10 @@
 #import "MASShortcut+UserDefaults.h"
 #import <Carbon/Carbon.h>
 
+@interface CDMPreferencesWindowController ()
+- (void)_userChanged:(NSNotification *)notification;
+@end
+
 @implementation CDMPreferencesWindowController
 
 @synthesize generalPreferenceView = _generalPreferenceView;
@@ -18,6 +22,13 @@
 @synthesize updatesPreferenceView = _updatesPreferenceView;
 @synthesize usernameLabel = _usernameLabel;
 @synthesize quickAddShortcutView = _quickAddShortcutView;
+
+
+#pragma mark - NSObject
+
+- (void)dealloc {
+	[[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 
 
 #pragma mark - NSWindowController
@@ -32,7 +43,10 @@
 
 - (void)windowDidLoad {
 	[super windowDidLoad];
-	self.usernameLabel.stringValue = [NSString stringWithFormat:@"You are signed in as %@.", [CDKUser currentUser].username];
+
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(_userChanged:) name:kCDKCurrentUserChangedNotificationName object:nil];
+	[self _userChanged:nil];
+
     self.quickAddShortcutView.associatedUserDefaultsKey = kCDMUserDefaultsQuickAddShortcutKey;
 }
 
@@ -59,6 +73,13 @@
 
 - (IBAction)manageAccount:(id)sender {
 	[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://cheddarapp.com/account"]];
+}
+
+
+#pragma mark - Private
+
+- (void)_userChanged:(NSNotification *)notification {
+	self.usernameLabel.stringValue = [NSString stringWithFormat:@"You are signed in as %@.", [CDKUser currentUser].username];
 }
 
 @end
