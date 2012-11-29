@@ -12,7 +12,7 @@
 #pragma mark - API
 
 extern NSString *const kCDMAPIClientID;
-extern NSString *const kCD<APIClientSecret;
+extern NSString *const kCDMAPIClientSecret;
 
 #pragma mark - Fonts
 
