@@ -15,7 +15,7 @@
 	url = https://github.com/andymatuschak/Sparkle.git
 [submodule "Vendor/LetsMove"]
 	path = Vendor/LetsMove
-	url = https://github.com/samsoffes/LetsMove.git
+	url = https://github.com/soffes/LetsMove.git
 [submodule "Vendor/MASShortcut"]
 	path = Vendor/MASShortcut
 	url = git://github.com/shpakovski/MASShortcut.git
