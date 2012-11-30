@@ -19,7 +19,6 @@
 
 @synthesize generalPreferenceView = _generalPreferenceView;
 @synthesize accountPreferenceView = _accountPreferenceView;
-@synthesize updatesPreferenceView = _updatesPreferenceView;
 @synthesize usernameLabel = _usernameLabel;
 @synthesize quickAddShortcutView = _quickAddShortcutView;
 
@@ -56,7 +55,6 @@
 - (void)setupToolbar {
     [self addView:self.generalPreferenceView label:@"General" image:[NSImage imageNamed:@"NSPreferencesGeneral"]];
     [self addView:self.accountPreferenceView label:@"Account" image:[NSImage imageNamed:@"NSUser"]];
-    [self addView:self.updatesPreferenceView label:@"Updates" image:[NSImage imageNamed:@"preferences-updates"]];
 
     [self setCrossFade:YES];
     [self setShiftSlowsAnimation:YES];
