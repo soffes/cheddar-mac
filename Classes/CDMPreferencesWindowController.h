@@ -13,7 +13,6 @@
 
 @property (weak, nonatomic) IBOutlet NSView *generalPreferenceView;
 @property (weak, nonatomic) IBOutlet NSView *accountPreferenceView;
-@property (weak, nonatomic) IBOutlet NSView *updatesPreferenceView;
 
 @property (weak, nonatomic) IBOutlet NSTextField *usernameLabel;
 @property (weak, nonatomic) IBOutlet MASShortcutView *quickAddShortcutView;
