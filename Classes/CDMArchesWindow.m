@@ -20,8 +20,7 @@ static CGFloat const kCDMArchesWindowShakeVigour = 0.05f;
 
 @implementation CDMArchesWindowContentView
 
-- (void)drawRect:(NSRect)dirtyRect
-{
+- (void)drawRect:(NSRect)dirtyRect {
     NSColor *archesColor = [NSColor cheddarArchesColor];
     NSBezierPath *path = [NSBezierPath bezierPathWithRoundedRect:[self bounds] xRadius:kCDMArchesWindowCornerRadius yRadius:kCDMArchesWindowCornerRadius];
     [archesColor setFill];
@@ -60,6 +59,7 @@ static CGFloat const kCDMArchesWindowShakeVigour = 0.05f;
     }
     return self;
 }
+
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -120,22 +120,22 @@ static CGFloat const kCDMArchesWindowShakeVigour = 0.05f;
     return shakeAnimation;
 }
 
+
 #pragma mark - NSResponder
 
-- (BOOL)canBecomeKeyWindow
-{
+- (BOOL)canBecomeKeyWindow {
     return YES;
 }
 
-- (BOOL)canBecomeMainWindow
-{
+
+- (BOOL)canBecomeMainWindowb {
     return YES;
 }
+
 
 #pragma mark - Private
 
-- (void)_repositionContentView
-{
+- (void)_repositionContentView {
     NSView *contentView = [self contentView];
     NSRect windowFrame = [self frame];
     NSRect newFrame = [contentView frame];
@@ -144,12 +144,13 @@ static CGFloat const kCDMArchesWindowShakeVigour = 0.05f;
     [contentView setNeedsDisplay:YES];
 }
 
-- (void)_createAndPositionTrafficLights
-{
+
+- (void)_createAndPositionTrafficLights {
     NSView *themeView = [[self contentView] superview];
     NSSize imageSize = [[NSImage imageNamed:@"traffic-normal"] size];
-    NSRect trafficLightContainerRect = NSMakeRect(kCDMWindowTrafficLightsSpacing,  NSMaxY([themeView bounds]) - (kCDMWindowTrafficLightsYInset + imageSize.height), (imageSize.width * 3.f) + (kCDMWindowTrafficLightsSpacing * 2.f), imageSize.height);
+    NSRect trafficLightContainerRect = NSMakeRect(kCDMWindowTrafficLightsSpacing + 1.0f,  NSMaxY([themeView bounds]) - (kCDMWindowTrafficLightsYInset + imageSize.height), (imageSize.width * 3.f) + (kCDMWindowTrafficLightsSpacing * 2.f), imageSize.height);
     _trafficLightContainer = [[CDMTrafficLightsView alloc] initWithFrame:trafficLightContainerRect];
     [_trafficLightContainer setAutoresizingMask:NSViewMaxXMargin | NSViewMinYMargin];
 }
+
 @end

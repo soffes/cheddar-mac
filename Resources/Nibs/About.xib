@@ -2,13 +2,13 @@
 <archive type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="8.00">
 	<data>
 		<int key="IBDocument.SystemTarget">1080</int>
-		<string key="IBDocument.SystemVersion">12A269</string>
-		<string key="IBDocument.InterfaceBuilderVersion">2549</string>
-		<string key="IBDocument.AppKitVersion">1187</string>
-		<string key="IBDocument.HIToolboxVersion">624.00</string>
+		<string key="IBDocument.SystemVersion">12C3104</string>
+		<string key="IBDocument.InterfaceBuilderVersion">2844</string>
+		<string key="IBDocument.AppKitVersion">1187.34</string>
+		<string key="IBDocument.HIToolboxVersion">625.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin</string>
-			<string key="NS.object.0">2549</string>
+			<string key="NS.object.0">2844</string>
 		</object>
 		<array key="IBDocument.IntegratedClassDependencies">
 			<string>NSCustomObject</string>
@@ -62,7 +62,7 @@
 							<object class="NSTextFieldCell" key="NSCell" id="758864004">
 								<int key="NSCellFlags">67108864</int>
 								<int key="NSCellFlags2">138674176</int>
-								<string key="NSContents">Cheddar is designed &amp; developed by Nothing Magical in California.</string>
+								<string key="NSContents">Cheddar is designed &amp; developed by Nothing Magical.</string>
 								<object class="NSFont" key="NSSupport">
 									<string key="NSName">LucidaGrande</string>
 									<double key="NSSize">15</double>
@@ -378,7 +378,7 @@
 				</object>
 				<object class="IBPartialClassDescription">
 					<string key="className">CDMArchesWindow</string>
-					<string key="superclassName">NSWindow</string>
+					<string key="superclassName">NSPanel</string>
 					<object class="NSMutableDictionary" key="actions">
 						<string key="NS.key.0">shake:</string>
 						<string key="NS.object.0">id</string>
