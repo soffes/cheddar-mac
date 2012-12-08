@@ -2,6 +2,8 @@
 
 [Cheddar for Mac](http://cheddarapp.com/apps) is the Mac application for [Cheddar](http://cheddarapp.com), a simple & instant task manager.
 
+**Note:** I haven't had time to setup good tools for third-party developers to hack on Cheddar for Mac yet. I need to spend time and implement the web flow since only offical apps can use the username and password OAuth flow. Also, the [app_store branch](https://github.com/nothingmagical/cheddar-mac/tree/app_store) has a lot of differences than master. I want to merge it back in and #ifdef all of the Sparkle stuff so it's easy to keep doing betas.
+
 
 ## Getting Started
 
