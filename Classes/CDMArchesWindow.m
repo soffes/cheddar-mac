@@ -128,7 +128,7 @@ static CGFloat const kCDMArchesWindowShakeVigour = 0.05f;
 }
 
 
-- (BOOL)canBecomeMainWindowb {
+- (BOOL)canBecomeMainWindow {
     return YES;
 }
 
