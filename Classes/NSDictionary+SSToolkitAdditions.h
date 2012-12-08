@@ -24,4 +24,5 @@
  invalid representation of a dictionary.
  */
 + (NSDictionary *)dictionaryWithFormEncodedString:(NSString *)encodedString;
+
 @end

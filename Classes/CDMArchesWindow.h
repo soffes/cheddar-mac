@@ -11,6 +11,3 @@
 - (IBAction)shake:(id)sender;
 
 @end
-
-@interface CDMArchesWindowContentView : NSView
-@end

@@ -10,9 +10,19 @@
 #import "NSColor+CDMAdditions.h"
 
 @implementation CDMBoolToTaskTextColorValueTransformer
-+ (Class)transformedValueClass { return [NSColor class]; }
-+ (BOOL)allowsReverseTransformation { return NO; }
+
++ (Class)transformedValueClass {
+	return [NSColor class];
+}
+
+
++ (BOOL)allowsReverseTransformation {
+	return NO;
+}
+
+
 - (id)transformedValue:(id)value {
     return [value boolValue] ? [NSColor cheddarSteelColor] : [NSColor cheddarLightTextColor];
 }
+
 @end

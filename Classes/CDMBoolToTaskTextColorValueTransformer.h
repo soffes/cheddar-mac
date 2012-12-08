@@ -6,8 +6,5 @@
 //  Copyright (c) 2012 Nothing Magical. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
 @interface CDMBoolToTaskTextColorValueTransformer : NSValueTransformer
-
 @end

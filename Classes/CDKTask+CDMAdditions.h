@@ -9,5 +9,7 @@
 #import <CheddarKit/CheddarKit.h>
 
 @interface CDKTask (CDMAdditions)
+
 - (NSAttributedString *)attributedDisplayText;
+
 @end

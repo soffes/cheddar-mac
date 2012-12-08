@@ -6,14 +6,19 @@
 //  Copyright (c) 2012 Nothing Magical. All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
-
 @protocol CDMTagFilterBarDelegate;
+
 @interface CDMTagFilterBar : NSView
+
 @property (nonatomic, assign) IBOutlet id<CDMTagFilterBarDelegate> delegate;
+
 @end
 
+
 @protocol CDMTagFilterBarDelegate <NSObject>
+
 @optional
-- (void)tagFilterBarClicked:(CDMTagFilterBar*)bar;
+
+- (void)tagFilterBarClicked:(CDMTagFilterBar *)bar;
+
 @end

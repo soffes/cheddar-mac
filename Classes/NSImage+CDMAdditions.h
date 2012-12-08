@@ -8,7 +8,6 @@
 
 @interface NSImage (CDMAdditions)
 
-
 - (void)drawStretchableImageInRect:(CGRect)rect leftCapWidth:(CGFloat)leftCapWith;
 
 @end

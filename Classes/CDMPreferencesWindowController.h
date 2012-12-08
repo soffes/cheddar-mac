@@ -9,6 +9,7 @@
 #import "DBPrefsWindowController.h"
 
 @class MASShortcutView;
+
 @interface CDMPreferencesWindowController : DBPrefsWindowController
 
 @property (weak, nonatomic) IBOutlet NSView *generalPreferenceView;

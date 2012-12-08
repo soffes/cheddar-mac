@@ -14,8 +14,10 @@
     NSTextView *_hitTestTextView;
 }
 
-- (id)initWithCoder:(NSCoder *)aDecoder
-{
+
+#pragma mark - NSObject
+
+- (id)initWithCoder:(NSCoder *)aDecoder {
     if ((self = [super initWithCoder:aDecoder])) {
         self.textColor = [NSColor cheddarLightTextColor];
         self.font = [NSFont fontWithName:kCDMRegularFontName size:15.f];
@@ -33,17 +35,17 @@
     return self;
 }
 
-- (void)dealloc
-{
+
+- (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
     [self removeObserver:self forKeyPath:@"attributedStringValue"];
     [_hitTestTextView unbind:@"attributedString"];
 }
 
+
 #pragma mark - Mouse Events
 
-- (void)mouseDown:(NSEvent *)theEvent
-{
+- (void)mouseDown:(NSEvent *)theEvent {
     if ([theEvent clickCount] == 2) {
         [self beginEditing];
     } else {
@@ -71,8 +73,8 @@
     }
 }
 
-- (void)beginEditing
-{
+
+- (void)beginEditing {
     if ([self.delegate respondsToSelector:@selector(editingTextForTextField:)]) {
         [self setAttributedStringValue:nil];
         [self setStringValue:[(id)self.delegate editingTextForTextField:self]];
@@ -83,14 +85,14 @@
     [fieldEditor scrollRangeToVisible:NSMakeRange ([[fieldEditor string] length], 0)];
 }
 
-- (void)textDidEndEditing:(NSNotification *)notification
-{
+
+- (void)textDidEndEditing:(NSNotification *)notification {
     [super textDidEndEditing:notification];
     [self setEditable:NO];
 }
 
-- (void)resetCursorRects
-{
+
+- (void)resetCursorRects {
     [super resetCursorRects];
     NSAttributedString *string = [_hitTestTextView attributedString];
     NSLayoutManager *layoutManager = [_hitTestTextView layoutManager];
@@ -103,18 +105,19 @@
     }];
 }
 
-#pragma mark - KVO
+#pragma mark - Private
 
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
-{
+- (void)_textFieldFrameChanged:(NSNotification *)notification {
+    [_hitTestTextView setFrame:[self frame]];
+}
+
+
+#pragma mark - NSKeyValueObserving
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     if ([keyPath isEqualToString:@"attributedStringValue"]) {
         [self resetCursorRects];
     }
 }
-#pragma mark - Private
 
-- (void)_textFieldFrameChanged:(NSNotification *)notification
-{
-    [_hitTestTextView setFrame:[self frame]];
-}
 @end

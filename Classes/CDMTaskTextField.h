@@ -6,13 +6,17 @@
 //  Copyright (c) 2012 Nothing Magical. All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
-
 @interface CDMTaskTextField : NSTextField <NSTextFieldDelegate>
+
 - (void)beginEditing;
+
 @end
 
+
 @protocol CDMTaskTextFieldDelegate
+
 @optional
+
 - (NSString *)editingTextForTextField:(NSTextField*)textField;
+
 @end

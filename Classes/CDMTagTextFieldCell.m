@@ -10,6 +10,9 @@
 #import "NSColor+CDMAdditions.h"
 
 @implementation CDMTagTextFieldCell
+
+#pragma mark - NSObject
+
 - (id)initWithCoder:(NSCoder *)aDecoder {
     if ((self = [super initWithCoder:aDecoder])) {
         self.font = [NSFont fontWithName:kCDMRegularFontName size:15.0];

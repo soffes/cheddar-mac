@@ -14,13 +14,7 @@
 
 @implementation CDMAddTaskView
 
-@synthesize textField = _textField;
-@synthesize colorList = _colorList;
-
-- (BOOL)isFlipped {
-	return YES;
-}
-
+#pragma mark - NSObject
 
 - (void)awakeFromNib {
 	[super awakeFromNib];
@@ -48,6 +42,13 @@
 	components[1] = 180.0 / 255.0;
 	components[2] = 180.0 / 255.0;
 	[self.colorList setColor:[NSColor colorWithColorSpace:sRGB components:components count:4] forKey:@"bottomBorder"];
+}
+
+
+#pragma mark - NSView
+
+- (BOOL)isFlipped {
+	return YES;
 }
 
 
