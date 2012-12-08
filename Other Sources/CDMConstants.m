@@ -10,6 +10,6 @@
 
 CGFloat const kCDMTableViewAnimationDuration = 0.2f;
 NSString* const kCDMURLScheme = @"cheddar://";
-CGFloat const kCDMWindowTrafficLightsSpacing = 7.0f;
-CGFloat const kCDMWindowTrafficLightsYInset = 8.0f;
+CGFloat const kCDMWindowTrafficLightsSpacing = 6.0f;
+CGFloat const kCDMWindowTrafficLightsYInset = 5.0f;
 NSString* const kCDMUserDefaultsQuickAddShortcutKey = @"quickAddShortcut";

@@ -45,9 +45,11 @@ static CGFloat const kCDMTrafficLightsViewAnimationDuration = 0.1f;
         NSSize imageSize = [trafficNormal size];
         NSRect closeRect = NSMakeRect(0.f, 0.f, imageSize.width, imageSize.height);
         _closeButton = [self _borderlessButtonWithRect:closeRect];
+		
         NSRect minimizeRect = closeRect;
         minimizeRect.origin.x += closeRect.size.width + kCDMWindowTrafficLightsSpacing;
         _minimizeButton = [self _borderlessButtonWithRect:minimizeRect];
+		
         NSRect zoomRect = minimizeRect;
         zoomRect.origin.x += minimizeRect.size.width + kCDMWindowTrafficLightsSpacing;
         _zoomButton = [self _borderlessButtonWithRect:zoomRect];
