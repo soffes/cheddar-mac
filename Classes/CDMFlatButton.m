@@ -12,7 +12,19 @@
 
 @implementation CDMFlatButton
 
-@synthesize buttonColor = _buttonColor;
+#pragma mark - Accessors
+
+- (void)setButtonColor:(NSColor *)buttonColor {
+    [[self cell] setButtonColor:buttonColor];
+}
+
+
+- (NSColor*)buttonColor {
+    return [[self cell] buttonColor];
+}
+
+
+#pragma mark - NSObject
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -27,20 +39,10 @@
 }
 
 
+#pragma mark - NSControl
+
 + (Class)cellClass {
     return [CDMFlatButtonCell class];
-}
-
-
-#pragma mark - Accessors
-
-- (void)setButtonColor:(NSColor *)buttonColor {
-    [[self cell] setButtonColor:buttonColor];
-}
-
-
-- (NSColor*)buttonColor {
-    return [[self cell] buttonColor];
 }
 
 @end

@@ -7,27 +7,16 @@
 //
 
 #import "CDMArchesWindow.h"
-#import "NSColor+CDMAdditions.h"
-#import <Carbon/Carbon.h>
-#import <QuartzCore/QuartzCore.h>
+#import "CDMArchesWindowContentView.h"
 #import "CDMTrafficLightsView.h"
 
-static CGFloat const kCDMArchesWindowCornerRadius = 4.0f;
+#import <QuartzCore/QuartzCore.h>
+#import <Carbon/Carbon.h>
+
 static NSInteger const kCDMArchesWindowShakeCount = 4;
 static CGFloat const kCDMArchesWindowShakeDuration = 0.5f;
 // factor that determines the distance the window moves when shaking
 static CGFloat const kCDMArchesWindowShakeVigour = 0.05f; 
-
-@implementation CDMArchesWindowContentView
-
-- (void)drawRect:(NSRect)dirtyRect {
-    NSColor *archesColor = [NSColor cheddarArchesColor];
-    NSBezierPath *path = [NSBezierPath bezierPathWithRoundedRect:[self bounds] xRadius:kCDMArchesWindowCornerRadius yRadius:kCDMArchesWindowCornerRadius];
-    [archesColor setFill];
-    [path fill];
-}
-
-@end
 
 @interface CDMArchesWindow ()
 - (void)_createAndPositionTrafficLights;

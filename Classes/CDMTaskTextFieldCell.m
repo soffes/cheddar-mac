@@ -11,15 +11,13 @@
 
 @implementation CDMTaskTextFieldCell
 
-- (NSText *)setUpFieldEditorAttributes:(NSText *)textObj
-{
-    NSTextView *textView = (NSTextView *)[super setUpFieldEditorAttributes:textObj];
-  //  [textView setDrawsBackground:NO];
-    [textView setBackgroundColor:[NSColor clearColor]];
-  //  [[textView enclosingScrollView] setDrawsBackground:NO];
-    [[textView enclosingScrollView] setBackgroundColor:[NSColor clearColor]];
-    return textView;
+- (NSText *)setUpFieldEditorAttributes:(NSText *)textObj {
+	NSTextView *textView = (NSTextView *)[super setUpFieldEditorAttributes:textObj];
+	[textView setBackgroundColor:[NSColor clearColor]];
+	[[textView enclosingScrollView] setBackgroundColor:[NSColor clearColor]];
+	return textView;
 }
+
 
 - (NSRect)adjustedFrameToVerticallyCenterText:(NSRect)frame {
 	NSInteger offset = floor((NSHeight(frame) - ([[self font] ascender] - [[self font] descender])) / 2);
@@ -36,8 +34,8 @@
 	[super selectWithFrame:[self adjustedFrameToVerticallyCenterText:aRect] inView:controlView editor:editor delegate:delegate start:start length:length];
 }
 
-- (void)drawInteriorWithFrame:(NSRect)cellFrame inView:(NSView *)controlView
-{
+- (void)drawInteriorWithFrame:(NSRect)cellFrame inView:(NSView *)controlView {
     [super drawInteriorWithFrame:[self adjustedFrameToVerticallyCenterText:cellFrame] inView:controlView];
 }
+
 @end

@@ -15,6 +15,8 @@
 
 @implementation CDMSecureTextField
 
+#pragma mark - NSObject
+
 - (id)initWithCoder:(NSCoder *)aDecoder {
     if ((self = [super initWithCoder:aDecoder])) {
         NSNotificationCenter *nc = [NSNotificationCenter defaultCenter];
@@ -28,15 +30,23 @@
     return self;
 }
 
-- (void)_redrawView {
-    [self setNeedsDisplay:YES];
-}
 
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
+
+#pragma mark - NSControl
+
 + (Class)cellClass {
     return [CDMSecureTextFieldCell class];
 }
+
+
+#pragma mark - Private
+
+- (void)_redrawView {
+    [self setNeedsDisplay:YES];
+}
+
 @end

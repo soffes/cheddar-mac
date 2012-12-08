@@ -38,8 +38,9 @@ static CGFloat const kCDMTrafficLightsViewAnimationDuration = 0.1f;
     NSButton *_zoomButton;
 }
 
-- (id)initWithFrame:(NSRect)frameRect
-{
+#pragma mark - NSObject
+
+- (id)initWithFrame:(NSRect)frameRect {
     if ((self = [super initWithFrame:frameRect])) {
         NSImage *trafficNormal = [NSImage imageNamed:kCDMTrafficLightsViewImageNameTrafficNormal];
         NSSize imageSize = [trafficNormal size];
@@ -62,8 +63,8 @@ static CGFloat const kCDMTrafficLightsViewAnimationDuration = 0.1f;
     return self;
 }
 
-- (void)updateTrackingAreas
-{
+
+- (void)updateTrackingAreas {
 	[super updateTrackingAreas];
 	if (_trackingArea) { [self removeTrackingArea:_trackingArea]; }
 	NSTrackingAreaOptions options = (NSTrackingMouseEnteredAndExited | NSTrackingActiveAlways);
@@ -71,8 +72,8 @@ static CGFloat const kCDMTrafficLightsViewAnimationDuration = 0.1f;
 	[self addTrackingArea:_trackingArea];
 }
 
-- (void)viewWillMoveToWindow:(NSWindow *)newWindow
-{
+
+- (void)viewWillMoveToWindow:(NSWindow *)newWindow {
     [super viewWillMoveToWindow:newWindow];
     [self updateTrackingAreas];
     NSUInteger styleMask = [newWindow styleMask];
@@ -87,15 +88,20 @@ static CGFloat const kCDMTrafficLightsViewAnimationDuration = 0.1f;
     [_zoomButton setAction:@selector(zoom:)];
 }
 
+
 #pragma mark - Mouse Events
 
 - (void)mouseEntered:(NSEvent *)theEvent {
     [self _animateButtonsWithState:YES];
 }
 
+
 - (void)mouseExited:(NSEvent *)theEvent {
     [self _animateButtonsWithState:NO];
 }
+
+
+#pragma mark - Private
 
 - (void)_animateButtonsWithState:(BOOL)state {
     BOOL graphite = [self _isGraphite];
@@ -156,9 +162,8 @@ static CGFloat const kCDMTrafficLightsViewAnimationDuration = 0.1f;
     [NSAnimationContext endGrouping];
 }
 
-#pragma mark - Private
 
-- (NSButton*)_borderlessButtonWithRect:(NSRect)rect {
+- (NSButton *)_borderlessButtonWithRect:(NSRect)rect {
     NSButton *button = [[NSButton alloc] initWithFrame:rect];
     [button setBordered:NO];
     [button setButtonType:NSMomentaryChangeButton];
@@ -181,4 +186,5 @@ static CGFloat const kCDMTrafficLightsViewAnimationDuration = 0.1f;
     [_minimizeButton setAlternateImage:minimize];
     [_zoomButton setAlternateImage:zoom];
 }
+
 @end

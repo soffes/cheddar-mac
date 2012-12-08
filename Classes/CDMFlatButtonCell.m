@@ -14,7 +14,8 @@ static CGFloat const CDMFlatButtonCellCornerRadius = 4.0f;
 #define CDMFlatButtonCellOverlayColor [NSColor colorWithDeviceWhite:0.f alpha:0.2f]
 
 @implementation CDMFlatButtonCell
-@synthesize buttonColor = _buttonColor;
+
+#pragma mark - NSObject
 
 - (id)init {
     if ((self = [super init])) {
@@ -23,6 +24,8 @@ static CGFloat const CDMFlatButtonCellCornerRadius = 4.0f;
     return self;
 }
 
+
+#pragma mark - NSCell
 
 - (void)drawWithFrame:(NSRect)cellFrame inView:(NSView *)controlView {
     NSBezierPath *path = [NSBezierPath bezierPathWithRoundedRect:cellFrame xRadius:CDMFlatButtonCellCornerRadius yRadius:CDMFlatButtonCellCornerRadius];

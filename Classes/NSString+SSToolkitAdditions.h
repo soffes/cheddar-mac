@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface NSString (SSToolkitAdditions)
+
 - (NSString *)stringByEscapingForURLQuery;
 - (NSString *)stringByUnescapingFromURLQuery;
+
 @end

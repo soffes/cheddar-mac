@@ -9,12 +9,8 @@
 #import "CDMColorView.h"
 
 @implementation CDMColorView
-@synthesize color = _color;
 
-- (void)drawRect:(NSRect)dirtyRect {
-    [self.color set];
-    [NSBezierPath fillRect:[self bounds]];
-}
+#pragma mark - Accessors
 
 - (void)setColor:(NSColor *)color {
     if (_color != color) {
@@ -22,4 +18,13 @@
         [self setNeedsDisplay:YES];
     }
 }
+
+
+#pragma mark - NSView
+
+- (void)drawRect:(NSRect)dirtyRect {
+    [self.color set];
+    [NSBezierPath fillRect:[self bounds]];
+}
+
 @end

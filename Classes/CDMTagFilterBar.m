@@ -18,7 +18,15 @@
 @end
 
 @implementation CDMTagFilterBar
-@synthesize delegate = _delegate;
+
+#pragma mark - NSObject
+
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+
+#pragma mark - NSView
 
 - (id)initWithFrame:(NSRect)frameRect {
     if ((self = [super initWithFrame:frameRect])) {
@@ -27,11 +35,6 @@
         [nc addObserver:self selector:@selector(_redrawView) name:NSWindowDidResignKeyNotification object:[self window]];
     }
     return self;
-}
-
-
-- (void)dealloc {
-    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 
@@ -59,6 +62,8 @@
 	[NSBezierPath fillRect:CGRectMake(0.0f, 0.0f, size.width, 1.0f)];
 }
 
+
+#pragma mark - NSControl
 
 - (void)mouseDown:(NSEvent *)theEvent {
     if ([self.delegate respondsToSelector:@selector(tagFilterBarClicked:)]) {

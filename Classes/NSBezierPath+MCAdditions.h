@@ -5,8 +5,6 @@
 //  Copyright 2008 MolokoCacao. All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
-
 @interface NSBezierPath (MCAdditions)
 
 + (NSBezierPath*)bezierPathWithCGPath:(CGPathRef)pathRef;

@@ -11,6 +11,8 @@ extern NSString* const kCDMTasksDragTypeMove;
 @interface CDMTasksViewController : NSViewController <NSTextFieldDelegate>
 
 @property (nonatomic, strong) NSArrayController *arrayController;
+@property (nonatomic, strong) CDKList *selectedList;
+
 @property (nonatomic, weak) IBOutlet NSTableView *tableView;
 @property (nonatomic, weak) IBOutlet NSTextField *taskField;
 @property (nonatomic, weak) IBOutlet NSView *tagFilterBar;
@@ -20,14 +22,15 @@ extern NSString* const kCDMTasksDragTypeMove;
 @property (nonatomic, strong) IBOutlet NSView *noTasksView;
 @property (nonatomic, strong) IBOutlet NSView *loadingTasksView;
 
-@property (nonatomic, strong) CDKList *selectedList;
-- (IBAction)addTask:(id)sender;
-- (IBAction)focusTaskField:(id)sender;
 - (void)addFilterForTag:(CDKTag*)tag;
 - (void)addTaskWithName:(NSString *)name inList:(CDKList *)list;
+
+- (IBAction)addTask:(id)sender;
+- (IBAction)focusTaskField:(id)sender;
 
 // Menu items
 - (IBAction)editTask:(id)sender;
 - (IBAction)archiveTask:(id)sender;
 - (IBAction)deleteTask:(id)sender;
+
 @end

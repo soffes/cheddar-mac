@@ -39,6 +39,9 @@ static inline CGImageRef _createNoiseImageRef(NSUInteger width, NSUInteger heigh
     CDMTrafficLightsView *_trafficLightsContainer;
 }
 
+
+#pragma mark - NSObject
+
 - (void)awakeFromNib {
 	[super awakeFromNib];
 	NSColorList *colorList = [[NSColorList alloc] initWithName:NSStringFromClass([self class])];
@@ -134,17 +137,29 @@ static inline CGImageRef _createNoiseImageRef(NSUInteger width, NSUInteger heigh
 	}];
 }
 
+
+#pragma mark - NSWindow
+
+- (void)toggleFullScreen:(id)sender {
+	BOOL isFullScreen = (self.styleMask & NSFullScreenWindowMask) != NSFullScreenWindowMask;
+	_trafficLightsContainer.alphaValue = isFullScreen ? 0.0f : 1.0f;
+	
+	[super toggleFullScreen:sender];
+}
+
+
 #pragma mark - Private
 
-- (void)_doInitialWindowSetup
-{
+- (void)_doInitialWindowSetup {
     [super _doInitialWindowSetup];
-    if ([[NSUserDefaults standardUserDefaults] boolForKey:kCDMUserDefaultsKeyWindowAlwaysOnTop])
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:kCDMUserDefaultsKeyWindowAlwaysOnTop]) {
         [self setLevel:NSFloatingWindowLevel];
+	}
     [self _createAndPositionTrafficLights];
 }
-- (void)_layoutTrafficLightsAndContent
-{
+
+
+- (void)_layoutTrafficLightsAndContent {
     [super _layoutTrafficLightsAndContent];
     NSButton *close = [self standardWindowButton:NSWindowCloseButton];
     NSButton *minimize = [self standardWindowButton:NSWindowMiniaturizeButton];
@@ -154,12 +169,13 @@ static inline CGImageRef _createNoiseImageRef(NSUInteger width, NSUInteger heigh
     [zoom setHidden:YES];
 }
 
-- (void)_createAndPositionTrafficLights
-{
+
+- (void)_createAndPositionTrafficLights {
     NSSize imageSize = [[NSImage imageNamed:@"traffic-normal"] size];
     NSRect trafficLightContainerRect = NSMakeRect(kCDMWindowTrafficLightsSpacing,  floor(NSMidY([self.titleBarView bounds]) - (imageSize.height / 2.f)), (imageSize.width * 3.f) + (kCDMWindowTrafficLightsSpacing * 2.f), imageSize.height);
     _trafficLightsContainer = [[CDMTrafficLightsView alloc] initWithFrame:trafficLightContainerRect];
     [_trafficLightsContainer setAutoresizingMask:NSViewMaxXMargin | NSViewMaxYMargin | NSViewMinYMargin];
     [self.titleBarView addSubview:_trafficLightsContainer];
 }
+
 @end

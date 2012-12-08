@@ -6,8 +6,5 @@
 //  Copyright (c) 2012 Nothing Magical. All rights reserved.
 //
 
-#import <Cocoa/Cocoa.h>
-
 @interface CDMAddListView : NSView
-
 @end

@@ -14,4 +14,5 @@
 + (NSColor *)cheddarTextColor;
 + (NSColor *)cheddarLightTextColor;
 + (NSColor *)cheddarBlueColor;
+
 @end
