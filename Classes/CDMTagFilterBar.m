@@ -7,11 +7,7 @@
 //
 
 #import "CDMTagFilterBar.h"
-
-#define CDMTagFilterBarBottomColor [NSColor colorWithCalibratedRed:0.071 green:0.570 blue:0.801 alpha:1.000]
-#define CDMTagFilterBarTopColor [NSColor colorWithCalibratedRed:0.082 green:0.654 blue:0.887 alpha:1.000]
-#define CDMTagFilterBarInactiveTopColor [NSColor colorWithCalibratedRed:0.710 green:0.705 blue:0.710 alpha:1.000] 
-#define CDMTagFilterBarInactiveBottomColor [NSColor colorWithCalibratedWhite:0.542 alpha:1.000]
+#import "NSColor+CDMAdditions.h"
 
 @interface CDMTagFilterBar ()
 - (void)_redrawView;
@@ -40,10 +36,10 @@
 
 - (void)drawRect:(NSRect)dirtyRect {
     BOOL active = [[self window] isKeyWindow] && [NSApp isActive];
-    NSColor *topColor = active ? CDMTagFilterBarTopColor : CDMTagFilterBarInactiveTopColor;
-    NSColor *bottomColor = active ? CDMTagFilterBarBottomColor : CDMTagFilterBarInactiveBottomColor;
-	NSColor *bottomInsetColor = active ? [NSColor colorWithCalibratedRed:0.370 green:0.687 blue:0.834 alpha:1.0] : [NSColor colorWithCalibratedWhite:0.585 alpha:1.0];
-	NSColor *bottomBorderColor = active ? [NSColor colorWithCalibratedRed:0.083 green:0.427 blue:0.641 alpha:1.0] : [NSColor colorWithCalibratedWhite:0.4 alpha:1.0];
+    NSColor *topColor = active ? [NSColor cheddarFilterBarTopColor] : [NSColor cheddarFilterBarInactiveTopColor];
+    NSColor *bottomColor = active ? [NSColor cheddarFilterBarBottomColor] : [NSColor cheddarFilterBarInactiveBottomColor];
+	NSColor *bottomInsetColor = active ? [NSColor cheddarFilterBarInsetColor] : [NSColor cheddarFilterBarInactiveInsetColor];
+	NSColor *bottomBorderColor = active ? [NSColor cheddarFilterBarBottomBorderColor] : [NSColor cheddarFilterBarInactiveBottomBorderColor];
 	
     NSGradient *gradient = [[NSGradient alloc] initWithStartingColor:bottomColor endingColor:topColor];
     [gradient drawInRect:[self bounds] angle:90.f];

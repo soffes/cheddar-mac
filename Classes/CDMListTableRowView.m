@@ -7,31 +7,9 @@
 //
 
 #import "CDMListTableRowView.h"
-
-@interface CDMListTableRowView ()
-@property (nonatomic, strong) NSColorList *colorList;
-@end
+#import "NSColor+CDMAdditions.h"
 
 @implementation CDMListTableRowView
-
-@synthesize colorList = _colorList;
-
-- (id)initWithFrame:(NSRect)frameRect {
-	if ((self = [super initWithFrame:frameRect])) {
-		self.colorList = [[NSColorList alloc] initWithName:NSStringFromClass([self class])];
-		[self.colorList setColor:[NSColor colorWithCalibratedWhite:0.926 alpha:1.000] forKey:@"border"];
-
-		[self.colorList setColor:[NSColor colorWithCalibratedRed:0.082 green:0.654 blue:0.887 alpha:1.000] forKey:@"selectedTop"];
-		[self.colorList setColor:[NSColor colorWithCalibratedRed:0.071 green:0.570 blue:0.801 alpha:1.000] forKey:@"selectedBottom"];
-		[self.colorList setColor:[NSColor colorWithCalibratedRed:0.058 green:0.458 blue:0.700 alpha:1.000] forKey:@"selectedBorder"];
-		
-		[self.colorList setColor:[NSColor colorWithCalibratedRed:0.710 green:0.705 blue:0.710 alpha:1.000] forKey:@"selectedTopUnemphasized"];
-		[self.colorList setColor:[NSColor colorWithCalibratedWhite:0.542 alpha:1.000] forKey:@"selectedBottomUnemphasized"];
-		[self.colorList setColor:[NSColor colorWithCalibratedWhite:0.400 alpha:1.000] forKey:@"selectedBorderUnemphasized"];
-	}
-	return self;
-}
-
 
 - (void)drawBackgroundInRect:(NSRect)dirtyRect {
 	CGRect rect = self.bounds;
@@ -43,7 +21,7 @@
 	separatorRect.origin.y = separatorRect.size.height - 1.0f;
 	separatorRect.size.height = 1.0f;
 	
-	[[self.colorList colorWithKey:@"border"] set];
+	[[NSColor cheddarCellSeparatorColor] set];
 	[NSBezierPath fillRect:separatorRect];
 	
 	NSTableCellView *cellView = nil;
@@ -57,20 +35,10 @@
 	CGRect rect = self.bounds;
 	rect.size.height -= 1.0f;
 	
-	NSColor *topColor = nil;
-	NSColor *bottomColor = nil;
-	NSColor *bottomBorderColor = nil;
-	
-	if (self.emphasized) {
-		topColor = [self.colorList colorWithKey:@"selectedTop"];
-		bottomColor = [self.colorList colorWithKey:@"selectedBottom"];
-		bottomBorderColor = [self.colorList colorWithKey:@"selectedBorder"];
-	} else {
-		topColor = [self.colorList colorWithKey:@"selectedTopUnemphasized"];
-		bottomColor = [self.colorList colorWithKey:@"selectedBottomUnemphasized"];
-		bottomBorderColor = [self.colorList colorWithKey:@"selectedBorderUnemphasized"];
-	}
-	
+	NSColor *topColor = self.emphasized ? [NSColor cheddarFilterBarTopColor] : [NSColor cheddarFilterBarInactiveTopColor];
+	NSColor *bottomColor = self.emphasized ? [NSColor cheddarFilterBarBottomColor] : [NSColor cheddarFilterBarInactiveBottomColor];
+	NSColor *bottomBorderColor = self.emphasized ? [NSColor cheddarFilterBarBottomBorderColor] : [NSColor cheddarFilterBarInactiveBottomBorderColor];
+
 	NSGradient *gradient = [[NSGradient alloc] initWithStartingColor:topColor endingColor:bottomColor];
 	[gradient drawInRect:rect angle:90.0f];
 	
@@ -87,8 +55,9 @@
 	}
 }
 
-- (BOOL)isEmphasized
-{
+
+- (BOOL)isEmphasized {
     return [[self window] isKeyWindow] && [NSApp isActive];
 }
+
 @end

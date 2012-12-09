@@ -7,43 +7,9 @@
 //
 
 #import "CDMAddTaskView.h"
-
-@interface CDMAddTaskView ()
-@property (nonatomic, strong) NSColorList *colorList;
-@end
+#import "NSColor+CDMAdditions.h"
 
 @implementation CDMAddTaskView
-
-#pragma mark - NSObject
-
-- (void)awakeFromNib {
-	[super awakeFromNib];
-	
-	self.colorList = [[NSColorList alloc] initWithName:NSStringFromClass([self class])];
-	
-	NSColorSpace *sRGB = [NSColorSpace sRGBColorSpace];
-	
-	[self.colorList setColor:[NSColor whiteColor] forKey:@"topInset"];
-	
-	CGFloat components[] = { 240.0 / 255.0, 240.0 / 255.0, 240.0 / 255.0, 1.0 };
-	[self.colorList setColor:[NSColor colorWithColorSpace:sRGB components:components count:4] forKey:@"backgroundTop"];
-	
-	components[0] = 227.0 / 255.0;
-	components[1] = 227.0 / 255.0;
-	components[2] = 227.0 / 255.0;
-	[self.colorList setColor:[NSColor colorWithColorSpace:sRGB components:components count:4] forKey:@"backgroundBottom"];
-
-	components[0] = 233.0 / 255.0;
-	components[1] = 233.0 / 255.0;
-	components[2] = 233.0 / 255.0;
-	[self.colorList setColor:[NSColor colorWithColorSpace:sRGB components:components count:4] forKey:@"bottomInset"];
-	
-	components[0] = 180.0 / 255.0;
-	components[1] = 180.0 / 255.0;
-	components[2] = 180.0 / 255.0;
-	[self.colorList setColor:[NSColor colorWithColorSpace:sRGB components:components count:4] forKey:@"bottomBorder"];
-}
-
 
 #pragma mark - NSView
 
@@ -55,18 +21,18 @@
 - (void)drawRect:(NSRect)dirtyRect {
 	CGSize size = self.bounds.size;
 	
-	[[self.colorList colorWithKey:@"topInset"] setFill];
+	[[NSColor cheddarAddTaskBarTopInsetColor] setFill];
 	[NSBezierPath fillRect:CGRectMake(0.0f, 0.0f, size.width, 1.0)];
 	
 	CGRect rect = CGRectMake(0.0f, 1.0f, size.width, size.height - 3.0f);
-	NSGradient *gradient = [[NSGradient alloc] initWithStartingColor:[self.colorList colorWithKey:@"backgroundTop"]
-														 endingColor:[self.colorList colorWithKey:@"backgroundBottom"]];
+	NSGradient *gradient = [[NSGradient alloc] initWithStartingColor:[NSColor cheddarAddTaskBarTopColor]
+														 endingColor:[NSColor cheddarAddTaskBarBottomColor]];
 	[gradient drawInRect:rect angle:90.0f];
 	
-	[[self.colorList colorWithKey:@"bottomInset"] setFill];
+	[[NSColor cheddarAddTaskBarBottomInsetColor] setFill];
 	[NSBezierPath fillRect:CGRectMake(0.0f, size.height - 2.0f, size.width, 1.0)];
 	
-	[[self.colorList colorWithKey:@"bottomBorder"] setFill];
+	[[NSColor cheddarAddTaskBarBottomBorderColor] setFill];
 	[NSBezierPath fillRect:CGRectMake(0.0f, size.height - 1.0f, size.width, 1.0)];
 }
 
