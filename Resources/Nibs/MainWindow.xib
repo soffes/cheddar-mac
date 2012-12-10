@@ -2,13 +2,13 @@
 <archive type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="8.00">
 	<data>
 		<int key="IBDocument.SystemTarget">1080</int>
-		<string key="IBDocument.SystemVersion">12B19</string>
-		<string key="IBDocument.InterfaceBuilderVersion">2829</string>
-		<string key="IBDocument.AppKitVersion">1187</string>
-		<string key="IBDocument.HIToolboxVersion">624.00</string>
+		<string key="IBDocument.SystemVersion">12C3104</string>
+		<string key="IBDocument.InterfaceBuilderVersion">2844</string>
+		<string key="IBDocument.AppKitVersion">1187.34</string>
+		<string key="IBDocument.HIToolboxVersion">625.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.CocoaPlugin</string>
-			<string key="NS.object.0">2829</string>
+			<string key="NS.object.0">2844</string>
 		</object>
 		<array key="IBDocument.IntegratedClassDependencies">
 			<string>NSArrayController</string>
@@ -168,7 +168,7 @@
 				<string key="NSClassName">CDMTagFilterBar</string>
 			</object>
 			<object class="NSCustomView" id="154427372">
-				<nil key="NSNextResponder"/>
+				<reference key="NSNextResponder"/>
 				<int key="NSvFlags">266</int>
 				<array class="NSMutableArray" key="NSSubviews">
 					<object class="NSButton" id="74726422">
@@ -176,6 +176,7 @@
 						<int key="NSvFlags">289</int>
 						<string key="NSFrame">{{575, 15}, {15, 15}}</string>
 						<reference key="NSSuperview" ref="154427372"/>
+						<reference key="NSWindow"/>
 						<string key="NSReuseIdentifierKey">_NS:9</string>
 						<bool key="NSEnabled">YES</bool>
 						<object class="NSButtonCell" key="NSCell" id="617846072">
@@ -203,6 +204,7 @@
 						<int key="NSvFlags">266</int>
 						<string key="NSFrame">{{9, 14}, {552, 17}}</string>
 						<reference key="NSSuperview" ref="154427372"/>
+						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="74726422"/>
 						<string key="NSAntiCompressionPriority">{250, 750}</string>
 						<bool key="NSEnabled">YES</bool>
@@ -220,6 +222,8 @@
 					</object>
 				</array>
 				<string key="NSFrameSize">{603, 45}</string>
+				<reference key="NSSuperview"/>
+				<reference key="NSWindow"/>
 				<reference key="NSNextKeyView" ref="861775339"/>
 				<string key="NSReuseIdentifierKey">_NS:9</string>
 				<string key="NSClassName">CDMAddListView</string>
@@ -691,14 +695,6 @@
 						<reference key="NSOnImage" ref="446734530"/>
 						<reference key="NSMixedImage" ref="902786595"/>
 					</object>
-					<object class="NSMenuItem" id="496801382">
-						<reference key="NSMenu" ref="574512047"/>
-						<string key="NSTitle">Delete</string>
-						<string key="NSKeyEquiv"/>
-						<int key="NSMnemonicLoc">2147483647</int>
-						<reference key="NSOnImage" ref="446734530"/>
-						<reference key="NSMixedImage" ref="902786595"/>
-					</object>
 				</array>
 			</object>
 		</array>
@@ -1148,14 +1144,6 @@
 					<int key="connectionID">412</int>
 				</object>
 				<object class="IBConnectionRecord">
-					<object class="IBActionConnection" key="connection">
-						<string key="label">deleteTask:</string>
-						<reference key="source" ref="666935639"/>
-						<reference key="destination" ref="496801382"/>
-					</object>
-					<int key="connectionID">413</int>
-				</object>
-				<object class="IBConnectionRecord">
 					<object class="IBBindingConnection" key="connection">
 						<string key="label">value: objectValue.completed</string>
 						<reference key="source" ref="760301156"/>
@@ -1554,7 +1542,6 @@
 						<array class="NSMutableArray" key="children">
 							<reference ref="1064596077"/>
 							<reference ref="802077188"/>
-							<reference ref="496801382"/>
 						</array>
 						<reference key="parent" ref="0"/>
 						<string key="objectName">Tasks Menu</string>
@@ -1567,11 +1554,6 @@
 					<object class="IBObjectRecord">
 						<int key="objectID">408</int>
 						<reference key="object" ref="802077188"/>
-						<reference key="parent" ref="574512047"/>
-					</object>
-					<object class="IBObjectRecord">
-						<int key="objectID">409</int>
-						<reference key="object" ref="496801382"/>
 						<reference key="parent" ref="574512047"/>
 					</object>
 					<object class="IBObjectRecord">
@@ -1678,7 +1660,6 @@
 				<string key="406.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="407.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="408.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
-				<string key="409.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="414.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="415.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
 				<string key="416.IBPluginDependency">com.apple.InterfaceBuilder.CocoaPlugin</string>
@@ -1793,7 +1774,7 @@
 						<string key="arrayController">NSArrayController</string>
 						<string key="loadingListsView">NSView</string>
 						<string key="noListsView">NSView</string>
-						<string key="tableView">NSTableView</string>
+						<string key="tableView">CDMShadowTableView</string>
 						<string key="tasksViewController">CDMTasksViewController</string>
 					</dictionary>
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
@@ -1819,7 +1800,7 @@
 						</object>
 						<object class="IBToOneOutletInfo" key="tableView">
 							<string key="name">tableView</string>
-							<string key="candidateClassName">NSTableView</string>
+							<string key="candidateClassName">CDMShadowTableView</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="tasksViewController">
 							<string key="name">tasksViewController</string>
