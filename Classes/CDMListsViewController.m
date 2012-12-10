@@ -181,7 +181,17 @@ static CGFloat const kCDMListsViewControllerAddListAnimationDuration = 0.15f;
             }
             [self.tasksViewController focusTaskField:nil];
         } failure:^(AFJSONRequestOperation *remoteOperation, NSError *error) {
-            NSLog(@"Error creating list: %@, %@", error, [error userInfo]);
+			NSLog(@"Error creating list: %@, %@", error, [error userInfo]);
+			
+			NSDictionary *response = remoteOperation.responseJSON;
+			if ([response[@"error"] isEqualToString:@"plus_required"]) {
+				NSInteger choice = NSRunAlertPanel(@"Cheddar Plus Required", @"You need Cheddar Plus to create more than 2 lists. Upgrading takes less than a minute", @"Upgrade", @"Later", nil);
+				if (choice == NSAlertDefaultReturn) {
+					[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"https://cheddarapp.com/account#plus"]];
+				}
+			} else {
+				NSRunAlertPanel(@"Error", @"Sorry, there was an error creating your list. Try again later.", @"Darn", nil, nil);
+			}
         }];
     }
     [self closeAddList:nil];
