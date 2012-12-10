@@ -33,7 +33,7 @@
 	CGSize size = self.bounds.size;
 	CGSize iconSize = self.iconImageView.bounds.size;
 	self.iconImageView.frame = CGRectMake(roundf((size.width - iconSize.width) / 2.0f), roundf((size.height + iconSize.height) / 2.0f), iconSize.width, iconSize.height);
-	self.titleLabel.frame = CGRectMake(roundf((size.width - 280.0f) / 2.0f), _iconImageView.frame.origin.y - iconSize.height - 20.0f, 280.0f, 40.0f);
+	self.titleLabel.frame = CGRectMake(20.0f, _iconImageView.frame.origin.y - iconSize.height - 20.0f, size.width - 40.0f, 40.0f);
 }
 
 @end
