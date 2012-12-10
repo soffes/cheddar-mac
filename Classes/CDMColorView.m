@@ -12,9 +12,9 @@
 
 #pragma mark - Accessors
 
-- (void)setColor:(NSColor *)color {
-    if (_color != color) {
-        _color = color;
+- (void)setBackgroundColor:(NSColor *)color {
+    if (_backgroundColor != color) {
+        _backgroundColor = color;
         [self setNeedsDisplay:YES];
     }
 }
@@ -23,7 +23,7 @@
 #pragma mark - NSView
 
 - (void)drawRect:(NSRect)dirtyRect {
-    [self.color set];
+    [self.backgroundColor set];
     [NSBezierPath fillRect:[self bounds]];
 }
 

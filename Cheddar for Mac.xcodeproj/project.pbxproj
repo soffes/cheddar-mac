@@ -83,6 +83,7 @@
 		217E498616754DE0008008D6 /* add-task-arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 217E498416754DE0008008D6 /* add-task-arrow.png */; };
 		217E498716754DE0008008D6 /* add-task-arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 217E498516754DE0008008D6 /* add-task-arrow@2x.png */; };
 		217E49891675502A008008D6 /* NoTasks.xib in Resources */ = {isa = PBXBuildFile; fileRef = 217E49881675502A008008D6 /* NoTasks.xib */; };
+		217E49A5167554B4008008D6 /* CDMTasksPlaceholderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 217E49A4167554B4008008D6 /* CDMTasksPlaceholderView.m */; };
 		21CF8688166908860052625D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21CF85B01668FBF30052625D /* SystemConfiguration.framework */; };
 		21CF868A166908890052625D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21CF8689166908890052625D /* Security.framework */; };
 		B21FF2C515BF7D6500AEEA97 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B21FF2C415BF7D6500AEEA97 /* Cocoa.framework */; };
@@ -275,6 +276,8 @@
 		217E498416754DE0008008D6 /* add-task-arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add-task-arrow.png"; sourceTree = "<group>"; };
 		217E498516754DE0008008D6 /* add-task-arrow@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add-task-arrow@2x.png"; sourceTree = "<group>"; };
 		217E49881675502A008008D6 /* NoTasks.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoTasks.xib; sourceTree = "<group>"; };
+		217E49A3167554B4008008D6 /* CDMTasksPlaceholderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMTasksPlaceholderView.h; sourceTree = "<group>"; };
+		217E49A4167554B4008008D6 /* CDMTasksPlaceholderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMTasksPlaceholderView.m; sourceTree = "<group>"; };
 		21CF85B01668FBF30052625D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		21CF8689166908890052625D /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		B21FF2C015BF7D6500AEEA97 /* Cheddar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cheddar.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -422,6 +425,8 @@
 				032D16CE15DC3CE80015912A /* CDMTagFilterBar.m */,
 				032D16DC15DC52260015912A /* CDMColorView.h */,
 				032D16DD15DC52260015912A /* CDMColorView.m */,
+				217E49A3167554B4008008D6 /* CDMTasksPlaceholderView.h */,
+				217E49A4167554B4008008D6 /* CDMTasksPlaceholderView.m */,
 			);
 			name = "Custom Views";
 			sourceTree = "<group>";
@@ -1018,6 +1023,7 @@
 				0306DBBE15EC87F400D6409B /* CDMQuickAddWindowController.m in Sources */,
 				0371CF8815ED60A400B304CC /* CDMTasksTableView.m in Sources */,
 				2137B07C167303160092A7DF /* CDMArchesWindowContentView.m in Sources */,
+				217E49A5167554B4008008D6 /* CDMTasksPlaceholderView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

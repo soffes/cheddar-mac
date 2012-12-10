@@ -172,7 +172,7 @@ static NSString* const kCDMTasksViewControllerImageTagXUnfocused = @"tag-x-unfoc
         beforeTagFrame.origin.y = NSMaxY([scrollView frame]) - beforeTagFrame.size.height;
         [self.tagFilterBar setFrame:beforeTagFrame];
         _overlayView = [[CDMColorView alloc] initWithFrame:[self.addTaskView frame]];
-        [_overlayView setColor:[NSColor colorWithDeviceWhite:0.f alpha:0.8f]];
+        [_overlayView setBackgroundColor:[NSColor colorWithDeviceWhite:0.f alpha:0.8f]];
         [_overlayView setAlphaValue:0.f];
         [_overlayView setAutoresizingMask:[self.addTaskView autoresizingMask]];
         [parentView addSubview:self.tagFilterBar positioned:NSWindowAbove relativeTo:self.addTaskView];

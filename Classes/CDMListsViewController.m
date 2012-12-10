@@ -127,7 +127,7 @@ static CGFloat const kCDMListsViewControllerAddListAnimationDuration = 0.15f;
     NSView *parentView = [scrollView superview] ;
     [parentView addSubview:self.addListView positioned:NSWindowBelow relativeTo:[[parentView subviews] objectAtIndex:0]];
     _overlayView = [[CDMColorView alloc] initWithFrame:[scrollView frame]];
-    [_overlayView setColor:[NSColor colorWithDeviceWhite:1.f alpha:0.9f]];
+    [_overlayView setBackgroundColor:[NSColor colorWithDeviceWhite:1.f alpha:0.9f]];
     [_overlayView setAlphaValue:0.f];
     [_overlayView setAutoresizingMask:[scrollView autoresizingMask]];
     [parentView addSubview:_overlayView positioned:NSWindowAbove relativeTo:scrollView];

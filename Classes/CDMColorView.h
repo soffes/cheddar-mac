@@ -8,6 +8,6 @@
 
 @interface CDMColorView : NSView
 
-@property (nonatomic, strong) NSColor *color;
+@property (nonatomic, strong) NSColor *backgroundColor;
 
 @end
