@@ -15,6 +15,7 @@
 #import "CDMTagFilterBar.h"
 #import "CDMTaskTextField.h"
 #import "CDMTasksPlaceholderView.h"
+#import "CDMLoadingView.h"
 
 static NSString *const kCDMTasksDragTypeRearrange = @"CDMTasksDragTypeRearrange";
 NSString *const kCDMTasksDragTypeMove = @"CDMTasksDragTypeMove";
@@ -210,8 +211,8 @@ static NSString *const kCDMTasksViewControllerImageTagXUnfocused = @"tag-x-unfoc
             self.noTasksView = [[CDMTasksPlaceholderView alloc] init];
         }
 
-        [self.noTasksView setFrame:self.tableView.bounds];
-        [self.tableView addSubview:self.noTasksView];
+		self.noTasksView.frame = self.tableView.bounds;
+		[self.tableView addSubview:self.noTasksView];
     }
 
 	// Hide
@@ -224,12 +225,11 @@ static NSString *const kCDMTasksViewControllerImageTagXUnfocused = @"tag-x-unfoc
 - (void)_setLoadingTasksViewVisible:(BOOL)visible {
     if (visible && ![self.loadingTasksView superview]) {
         if (!self.loadingTasksView) {
-            [NSBundle loadNibNamed:kCDMLoadingTasksNibName owner:self];
+            self.loadingTasksView = [[CDMLoadingView alloc] init];
         }
-        NSScrollView *scrollView = [self.tableView enclosingScrollView];
-        [self.loadingTasksView setFrame:[scrollView frame]];
-        [self.loadingTasksView setAutoresizingMask:NSViewHeightSizable | NSViewWidthSizable | NSViewMaxYMargin];
-        [scrollView addSubview:self.loadingTasksView];
+
+		self.loadingTasksView.frame = self.tableView.bounds;
+		[self.tableView addSubview:self.loadingTasksView];
     } else if (!visible && [self.loadingTasksView superview]) {
         [self.loadingTasksView removeFromSuperview];
     }

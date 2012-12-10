@@ -12,6 +12,7 @@
 #import "CDMColorView.h"
 #import "CDMShadowTableView.h"
 #import "CDMListsPlaceholderView.h"
+#import "CDMLoadingView.h"
 #import <QuartzCore/QuartzCore.h>
 
 typedef NS_ENUM(NSInteger, CDMListsMenuItemTag) {
@@ -366,27 +367,26 @@ static CGFloat const kCDMListsViewControllerAddListAnimationDuration = 0.15f;
     }
 }
 
-- (void)_setLoadingListsViewVisible:(BOOL)visible
-{
+
+- (void)_setLoadingListsViewVisible:(BOOL)visible {
     if (visible && ![self.loadingListsView superview]) {
         _isLoading = YES;
         if (!self.loadingListsView) {
-            [NSBundle loadNibNamed:kCDMLoadingListsNibName owner:self];
+            self.loadingListsView = [[CDMLoadingView alloc] init];
         }
-        NSScrollView *scrollView = [self.tableView enclosingScrollView];
-        [self.loadingListsView setFrame:[scrollView frame]];
-        [self.loadingListsView setAutoresizingMask:NSViewHeightSizable | NSViewWidthSizable | NSViewMaxYMargin];
-        [scrollView addSubview:self.loadingListsView];
+
+		self.loadingListsView.frame = self.tableView.bounds;
+		[self.tableView addSubview:self.loadingListsView];
     } else if (!visible && [self.loadingListsView superview]) {
         _isLoading = NO;
         [self.loadingListsView removeFromSuperview];
     }
 }
 
+
 #pragma mark - Table View Menu Items
 
-- (IBAction)renameList:(id)sender
-{
+- (IBAction)renameList:(id)sender {
     NSInteger row = [self.tableView clickedRow];
     if (row != -1) {
         NSTableRowView *rowView = [self.tableView rowViewAtRow:row makeIfNecessary:NO];
@@ -395,8 +395,8 @@ static CGFloat const kCDMListsViewControllerAddListAnimationDuration = 0.15f;
     }
 }
 
-- (IBAction)archiveList:(id)sener
-{
+
+- (IBAction)archiveList:(id)sener {
     NSInteger row = [self.tableView clickedRow];
     if (row != -1) {
         CDKList *list = [[self.arrayController arrangedObjects] objectAtIndex:row];
@@ -407,8 +407,8 @@ static CGFloat const kCDMListsViewControllerAddListAnimationDuration = 0.15f;
     }
 }
 
-- (IBAction)deleteList:(id)sender
-{
+
+- (IBAction)deleteList:(id)sender {
     NSInteger row = [self.tableView clickedRow];
     if (row != -1) {
         CDKList *list = [[self.arrayController arrangedObjects] objectAtIndex:row];
