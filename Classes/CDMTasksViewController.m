@@ -38,16 +38,6 @@ static NSString* const kCDMTasksViewControllerImageTagXUnfocused = @"tag-x-unfoc
     CDMColorView *_overlayView;
     NSMutableArray *_filterTags;
 }
-@synthesize arrayController = _arrayController;
-@synthesize tableView = _tableView;
-@synthesize selectedList = _selectedList;
-@synthesize taskField = _taskField;
-@synthesize tagFilterBar = _tagFilterBar;
-@synthesize tagNameField = _tagNameField;
-@synthesize addTaskView = _addTaskView;
-@synthesize tagXImageView = _tagXImageView;
-@synthesize noTasksView = _noTasksView;
-@synthesize loadingTasksView = _loadingTasksView;
 
 #pragma mark - NSObject
 

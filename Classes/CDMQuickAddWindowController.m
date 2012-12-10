@@ -22,8 +22,6 @@
     CDKList *_selectedList;
     BOOL _closeWhenFinished;
 }
-@synthesize listPopUpButton = _listPopUpButton;
-@synthesize addTaskField = _addTaskField;
 
 #pragma mark - NSWindowController
 

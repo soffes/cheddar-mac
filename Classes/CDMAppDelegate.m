@@ -18,17 +18,16 @@
 #import "MASShortcut+UserDefaults.h"
 
 @interface CDMAppDelegate ()
+@property (nonatomic, strong) CDMQuickAddWindowController *quickAddWindowController;
 - (void)_userChanged:(NSNotification *)notification;
 @end
 
-@implementation CDMAppDelegate {
-    CDMQuickAddWindowController *_quickAddWindowController;
-}
+@implementation CDMAppDelegate
+
+#pragma mark - Accessors
 
 @synthesize signInWindowController = _signInWindowController;
 @synthesize mainWindowController = _mainWindowController;
-@synthesize viewMenu = _viewMenu;
-
 
 - (CDMSignInWindowController *)signInWindowController {
 	if (!_signInWindowController) {

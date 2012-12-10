@@ -32,14 +32,6 @@ void SSDrawGradientInRect(CGContextRef context, CGGradientRef gradient, CGRect r
 
 @implementation CDMMainWindowController
 
-@synthesize listsViewController = _listsViewController;
-@synthesize tasksViewController = _tasksViewController;
-@synthesize splitViewLeft = _splitViewLeft;
-@synthesize splitView = _splitView;
-@synthesize taskTextField = _taskTextField;
-@synthesize listMenu = _listMenu;
-
-
 #pragma mark - NSObject
 
 - (id)init {

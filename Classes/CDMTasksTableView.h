@@ -9,5 +9,7 @@
 #import "CDMShadowTableView.h"
 
 @interface CDMTasksTableView : CDMShadowTableView
+
 @property (nonatomic, assign) NSInteger selectedTaskRow;
+
 @end

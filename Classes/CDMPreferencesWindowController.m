@@ -17,12 +17,6 @@
 
 @implementation CDMPreferencesWindowController
 
-@synthesize generalPreferenceView = _generalPreferenceView;
-@synthesize accountPreferenceView = _accountPreferenceView;
-@synthesize usernameLabel = _usernameLabel;
-@synthesize quickAddShortcutView = _quickAddShortcutView;
-
-
 #pragma mark - NSObject
 
 - (void)dealloc {

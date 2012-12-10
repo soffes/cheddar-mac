@@ -19,13 +19,6 @@
 
 @implementation CDMSignInWindowController
 
-@synthesize usernameTextField = _usernameTextField;
-@synthesize passwordTextField = _passwordTextField;
-@synthesize signInButton = _signInButton;
-@synthesize signUpButton = _signUpButton;
-@synthesize usernameLabel = _usernameLabel;
-@synthesize passwordLabel = _passwordLabel;
-
 #pragma mark - NSWindowController
 
 - (NSString *)windowNibName {

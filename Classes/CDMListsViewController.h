@@ -7,11 +7,12 @@
 //
 
 @class CDMTasksViewController;
+@class CDMShadowTableView;
 
 @interface CDMListsViewController : NSViewController <NSTableViewDataSource, NSTableViewDelegate, NSMenuDelegate>
 
 @property (nonatomic, weak) IBOutlet NSArrayController *arrayController;
-@property (nonatomic, weak) IBOutlet NSTableView *tableView;
+@property (nonatomic, weak) IBOutlet CDMShadowTableView *tableView;
 @property (nonatomic, assign) IBOutlet CDMTasksViewController *tasksViewController;
 @property (nonatomic, weak) IBOutlet NSView *addListView;
 @property (nonatomic, weak) IBOutlet NSTextField *addListField;

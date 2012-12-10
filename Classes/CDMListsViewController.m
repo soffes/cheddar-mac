@@ -10,19 +10,19 @@
 #import "CDMListTableRowView.h"
 #import "CDMTasksViewController.h"
 #import "CDMColorView.h"
+#import "CDMShadowTableView.h"
 #import <QuartzCore/QuartzCore.h>
 
-enum {
+typedef NS_ENUM(NSInteger, CDMListsMenuItemTag) {
     CDMListsRenameListItemTag = 0,
     CDMListsArchiveAllTasksItemTag = 1,
     CDMListsArchiveCompletedTasksItemTag = 2,
     CDMListsArchiveListItemTag = 3
 };
-typedef NSUInteger CDMListsMenuItemTag;
 
-static NSString* const kCDMNoListsNibName = @"NoLists";
-static NSString* const kCDMLoadingListsNibName = @"LoadingLists";
-static NSString* const kCDMListsDragTypeRearrange = @"CDMListsDragTypeRearrange";
+static NSString *const kCDMNoListsNibName = @"NoLists";
+static NSString *const kCDMLoadingListsNibName = @"LoadingLists";
+static NSString *const kCDMListsDragTypeRearrange = @"CDMListsDragTypeRearrange";
 static CGFloat const kCDMListsViewControllerAddListAnimationDuration = 0.15f;
 
 @interface CDMListsViewController ()
@@ -40,13 +40,6 @@ static CGFloat const kCDMListsViewControllerAddListAnimationDuration = 0.15f;
     BOOL _isLoading;
     CDMColorView *_overlayView;
 }
-@synthesize arrayController = _arrayController;
-@synthesize tableView = _tableView;
-@synthesize tasksViewController = _tasksViewController;
-@synthesize addListView = _addListView;
-@synthesize addListField = _addListField;
-@synthesize noListsView = _noListsView;
-@synthesize loadingListsView = _loadingListsView;
 
 #pragma mark - NSObject
 

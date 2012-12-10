@@ -10,18 +10,16 @@
 #import "CDMTaskTableRowView.h"
 
 @implementation CDMTasksTableView
-@synthesize selectedTaskRow = _selectedTaskRow;
 
-- (id)initWithCoder:(NSCoder *)aDecoder
-{
+- (id)initWithCoder:(NSCoder *)aDecoder {
     if ((self = [super initWithCoder:aDecoder])) {
         self.selectedTaskRow = -1;
     }
     return self;
 }
 
-- (void)setSelectedTaskRow:(NSInteger)selectedTaskRow
-{
+
+- (void)setSelectedTaskRow:(NSInteger)selectedTaskRow {
     if (_selectedTaskRow != selectedTaskRow) {
         if (_selectedTaskRow != -1 && _selectedTaskRow < [self numberOfRows]) {
             CDMTaskTableRowView *oldRow = (CDMTaskTableRowView *)[self rowViewAtRow:_selectedTaskRow makeIfNecessary:NO];
@@ -35,8 +33,8 @@
     }
 }
 
-- (void)mouseDown:(NSEvent *)theEvent
-{
+
+- (void)mouseDown:(NSEvent *)theEvent {
     [super mouseDown:theEvent];
     NSPoint localPoint = [self convertPoint:[theEvent locationInWindow] fromView:nil];
     NSInteger row = [self rowAtPoint:localPoint];
@@ -45,8 +43,8 @@
     }
 }
 
-- (void)keyDown:(NSEvent *)theEvent
-{
+
+- (void)keyDown:(NSEvent *)theEvent {
     NSString *characters = [theEvent characters];
     if ([characters isEqualToString:@"j"] || [characters isEqualToString:@"n"]) {
         [self moveDown:nil];
@@ -57,21 +55,21 @@
     }
 }
 
-- (void)moveDown:(id)sender
-{
+
+- (void)moveDown:(id)sender {
     NSInteger row = self.selectedTaskRow + 1;
     self.selectedTaskRow = (row >= [self numberOfRows]) ? 0 : row;
 }
 
-- (void)moveUp:(id)sender
-{
+
+- (void)moveUp:(id)sender {
     NSInteger row = self.selectedTaskRow - 1;
     self.selectedTaskRow = (row < 0) ? [self numberOfRows] - 1 : row;
 }
 
-- (void)cancelOperation:(id)sender
-{
+
+- (void)cancelOperation:(id)sender {
     self.selectedTaskRow = -1;
 }
-@end
 
+@end

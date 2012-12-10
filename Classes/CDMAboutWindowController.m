@@ -11,10 +11,6 @@
 
 @implementation CDMAboutWindowController
 
-@synthesize subheaderLabel = _subheaderLabel;
-@synthesize versionLabel = _versionLabel;
-@synthesize copyrightLabel = _copyrightLabel;
-
 #pragma mark - NSObject
 
 - (void)awakeFromNib {

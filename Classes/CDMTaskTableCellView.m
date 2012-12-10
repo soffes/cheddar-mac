@@ -10,7 +10,8 @@
 #import "CDKTask+CDMAdditions.h"
 
 @implementation CDMTaskTableCellView
-@synthesize checkbox = _checkbox;
+
+#pragma mark - NSObject
 
 - (void)awakeFromNib {
 	[super awakeFromNib];
@@ -18,8 +19,16 @@
     [self addObserver:self forKeyPath:@"objectValue.completedAt" options:0 context:NULL];
 }
 
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
-{
+
+- (void)dealloc {
+    [self removeObserver:self forKeyPath:@"objectValue.entities"];
+    [self removeObserver:self forKeyPath:@"objectValue.completedAt"];
+}
+
+
+#pragma mark - NSKeyValueObserving
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
     CDKTask *task = [self objectValue];
     [self.textField setAttributedStringValue:[task attributedDisplayText]];
     if ([keyPath isEqualToString:@"objectValue.completedAt"]) {
@@ -27,9 +36,4 @@
     }
 }
 
-- (void)dealloc
-{
-    [self removeObserver:self forKeyPath:@"objectValue.entities"];
-    [self removeObserver:self forKeyPath:@"objectValue.completedAt"];
-}
 @end

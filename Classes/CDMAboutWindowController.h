@@ -8,8 +8,8 @@
 
 @interface CDMAboutWindowController : NSWindowController
 
-@property IBOutlet NSTextField *subheaderLabel;
-@property IBOutlet NSTextField *versionLabel;
-@property IBOutlet NSTextField *copyrightLabel;
+@property (nonatomic, weak) IBOutlet NSTextField *subheaderLabel;
+@property (nonatomic, weak) IBOutlet NSTextField *versionLabel;
+@property (nonatomic, weak) IBOutlet NSTextField *copyrightLabel;
 
 @end

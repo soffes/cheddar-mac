@@ -7,5 +7,7 @@
 //
 
 @interface CDMTaskTableCellView : NSTableCellView
+
 @property (nonatomic, weak) IBOutlet NSButton *checkbox;
+
 @end

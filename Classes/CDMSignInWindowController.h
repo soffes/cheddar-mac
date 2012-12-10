@@ -10,12 +10,12 @@
 
 @interface CDMSignInWindowController : NSWindowController
 
-@property (weak) IBOutlet NSTextField *usernameTextField;
-@property (weak) IBOutlet NSSecureTextField *passwordTextField;
-@property (weak) IBOutlet NSTextField *usernameLabel;
-@property (weak) IBOutlet NSTextField *passwordLabel;
-@property (weak) IBOutlet CDMFlatButton *signUpButton;
-@property (weak) IBOutlet CDMFlatButton *signInButton;
+@property (nonatomic, weak) IBOutlet NSTextField *usernameTextField;
+@property (nonatomic, weak) IBOutlet NSSecureTextField *passwordTextField;
+@property (nonatomic, weak) IBOutlet NSTextField *usernameLabel;
+@property (nonatomic, weak) IBOutlet NSTextField *passwordLabel;
+@property (nonatomic, weak) IBOutlet CDMFlatButton *signUpButton;
+@property (nonatomic, weak) IBOutlet CDMFlatButton *signInButton;
 
 - (IBAction)signIn:(id)sender;
 - (IBAction)signUp:(id)sender;
