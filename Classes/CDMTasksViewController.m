@@ -209,9 +209,8 @@ static NSString *const kCDMTasksViewControllerImageTagXUnfocused = @"tag-x-unfoc
             [NSBundle loadNibNamed:kCDMNoTasksNibName owner:self];
         }
 
-        NSScrollView *scrollView = self.tableView.enclosingScrollView;
-        [self.noTasksView setFrame:scrollView.bounds];
-        [scrollView addSubview:self.noTasksView];
+        [self.noTasksView setFrame:self.tableView.bounds];
+        [self.tableView addSubview:self.noTasksView];
     }
 
 	// Hide
