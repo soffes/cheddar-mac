@@ -29,12 +29,13 @@
 
 - (void)setFrame:(NSRect)frameRect {
 	[super setFrame:frameRect];
-	[self setNeedsLayout:YES];
+	[self resizeSubviewsWithOldSize:frameRect.size];
 }
 
 
 - (void)resizeSubviewsWithOldSize:(NSSize)oldSize {
 	[super resizeSubviewsWithOldSize:oldSize];
+	NSLog(@"Layout");
 	
 	CGSize size = self.bounds.size;
 	CGSize iconSize = self.iconImageView.bounds.size;
