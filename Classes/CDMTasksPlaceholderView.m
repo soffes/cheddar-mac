@@ -7,33 +7,31 @@
 //
 
 #import "CDMTasksPlaceholderView.h"
-#import "NSColor+CDMAdditions.h"
-#import "NSView+CDMAdditions.h"
 
 @implementation CDMTasksPlaceholderView
 
-#pragma mark - NSObject
-
-- (void)awakeFromNib {
-	[super awakeFromNib];
-
-	self.autoresizingMask = NSViewAutoresizingFlexibleWidth | NSViewAutoresizingFlexibleHeight;
-
-	self.backgroundColor = [NSColor cheddarArchesColor];
-	self.addLabel.frameCenterRotation = 2.0f;
-	self.titleLabel.font = [NSFont fontWithName:kCDMRegularFontName size:15.f];
-}
-
-
 #pragma mark - NSView
 
-- (void)resizeSubviewsWithOldSize:(NSSize)oldSize {
-	[super resizeSubviewsWithOldSize:oldSize];
-	
-	CGSize size = self.bounds.size;
-	CGSize iconSize = self.iconImageView.bounds.size;
-	self.iconImageView.frame = CGRectMake(roundf((size.width - iconSize.width) / 2.0f), roundf((size.height + iconSize.height) / 2.0f), iconSize.width, iconSize.height);
-	self.titleLabel.frame = CGRectMake(20.0f, _iconImageView.frame.origin.y - iconSize.height - 20.0f, size.width - 40.0f, 40.0f);
+- (id)initWithFrame:(NSRect)frameRect {
+	if ((self = [super initWithFrame:frameRect])) {
+		NSImageView *arrowImageView = [[NSImageView alloc] initWithFrame:CGRectMake(13.0f, 4.0f, 34.0f, 40.0f)];
+		arrowImageView.image = [NSImage imageNamed:@"add-task-arrow"];
+		[self addSubview:arrowImageView];
+
+		NSTextField *arrowLabel = [[NSTextField alloc] initWithFrame:CGRectMake(42.0f, 26.0f, 85.0f, 22.0f)];
+		arrowLabel.backgroundColor = [NSColor clearColor];
+		arrowLabel.bordered = NO;
+		arrowLabel.editable = NO;
+		arrowLabel.font = [NSFont fontWithName:@"Noteworthy" size:13.0f];
+		arrowLabel.textColor = [NSColor colorWithCalibratedWhite:0.294f alpha:0.45f];
+		arrowLabel.frameCenterRotation = -2.0f;
+		arrowLabel.stringValue = @"Add Task";
+		[self addSubview:arrowLabel];
+
+		self.iconImageView.image = [NSImage imageNamed:@"task-icon"];
+		self.titleLabel.stringValue = @"You don't have any tasks in this list.";
+	}
+	return self;
 }
 
 @end

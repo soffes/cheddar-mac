@@ -14,6 +14,7 @@
 #import "CDMColorView.h"
 #import "CDMTagFilterBar.h"
 #import "CDMTaskTextField.h"
+#import "CDMTasksPlaceholderView.h"
 
 static NSString *const kCDMTasksDragTypeRearrange = @"CDMTasksDragTypeRearrange";
 NSString *const kCDMTasksDragTypeMove = @"CDMTasksDragTypeMove";
@@ -206,7 +207,7 @@ static NSString *const kCDMTasksViewControllerImageTagXUnfocused = @"tag-x-unfoc
 	// Show
     if (visible && ![self.noTasksView superview]) {
         if (!self.noTasksView) {
-            [NSBundle loadNibNamed:kCDMNoTasksNibName owner:self];
+            self.noTasksView = [[CDMTasksPlaceholderView alloc] init];
         }
 
         [self.noTasksView setFrame:self.tableView.bounds];

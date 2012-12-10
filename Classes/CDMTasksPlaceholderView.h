@@ -6,12 +6,7 @@
 //  Copyright (c) 2012 Nothing Magical. All rights reserved.
 //
 
-#import "CDMColorView.h"
+#import "CDMPlaceholderView.h"
 
-@interface CDMTasksPlaceholderView : CDMColorView
-
-@property (weak) IBOutlet NSTextField *addLabel;
-@property (weak) IBOutlet NSImageView *iconImageView;
-@property (weak) IBOutlet NSTextField *titleLabel;
-
+@interface CDMTasksPlaceholderView : CDMPlaceholderView
 @end
