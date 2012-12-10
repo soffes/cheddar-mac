@@ -8,15 +8,28 @@
 
 #import "CDMTasksPlaceholderView.h"
 #import "NSColor+CDMAdditions.h"
+#import "NSView+CDMAdditions.h"
 
 @implementation CDMTasksPlaceholderView
+
+#pragma mark - NSObject
 
 - (void)awakeFromNib {
 	[super awakeFromNib];
 
+	self.autoresizingMask = NSViewAutoresizingFlexibleWidth | NSViewAutoresizingFlexibleHeight;
+
 	self.backgroundColor = [NSColor cheddarArchesColor];
 	self.addLabel.frameCenterRotation = 2.0f;
 	self.titleLabel.font = [NSFont fontWithName:kCDMRegularFontName size:15.f];
+}
+
+
+#pragma mark - NSView
+
+- (void)setFrame:(NSRect)frameRect {
+	[super setFrame:frameRect];
+	[self setNeedsLayout:YES];
 }
 
 

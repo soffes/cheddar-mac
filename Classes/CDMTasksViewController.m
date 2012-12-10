@@ -15,15 +15,15 @@
 #import "CDMTagFilterBar.h"
 #import "CDMTaskTextField.h"
 
-static NSString* const kCDMTasksDragTypeRearrange = @"CDMTasksDragTypeRearrange";
-NSString* const kCDMTasksDragTypeMove = @"CDMTasksDragTypeMove";
-static NSString* const kCDMTaskCellIdentifier = @"TaskCell";
-static NSString* const kCDMNoTasksNibName = @"NoTasks";
-static NSString* const kCDMLoadingTasksNibName = @"LoadingTasks";
+static NSString *const kCDMTasksDragTypeRearrange = @"CDMTasksDragTypeRearrange";
+NSString *const kCDMTasksDragTypeMove = @"CDMTasksDragTypeMove";
+static NSString *const kCDMTaskCellIdentifier = @"TaskCell";
+static NSString *const kCDMNoTasksNibName = @"NoTasks";
+static NSString *const kCDMLoadingTasksNibName = @"LoadingTasks";
 
 static CGFloat const kCDMTasksViewControllerTagBarAnimationDuration = 0.3f;
-static NSString* const kCDMTasksViewControllerImageTagX = @"tag-x";
-static NSString* const kCDMTasksViewControllerImageTagXUnfocused = @"tag-x-unfocused";
+static NSString *const kCDMTasksViewControllerImageTagX = @"tag-x";
+static NSString *const kCDMTasksViewControllerImageTagXUnfocused = @"tag-x-unfocused";
 
 @interface CDMTasksViewController ()
 - (void)_setTagBarVisible:(BOOL)visible;
@@ -194,29 +194,34 @@ static NSString* const kCDMTasksViewControllerImageTagXUnfocused = @"tag-x-unfoc
     }
 }
 
-- (void)_clearTagFilter
-{
+
+- (void)_clearTagFilter {
     self.arrayController.filterPredicate = nil;
     [_filterTags removeAllObjects];
     [self _setTagBarVisible:NO];
 }
 
+
 - (void)_setNoTasksViewVisible:(BOOL)visible {
+	// Show
     if (visible && ![self.noTasksView superview]) {
         if (!self.noTasksView) {
             [NSBundle loadNibNamed:kCDMNoTasksNibName owner:self];
         }
-        NSScrollView *scrollView = [self.tableView enclosingScrollView];
-        [self.noTasksView setFrame:[scrollView frame]];
-        [self.noTasksView setAutoresizingMask:NSViewHeightSizable | NSViewWidthSizable | NSViewMaxYMargin];
+
+        NSScrollView *scrollView = self.tableView.enclosingScrollView;
+        [self.noTasksView setFrame:scrollView.bounds];
         [scrollView addSubview:self.noTasksView];
-    } else if (!visible && [self.noTasksView superview]) {
+    }
+
+	// Hide
+	else if (!visible && [self.noTasksView superview]) {
         [self.noTasksView removeFromSuperview];
     }
 }
 
-- (void)_setLoadingTasksViewVisible:(BOOL)visible
-{
+
+- (void)_setLoadingTasksViewVisible:(BOOL)visible {
     if (visible && ![self.loadingTasksView superview]) {
         if (!self.loadingTasksView) {
             [NSBundle loadNibNamed:kCDMLoadingTasksNibName owner:self];
@@ -230,16 +235,17 @@ static NSString* const kCDMTasksViewControllerImageTagXUnfocused = @"tag-x-unfoc
     }
 }
 
+
 #pragma mark - CDMTagFilterBarDelegate
 
 - (void)tagFilterBarClicked:(CDMTagFilterBar*)bar {
     [self _clearTagFilter];
 }
 
+
 #pragma mark - CDMTaskTextFieldDelegate
 
-- (NSString *)editingTextForTextField:(NSTextField*)textField
-{
+- (NSString *)editingTextForTextField:(NSTextField*)textField {
     NSInteger row = [self.tableView rowForView:textField];
     if (row != -1) {
         CDKTask *task = [[self.arrayController arrangedObjects] objectAtIndex:row];
@@ -248,8 +254,8 @@ static NSString* const kCDMTasksViewControllerImageTagXUnfocused = @"tag-x-unfoc
     return nil;
 }
 
-- (void)controlTextDidEndEditing:(NSNotification *)obj
-{
+
+- (void)controlTextDidEndEditing:(NSNotification *)obj {
     NSTextField *textField = [obj object];
     NSInteger row = [self.tableView rowForView:textField];
     if (row != -1) {
@@ -261,14 +267,15 @@ static NSString* const kCDMTasksViewControllerImageTagXUnfocused = @"tag-x-unfoc
     }
 }
 
-- (BOOL)control:(NSControl *)control textView:(NSTextView *)textView doCommandBySelector:(SEL)command
-{
+
+- (BOOL)control:(NSControl *)control textView:(NSTextView *)textView doCommandBySelector:(SEL)command {
     if (command == @selector(cancelOperation:)) {
         [[control window] makeFirstResponder:self.tableView];
         return YES;
     }
     return NO;
 }
+
 
 #pragma mark - Accessors
 
@@ -319,15 +326,15 @@ static NSString* const kCDMTasksViewControllerImageTagXUnfocused = @"tag-x-unfoc
 #pragma mark - NSTableViewDataSource
 
 // Stub implementations to avoid assertion failure before the bindings have been made
-- (NSInteger)numberOfRowsInTableView:(NSTableView *)aTableView
-{
+- (NSInteger)numberOfRowsInTableView:(NSTableView *)aTableView {
     return 0;
 }
 
-- (id)tableView:(NSTableView *)aTableView objectValueForTableColumn:(NSTableColumn *)aTableColumn row:(NSInteger)rowIndex
-{
+
+- (id)tableView:(NSTableView *)aTableView objectValueForTableColumn:(NSTableColumn *)aTableColumn row:(NSInteger)rowIndex {
     return nil;
 }
+
 
 - (BOOL)tableView:(NSTableView *)aTableView writeRowsWithIndexes:(NSIndexSet *)rowIndexes toPasteboard:(NSPasteboard *)pboard {
     [pboard declareTypes:[NSArray arrayWithObject:kCDMTasksDragTypeRearrange] owner:self];
@@ -377,10 +384,10 @@ static NSString* const kCDMTasksViewControllerImageTagXUnfocused = @"tag-x-unfoc
 	return YES;
 }
 
+
 #pragma mark - Menu Items
 
-- (IBAction)editTask:(id)sender
-{
+- (IBAction)editTask:(id)sender {
     NSInteger row = [self.tableView clickedRow];
     if (row != -1) {
         NSTableRowView *rowView = [self.tableView rowViewAtRow:row makeIfNecessary:NO];
@@ -390,8 +397,8 @@ static NSString* const kCDMTasksViewControllerImageTagXUnfocused = @"tag-x-unfoc
     }
 }
 
-- (IBAction)archiveTask:(id)sender
-{
+
+- (IBAction)archiveTask:(id)sender {
     NSInteger row = [self.tableView clickedRow];
     if (row != -1) {
         CDKTask *task = [[self.arrayController arrangedObjects] objectAtIndex:row];
@@ -402,8 +409,8 @@ static NSString* const kCDMTasksViewControllerImageTagXUnfocused = @"tag-x-unfoc
     }
 }
 
-- (IBAction)deleteTask:(id)sender
-{
+
+- (IBAction)deleteTask:(id)sender {
     NSInteger row = [self.tableView clickedRow];
     if (row != -1) {
         CDKTask *task = [[self.arrayController arrangedObjects] objectAtIndex:row];
