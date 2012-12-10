@@ -67,7 +67,6 @@
 		038DBD0515F1463100736345 /* LoadingLists.xib in Resources */ = {isa = PBXBuildFile; fileRef = 038DBD0415F1463100736345 /* LoadingLists.xib */; };
 		038DBD0715F1463800736345 /* LoadingTasks.xib in Resources */ = {isa = PBXBuildFile; fileRef = 038DBD0615F1463800736345 /* LoadingTasks.xib */; };
 		038FF74915DDA596004B7316 /* CDMTrafficLightsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 038FF74815DDA596004B7316 /* CDMTrafficLightsView.m */; };
-		0391100615F08CA300A3EA7B /* NoLists.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0391100515F08CA300A3EA7B /* NoLists.xib */; };
 		03B3951C15DAB73000A8A7D4 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 03B3951B15DAB73000A8A7D4 /* Localizable.strings */; };
 		03B3952815DAC66E00A8A7D4 /* CDMTaskTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 03B3952715DAC66E00A8A7D4 /* CDMTaskTextField.m */; };
 		03B3952E15DAC97900A8A7D4 /* CDMBoolToTaskTextColorValueTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = 03B3952D15DAC97000A8A7D4 /* CDMBoolToTaskTextColorValueTransformer.m */; };
@@ -84,6 +83,9 @@
 		217E498716754DE0008008D6 /* add-task-arrow@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 217E498516754DE0008008D6 /* add-task-arrow@2x.png */; };
 		217E49A5167554B4008008D6 /* CDMTasksPlaceholderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 217E49A4167554B4008008D6 /* CDMTasksPlaceholderView.m */; };
 		217E4A0C16757B2B008008D6 /* CDMPlaceholderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 217E4A0B16757B2B008008D6 /* CDMPlaceholderView.m */; };
+		217E4A1016757EDF008008D6 /* CDMListsPlaceholderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 217E4A0F16757EDF008008D6 /* CDMListsPlaceholderView.m */; };
+		217E4A2C16757F82008008D6 /* list-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 217E4A2A16757F82008008D6 /* list-icon.png */; };
+		217E4A2D16757F82008008D6 /* list-icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 217E4A2B16757F82008008D6 /* list-icon@2x.png */; };
 		21CF8688166908860052625D /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21CF85B01668FBF30052625D /* SystemConfiguration.framework */; };
 		21CF868A166908890052625D /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21CF8689166908890052625D /* Security.framework */; };
 		B21FF2C515BF7D6500AEEA97 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B21FF2C415BF7D6500AEEA97 /* Cocoa.framework */; };
@@ -253,7 +255,6 @@
 		038DBD0615F1463800736345 /* LoadingTasks.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingTasks.xib; sourceTree = "<group>"; };
 		038FF74715DDA596004B7316 /* CDMTrafficLightsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMTrafficLightsView.h; sourceTree = "<group>"; };
 		038FF74815DDA596004B7316 /* CDMTrafficLightsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMTrafficLightsView.m; sourceTree = "<group>"; };
-		0391100515F08CA300A3EA7B /* NoLists.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoLists.xib; sourceTree = "<group>"; };
 		03B3951B15DAB73000A8A7D4 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		03B3952615DAC66E00A8A7D4 /* CDMTaskTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMTaskTextField.h; sourceTree = "<group>"; };
 		03B3952715DAC66E00A8A7D4 /* CDMTaskTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMTaskTextField.m; sourceTree = "<group>"; };
@@ -279,6 +280,10 @@
 		217E49A4167554B4008008D6 /* CDMTasksPlaceholderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMTasksPlaceholderView.m; sourceTree = "<group>"; };
 		217E4A0A16757B2A008008D6 /* CDMPlaceholderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMPlaceholderView.h; sourceTree = "<group>"; };
 		217E4A0B16757B2B008008D6 /* CDMPlaceholderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMPlaceholderView.m; sourceTree = "<group>"; };
+		217E4A0E16757EDE008008D6 /* CDMListsPlaceholderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDMListsPlaceholderView.h; sourceTree = "<group>"; };
+		217E4A0F16757EDF008008D6 /* CDMListsPlaceholderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDMListsPlaceholderView.m; sourceTree = "<group>"; };
+		217E4A2A16757F82008008D6 /* list-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "list-icon.png"; sourceTree = "<group>"; };
+		217E4A2B16757F82008008D6 /* list-icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "list-icon@2x.png"; sourceTree = "<group>"; };
 		21CF85B01668FBF30052625D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		21CF8689166908890052625D /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		B21FF2C015BF7D6500AEEA97 /* Cheddar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cheddar.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -507,6 +512,8 @@
 				217E4A0B16757B2B008008D6 /* CDMPlaceholderView.m */,
 				217E49A3167554B4008008D6 /* CDMTasksPlaceholderView.h */,
 				217E49A4167554B4008008D6 /* CDMTasksPlaceholderView.m */,
+				217E4A0E16757EDE008008D6 /* CDMListsPlaceholderView.h */,
+				217E4A0F16757EDF008008D6 /* CDMListsPlaceholderView.m */,
 			);
 			name = Placeholders;
 			sourceTree = "<group>";
@@ -590,6 +597,8 @@
 		B21FF2FA15BF7D7B00AEEA97 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				217E4A2A16757F82008008D6 /* list-icon.png */,
+				217E4A2B16757F82008008D6 /* list-icon@2x.png */,
 				217E498416754DE0008008D6 /* add-task-arrow.png */,
 				217E498516754DE0008008D6 /* add-task-arrow@2x.png */,
 				217E498016754C63008008D6 /* task-icon.png */,
@@ -651,7 +660,6 @@
 				B2A23DA315D9997700EA9D2D /* About.xib */,
 				B2A23DA515D9997E00EA9D2D /* Preferences.xib */,
 				03457A8215EC8AE300645547 /* QuickAdd.xib */,
-				0391100515F08CA300A3EA7B /* NoLists.xib */,
 				038DBD0415F1463100736345 /* LoadingLists.xib */,
 				038DBD0615F1463800736345 /* LoadingTasks.xib */,
 			);
@@ -963,13 +971,14 @@
 				03F7954115E41FA600C9F652 /* tag-x-unfocused@2x.png in Resources */,
 				03F7954215E41FA600C9F652 /* About.xib in Resources */,
 				03457A8315EC8AE300645547 /* QuickAdd.xib in Resources */,
-				0391100615F08CA300A3EA7B /* NoLists.xib in Resources */,
 				038DBD0515F1463100736345 /* LoadingLists.xib in Resources */,
 				038DBD0715F1463800736345 /* LoadingTasks.xib in Resources */,
 				217E498216754C63008008D6 /* task-icon.png in Resources */,
 				217E498316754C63008008D6 /* task-icon@2x.png in Resources */,
 				217E498616754DE0008008D6 /* add-task-arrow.png in Resources */,
 				217E498716754DE0008008D6 /* add-task-arrow@2x.png in Resources */,
+				217E4A2C16757F82008008D6 /* list-icon.png in Resources */,
+				217E4A2D16757F82008008D6 /* list-icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1034,6 +1043,7 @@
 				2137B07C167303160092A7DF /* CDMArchesWindowContentView.m in Sources */,
 				217E49A5167554B4008008D6 /* CDMTasksPlaceholderView.m in Sources */,
 				217E4A0C16757B2B008008D6 /* CDMPlaceholderView.m in Sources */,
+				217E4A1016757EDF008008D6 /* CDMListsPlaceholderView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

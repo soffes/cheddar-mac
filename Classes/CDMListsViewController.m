@@ -11,6 +11,7 @@
 #import "CDMTasksViewController.h"
 #import "CDMColorView.h"
 #import "CDMShadowTableView.h"
+#import "CDMListsPlaceholderView.h"
 #import <QuartzCore/QuartzCore.h>
 
 typedef NS_ENUM(NSInteger, CDMListsMenuItemTag) {
@@ -355,12 +356,11 @@ static CGFloat const kCDMListsViewControllerAddListAnimationDuration = 0.15f;
 - (void)_setNoListsViewVisible:(BOOL)visible {
     if (visible && ![self.noListsView superview]) {
         if (!self.noListsView) {
-            [NSBundle loadNibNamed:kCDMNoListsNibName owner:self];
+			self.noListsView = [[CDMListsPlaceholderView alloc] init];
         }
-        NSScrollView *scrollView = [self.tableView enclosingScrollView];
-        [self.noListsView setFrame:[scrollView frame]];
-        [self.noListsView setAutoresizingMask:NSViewHeightSizable | NSViewWidthSizable | NSViewMaxYMargin];
-        [scrollView addSubview:self.noListsView];
+
+		self.noListsView.frame = self.tableView.bounds;
+		[self.tableView addSubview:self.noListsView];
     } else if (!visible && [self.noListsView superview]) {
         [self.noListsView removeFromSuperview];
     }
