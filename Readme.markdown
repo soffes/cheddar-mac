@@ -2,7 +2,7 @@
 
 [Cheddar for Mac](http://cheddarapp.com/apps) is the Mac application for [Cheddar](http://cheddarapp.com), a simple & instant task manager.
 
-**Note:** I haven't had time to setup good tools for third-party developers to hack on Cheddar for Mac yet. I need to spend time and implement the web flow since only offical apps can use the username and password OAuth flow. Also, the [sparkle branch](https://github.com/nothingmagical/cheddar-mac/tree/sparkle) has a lot of differences than master. I want to merge it back in and #ifdef all of the Sparkle stuff so it's easy to keep doing betas.
+**Note:** I haven't had time to setup good tools for third-party developers to hack on Cheddar for Mac yet. I need to spend time and implement the web flow since only official apps can use the username and password OAuth flow. Also, the [sparkle branch](https://github.com/nothingmagical/cheddar-mac/tree/sparkle) has a lot of differences than master. I want to merge it back in and #ifdef all of the Sparkle stuff so it's easy to keep doing betas.
 
 
 ## Getting Started
@@ -18,7 +18,7 @@ Now open the Xcode project and build. You will see one error telling you to fill
 
 ## Why is this open source?
 
-This is open source since the app is free already. It is indended to be a source of sample code for everyone to benefit from. You can make cool apps that use Cheddar and I hopefully get more users because you built something awesome.
+This is open source since the app is free already. It is intended to be a source of sample code for everyone to benefit from. You can make cool apps that use Cheddar and I hopefully get more users because you built something awesome.
 
 Also, if you want to help out and fix some bugs, I'll love you forever. Maybe you'll even get a shirt or something :)
 
