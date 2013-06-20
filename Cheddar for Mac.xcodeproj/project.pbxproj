@@ -1110,8 +1110,6 @@
 		B21FF2DF15BF7D6500AEEA97 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = Resources/Cheddar.entitlements;
-				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: Sam Soffes";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Other Sources/Cheddar-Prefix.pch";
@@ -1123,7 +1121,6 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = Cheddar;
-				PROVISIONING_PROFILE = "C2331947-1516-4958-9A8D-072347627B86";
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
 			};
@@ -1132,8 +1129,6 @@
 		B21FF2E015BF7D6500AEEA97 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = Resources/Cheddar.entitlements;
-				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application: Sam Soffes";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Other Sources/Cheddar-Prefix.pch";
@@ -1145,7 +1140,6 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = Cheddar;
-				PROVISIONING_PROFILE = "C2331947-1516-4958-9A8D-072347627B86";
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = app;
 			};

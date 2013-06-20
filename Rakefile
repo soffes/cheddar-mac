@@ -44,7 +44,7 @@ task :default => :setup
 # Tasks only for Nothing Magical
 namespace :private do
   desc 'Setup with private files'
-  task :'setup:private' => :update_submodules do
+  task :setup => :update_submodules do
     # Copy defines
     puts 'Copying example CDMDefines into place...'.cyan
     `cp ../cheddar-private/Mac/CDMDefines.* Other\\ Sources/`
