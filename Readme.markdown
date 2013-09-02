@@ -1,5 +1,9 @@
 # Cheddar for Mac
 
+**Important:** Cheddar for Mac is no longer maintained by Nothing Magical. It has been [sold](http://sam.roon.io/parting-ways-with-cheddar). Going forward, Cheddar is no longe open source since the new owner has choosen to keep it private. This will remain as an archive of the previous version that was open source. Everything should still work. Thank you to everyone for your support as I built Cheddar. Seriously. Thank you.
+
+---
+
 [Cheddar for Mac](http://cheddarapp.com/apps) is the Mac application for [Cheddar](http://cheddarapp.com), a simple & instant task manager.
 
 **Note:** I haven't had time to setup good tools for third-party developers to hack on Cheddar for Mac yet. I need to spend time and implement the web flow since only official apps can use the username and password OAuth flow. Also, the [sparkle branch](https://github.com/nothingmagical/cheddar-mac/tree/sparkle) has a lot of differences than master. I want to merge it back in and #ifdef all of the Sparkle stuff so it's easy to keep doing betas.
